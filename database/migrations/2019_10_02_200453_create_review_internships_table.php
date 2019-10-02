@@ -15,8 +15,8 @@ class CreateReviewInternshipsTable extends Migration
     {
         Schema::create('review_internships', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('student_id');
-            $table->string('internship_id');
+            $table->integer('student_id');
+            $table->integer('internship_id');
             $table->string('review_text');
             $table->string('review_rating');
             $table->rememberToken();

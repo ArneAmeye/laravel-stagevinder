@@ -15,8 +15,8 @@ class CreateReviewCompaniesTable extends Migration
     {
         Schema::create('review_companies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('company_id');
-            $table->string('student_id');
+            $table->integer('company_id');
+            $table->integer('student_id');
             $table->string('review_text');
             $table->string('review_rating');
             $table->rememberToken();
