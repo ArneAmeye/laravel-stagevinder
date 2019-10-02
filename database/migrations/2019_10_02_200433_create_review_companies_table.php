@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateInternshipsTable extends Migration
+class CreateReviewCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateInternshipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('internships', function (Blueprint $table) {
+        Schema::create('review_companies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
             $table->string('company_id');
-            $table->string('description');
-            $table->boolean('is_available');
+            $table->string('student_id');
+            $table->string('review_text');
+            $table->string('review_rating');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateInternshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('internships');
+        Schema::dropIfExists('review_companies');
     }
 }
