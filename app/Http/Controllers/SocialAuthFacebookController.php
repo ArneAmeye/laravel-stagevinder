@@ -25,8 +25,14 @@ class SocialAuthFacebookController extends Controller
      */
     public function handleProviderCallback(SocialFacebookAccountService $service)
     {
+
+        //check if request denied or does not contain valid login info, then redirect back to login
+        if (!$request->has('code') || $request->has('denied')) {
+            return redirect('/login');
+        }
+
         $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
         auth()->login($user);
-        return redirect()->to('/home');
+        return redirect()->to('/');
     }
 }
