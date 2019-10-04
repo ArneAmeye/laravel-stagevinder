@@ -32,7 +32,6 @@ Route::get('/companies/{company}', 'CompanyController@show');
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{intership}', 'InternshipController@show');
 
-
 //Socialite (Facebook) routes
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');

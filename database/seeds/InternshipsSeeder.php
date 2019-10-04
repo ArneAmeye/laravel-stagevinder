@@ -9,6 +9,6 @@ class InternshipsSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Internships::class, 5)->create();
+        factory(\App\Internship::class, 5)->create();
     }
 }
