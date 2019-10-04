@@ -9,7 +9,7 @@ class StudentsSeeder extends Seeder
      */
     public function run()
     {
-        $student1 = new \App\Students();
+        $student1 = new \App\Student();
         $student1->fistname = 'Arne';
         $student1->lastname = 'Ameye';
         $student1->email = 'arne@stagevinder.be';
@@ -18,7 +18,7 @@ class StudentsSeeder extends Seeder
         $student1->school = 'Thomas More Highschool';
         $student1->bio = 'Lorem Ipsum';
 
-        $student2 = new \App\Students();
+        $student2 = new \App\Student();
         $student2->fistname = 'Irene';
         $student2->lastname = 'Haegeman';
         $student2->email = 'irene@stagevinder.be';
@@ -27,7 +27,7 @@ class StudentsSeeder extends Seeder
         $student2->school = 'Thomas More Highschool';
         $student2->bio = 'Lorem Ipsum';
 
-        $student3 = new \App\Students();
+        $student3 = new \App\Student();
         $student3->fistname = 'Arne';
         $student3->lastname = 'Ameye';
         $student3->email = 'arne@stagevinder.be';
@@ -36,7 +36,7 @@ class StudentsSeeder extends Seeder
         $student3->school = 'Thomas More Highschool';
         $student3->bio = 'Lorem Ipsum';
 
-        $student4 = new \App\Students();
+        $student4 = new \App\Student();
         $student4->fistname = 'Lars';
         $student4->lastname = 'Pauwels';
         $student4->email = 'Lars@stagevinder.be';
@@ -45,7 +45,7 @@ class StudentsSeeder extends Seeder
         $student4->school = 'Thomas More Highschool';
         $student4->bio = 'Lorem Ipsum';
 
-        $student5 = new \App\Students();
+        $student5 = new \App\Student();
         $student5->fistname = 'Bram';
         $student5->lastname = 'Ravijts';
         $student5->email = 'bram@stagevinder.be';
@@ -54,6 +54,6 @@ class StudentsSeeder extends Seeder
         $student5->school = 'Thomas More Highschool';
         $student5->bio = 'Lorem Ipsum';
 
-        factory(\App\Students::class, 50)->create();
+        factory(\App\Student::class, 50)->create();
     }
 }

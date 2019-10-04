@@ -9,6 +9,6 @@ class CompaniesSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Companies::class, 50)->create();
+        factory(\App\Company::class, 50)->create();
     }
 }
