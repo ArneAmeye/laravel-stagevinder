@@ -23,7 +23,7 @@ class SocialAuthFacebookController extends Controller
      *
      * @return callback URL from facebook
      */
-    public function handleProviderCallback(SocialFacebookAccountService $service)
+    public function handleProviderCallback(SocialFacebookAccountService $service, Request $request)
     {
 
         //check if request denied or does not contain valid login info, then redirect back to login
