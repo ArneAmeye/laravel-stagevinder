@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Socialite (Facebook) routes
+Route::get('/redirect', 'SocialAuthFacebookController@redirectToProvider');
+Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
