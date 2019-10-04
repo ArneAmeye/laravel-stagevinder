@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class StudentController extends Controller{
 
     public function index(){
-        
-        return view("students/index");
+        $data['students'] = \DB::table('students')->get();
+        return view("students/index", $data);
     }
 
     public function show(\App\Students $student){
-        $data['student'] = \App\Students::where('id', $student)->first();
+        $data['student'] = \DB::table('students')->where('id', $student)->first();
         return view('students/show', $data);
     }
 
