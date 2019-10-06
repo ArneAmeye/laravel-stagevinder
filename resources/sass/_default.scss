@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $mainBackgroundColor;
+	font-size: $mainFontSize;
+	overflow-x: hidden;
+	color: $mainColor;
+	font-family: $mainFontFamily;
+}
+
+img {
+	vertical-align: middle;
+	border-style: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "";
+	clear: both;
+	height: 0;
+}

@@ -11,7 +11,7 @@ class StudentController extends Controller{
         return view("students/index", $data);
     }
 
-    public function show(\App\Students $student){
+    public function show($student){
         $data['student'] = \DB::table('students')->where('id', $student)->first();
         return view('students/show', $data);
     }

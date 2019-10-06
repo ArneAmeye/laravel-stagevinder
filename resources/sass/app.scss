@@ -1,1 +1,12 @@
-//
+/*VARIABLES*/
+@import "./variables";
+
+/*DEFAULT CSS*/
+@import "./default";
+
+/*COMPONENTS CSS*/
+@import "components/alert";
+@import "components/header";
+@import "components/navigation";
+
+/*KEYFRAMES*/

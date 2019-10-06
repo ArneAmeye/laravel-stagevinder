@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Faker\Generator as Faker;
 
-$factory->define(\App\Students::class, function (Faker $faker) {
+$factory->define(\App\Student::class, function (Faker $faker) {
     return [
         'firstname' => $faker->firstName(),
         'lastname' => $faker->lastName,
