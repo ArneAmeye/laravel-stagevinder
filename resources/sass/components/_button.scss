@@ -1,0 +1,40 @@
+.buttons__container {
+}
+
+.button {
+	margin-right: 10px;
+	background-color: $highlightBackgroundColor;
+	border-color: $highlightBackgroundColor;
+	color: $whiteColor;
+	cursor: pointer;
+	-webkit-transition: all ease-in 0.3s;
+	transition: all ease-in 0.3s;
+	border-radius: $buttonRadius;
+	text-transform: capitalize;
+	font-size: $buttonSize;
+	padding: 10px 19px;
+	margin-bottom: 5px;
+	box-shadow: none;
+	border: none;
+}
+
+.button--right {
+	margin: 0;
+	padding: 8px 14px;
+	line-height: 16px;
+	font-size: 11px;
+	float: right;
+}
+
+.button__icon {
+	margin-right: 5px;
+}
+
+@media (min-width: 769px) {
+	.buttons__container {
+		float: right;
+		bottom: 38px;
+		right: 35px;
+		position: absolute;
+	}
+}

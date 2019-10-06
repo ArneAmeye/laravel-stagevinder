@@ -15,6 +15,7 @@ body {
 img {
 	vertical-align: middle;
 	border-style: none;
+	width: 100%;
 }
 
 a {
@@ -46,11 +47,15 @@ ul {
 }
 
 .container__inner {
-	padding: 1.8rem;
+	padding: 10px;
 }
 
 @media (min-width: 993px) {
 	.container {
 		margin-left: 270px;
+	}
+
+	.container__inner {
+		padding: 1.8rem;
 	}
 }

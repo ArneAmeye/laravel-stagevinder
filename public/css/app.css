@@ -21,6 +21,7 @@ body {
 img {
   vertical-align: middle;
   border-style: none;
+  width: 100%;
 }
 
 a {
@@ -52,12 +53,16 @@ ul {
 }
 
 .container__inner {
-  padding: 1.8rem;
+  padding: 10px;
 }
 
 @media (min-width: 993px) {
   .container {
     margin-left: 270px;
+  }
+
+  .container__inner {
+    padding: 1.8rem;
   }
 }
 
@@ -209,6 +214,7 @@ ul {
   transform: translateY(20px);
   display: none;
   transition: all 0.3s ease-in-out;
+  width: 14em;
 }
 
 .options__more__items--active {
@@ -263,7 +269,7 @@ ul {
   margin-top: 80px;
   background: #303548;
   min-height: calc(100vh - 80px);
-  position: absolute;
+  position: fixed;
   width: 270px;
   z-index: 999;
   margin-left: -270px;

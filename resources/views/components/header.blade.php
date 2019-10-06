@@ -37,7 +37,7 @@
 					<p class="header__options__name">
 						John Doe
 					</p>
-					<i class="fa fa-angle-down header__options__more" id="moreMenu" aria-hidden="true"></i>
+					<i class="fa fa-angle-down header__options__more" aria-hidden="true"></i>
 				</a>
 				<ul class="options__more__items">
 					<li class="options__more__item">

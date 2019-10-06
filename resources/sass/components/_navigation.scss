@@ -2,7 +2,7 @@
 	margin-top: 80px;
 	background: $mainColor;
 	min-height: calc(100vh - 80px);
-	position: absolute;
+	position: fixed;
 	width: 270px;
 	z-index: $topIndex;
 	margin-left: -270px;
