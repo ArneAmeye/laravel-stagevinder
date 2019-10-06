@@ -6,10 +6,12 @@ $mainFontFamily: open sans, sans-serif;
 //FONT SIZES
 $smallIconSize: 10px;
 $navigationSmallSize: 12px;
+$breadcrumbTextSize: 13px;
 $navigationSize: 14px;
 $navMoreSize: 15px;
 $mainFontSize: 16px;
 $headerIconFontSize: 16px;
+$breadcrumbTitleSize: 20px;
 
 //FONT WEIGHTS
 $lightWeight: 300;
@@ -33,13 +35,19 @@ $greenBadgeBackgroundColor: #93be52;
 $headerShadow: 0 0 11px rgba(0, 0, 0, 0.13);
 $headerMoreShadow: 0 0 1px 2px rgba(0, 0, 0, 0.03),
 	0 -2px 1px -2px rgba(0, 0, 0, 0.02), 0 0 0 -1px rgba(0, 0, 0, 0.03);
+$breadcrumbShadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+$breadcrumbIconShadow: 0 2px 12px -3px rgba(0, 0, 0, 0.5);
 
 //COLORS
 $mainColor: #303548;
 $whiteColor: #fff;
 $navMoreColor: #666;
 $navigationIcon: #ccc;
+$breadcrumbTitleColor: #919aa3;
 $navigationTitleColor: #8c8c8c;
+$breadcrumbLinkColor: #4a6076;
+$breadcrumbSlashColor: #868e96;
+$breadcrumbCurrentColor: #7e7e7e;
 
 //BORDER RADIUS
 $circleRadius: 50%;

@@ -1,0 +1,126 @@
+.breadcrumb__container {
+	margin-bottom: 30px;
+	background-color: $whiteColor;
+	padding: 30px;
+	border-radius: 5px;
+	-webkit-box-shadow: $breadcrumbShadow;
+	box-shadow: $breadcrumbShadow;
+	border: none;
+	flex-direction: column;
+	display: flex;
+}
+
+.breadcrumb__inner {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.breadcrumb__info {
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding: 0 15px;
+	text-align: center;
+}
+
+.breadcrumb__info__icon {
+	margin-bottom: 10px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex !important;
+	width: 50px;
+	height: 50px;
+	border-radius: $inputRadius;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	vertical-align: middle;
+	font-size: 25px !important;
+	color: $whiteColor;
+	-webkit-box-shadow: $breadcrumbIconShadow;
+	box-shadow: $breadcrumbIconShadow;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color: $highlightBackgroundColor;
+}
+
+.breadcrumb__info__title {
+	display: block;
+	margin-bottom: 0;
+	font-weight: $boldWeight;
+	color: $mainColor;
+	font-size: $breadcrumbTitleSize;
+	text-transform: capitalize;
+}
+
+.breadcrumb__info__text {
+	font-size: $breadcrumbTextSize;
+	color: $breadcrumbTitleColor;
+	display: inline-block;
+	margin-top: 10px;
+	text-transform: capitalize;
+}
+
+.breadcrumb__info__links {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	display: block;
+}
+
+.breadcrumb__info__linkContainer {
+	display: inline-block;
+}
+
+.breadcrumb__info__linkContainer--slash:before {
+	display: inline-block;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+	color: $breadcrumbSlashColor;
+	content: "/";
+}
+
+.breadcrumb__info__link {
+	font-size: $navigationSize;
+	color: $breadcrumbLinkColor;
+}
+
+.breadcrumb__info__link--current {
+	color: $breadcrumbCurrentColor;
+	cursor: default;
+}
+
+@media (min-width: 992px) {
+	.breadcrumb__info {
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		text-align: left;
+	}
+
+	.breadcrumb__info__icon {
+		margin-right: 20px;
+		margin-bottom: 0;
+	}
+
+	.breadcrumb__info__mobile--inline {
+		display: inline-block;
+	}
+
+	.breadcrumb__info--big {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 66.666667%;
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
+	}
+
+	.breadcrumb__info--small {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+		float: right;
+	}
+}

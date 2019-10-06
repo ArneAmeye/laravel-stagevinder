@@ -5,6 +5,7 @@
 	position: absolute;
 	width: 270px;
 	z-index: $topIndex;
+	margin-left: -270px;
 }
 
 .navigation__scroll {
@@ -172,4 +173,10 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+@media (min-width: 993px) {
+	.navigation__container {
+		margin-left: 0;
+	}
 }

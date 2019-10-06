@@ -70,6 +70,7 @@
 	padding: 0 15px;
 	width: 100%;
 	background-color: $whiteColor;
+	display: none;
 }
 
 .header__options__items--left {
@@ -135,7 +136,6 @@
 }
 
 .options__more__items {
-	opacity: 0;
 	-webkit-box-shadow: $headerMoreShadow;
 	box-shadow: $headerMoreShadow;
 	position: absolute;
@@ -143,12 +143,14 @@
 	width: auto;
 	left: auto;
 	right: 0;
+	transform: translateY(20px);
+	display: none;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .options__more__items--active {
-	opacity: 1;
 	transform: translateY(0px);
-	visibility: visible;
 }
 
 .options__more__item {
@@ -188,5 +190,9 @@
 
 	.header__options--mobile {
 		display: none;
+	}
+
+	.header__options__container {
+		display: block;
 	}
 }

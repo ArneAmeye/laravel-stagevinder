@@ -6,9 +6,19 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>StageVinder | @yield('title')</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+	<link rel="stylesheet" type="text/css" href="@yield('stylesheet')">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	@yield('header')
+	@component('components/header')@endcomponent
+    @component('components/navigation')@endcomponent
+    <section class="container">
+    	<div class="container__inner">
+    		@yield('content')
+    	</div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    @yield('javascript')
 </body>
 </html>

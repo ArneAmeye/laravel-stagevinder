@@ -1,0 +1,119 @@
+/*VARIABLES*/
+
+/*COMPONENTS CSS*/
+
+.breadcrumb__container {
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  flex-direction: column;
+  display: flex;
+}
+
+.breadcrumb__inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.breadcrumb__info {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.breadcrumb__info__icon {
+  margin-bottom: 10px;
+  display: inline-flex !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: 25px !important;
+  color: #fff;
+  box-shadow: 0 2px 12px -3px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  background-color: #4680ff;
+}
+
+.breadcrumb__info__title {
+  display: block;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #303548;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.breadcrumb__info__text {
+  font-size: 13px;
+  color: #919aa3;
+  display: inline-block;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.breadcrumb__info__links {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+}
+
+.breadcrumb__info__linkContainer {
+  display: inline-block;
+}
+
+.breadcrumb__info__linkContainer--slash:before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #868e96;
+  content: "/";
+}
+
+.breadcrumb__info__link {
+  font-size: 14px;
+  color: #4a6076;
+}
+
+.breadcrumb__info__link--current {
+  color: #7e7e7e;
+  cursor: default;
+}
+
+@media (min-width: 992px) {
+  .breadcrumb__info {
+    display: inline-flex;
+    text-align: left;
+  }
+
+  .breadcrumb__info__icon {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb__info__mobile--inline {
+    display: inline-block;
+  }
+
+  .breadcrumb__info--big {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  .breadcrumb__info--small {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    float: right;
+  }
+}
+
+/*KEYFRAMES*/
+
