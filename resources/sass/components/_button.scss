@@ -1,6 +1,17 @@
 .buttons__container {
 }
 
+.button__center {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.button__center--margin {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
 .button {
 	margin-right: 10px;
 	background-color: $highlightBackgroundColor;
@@ -16,6 +27,15 @@
 	margin-bottom: 5px;
 	box-shadow: none;
 	border: none;
+}
+
+.button--big {
+	width: 120px;
+}
+
+.button--transparent {
+	background-color: transparent;
+	color: $mainColor;
 }
 
 .button--right {

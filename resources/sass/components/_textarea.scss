@@ -1,0 +1,19 @@
+.textarea {
+	resize: none;
+	height: 470px;
+	width: 100%;
+	font-size: $navigationSize;
+	border: 1px solid $inputBorderColor;
+	padding: 0.5rem 0.75rem;
+	line-height: 1.25;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 0.25rem;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.textarea:focus {
+	border-color: $inputBorderFocusColor;
+	outline: 0;
+}

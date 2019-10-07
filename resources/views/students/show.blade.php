@@ -1,7 +1,7 @@
 @extends("layouts/app")
 
 @section('title')
-    {{$student->firstname}}
+    {{ $student->firstname }}
 @endsection
 @section('stylesheet')
 	{{ asset('css/pages/student.css') }}
@@ -23,7 +23,7 @@
 				<div class="user__info">
 					<div class="user__inner clearfix">
 						<div class="user__profile">
-							<a href="#">
+							<a href="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg">
 								<img src="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg" class="user__profile__image">
 							</a>
 						</div>
@@ -58,100 +58,55 @@
 					<h5 class="card__title">
 						About Me
 					</h5>
-					<button class="button button--right">
-						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-					</button>
+					@if(empty($edit) || $edit != "details")
+						<a href="?edit=details" class="button button--right">
+							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						</a>
+					@else
+						<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</a>
+					@endif
 				</div>
-				<div class="card__body card__body--padding clearfix">
-					<div class="card__info">
-						<table class="card__table">
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Full Name
-								</th>
-								<td class="card__table__data">
-									{{ $student->firstname }} {{ $student->lastname }}
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Gender
-								</th>
-								<td class="card__table__data">
-									Female
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Birth Date
-								</th>
-								<td class="card__table__data">
-									October 25th, 1990
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									School
-								</th>
-								<td class="card__table__data">
-									{{ $student->school }}
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Location
-								</th>
-								<td class="card__table__data">
-									New York, USA
-								</td>
-							</tr>
-						</table>
-					</div>
-					<div class="card__info">
-						<table class="card__table">
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Email
-								</th>
-								<td class="card__table__data">
-									{{ $student->email }}
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Mobile Number
-								</th>
-								<td class="card__table__data">
-									(0123) - 4567891
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Twitter
-								</th>
-								<td class="card__table__data">
-									@xyz
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									Skype
-								</th>
-								<td class="card__table__data">
-									demo.skype
-								</td>
-							</tr>
-							<tr class="card__table__row">
-								<th class="card__table__data card__table__data--big">
-									website
-								</th>
-								<td class="card__table__data">
-									www.demo.com
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
+				@if(empty($edit) || $edit != "details")
+					@component('components/details')
+				@else
+					@component('components/edit_details')
+				@endif
+						@slot('name') 
+							{{ $student->firstname }} {{ $student->lastname }}
+						@endslot
+						@slot('profession') 
+							Web designer
+						@endslot
+						@slot('date') 
+							1998-03-29
+						@endslot
+						@slot('school') 
+							{{ $student->school }}
+						@endslot
+						@slot('location') 
+							New York, USA
+						@endslot
+						@slot('email') 
+							{{ $student->email }}
+						@endslot
+						@slot('number') 
+							(0123) - 4567891
+						@endslot
+						@slot('linkedIn') 
+							@xyz
+						@endslot
+						@slot('skype') 
+							demo.skype
+						@endslot
+						@slot('website')
+							www.demo.com
+						@endslot
+						@slot('id')
+							{{ $student->id }}
+						@endslot
+					@endcomponent
 			</div>
 		</section>
 
@@ -161,14 +116,28 @@
 					<h5 class="card__title">
 						Description About Me
 					</h5>
-					<button class="button button--right">
-						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-					</button>
+					@if (empty($edit) || $edit != "bio")
+						<a href="?edit=bio" class="button button--right">
+							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						</a>
+					@else
+						<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</a>
+					@endif
 				</div>
 				<div class="card__body">
-					<p class="card__text">
-						{{ $student->bio }}
-					</p>
+					@if (empty($edit) || $edit != "bio")
+						<p class="card__text">
+							{{ $student->bio }}
+						</p>
+					@else
+						<textarea class="textarea">{{ $student->bio }}</textarea>
+						<div class="button__center">
+							<button class="button button--big">Save</button>
+							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--transparent">Cancel</a>
+						</div>
+					@endif
 				</div>
 			</div>
 		</section>

@@ -83,6 +83,17 @@
   }
 }
 
+.button__center {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.button__center--margin {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 .button {
   margin-right: 10px;
   background-color: #4680ff;
@@ -97,6 +108,15 @@
   margin-bottom: 5px;
   box-shadow: none;
   border: none;
+}
+
+.button--big {
+  width: 120px;
+}
+
+.button--transparent {
+  background-color: transparent;
+  color: #303548;
 }
 
 .button--right {
@@ -213,6 +233,75 @@
   .card__body--padding {
     margin: 0 -15px;
   }
+}
+
+.input__container {
+  margin-bottom: 1.25em;
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.input__addon {
+  background-color: #4680ff;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  width: 45px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.25;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.input:focus {
+  border-color: #80bdff;
+  outline: 0;
+}
+
+.textarea {
+  resize: none;
+  height: 470px;
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.25;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.textarea:focus {
+  border-color: #80bdff;
+  outline: 0;
 }
 
 /*KEYFRAMES*/
