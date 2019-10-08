@@ -8,6 +8,9 @@
 @endsection
 @section('content')
 	@component('components/breadcrumb')
+		@slot('icon')
+			fa-user
+		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
 				<a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
@@ -142,7 +145,4 @@
 			</div>
 		</section>
 	</div>
-@endsection
-@section('javascript')
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 @endsection

@@ -1,7 +1,7 @@
 <div class="breadcrumb__container">
 	<div class="breadcrumb__inner">
 		<div class="breadcrumb__info breadcrumb__info--big">
-			<i class="fa fa-user breadcrumb__info__icon" aria-hidden="true"></i>
+			<i class="fa {{ $icon }} breadcrumb__info__icon" aria-hidden="true"></i>
 			<div class="breadcrumb__info__mobile--inline">
 				<h4 class="breadcrumb__info__title">
 					User Profile
