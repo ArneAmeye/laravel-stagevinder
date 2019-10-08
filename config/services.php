@@ -33,7 +33,7 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_SECRET_ID'),
-        'redirect' => 'http://homestead.test/callback',
+        'redirect' => 'https://homestead.test/callback',
     ]
 
 ];

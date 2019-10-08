@@ -15,14 +15,15 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('facebook_user_id'); //fb login ID
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('field_study');
-            $table->string('school');
-            $table->string('bio');
+            $table->string('field_study')->nullable();
+            $table->string('school')->nullable();
+            $table->string('bio')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
