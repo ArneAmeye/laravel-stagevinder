@@ -10,8 +10,8 @@ class InternshipController extends Controller{
         return view("internships/index");
     }
 
-    public function show(\App\Internships $company){
-        $data['internship'] = \App\Internships::where('id', $company)->first();
+    public function show(\App\Internship $company){
+        $data['internship'] = \App\Internship::where('id', $company)->first();
         return view('internships/show', $data);
     }
 

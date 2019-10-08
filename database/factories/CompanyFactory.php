@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Faker\Generator as Faker;
 
-$factory->define(\App\Companies::class, function (Faker $faker) {
+$factory->define(\App\Company::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
         'email' => $faker->email,
