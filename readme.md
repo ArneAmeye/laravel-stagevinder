@@ -34,6 +34,8 @@ That's it, you should now be able to use the external tool (see previous title) 
 
 ### Refresh (update) tables
 
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to table 'students' on 08/10/2019`
+
 Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
@@ -50,3 +52,5 @@ If a new seeder is added or in case of an error try the following commands:
 
 If the problem is still there:
 `composer update` and `composer dump-autoload`
+
+
