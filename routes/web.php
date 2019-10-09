@@ -27,6 +27,7 @@ Route::get('/students/{student}', 'StudentController@show');
 
 Route::get('/companies', 'CompanyController@index');
 Route::get('/companies/{company}', 'CompanyController@show');
+Route::get('/companies-add', 'CompanyController@getCompanyData');
 
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{intership}', 'InternshipController@show');
