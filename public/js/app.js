@@ -165,6 +165,17 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/pages/index.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/pages/index.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/pages/student.scss":
 /*!*******************************************!*\
   !*** ./resources/sass/pages/student.scss ***!
@@ -177,15 +188,16 @@ $(document).ready(function () {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/pages/student.scss ***!
-  \*************************************************************************************************/
+/*!***********************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/pages/index.scss ./resources/sass/pages/student.scss ***!
+  \***********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
 
 
 /***/ })

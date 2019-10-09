@@ -1,0 +1,50 @@
+.preview__container {
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    width: 100%;
+    justify-content: initial;
+}
+
+.preview__inner {
+    position: relative;
+    border-radius: $profilePictureRadius;
+    -webkit-box-shadow: $breadcrumbShadow;
+    box-shadow: $breadcrumbShadow;
+    border: none;
+    background: $whiteColor;
+    width: 250px;
+    height: 250px;
+    margin: 0px 10px 30px -5px;
+}
+
+.preview__image {
+    position: absolute;
+}
+
+.preview__text {
+    position: relative;
+    padding: 10%;
+    top: 70%;
+    color: $cardTitleColor;
+    background-color: $whiteColor;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.preview__text--internship {
+    font-size: $navigationSize;
+    font-weight: $boldWeight;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.preview__text--position {
+    font-size: $breadcrumbTextSize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
