@@ -1,5 +1,5 @@
 @extends("layouts/app")
-
+	
 @section('title')
     {{ $student->firstname }}
 @endsection
@@ -80,31 +80,31 @@
 							{{ $student->firstname }} {{ $student->lastname }}
 						@endslot
 						@slot('profession') 
-							Web designer
+							{{ $student->field_study }}
 						@endslot
 						@slot('date') 
-							1998-03-29
+							{{ $student->birth_date }}
 						@endslot
 						@slot('school') 
 							{{ $student->school }}
 						@endslot
 						@slot('location') 
-							New York, USA
+							{{ $student->adress }}
 						@endslot
 						@slot('email') 
 							{{ $student->email }}
 						@endslot
 						@slot('number') 
-							(0123) - 4567891
+							{{ $student->mobile_number }}
 						@endslot
 						@slot('linkedIn') 
-							@xyz
+							{{ $student->linkedIn }}
 						@endslot
 						@slot('skype') 
-							demo.skype
+							{{ $student->skype }}
 						@endslot
 						@slot('website')
-							www.demo.com
+							{{ $student->website }}
 						@endslot
 						@slot('id')
 							{{ $student->id }}
@@ -146,3 +146,11 @@
 		</section>
 	</div>
 @endsection
+
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif

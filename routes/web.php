@@ -24,6 +24,7 @@ Route::get('/register', function(){
 });
 
 Route::get('/students', 'StudentController@index');
+Route::patch('/students/{student}',  ['as' => 'student.update', 'uses' => 'StudentController@update']);
 Route::get('/students/{student}', 'StudentController@show');
 
 Route::get('/companies', 'CompanyController@index');
