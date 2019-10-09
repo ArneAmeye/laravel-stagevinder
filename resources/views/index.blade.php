@@ -9,7 +9,7 @@
 @section('content')
     @component('components/breadcrumb')
         @slot('icon')
-			fa-user
+			fa-home
 		@endslot
 		@slot('breadcrumb')
 		@endslot
