@@ -32,6 +32,14 @@ Migrate (make) tables that are defined in "laravel-app > database > migrations":
 
 That's it, you should now be able to use the external tool (see previous title) to look into the DB and confirm if all is ok.
 
+### Refresh (update) tables
+
+Refreshing tables when changes were made
+`php artisan migrate:refresh`
+
+Refreshing tables and simultaniously add seeders
+`php artisan migrate:refresh --seed`
+
 ### Seeders
 
 To add dummy data to the tables:
