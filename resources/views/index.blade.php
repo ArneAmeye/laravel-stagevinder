@@ -28,19 +28,6 @@
                     </div>
 	            </a>
             @endforeach
-            <!--
-            <div class="preview__inner">
-                <div class="preview__header">
-                    <h5 class="preview__title">
-                        Name internship
-                    </h5>
-			    </div>
-                <div class="preview__body">
-                    <p class="preview__text">
-                        Proffesion
-                    </p>
-                </div>
-            -->
 		    </div>
 		</section>
     </div>
