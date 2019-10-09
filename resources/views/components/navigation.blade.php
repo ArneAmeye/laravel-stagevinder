@@ -24,12 +24,42 @@
 			</div>
 			<ul class="navigation__items">
 				<li class="navigation__item">
-					<a href="#" class="navigation__link">
+					<a href="/index.php" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
 							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Home
+						</span>
+					</a>
+				</li>
+				<li class="navigation__item">
+					<a href="/students" class="navigation__link {{ Request::is('students') ? 'navigation__link--current' : '' }}">
+						<span class="navigation__link__icon">
+							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
+						</span>
+						<span class="navigation__link__title">
+							Students
+						</span>
+					</a>
+				</li>
+				<li class="navigation__item">
+					<a href="/companies" class="navigation__link {{ Request::is('companies') ? 'navigation__link--current' : '' }}">
+						<span class="navigation__link__icon">
+							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
+						</span>
+						<span class="navigation__link__title">
+							Companies
+						</span>
+					</a>
+				</li>
+				<li class="navigation__item">
+					<a href="internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
+						<span class="navigation__link__icon">
+							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
+						</span>
+						<span class="navigation__link__title">
+							Internships
 						</span>
 					</a>
 				</li>
