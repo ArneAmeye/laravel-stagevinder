@@ -36,7 +36,7 @@
 				<li class="navigation__item">
 					<a href="/students" class="navigation__link {{ Request::is('students') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fa fa-graduation-cap navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Students
@@ -46,7 +46,7 @@
 				<li class="navigation__item">
 					<a href="/companies" class="navigation__link {{ Request::is('companies') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fa fa-building navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Companies
@@ -56,7 +56,7 @@
 				<li class="navigation__item">
 					<a href="internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fa fa-file-text-o navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Internships
