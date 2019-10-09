@@ -4,10 +4,11 @@
 			<i class="fa {{ $icon }} breadcrumb__info__icon" aria-hidden="true"></i>
 			<div class="breadcrumb__info__mobile--inline">
 				<h4 class="breadcrumb__info__title">
-					User Profile
+					@yield('title')
 				</h4>
 				<span class="breadcrumb__info__text">
 					lorem ipsum dolor sit amet, consectetur adipisicing elit
+					<!--{{$student->field_study ?? ''}}-->
 				</span>
 			</div>
 		</div>

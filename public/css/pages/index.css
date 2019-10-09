@@ -1,0 +1,54 @@
+/*VARIABLES*/
+
+/*COMPONENTS CSS*/
+
+.preview__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: initial;
+}
+
+.preview__inner {
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  background: #fff;
+  width: 250px;
+  height: 250px;
+  margin: 0px 10px 30px -5px;
+}
+
+.preview__image {
+  position: absolute;
+}
+
+.preview__text {
+  position: relative;
+  padding: 10%;
+  top: 70%;
+  color: #505458;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview__text--internship {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview__text--position {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*KEYFRAMES*/
+
