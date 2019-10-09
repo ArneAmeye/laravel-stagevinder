@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Socialite;
 use App\Services\SocialFacebookAccountService;
 
@@ -32,7 +34,7 @@ class SocialAuthFacebookController extends Controller
         }
 
         $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
-        auth()->login($user);
+        Auth::login($user, true);
         return redirect()->to('/');
     }
 }
