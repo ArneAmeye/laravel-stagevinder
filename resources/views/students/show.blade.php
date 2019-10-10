@@ -148,9 +148,12 @@
 @endsection
 
 @if (\Session::has('success'))
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
-        </ul>
-    </div>
+    @component('components/alert')
+		@slot('type', 'success')
+		<ul class="alert__container">
+			<li class="alert__item">
+				{!! \Session::get('success') !!}
+			</li>
+		</ul>
+	@endcomponent
 @endif

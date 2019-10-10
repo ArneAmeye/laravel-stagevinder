@@ -1,3 +1,128 @@
-.alert-danger {
-	color: red;
+.alert {
+	background-color: $whiteColor;
+	color: $alertDefaultColor;
+	font-size: $alertSize;
+	padding: 0.75rem 1.25rem;
+	border: 1px solid $alertDefaultColor;
+	border-radius: 0.25rem;
+	position: fixed;
+	top: 120px;
+	right: 0;
+	width: 480px;
+	border-left-width: 48px;
+	border-right-width: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	z-index: $topIndex;
+	-moz-transition: right 0.95s ease-out;
+	-webkit-transition: right 0.95s ease-out;
+	transition: right 0.95s ease-out;
+}
+
+.alert:before {
+	font-family: FontAwesome;
+	color: $whiteColor;
+	font-size: $mainFontSize;
+	position: absolute;
+	left: -30px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.alert--show {
+	animation: alert 0.95s ease-in forwards;
+}
+
+.alert--hide {
+	animation: alertReverse 0.95s ease-in forwards;
+}
+
+.alert--default:before,
+.alert--info:before {
+	content: "\f05a";
+}
+
+.alert--warning {
+	border-color: $alertWarningColor;
+	color: $alertWarningColor;
+}
+
+.alert--error {
+	border-color: $alertErrorColor;
+	color: $alertErrorColor;
+}
+
+.alert--warning:before,
+.alert--error:before {
+	content: "\f06a";
+}
+
+.alert--success {
+	border-color: $alertSuccessColor;
+	color: $alertSuccessColor;
+}
+
+.alert--success:before {
+	content: "\f00c";
+}
+
+.alert--info {
+	border-color: $highlightBackgroundColor;
+	color: $highlightBackgroundColor;
+}
+
+.alert__close {
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 $whiteColor;
+	opacity: 0.3;
+	position: absolute;
+	right: 1.25rem;
+	top: 1rem;
+	outline: none;
+	cursor: pointer;
+}
+
+.alert__text {
+	line-height: 21px;
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+.alert__text--bold {
+	text-transform: capitalize;
+}
+
+.alert__container {
+	margin-top: 10px;
+	margin-left: 1.25rem;
+}
+
+.alert__item {
+	list-style-type: disc;
+	text-indent: -4px;
+}
+
+@keyframes alertReverse {
+	0% {
+		right: 0;
+	}
+
+	100% {
+		right: -480px;
+	}
+}
+
+@keyframes alert {
+	0% {
+		right: -480px;
+	}
+	100% {
+		right: 0;
+	}
 }

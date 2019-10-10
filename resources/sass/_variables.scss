@@ -10,6 +10,7 @@ $breadcrumbTextSize: 13px;
 $navigationSize: 14px;
 $navMoreSize: 15px;
 $buttonSize: 15px;
+$alertSize: 15px;
 $mainFontSize: 16px;
 $headerIconFontSize: 16px;
 $breadcrumbTitleSize: 20px;
@@ -55,6 +56,10 @@ $inputBorderFocusColor: #80bdff;
 $inputColor: #495057;
 $breadcrumbCurrentColor: #7e7e7e;
 $cardTitleColor: #505458;
+$alertDefaultColor: #e0e0e0;
+$alertWarningColor: #ffb64d;
+$alertErrorColor: #fc6180;
+$alertSuccessColor: #93be52;
 
 //BORDER RADIUS
 $circleRadius: 50%;

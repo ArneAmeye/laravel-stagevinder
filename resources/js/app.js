@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	/* NAVIGATION OPEN AND CLOSE */
 	var toggleMore = true;
 	$(".header__options__more, .header__options__name").click(function(e) {
 		if (toggleMore) {
@@ -64,4 +65,15 @@ $(document).ready(function() {
 		}
 		e.preventDefault();
 	});
+
+	/* ERRORS SHOW AND HIDE */
+	$(".alert__close").click(function() {
+		$(".alert").removeClass("alert--show");
+		$(".alert").addClass("alert--hide");
+	});
+
+	setTimeout(function() {
+		$(".alert").removeClass("alert--show");
+		$(".alert").addClass("alert--hide");
+	}, 6000);
 });

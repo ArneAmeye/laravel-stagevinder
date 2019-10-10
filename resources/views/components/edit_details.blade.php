@@ -1,8 +1,19 @@
+@if($errors->any())
+	@component('components/alert')
+		@slot('type', 'error')
+		<ul class="alert__container">
+			@foreach($errors->all() as $error)
+				<li class="alert__item">
+					{{ $error }}
+				</li>
+			@endforeach
+		</ul>
+	@endcomponent
+@endif
+
 <form method="post" action="{{ route('student.update', $id) }}">
 	{{ csrf_field() }}
     {{ method_field('patch') }}
-
-    {{ $errors }}
 
 	<div class="card__body card__body--padding clearfix">
 		<div class="card__info">

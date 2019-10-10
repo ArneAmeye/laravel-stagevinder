@@ -30,8 +30,8 @@ class StudentController extends Controller{
             'username' => 'required|string',
             'profession' => 'required',
             'date' => 'required|before:'.date('Y-m-d').'|date',
-            'linkedIn' => 'url',
-            'website' => 'url',
+            'linkedIn' => 'url|nullable',
+            'website' => 'url|nullable',
             'email' => 'required|email|unique:students,email,'.$id
         ]);
 
