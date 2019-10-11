@@ -22,12 +22,14 @@
 	<div class="page__container">
 		<section class="user__container">
 			<div class="user__inner user__inner--padding">
-				<img src="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/bg-img1.jpg">
+				<div class="user__inner__image" style="background-image: url({{ $student->background_picture }});"></div>
 				<div class="user__info">
 					<div class="user__inner clearfix">
 						<div class="user__profile">
-							<a href="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg">
-								<img src="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg" class="user__profile__image">
+							<a href="{{ $student->profile_picture }}" target="_blank">
+								<div class="user__profile__image" style="background-image: url({{ $student->profile_picture }});">
+									
+								</div>
 							</a>
 						</div>
 						<div class="user__inner user__inner--inline">

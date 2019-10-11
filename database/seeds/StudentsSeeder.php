@@ -28,6 +28,7 @@ class StudentsSeeder extends Seeder
         $student2->school = 'Thomas More Highschool';
         $student2->bio = 'Lorem Ipsum';
         $student2->save();
+        
         $student4 = new \App\Student();
         $student4->firstname = 'Lars';
         $student4->lastname = 'Pauwels';

@@ -9,7 +9,7 @@ $factory->define(\App\Student::class, function (Faker $faker) {
         'lastname' => $faker->lastName,
         'birth_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'profile_picture' => $faker->imageUrl($width = 200, $height = 200),
-        'background_picture' => $faker->imageUrl($width = 640, $height = 480),
+        'background_picture' => $faker->imageUrl($width = 1180, $height = 213),
         'email' => $faker->email,
         //'email_verified'
         'password' => Hash::make($faker->password),
