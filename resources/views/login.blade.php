@@ -8,16 +8,6 @@
 @endsection
 @section('content')
 	<form action="{{ route('user.login') }}" method="post">
-		@auth
-			@component('components/alert')
-				@slot('type', 'success')
-				<ul class="alert__container">
-					<li class="alert__item">
-						Logged in successfully!
-					</li>
-				</ul>
-			@endcomponent
-		@endauth
 		{{ csrf_field() }}
 
 		<div class="auth__box">
@@ -53,13 +43,13 @@
 				<span class="input__addon">
 					<i class="fa fa-envelope" aria-hidden="true"></i>
 				</span>
-				<input type="email" name="email" class="input" placeholder="Email Address">
+				<input type="email" name="email" class="input" placeholder="Email Address" value="lars@stagevinder.be">
 			</div>
 			<div class="input__container">
 				<span class="input__addon">
 					<i class="fa fa-lock" aria-hidden="true"></i>
 				</span>
-				<input type="password" name="password" class="input" placeholder="Password">
+				<input type="password" name="password" class="input" placeholder="Password" value="password">
 			</div>
 			<div class="auth__checkbox clearfix">
 				<div class="checkbox__container">

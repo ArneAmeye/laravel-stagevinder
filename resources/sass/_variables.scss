@@ -7,6 +7,7 @@ $mainFontFamily: open sans, sans-serif;
 $smallIconSize: 10px;
 $navigationSmallSize: 12px;
 $breadcrumbTextSize: 13px;
+$authTextSize: 13px;
 $navigationSize: 14px;
 $navMoreSize: 15px;
 $buttonSize: 15px;
@@ -14,6 +15,7 @@ $alertSize: 15px;
 $mainFontSize: 16px;
 $headerIconFontSize: 16px;
 $breadcrumbTitleSize: 20px;
+$authTitleSize: 24px;
 
 //FONT WEIGHTS
 $lightWeight: 300;
@@ -41,6 +43,7 @@ $headerMoreShadow: 0 0 1px 2px rgba(0, 0, 0, 0.03),
 $breadcrumbShadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
 $breadcrumbIconShadow: 0 2px 12px -3px rgba(0, 0, 0, 0.5);
 $usernameShadow: 1px 1px 4px #373a3c;
+$authBoxShadow: 0 2px 18px -2px #000;
 
 //COLORS
 $mainColor: #303548;
@@ -60,6 +63,7 @@ $alertDefaultColor: #e0e0e0;
 $alertWarningColor: #ffb64d;
 $alertErrorColor: #fc6180;
 $alertSuccessColor: #93be52;
+$facebookColor: #3c5a99;
 
 //BORDER RADIUS
 $circleRadius: 50%;

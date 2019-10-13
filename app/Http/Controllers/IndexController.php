@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class IndexController extends Controller
 {
@@ -13,6 +14,10 @@ class IndexController extends Controller
      */
     public function index()
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
         $data['internships'] = \App\Internship::get();
 
         return view('index', $data);

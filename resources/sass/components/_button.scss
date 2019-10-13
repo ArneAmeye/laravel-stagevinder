@@ -33,6 +33,11 @@
 	width: 120px;
 }
 
+.button--fullWidth {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
 .button--transparent {
 	background-color: transparent;
 	color: $mainColor;
@@ -47,6 +52,28 @@
 }
 
 .button__icon {
+	margin-right: 5px;
+}
+
+.button__social {
+	background-color: $facebookColor;
+	border-color: $facebookColor;
+	border-radius: 2px;
+	color: $whiteColor;
+	cursor: pointer;
+	text-transform: capitalize;
+	font-size: 15px;
+	padding: 10px 19px;
+	font-weight: $mainWeight;
+	text-align: center;
+	display: inline-block;
+}
+
+.button__social__icon {
+	padding: 5px 0;
+	display: inline-block !important;
+	border-radius: 3px 0 0 3px;
+	margin: -7px 0 -7px -13px;
 	margin-right: 5px;
 }
 

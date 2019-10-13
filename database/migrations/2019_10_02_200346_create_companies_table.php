@@ -27,6 +27,8 @@ class CreateCompaniesTable extends Migration
             $table->string('zip_code');
             $table->string('street_and_number');
             $table->string('website');
+            //$table->integer('user_id')->unsigned();
+            //$table->foreign('user_id')->references('id')->on('companies');
             $table->rememberToken();
             $table->timestamps();
         });

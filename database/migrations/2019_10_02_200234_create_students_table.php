@@ -14,7 +14,8 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->nullable();
             $table->string('facebook_user_id')->nullable(); //fb login ID
             $table->string('firstname')->default('');
             $table->string('lastname')->default('');
@@ -26,14 +27,15 @@ class CreateStudentsTable extends Migration
             $table->string('linkedIn')->nullable();
             $table->string('skype')->nullable();
             $table->string('website')->nullable();
-            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->default('');
             $table->string('field_study')->nullable();
             $table->string('school')->nullable();
             $table->string('bio')->nullable();
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

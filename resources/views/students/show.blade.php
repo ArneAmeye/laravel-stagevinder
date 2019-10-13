@@ -94,7 +94,7 @@
 							{{ $student->adress }}
 						@endslot
 						@slot('email') 
-							{{ $student->email }}
+							{{ $student->user['email'] }}
 						@endslot
 						@slot('number') 
 							{{ $student->mobile_number }}

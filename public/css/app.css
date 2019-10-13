@@ -1,9 +1,6 @@
 @charset "UTF-8";
-
 /*VARIABLES*/
-
 /*DEFAULT CSS*/
-
 * {
   margin: 0;
   padding: 0;
@@ -42,32 +39,7 @@ ul {
   height: 0;
 }
 
-.container {
-  margin-top: 80px;
-  padding: 30px 10px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-}
-
-.container__inner {
-  padding: 10px;
-}
-
-@media (min-width: 993px) {
-  .container {
-    margin-left: 270px;
-  }
-
-  .container__inner {
-    padding: 1.8rem;
-  }
-}
-
 /*COMPONENTS CSS*/
-
 .header__container {
   position: fixed;
   z-index: 999;
@@ -264,7 +236,6 @@ ul {
     display: block;
   }
 }
-
 .navigation__container {
   margin-top: 80px;
   background: #303548;
@@ -457,7 +428,6 @@ ul {
     margin-left: 0;
   }
 }
-
 .breadcrumb__container {
   margin-bottom: 30px;
   background-color: #fff;
@@ -570,7 +540,6 @@ ul {
     float: right;
   }
 }
-
 .alert {
   background-color: #fff;
   color: #e0e0e0;
@@ -685,7 +654,6 @@ ul {
   0% {
     right: 0;
   }
-
   100% {
     right: -480px;
   }
@@ -695,31 +663,48 @@ ul {
   0% {
     right: 0;
   }
-
   100% {
     right: -480px;
   }
 }
-
 @-webkit-keyframes alert {
   0% {
     right: -480px;
   }
-
   100% {
     right: 0;
   }
 }
-
 @keyframes alert {
   0% {
     right: -480px;
   }
-
   100% {
     right: 0;
   }
 }
-
 /*KEYFRAMES*/
+/*BASIC CSS FOR PAGES*/
+.container {
+  margin-top: 80px;
+  padding: 30px 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
 
+.container__inner {
+  padding: 10px;
+}
+
+@media (min-width: 993px) {
+  .container {
+    margin-left: 270px;
+  }
+
+  .container__inner {
+    padding: 1.8rem;
+  }
+}
