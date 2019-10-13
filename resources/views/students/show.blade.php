@@ -137,11 +137,14 @@
 							{{ $student->bio }}
 						</p>
 					@else
-						<textarea class="textarea">{{ $student->bio }}</textarea>
-						<div class="button__center">
-							<button class="button button--big">Save</button>
-							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--transparent">Cancel</a>
-						</div>
+						@component('components/edit_bio')
+							@slot('bio')
+								{{ $student->bio }}
+							@endslot
+							@slot('id')
+								{{ $student->id }}
+							@endslot
+						@endcomponent
 					@endif
 				</div>
 			</div>

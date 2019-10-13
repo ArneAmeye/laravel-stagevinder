@@ -14,6 +14,7 @@
 <form method="post" action="{{ route('student.update', $id) }}">
 	{{ csrf_field() }}
     {{ method_field('patch') }}
+    <input type="hidden" name="type" value="{{ request()->route('edit') }}">
 
 	<div class="card__body card__body--padding clearfix">
 		<div class="card__info">
@@ -127,7 +128,7 @@
 	</div>
 
 	<div class="button__center button__center--margin">
-		<button type="submit" class="button button--big" name="update">Save</button>
+		<button type="submit" class="button button--big" name="update_details">Save</button>
 		<a href="{{ url('students/') }}/{{ $id }}" class="button button--transparent">Cancel</a>
 	</div>
 </form>
