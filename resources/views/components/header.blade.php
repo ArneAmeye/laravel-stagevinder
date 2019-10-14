@@ -65,7 +65,7 @@
 						</a>
 					</li>
 					<li class="options__more__item">
-						<a href="#" class="options__more__link">
+						<a href="{{ route('user.logout') }}" class="options__more__link">
 							<i class="fa fa-sign-out options__more__icon" aria-hidden="true"></i>
 							Logout
 						</a>

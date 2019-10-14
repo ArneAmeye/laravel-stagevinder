@@ -1,0 +1,164 @@
+.container {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	min-height: 100vh;
+	color: $whiteColor;
+	background-size: cover;
+	background: url(../images/bg.jpg) no-repeat center center fixed;
+}
+
+.container__inner {
+	width: auto;
+	margin-top: 80px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.container__row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.auth__card {
+	width: 100%;
+	padding: 1.25rem;
+	margin: 0 auto;
+}
+
+.auth__box {
+	background-color: $whiteColor;
+	border-radius: 8px;
+	margin: 20px 0 0;
+	padding: 20px;
+	-webkit-box-shadow: $authBoxShadow;
+	box-shadow: $authBoxShadow;
+}
+
+.auth__header {
+	margin-bottom: 20px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.auth__header__left,
+.auth__header__right {
+	width: 100%;
+}
+
+.auth__header__title {
+	color: $navMoreColor;
+	font-size: $authTitleSize;
+	font-weight: $boldWeight;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.auth__header__text {
+	color: $mainColor;
+	margin: 25px 0;
+	text-align: center;
+	font-size: $authTextSize;
+}
+
+.auth__text {
+	border-bottom: 1px solid $alertDefaultColor;
+	color: $mainColor;
+	padding-bottom: 5px;
+	font-size: $authTextSize;
+	margin-bottom: 1rem;
+}
+
+.auth__buttons {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.auth__button {
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding: 0 15px;
+}
+
+.auth__checkbox {
+	margin-top: 25px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.auth__forgot {
+	text-align: right;
+	float: right;
+	width: 50%;
+}
+
+.auth__forgot__text {
+	display: inline-block;
+	font-weight: $boldWeight;
+	color: $mainColor;
+	font-size: $authTextSize;
+}
+
+.auth__login {
+	margin-top: 10px;
+	width: 100%;
+}
+
+@media (min-width: 576px) {
+	.container__center {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	.auth__card {
+		width: 550px;
+	}
+
+	.auth__header__left {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+
+	.auth__header__right {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 75%;
+		flex: 0 0 75%;
+		max-width: 75%;
+	}
+
+	.auth__header__text {
+		text-align: left;
+	}
+
+	.auth__buttons {
+		margin-bottom: 20px;
+	}
+
+	.auth__login {
+		margin-top: 30px;
+	}
+}

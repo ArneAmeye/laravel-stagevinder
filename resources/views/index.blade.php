@@ -14,6 +14,18 @@
 		@slot('breadcrumb')
 		@endslot
 	@endcomponent
+    @auth
+        @if(!empty(session('full_name')))
+            @component('components/alert')
+                @slot('type', 'info')
+                <ul class="alert__container">
+                    <li class="alert__item">
+                        Welcome back {{ session('full_name') }}!
+                    </li>
+                </ul>
+            @endcomponent
+        @endif
+    @endauth
     <div class="preview__container">
         <section class="preview__container">
             @foreach($internships as $internship)

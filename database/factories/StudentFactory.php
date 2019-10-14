@@ -4,15 +4,16 @@
 use Faker\Generator as Faker;
 
 $factory->define(\App\Student::class, function (Faker $faker) {
+    //$students = App\User::all()->pluck('id')->toArray();
+    static $student_id = 5;
+
     return [
         'firstname' => $faker->firstName(),
         'lastname' => $faker->lastName,
         'birth_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'profile_picture' => $faker->imageUrl($width = 200, $height = 200),
-        'background_picture' => $faker->imageUrl($width = 640, $height = 480),
-        'email' => $faker->email,
+        'background_picture' => $faker->imageUrl($width = 1180, $height = 213),
         //'email_verified'
-        'password' => Hash::make($faker->password),
         'field_study' => $faker->jobTitle,
         'school' => $faker->company,
         'adress' => $faker->address,
@@ -21,6 +22,7 @@ $factory->define(\App\Student::class, function (Faker $faker) {
         'skype' => $faker->url,
         'website' => $faker->url,
         'bio' => $faker->realText(200),
+        'user_id' => $student_id++,
         //'remember_token'
         //'remember_at'
         //'updated_at'

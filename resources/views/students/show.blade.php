@@ -22,12 +22,14 @@
 	<div class="page__container">
 		<section class="user__container">
 			<div class="user__inner user__inner--padding">
-				<img src="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/bg-img1.jpg">
+				<div class="user__inner__image" style="background-image: url({{ $student->background_picture }});"></div>
 				<div class="user__info">
 					<div class="user__inner clearfix">
 						<div class="user__profile">
-							<a href="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg">
-								<img src="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg" class="user__profile__image">
+							<a href="{{ $student->profile_picture }}" target="_blank">
+								<div class="user__profile__image" style="background-image: url({{ $student->profile_picture }});">
+									
+								</div>
 							</a>
 						</div>
 						<div class="user__inner user__inner--inline">
@@ -92,7 +94,7 @@
 							{{ $student->adress }}
 						@endslot
 						@slot('email') 
-							{{ $student->email }}
+							{{ $student->user['email'] }}
 						@endslot
 						@slot('number') 
 							{{ $student->mobile_number }}
@@ -135,11 +137,14 @@
 							{{ $student->bio }}
 						</p>
 					@else
-						<textarea class="textarea">{{ $student->bio }}</textarea>
-						<div class="button__center">
-							<button class="button button--big">Save</button>
-							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--transparent">Cancel</a>
-						</div>
+						@component('components/edit_bio')
+							@slot('bio')
+								{{ $student->bio }}
+							@endslot
+							@slot('id')
+								{{ $student->id }}
+							@endslot
+						@endcomponent
 					@endif
 				</div>
 			</div>
@@ -148,9 +153,12 @@
 @endsection
 
 @if (\Session::has('success'))
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
-        </ul>
-    </div>
+    @component('components/alert')
+		@slot('type', 'success')
+		<ul class="alert__container">
+			<li class="alert__item">
+				{!! \Session::get('success') !!}
+			</li>
+		</ul>
+	@endcomponent
 @endif

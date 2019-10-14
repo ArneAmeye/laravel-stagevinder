@@ -34,7 +34,8 @@ That's it, you should now be able to use the external tool (see previous title) 
 
 ### Refresh (update) tables
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to table 'students' on 08/10/2019`
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to table 'students' on 08/10/2019`</br>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added email and password rows to table 'users' for login on 14/10/2019`
 
 Refreshing tables when changes were made
 `php artisan migrate:refresh`

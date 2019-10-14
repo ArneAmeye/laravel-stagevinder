@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
-class StudentController extends Controller{
+class StudentController extends Controller {
 
     public function index(){
         $data['students'] = \App\Student::get();
@@ -13,7 +14,9 @@ class StudentController extends Controller{
     }
 
     public function show($student){
-        $data['student'] = \App\Student::where('id', $student)->first();
+        //$data['student'] = \App\User::with('student')->find($student)->where('id', $student)->first();
+        $data['student'] = \App\User::find($student)->where('id', $student)->first()->student;
+        //$data['user'] = \App\User::find($student)->where('id', $student)->first();
 
         if (!empty($_GET["edit"])) {
         	$data['edit'] = $_GET["edit"];
@@ -26,12 +29,46 @@ class StudentController extends Controller{
 
     public function update($id, Request $request) {
 
+        if ($request->has('update_details')) {
+            return $this->updateDetails($id, $request);
+        }
+
+        if ($request->has('update_bio')) {
+            return $this->updateBio($id, $request);
+        }
+
+        return redirect("/students/$id")
+                ->with('danger', 'Invalid request! Try again.');
+    }
+
+    private static function updateBio($id, Request $request) {
+        $validation = Validator::make($request->all(), [
+            'bio' => 'required|string'
+        ]);
+
+        if ($validation->fails()) {
+            return redirect("/students/$id?edit=bio")
+                ->withErrors($validation);
+        } else {
+
+            $student = \App\Student::where('id', $id)->first();
+
+            $student->bio = $request->input('bio');
+
+            $student->save();
+
+            return redirect("/students/$id")
+                ->with('success', 'Bio has been updated!');
+        }
+    }
+
+    private static function updateDetails($id, Request $request) {
         $validation = Validator::make($request->all(), [
             'username' => 'required|string',
             'profession' => 'required',
             'date' => 'required|before:'.date('Y-m-d').'|date',
-            'linkedIn' => 'url',
-            'website' => 'url',
+            'linkedIn' => 'url|nullable',
+            'website' => 'url|nullable',
             'email' => 'required|email|unique:students,email,'.$id
         ]);
 
@@ -59,7 +96,7 @@ class StudentController extends Controller{
             $student->save();
 
             return redirect("/students/$id")
-                ->with('success', 'User has been updated!');
+                ->with('success', 'User detials has been updated!');
         }
     }
 

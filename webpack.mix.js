@@ -11,12 +11,15 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/app.js", "public/js").sass(
-    "resources/sass/app.scss",
-    "public/css"
-);
+mix.disableNotifications();
+
+mix.js("resources/js/app.js", "public/js")
+	.sass("resources/sass/app.scss", "public/css")
+	.sass("resources/sass/authentication.scss", "public/css")
+	.options({ processCssUrls: false });
 
 mix.sass("resources/sass/pages/index.scss", "public/css/pages");
 mix.sass("resources/sass/pages/companies.scss", "public/css/pages");
 mix.sass("resources/sass/pages/student.scss", "public/css/pages");
 mix.sass("resources/sass/pages/company.scss", "public/css/pages");
+mix.sass("resources/sass/pages/login.scss", "public/css/pages");
