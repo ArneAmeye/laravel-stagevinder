@@ -161,6 +161,21 @@ $(document).ready(function () {
     $(".alert").removeClass("alert--show");
     $(".alert").addClass("alert--hide");
   }, 6000);
+  /*TOGGLE SLIDER REGISTER*/
+
+  $(".slider__container").click(function () {
+    //Input fields form
+    $(".container--active, .container--disabled").toggleClass("container--active container--disabled"); //Checkbox value
+
+    var CheckBox = $("input[name=isStudent]");
+    CheckBox.prop("checked", !CheckBox.prop("checked")); //Container slider
+
+    $(".slider__container--disabled, .slider__container--active").toggleClass("slider__container--disabled slider__container--active"); //Circle in slider
+
+    $(".slider__item--disabled, .slider__item--active").toggleClass("slider__item--disabled slider__item--active"); //Text next to slider
+
+    $(".slider__item--label").html($(".slider__item--label").html() == "You are a student!" ? "You are a company!" : "You are a student!");
+  });
 });
 
 /***/ }),
@@ -180,17 +195,6 @@ $(document).ready(function () {
 /*!********************************************!*\
   !*** ./resources/sass/authentication.scss ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/pages/companies.scss":
-/*!*********************************************!*\
-  !*** ./resources/sass/pages/companies.scss ***!
-  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -220,6 +224,17 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/pages/register.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/pages/register.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/pages/student.scss":
 /*!*******************************************!*\
   !*** ./resources/sass/pages/student.scss ***!
@@ -232,19 +247,19 @@ $(document).ready(function () {
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/companies.scss ./resources/sass/pages/student.scss ./resources/sass/pages/login.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/student.scss ./resources/sass/pages/login.scss ./resources/sass/pages/register.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\companies.scss */"./resources/sass/pages/companies.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
-module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
 
 
 /***/ })

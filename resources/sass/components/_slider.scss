@@ -1,0 +1,48 @@
+.slider {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.slider__container {
+    width: 40px;
+    border-radius: $inputRadius + 10;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.slider__container--disabled {
+    border: 2px solid $inputBorderColor;
+    background-color: $inputBorderColor;
+}
+
+.slider__container--active {
+    border: 2px solid $highlightBackgroundColor;
+    background-color: $highlightBackgroundColor;
+}
+
+.slider__item {
+    position: relative;
+    border-radius: $circleRadius;
+    width: 20px;
+    height: 20px;
+}
+
+.slider__item--disabled {
+    border: 2px solid $inputBorderColor;
+    background-color: $whiteColor;
+    left: 0%;
+}
+
+.slider__item--active {
+    border: 2px solid $highlightBackgroundColor;
+    background-color: $whiteColor;
+    order: 2;
+    left: 50%;
+}
+
+.slider__item--checkbox {
+    visibility: hidden;
+}

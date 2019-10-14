@@ -52,6 +52,14 @@ ul {
   background: url(../images/bg.jpg) no-repeat center center fixed;
 }
 
+.container--active {
+  display: block;
+}
+
+.container--disabled {
+  display: none;
+}
+
 .container__inner {
   width: auto;
   margin-top: 80px;
