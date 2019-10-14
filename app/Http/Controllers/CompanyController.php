@@ -3,22 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
-class CompanyController extends Controller{
-
-    public function index(){
-        return view("companies/index");
+class CompanyController extends Controller
+{
+    public static function handleRegister(Request $request)
+    {
+        $company = new \App\Company();
+        $company = $request->input('name');
+        $company->email = $request->input('email');
+        $company->password = Hash::make($request->input('password'));
+        $company->save();
     }
 
-    public function show(\App\Company $company){
-    	// belangrijk voor lars
+    public function index()
+    {
+        return view('companies/index');
+    }
+
+    public function show(\App\Company $company)
+    {
+        // belangrijk voor lars
         $data['company'] = \App\Company::where('id', $company)->first();
+
         return view('companies/show', $data);
     }
 
-    public function getCompanyData(){
+    public function getCompanyData()
+    {
         //Start new Guzzle client -> Used for fetching API data
         $client = new Client();
 
@@ -31,22 +43,23 @@ class CompanyController extends Controller{
             'query' => [
                 'client_id' => env('FOURSQUARE_CLIENT_ID'),
                 'client_secret' => env('FOURSQUARE_SECRET_ID'),
-                'v' => "20191009",
+                'v' => '20191009',
                 'near' => $location,
                 'query' => $companyName,
-                'limit' => 1
-            ]
+                'limit' => 1,
+            ],
         ]);
-        if($result->getStatusCode() == 200){
+        if ($result->getStatusCode() == 200) {
             //Response from API is succesful, proceed with data!
             $data['body'] = (array) $result->getBody();
+
             return view('companies/add', $data);
-        }else{
+        } else {
             //Response from API has ERROR, show error output!
             $data['errorCode'] = (string) $result->getStatusCode();
             $data['ErrorPhrase'] = (string) $result->getReasonPhrase();
+
             return view('companies/add', $data);
         }
     }
-
 }

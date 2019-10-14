@@ -4,31 +4,43 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use DB;
 
-class StudentController extends Controller {
-
-    public function index(){
-        $data['students'] = \App\Student::get();
-        return view("students/index", $data);
+class StudentController extends Controller
+{
+    public static function handleRegister(Request $request)
+    {
+        $student = new \App\Student();
+        $student->firstname = $request->input('firstname');
+        $student->firstname = $request->input('lastname');
+        $student->email = $request->input('email');
+        $student->password = Hash::make($request->input('password'));
+        $student->save();
     }
 
-    public function show($student){
+    public function index()
+    {
+        $data['students'] = \App\Student::get();
+
+        return view('students/index', $data);
+    }
+
+    public function show($student)
+    {
         //$data['student'] = \App\User::with('student')->find($student)->where('id', $student)->first();
         $data['student'] = \App\User::find($student)->where('id', $student)->first()->student;
         //$data['user'] = \App\User::find($student)->where('id', $student)->first();
 
-        if (!empty($_GET["edit"])) {
-        	$data['edit'] = $_GET["edit"];
+        if (!empty($_GET['edit'])) {
+            $data['edit'] = $_GET['edit'];
         } else {
-        	$data['edit'] = "";
+            $data['edit'] = '';
         }
 
         return view('students/show', $data);
     }
 
-    public function update($id, Request $request) {
-
+    public function update($id, Request $request)
+    {
         if ($request->has('update_details')) {
             return $this->updateDetails($id, $request);
         }
@@ -41,16 +53,16 @@ class StudentController extends Controller {
                 ->with('danger', 'Invalid request! Try again.');
     }
 
-    private static function updateBio($id, Request $request) {
+    private static function updateBio($id, Request $request)
+    {
         $validation = Validator::make($request->all(), [
-            'bio' => 'required|string'
+            'bio' => 'required|string',
         ]);
 
         if ($validation->fails()) {
             return redirect("/students/$id?edit=bio")
                 ->withErrors($validation);
         } else {
-
             $student = \App\Student::where('id', $id)->first();
 
             $student->bio = $request->input('bio');
@@ -62,21 +74,21 @@ class StudentController extends Controller {
         }
     }
 
-    private static function updateDetails($id, Request $request) {
+    private static function updateDetails($id, Request $request)
+    {
         $validation = Validator::make($request->all(), [
             'username' => 'required|string',
             'profession' => 'required',
             'date' => 'required|before:'.date('Y-m-d').'|date',
             'linkedIn' => 'url|nullable',
             'website' => 'url|nullable',
-            'email' => 'required|email|unique:students,email,'.$id
+            'email' => 'required|email|unique:students,email,'.$id,
         ]);
 
         if ($validation->fails()) {
             return redirect("/students/$id?edit=details")
                 ->withErrors($validation);
         } else {
-
             $student = \App\Student::where('id', $id)->first();
 
             $username = explode(' ', $request->input('username'), 2);
@@ -99,5 +111,4 @@ class StudentController extends Controller {
                 ->with('success', 'User detials has been updated!');
         }
     }
-
 }
