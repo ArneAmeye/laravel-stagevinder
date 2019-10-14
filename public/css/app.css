@@ -383,7 +383,7 @@ ul {
 }
 
 .navigation__link:after {
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Free";
   content: "\F105";
   color: #fff;
   float: right;
