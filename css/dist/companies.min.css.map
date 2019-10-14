@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../resources/sass/pages/companies.scss",
+        "../../resources/sass/_variables.scss"
+    ],
+    "names": [],
+    "file": "companies.min.css"
+}

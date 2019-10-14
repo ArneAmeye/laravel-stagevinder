@@ -65,7 +65,7 @@
 					<td class="card__table__data">
 						<div class="input__container">
 							<span class="input__addon">
-								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<i class="fas fa-envelope" aria-hidden="true"></i>
 							</span>
 							<input type="email" name="email" class="input" placeholder="Email" value="{{ $email }}">
 						</div>
@@ -75,7 +75,7 @@
 					<td class="card__table__data">
 						<div class="input__container">
 							<span class="input__addon">
-								<i class="fa fa-phone" aria-hidden="true"></i>
+								<i class="fas fa-phone" aria-hidden="true"></i>
 							</span>
 							<input type="text" name="number" class="input" placeholder="Mobile Number" value="{{ $number }}">
 						</div>
@@ -85,7 +85,7 @@
 					<td class="card__table__data">
 						<div class="input__container">
 							<span class="input__addon">
-								<i class="fa fa-user-alt" aria-hidden="true"></i>
+								<i class="fas fa-user-alt" aria-hidden="true"></i>
 							</span>
 							<input type="text" name="manager" class="input" placeholder="Name manager" value="{{ $manager }}">
 						</div>
@@ -105,7 +105,7 @@
 					<td class="card__table__data">
 						<div class="input__container">
 							<span class="input__addon">
-								<i class="fa fa-link" aria-hidden="true"></i>
+								<i class="fas fa-link" aria-hidden="true"></i>
 							</span>
 							<input type="text" name="website" class="input" placeholder="Website" value="{{ $website }}">
 						</div>

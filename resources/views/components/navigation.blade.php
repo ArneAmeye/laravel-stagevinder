@@ -9,14 +9,14 @@
 					</p>
 					<span class="navigation__header__title">
 						UX Designer
-						<i class="fa fa-angle-down navigation__header__icon" aria-hidden="true"></i>
+						<i class="fas fa-angle-down navigation__header__icon" aria-hidden="true"></i>
 					</span>
 				</div>
 			</div>
 			<div class="navigation__search">
 				<input type="text" name="" placeholder="Search" class="navigation__search__input">
 				<span class="navigation__search__icon">
-					<i class="fa fa-search" aria-hidden="true"></i>
+					<i class="fas fa-search" aria-hidden="true"></i>
 				</span>
 			</div>
 			<div class="navigation__title">
@@ -26,7 +26,7 @@
 				<li class="navigation__item">
 					<a href="/index.php" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fa fa-home navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fas fa-home navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Home
@@ -36,7 +36,7 @@
 				<li class="navigation__item">
 					<a href="/students" class="navigation__link {{ Request::is('students') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fa fa-graduation-cap navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fas fa-graduation-cap navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Students
@@ -46,7 +46,7 @@
 				<li class="navigation__item">
 					<a href="/companies" class="navigation__link {{ Request::is('companies') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fa fa-building navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fas fa-building navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Companies
@@ -56,7 +56,7 @@
 				<li class="navigation__item">
 					<a href="internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fa fa-file-text-o navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fas fa-file-alt navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
 							Internships

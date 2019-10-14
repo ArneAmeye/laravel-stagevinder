@@ -44,11 +44,11 @@
 						</div>
 						<div class="buttons__container">
 							<button class="button">
-								<i class="fa fa-plus button__icon" aria-hidden="true"></i>
+								<i class="fas fa-plus button__icon" aria-hidden="true"></i>
 								follow
 							</button>
 							<button class="button">
-								<i class="fa fa-comment button__icon" aria-hidden="true"></i>
+								<i class="fas fa-comment button__icon" aria-hidden="true"></i>
 								message
 							</button>
 						</div>
@@ -65,11 +65,11 @@
 					</h5>
 					@if(empty($edit) || $edit != "details")
 						<a href="?edit=details" class="button button--right">
-							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							<i class="fas fa-edit" aria-hidden="true"></i>
 						</a>
 					@else
 						<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
-							<i class="fa fa-times" aria-hidden="true"></i>
+							<i class="fas fa-times" aria-hidden="true"></i>
 						</a>
 					@endif
 				</div>
@@ -123,11 +123,11 @@
 					</h5>
 					@if (empty($edit) || $edit != "bio")
 						<a href="?edit=bio" class="button button--right">
-							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							<i class="fas fa-edit" aria-hidden="true"></i>
 						</a>
 					@else
 						<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
-							<i class="fa fa-times" aria-hidden="true"></i>
+							<i class="fas fa-times" aria-hidden="true"></i>
 						</a>
 					@endif
 				</div>
