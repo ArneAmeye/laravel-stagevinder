@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
 use Auth;
 
 class CompanyController extends Controller
@@ -13,19 +12,11 @@ class CompanyController extends Controller
     public static function handleRegister(Request $request)
     {
         $company = new \App\Company();
+        $company->user_id = $request->input('id');
         $company->name = $request->input('name');
         $company->email = $request->input('email');
-        $company->password = Hash::make($request->input('password'));
+        $company->password = $request->input('password');
         $company->save();
-    }
-
-    public static function handleLogin(Request $request)
-    {
-        $credentials = $request->only(['email', 'password']);
-
-        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            return redirect('index');
-        }
     }
 
     public function index()

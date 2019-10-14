@@ -20,7 +20,7 @@
 				<div class="auth__header__right">
 					<p class="auth__header__text">
 						Don't have an account? 
-						<a href="#"> Register </a>
+						<a href="register"> Register </a>
 						here for free!
 					</p>
 				</div>
