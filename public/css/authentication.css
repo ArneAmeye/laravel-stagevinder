@@ -392,6 +392,7 @@ ul {
   position: absolute;
   left: -30px;
   top: 50%;
+  font-weight: 900;
   transform: translateY(-50%);
 }
 
