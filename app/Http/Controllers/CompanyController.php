@@ -3,32 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Auth;
 
-class CompanyController extends Controller{
-
-    public function index(){
-        $data['companies'] = \App\Company::get();
-        return view("companies/index", $data);
+class CompanyController extends Controller
+{
+    public static function handleRegister(Request $request)
+    {
+        $company = new \App\Company();
+        $company->name = $request->input('name');
+        $company->email = $request->input('email');
+        $company->password = Hash::make($request->input('password'));
+        $company->save();
     }
 
-    public function show($company){
+    public static function handleLogin(Request $request)
+    {
+        $credentials = $request->only(['email', 'password']);
+
+        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            return redirect('index');
+        }
+    }
+
+    public function index()
+    {
+        $data['companies'] = \App\Company::get();
+
+        return view('companies/index', $data);
+    }
+
+    public function show($company)
+    {
         $data['company'] = \App\Company::find($company)->where('id', $company)->first();
         $data['user'] = \App\User::find($data['company']->user_id)->where('id', $data['company']->user_id)->first();
         $data['current'] = auth()->user()->id;
-
-        if (!empty($_GET["edit"])) {
-        	$data['edit'] = $_GET["edit"];
+        if (!empty($_GET['edit'])) {
+            $data['edit'] = $_GET['edit'];
         } else {
-        	$data['edit'] = "";
+            $data['edit'] = '';
         }
 
         return view('companies/show', $data);
     }
 
-    public function getCompanyData(){
+    public function getCompanyData()
+    {
         //Start new Guzzle client -> Used for fetching API data
         $client = new Client();
 
@@ -41,27 +63,29 @@ class CompanyController extends Controller{
             'query' => [
                 'client_id' => env('FOURSQUARE_CLIENT_ID'),
                 'client_secret' => env('FOURSQUARE_SECRET_ID'),
-                'v' => "20191009",
+                'v' => '20191009',
                 'near' => $location,
                 'query' => $companyName,
-                'limit' => 1
-            ]
+                'limit' => 1,
+            ],
         ]);
-        if($result->getStatusCode() == 200){
+        if ($result->getStatusCode() == 200) {
             //Response from API is succesful, proceed with data!
             $data['body'] = (array) $result->getBody();
+
             return view('companies/add', $data);
-        }else{
+        } else {
             //Response from API has ERROR, show error output!
             $data['errorCode'] = (string) $result->getStatusCode();
             $data['ErrorPhrase'] = (string) $result->getReasonPhrase();
+
             return view('companies/add', $data);
         }
     }
 
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $company = \App\Company::where('id', $id)->first();
-
         $validation = Validator::make($request->all(), [
             'name' => 'required|string',
             'sector' => 'required',
@@ -72,18 +96,16 @@ class CompanyController extends Controller{
             'manager' => 'string',
             'linkedIn' => 'url|nullable',
             'website' => 'url',
-            'bio' => 'string'
+            'bio' => 'string',
         ]);
 
-        if($validation->fails()){
+        if ($validation->fails()) {
             return redirect("companies/$id?edit=details")->withErrors($validation);
-        }else{
+        } else {
             $user = \App\User::where('id', $company->user_id)->first();
-
             $ceo_name = explode(' ', $request->input('ceo'), 2);
             $manager_name = explode(' ', $request->input('manager'), 2);
             $city = explode(' ', $request->input('city'), 2);
-
             $company->name = $request->input('name');
             $company->field_sector = $request->input('sector');
             $company->CEO_firstname = $ceo_name[0];
@@ -96,20 +118,14 @@ class CompanyController extends Controller{
             $company->mobile_number = $request->input('number');
             $company->website = $request->input('website');
             $company->linkedIn = $request->input('linkedIn');
-           // $company->profile_picture = $request->input('profile_picture');
-           // $company->background_picture = $request->input('background_picture');
+            // $company->profile_picture = $request->input('profile_picture');
+            // $company->background_picture = $request->input('background_picture');
             $company->bio = $request->input('bio');
-
             $user->email = $request->input('email');
-
             $company->save();
             $user->save();
 
-            return redirect("/companies/$id")->with('success', "Company detials has been updated!");
-
-
+            return redirect("/companies/$id")->with('success', 'Company detials has been updated!');
         }
-
     }
-
 }

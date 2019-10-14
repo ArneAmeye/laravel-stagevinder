@@ -165,6 +165,21 @@ $(document).ready(function () {
     $(".alert").removeClass("alert--show");
     $(".alert").addClass("alert--hide");
   }, 6000);
+  /*TOGGLE SLIDER REGISTER*/
+
+  $(".slider__container").click(function () {
+    //Input fields form
+    $(".container--active, .container--disabled").toggleClass("container--active container--disabled"); //Checkbox value
+
+    var CheckBox = $("input[name=isStudent]");
+    CheckBox.prop("checked", !CheckBox.prop("checked")); //Container slider
+
+    $(".slider__container--disabled, .slider__container--active").toggleClass("slider__container--disabled slider__container--active"); //Circle in slider
+
+    $(".slider__item--disabled, .slider__item--active").toggleClass("slider__item--disabled slider__item--active"); //Text next to slider
+
+    $(".slider__item--label").html($(".slider__item--label").html() == "You are a student!" ? "You are a company!" : "You are a student!");
+  });
 });
 
 /***/ }),
@@ -220,7 +235,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\resources\\sass\\pages\\register.scss'\n    at runLoaders (C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\webpack\\lib\\NormalModule.js:316:20)\n    at C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at process.nextTick (C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:73:15)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

@@ -19,6 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             //$table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+<<<<<<< HEAD
             //$table->string('password');
             $table->string('field_sector')->nullable();
             $table->string('CEO_firstname')->nullable();
@@ -34,6 +35,19 @@ class CreateCompaniesTable extends Migration
             $table->string('profile_picture')->nullable();
             $table->string('background_picture')->nullable();
             $table->string('bio')->nullable();
+=======
+            $table->string('password');
+            $table->string('field_sector')->default('');
+            $table->string('manager_firstname')->default('');
+            $table->string('manager_lastname')->default('');
+            $table->string('telephone')->default('');
+            $table->string('city')->default('');
+            $table->string('zip_code')->default('');
+            $table->string('street_and_number')->default('');
+            $table->string('website')->default('');
+            //$table->integer('user_id')->unsigned();
+            //$table->foreign('user_id')->references('id')->on('companies');
+>>>>>>> optimize_login_register
             $table->rememberToken();
             $table->timestamps();
 
