@@ -191,28 +191,6 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ "./resources/sass/pages/companies.scss":
-/*!*********************************************!*\
-  !*** ./resources/sass/pages/companies.scss ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/pages/company.scss":
-/*!*******************************************!*\
-  !*** ./resources/sass/pages/company.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/sass/pages/index.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/pages/index.scss ***!
@@ -235,6 +213,17 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/pages/register.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/pages/register.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\resources\\sass\\pages\\register.scss'\n    at runLoaders (C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\webpack\\lib\\NormalModule.js:316:20)\n    at C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at process.nextTick (C:\\Users\\haege\\Dropbox\\thomas_more\\3IMD_A\\advanced_webtech_back\\laravel\\laravel-stagevinder\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:73:15)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
+
+/***/ }),
+
 /***/ "./resources/sass/pages/student.scss":
 /*!*******************************************!*\
   !*** ./resources/sass/pages/student.scss ***!
@@ -246,33 +235,20 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ "./resources/sass/pages/upload.scss":
-/*!******************************************!*\
-  !*** ./resources/sass/pages/upload.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/companies.scss ./resources/sass/pages/student.scss ./resources/sass/pages/company.scss ./resources/sass/pages/login.scss ./resources/sass/pages/upload.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/student.scss ./resources/sass/pages/login.scss ./resources/sass/pages/register.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\companies.scss */"./resources/sass/pages/companies.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\company.scss */"./resources/sass/pages/company.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
-module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\upload.scss */"./resources/sass/pages/upload.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\laravel-stagevinder\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
 
 
 /***/ })
