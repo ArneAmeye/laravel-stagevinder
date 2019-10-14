@@ -40,6 +40,8 @@ Route::patch('/companies/{company}',  ['as' => 'company.update', 'uses' => 'Comp
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{intership}', 'InternshipController@show');
 
+Route::get('/upload', 'UploadController@index');
+
 //Socialite (Facebook) routes
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');

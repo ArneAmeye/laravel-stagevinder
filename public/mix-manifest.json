@@ -6,5 +6,6 @@
     "/css/pages/companies.css": "/css/pages/companies.css",
     "/css/pages/student.css": "/css/pages/student.css",
     "/css/pages/company.css": "/css/pages/company.css",
-    "/css/pages/login.css": "/css/pages/login.css"
+    "/css/pages/login.css": "/css/pages/login.css",
+    "/css/pages/upload.css": "/css/pages/upload.css"
 }

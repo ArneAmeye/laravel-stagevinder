@@ -23,3 +23,4 @@ mix.sass("resources/sass/pages/companies.scss", "public/css/pages");
 mix.sass("resources/sass/pages/student.scss", "public/css/pages");
 mix.sass("resources/sass/pages/company.scss", "public/css/pages");
 mix.sass("resources/sass/pages/login.scss", "public/css/pages");
+mix.sass("resources/sass/pages/upload.scss", "public/css/pages");

@@ -43,6 +43,12 @@
 	color: $mainColor;
 }
 
+.button--margin {
+	margin-right: 0;
+	font-weight: $boldWeight;
+	display: inline-block;
+}
+
 .button--right {
 	margin: 0;
 	padding: 8px 14px;

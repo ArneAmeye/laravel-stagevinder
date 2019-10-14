@@ -225,6 +225,12 @@ ul {
   color: #303548;
 }
 
+.button--margin {
+  margin-right: 0;
+  font-weight: 600;
+  display: inline-block;
+}
+
 .button--right {
   margin: 0;
   padding: 8px 14px;

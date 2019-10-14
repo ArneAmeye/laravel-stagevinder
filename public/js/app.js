@@ -246,10 +246,21 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/pages/upload.scss":
+/*!******************************************!*\
+  !*** ./resources/sass/pages/upload.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/companies.scss ./resources/sass/pages/student.scss ./resources/sass/pages/company.scss ./resources/sass/pages/login.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/companies.scss ./resources/sass/pages/student.scss ./resources/sass/pages/company.scss ./resources/sass/pages/login.scss ./resources/sass/pages/upload.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -260,7 +271,8 @@ __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\r
 __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\companies.scss */"./resources/sass/pages/companies.scss");
 __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
 __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\company.scss */"./resources/sass/pages/company.scss");
-module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
+module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\laravel-stagevinder\resources\sass\pages\upload.scss */"./resources/sass/pages/upload.scss");
 
 
 /***/ })
