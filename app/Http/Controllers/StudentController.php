@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use DB;
+use Auth;
 
 class StudentController extends Controller {
 
@@ -16,9 +17,13 @@ class StudentController extends Controller {
     public function show($student){
         //$data['student'] = \App\User::with('student')->find($student)->where('id', $student)->first();
         $data['student'] = \App\User::find($student)->where('id', $student)->first()->student;
-        //$data['user'] = \App\User::find($student)->where('id', $student)->first();
+        $user = auth()->user();
+        $data['current'] = \App\Student::find($user->id)->where('user_id', $user->id)->first();
 
         if (!empty($_GET["edit"])) {
+            if ($user->id != $student) {
+                return redirect("/students/$student");
+            }
         	$data['edit'] = $_GET["edit"];
         } else {
         	$data['edit'] = "";
@@ -28,6 +33,11 @@ class StudentController extends Controller {
     }
 
     public function update($id, Request $request) {
+
+        $user = auth()->user();
+        if ($user->id != $id) {
+            return redirect("/students/$id");
+        }
 
         if ($request->has('update_details')) {
             return $this->updateDetails($id, $request);
@@ -69,7 +79,7 @@ class StudentController extends Controller {
             'date' => 'required|before:'.date('Y-m-d').'|date',
             'linkedIn' => 'url|nullable',
             'website' => 'url|nullable',
-            'email' => 'required|email|unique:students,email,'.$id
+            'email' => 'required|email|unique:users,email,'.$id
         ]);
 
         if ($validation->fails()) {
@@ -77,8 +87,8 @@ class StudentController extends Controller {
                 ->withErrors($validation);
         } else {
 
-            $student = \App\Student::where('id', $id)->first();
-
+            $student = \App\Student::with('user')->where('id', $id)->first();
+            $user = \App\User::where('id', $student->user_id)->first();
             $username = explode(' ', $request->input('username'), 2);
 
             $student->firstname = $username[0];
@@ -89,11 +99,13 @@ class StudentController extends Controller {
             $student->linkedIn = $request->input('linkedIn');
             $student->skype = $request->input('skype');
             $student->website = $request->input('website');
-            $student->email = $request->input('email');
             $student->field_study = $request->input('profession');
             $student->school = $request->input('school');
 
+            $user->email = $request->input('email');
+
             $student->save();
+            $user->save();
 
             return redirect("/students/$id")
                 ->with('success', 'User detials has been updated!');
