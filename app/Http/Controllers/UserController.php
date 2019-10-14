@@ -16,6 +16,10 @@ class UserController extends Controller
     public function handleRegister(Request $request)
     {
         $user = new \App\User();
+
+        $email = $request->input('email');
+        $emailVerified = $request->input('VerificateEmail');
+
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
         $user->save();
@@ -25,15 +29,13 @@ class UserController extends Controller
 
         if ($ifStudent) {
             StudentController::handleRegister($request);
-
-            return redirect()->route('index')->with('full_name', $request->firstname);
+            StudentController::handleLogin($request);
         }
 
         if (!$ifStudent) {
             //If not checked, it is a company.
             CompanyController::handleRegister($request);
-
-            return redirect()->route('index')->with('full_name', $request->name);
+            CompanyController::handleLogin($request);
         }
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class CompanyController extends Controller
 {
@@ -15,6 +16,15 @@ class CompanyController extends Controller
         $company->email = $request->input('email');
         $company->password = Hash::make($request->input('password'));
         $company->save();
+    }
+
+    public static function handleLogin(Request $request)
+    {
+        $credentials = $request->only(['email', 'password']);
+
+        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            return redirect('index');
+        }
     }
 
     public function index()

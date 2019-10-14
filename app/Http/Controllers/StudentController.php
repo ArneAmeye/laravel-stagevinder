@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class StudentController extends Controller
 {
@@ -16,6 +17,15 @@ class StudentController extends Controller
         $student->email = $request->input('email');
         $student->password = Hash::make($request->input('password'));
         $student->save();
+    }
+
+    public static function handleLogin(Request $request)
+    {
+        $credentials = $request->only(['email', 'password']);
+
+        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            return redirect()->route('index');
+        }
     }
 
     public function index()

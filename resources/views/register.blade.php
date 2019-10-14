@@ -7,7 +7,7 @@
 	{{ asset('css/pages/register.css') }}
 @endsection
 @section('content')
-    <form action="" method="post" class="auth__box">
+    <form action="{{ route('user.register') }}" method="post" class="auth__box">
         {{csrf_field()}}
 
         <h3 class="auth__header__title">Sign up</h3>
@@ -25,7 +25,7 @@
 
             <div class="input__container">
                 <span class="input__addon">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
                 <input type="text" class="input" name ="lastname" placeholder="Enter your last name">
             </div>
@@ -35,7 +35,7 @@
         <div class="container--active">
             <div class="input__container">
                 <span class="input__addon">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                 </span>
                 <input type="text" class="input" name ="name" placeholder="Enter your name">
             </div>
