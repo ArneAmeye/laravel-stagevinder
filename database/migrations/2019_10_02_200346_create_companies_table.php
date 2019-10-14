@@ -14,11 +14,12 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->nullable();
             $table->string('name');
-            $table->string('email')->unique();
+            //$table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            //$table->string('password');
             $table->string('field_sector')->nullable();
             $table->string('CEO_firstname')->nullable();
             $table->string('CEO_lastname')->nullable();
@@ -35,6 +36,8 @@ class CreateCompaniesTable extends Migration
             $table->string('bio')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

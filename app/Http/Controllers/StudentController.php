@@ -73,21 +73,21 @@ class StudentController extends Controller {
     }
 
     private static function updateDetails($id, Request $request) {
+        $student = \App\Student::with('user')->where('id', $id)->first();
+
         $validation = Validator::make($request->all(), [
             'username' => 'required|string',
             'profession' => 'required',
             'date' => 'required|before:'.date('Y-m-d').'|date',
             'linkedIn' => 'url|nullable',
             'website' => 'url|nullable',
-            'email' => 'required|email|unique:users,email,'.$id
+            'email' => 'required|email|unique:users,email,'.$student->user_id
         ]);
 
         if ($validation->fails()) {
             return redirect("/students/$id?edit=details")
                 ->withErrors($validation);
         } else {
-
-            $student = \App\Student::with('user')->where('id', $id)->first();
             $user = \App\User::where('id', $student->user_id)->first();
             $username = explode(' ', $request->input('username'), 2);
 

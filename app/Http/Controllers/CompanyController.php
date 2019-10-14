@@ -15,8 +15,8 @@ class CompanyController extends Controller{
     }
 
     public function show($company){
-    	// belangrijk voor lars
-        $data['company'] = \App\Company::where('id', $company)->first();
+        $data['company'] = \App\Company::find($company)->where('id', $company)->first();
+        $data['user'] = \App\User::find($data['company']->user_id)->where('id', $data['company']->user_id)->first();
 
         if (!empty($_GET["edit"])) {
         	$data['edit'] = $_GET["edit"];
@@ -59,6 +59,7 @@ class CompanyController extends Controller{
     }
 
     public function update($id, Request $request){
+        $company = \App\Company::where('id', $id)->first();
 
         $validation = Validator::make($request->all(), [
             'name' => 'required|string',
@@ -66,18 +67,17 @@ class CompanyController extends Controller{
             'ceo' => 'required',
             'street' => 'required',
             'city' => 'required',
-            'email' => 'required|email|unique:companies,email,'.$id,
+            'email' => 'required|email|unique:users,email,'.$company->user_id,
             'manager' => 'string',
             'linkedIn' => 'url|nullable',
             'website' => 'url',
             'bio' => 'string'
-
         ]);
 
         if($validation->fails()){
             return redirect("companies/$id?edit=details")->withErrors($validation);
         }else{
-            $company = \App\Company::where('id', $id)->first();
+            $user = \App\User::where('id', $company->user_id)->first();
 
             $ceo_name = explode(' ', $request->input('ceo'), 2);
             $manager_name = explode(' ', $request->input('manager'), 2);
@@ -93,16 +93,18 @@ class CompanyController extends Controller{
             $company->manager_firstname = $manager_name[0];
             $company->manager_lastname = $manager_name[1];
             $company->mobile_number = $request->input('number');
-            $company->email = $request->input('email');
             $company->website = $request->input('website');
             $company->linkedIn = $request->input('linkedIn');
            // $company->profile_picture = $request->input('profile_picture');
            // $company->background_picture = $request->input('background_picture');
             $company->bio = $request->input('bio');
 
-            $company->save();
+            $user->email = $request->input('email');
 
-            return redirect("/companies/$id")->with('success', "User has been updated!");
+            $company->save();
+            $user->save();
+
+            return redirect("/companies/$id")->with('success', "Company detials has been updated!");
 
 
         }

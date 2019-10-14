@@ -92,7 +92,7 @@
 							{{ $company->zip_code }} {{ $company->city }}
 						@endslot
 						@slot('email') 
-							{{ $company->email }}
+							{{ $user->email }}
 						@endslot
 						@slot('number') 
 							{{ $company->mobile_number }}
