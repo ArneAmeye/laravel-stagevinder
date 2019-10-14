@@ -5,11 +5,18 @@
 				<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="navigation__header__image">
 				<div class="navigation__header__userInfo">
 					<p class="navigation__header__name">
-						John Doe
+						@if (Session::get('user')->type == 'student')
+							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
+						@elseif (Session::get('user')->type == 'company')
+							{{ Session::get('user')->name }}
+						@endif
 					</p>
 					<span class="navigation__header__title">
-						UX Designer
-						<i class="fas fa-angle-down navigation__header__icon" aria-hidden="true"></i>
+						@if (Session::get('user')->type == 'student')
+							{{ Session::get('user')->field_study }}
+						@elseif (Session::get('user')->type == 'company')
+							{{ Session::get('user')->field_sector }}
+						@endif
 					</span>
 				</div>
 			</div>

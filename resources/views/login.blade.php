@@ -31,7 +31,7 @@
 			<div class="auth__buttons">
 				<div class="auth__button">
 					<a href="{{ url('/fb-login') }}" class="button__social">
-						<i class="fa fa-facebook button__social__icon" aria-hidden="true"></i>
+						<i class="fab fa-facebook-f button__social__icon" aria-hidden="true"></i>
 						Sign in with facebook
 					</a>
 				</div>
@@ -41,15 +41,31 @@
 			</p>
 			<div class="input__container">
 				<span class="input__addon">
-					<i class="fa fa-envelope" aria-hidden="true"></i>
+					<i class="fas fa-envelope" aria-hidden="true"></i>
 				</span>
 				<input type="email" name="email" class="input" placeholder="Email Address" value="lars@stagevinder.be">
 			</div>
 			<div class="input__container">
 				<span class="input__addon">
-					<i class="fa fa-lock" aria-hidden="true"></i>
+					<i class="fas fa-lock" aria-hidden="true"></i>
 				</span>
 				<input type="password" name="password" class="input" placeholder="Password" value="password">
+			</div>
+			<div class="radios__container">
+				<div class="radio__container">
+					<label class="radio__label">
+						<input type="radio" name="user_type" checked="checked" class="radio" value="student">
+						<i class="radio__visual"></i>
+						Student
+					</label>
+				</div>
+				<div class="radio__container">
+					<label class="radio__label">
+						<input type="radio" name="user_type" class="radio" value="company">
+						<i class="radio__visual"></i>
+						Company
+					</label>
+				</div>
 			</div>
 			<div class="auth__checkbox clearfix">
 				<div class="checkbox__container">
@@ -74,7 +90,15 @@
 			</div>
 		</div>
 	</form>
-@endsection
 
-<!--<h1>Login</h1>
-<a href="{{url('/fb-login')}}" class="btn btn-primary">Login with Facebook</a>-->
+	@if (\Session::has('error'))
+	    @component('components/alert')
+			@slot('type', 'error')
+			<ul class="alert__container">
+				<li class="alert__item">
+					{!! \Session::get('error') !!}
+				</li>
+			</ul>
+		@endcomponent
+	@endif
+@endsection

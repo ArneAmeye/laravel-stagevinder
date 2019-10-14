@@ -17,10 +17,10 @@ class StudentController extends Controller {
     public function show($student){
         //$data['student'] = \App\User::with('student')->find($student)->where('id', $student)->first();
         $data['student'] = \App\User::find($student)->where('id', $student)->first()->student;
-        $user = auth()->user();
-        $data['current'] = \App\Student::find($user->id)->where('user_id', $user->id)->first();
+        $data['current'] = auth()->user()->id;
 
         if (!empty($_GET["edit"])) {
+            $user = auth()->user();
             if ($user->id != $student) {
                 return redirect("/students/$student");
             }

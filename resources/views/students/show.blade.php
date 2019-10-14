@@ -8,8 +8,11 @@
 @endsection
 @section('content')
 	@component('components/breadcrumb')
+		@slot('title')
+			User Profile
+		@endslot
 		@slot('icon')
-			fa-user
+			fa-graduation-cap
 		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
@@ -63,7 +66,7 @@
 					<h5 class="card__title">
 						About Me
 					</h5>
-					@if($current->id == $student->id)
+					@if($current == $student->user_id)
 						@if(empty($edit) || $edit != "details")
 							<a href="?edit=details" class="button button--right">
 								<i class="fas fa-edit" aria-hidden="true"></i>
@@ -123,7 +126,7 @@
 					<h5 class="card__title">
 						Description About Me
 					</h5>
-					@if($current->id == $student->id)
+					@if($current == $student->user_id)
 						@if (empty($edit) || $edit != "bio")
 							<a href="?edit=bio" class="button button--right">
 								<i class="fas fa-edit" aria-hidden="true"></i>

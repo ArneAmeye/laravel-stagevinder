@@ -8,6 +8,9 @@
 @endsection
 @section('content')
     @component('components/breadcrumb')
+        @slot('title')
+            Home
+        @endslot
         @slot('icon')
 			fa-home
 		@endslot

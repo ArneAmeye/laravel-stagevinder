@@ -117,12 +117,16 @@ $(document).ready(function () {
   });
   var toggleOptions = true;
   $(".header__options__icon").click(function (e) {
-    if (toggleOptions) {
-      $(".header__options__container").show(300);
-      toggleOptions = false;
-    } else {
-      $(".header__options__container").hide(300);
-      toggleOptions = true;
+    var width = $(window).width();
+
+    if (width <= 993) {
+      if (toggleOptions) {
+        $(".header__options__container").show(300);
+        toggleOptions = false;
+      } else {
+        $(".header__options__container").hide(300);
+        toggleOptions = true;
+      }
     }
 
     e.stopPropagation();

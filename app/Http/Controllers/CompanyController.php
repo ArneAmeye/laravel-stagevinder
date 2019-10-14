@@ -17,6 +17,7 @@ class CompanyController extends Controller{
     public function show($company){
         $data['company'] = \App\Company::find($company)->where('id', $company)->first();
         $data['user'] = \App\User::find($data['company']->user_id)->where('id', $data['company']->user_id)->first();
+        $data['current'] = auth()->user()->id;
 
         if (!empty($_GET["edit"])) {
         	$data['edit'] = $_GET["edit"];
