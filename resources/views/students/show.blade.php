@@ -63,14 +63,16 @@
 					<h5 class="card__title">
 						About Me
 					</h5>
-					@if(empty($edit) || $edit != "details")
-						<a href="?edit=details" class="button button--right">
-							<i class="fas fa-edit" aria-hidden="true"></i>
-						</a>
-					@else
-						<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
-							<i class="fas fa-times" aria-hidden="true"></i>
-						</a>
+					@if($current->id == $student->id)
+						@if(empty($edit) || $edit != "details")
+							<a href="?edit=details" class="button button--right">
+								<i class="fas fa-edit" aria-hidden="true"></i>
+							</a>
+						@else
+							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
+								<i class="fas fa-times" aria-hidden="true"></i>
+							</a>
+						@endif
 					@endif
 				</div>
 				@if(empty($edit) || $edit != "details")
@@ -121,14 +123,16 @@
 					<h5 class="card__title">
 						Description About Me
 					</h5>
-					@if (empty($edit) || $edit != "bio")
-						<a href="?edit=bio" class="button button--right">
-							<i class="fas fa-edit" aria-hidden="true"></i>
-						</a>
-					@else
-						<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
-							<i class="fas fa-times" aria-hidden="true"></i>
-						</a>
+					@if($current->id == $student->id)
+						@if (empty($edit) || $edit != "bio")
+							<a href="?edit=bio" class="button button--right">
+								<i class="fas fa-edit" aria-hidden="true"></i>
+							</a>
+						@else
+							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
+								<i class="fas fa-times" aria-hidden="true"></i>
+							</a>
+						@endif
 					@endif
 				</div>
 				<div class="card__body">
