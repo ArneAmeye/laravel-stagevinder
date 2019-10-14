@@ -5,16 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Validator;
 
 class CompanyController extends Controller{
 
     public function index(){
-        return view("companies/index");
+        $data['companies'] = \App\Company::get();
+        return view("companies/index", $data);
     }
 
-    public function show(\App\Company $company){
+    public function show($company){
     	// belangrijk voor lars
         $data['company'] = \App\Company::where('id', $company)->first();
+
+        if (!empty($_GET["edit"])) {
+        	$data['edit'] = $_GET["edit"];
+        } else {
+        	$data['edit'] = "";
+        }
+
         return view('companies/show', $data);
     }
 
@@ -47,6 +56,57 @@ class CompanyController extends Controller{
             $data['ErrorPhrase'] = (string) $result->getReasonPhrase();
             return view('companies/add', $data);
         }
+    }
+
+    public function update($id, Request $request){
+
+        $validation = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'sector' => 'required',
+            'ceo' => 'required',
+            'street' => 'required',
+            'city' => 'required',
+            'email' => 'required|email|unique:companies,email,'.$id,
+            'manager' => 'string',
+            'linkedIn' => 'url|nullable',
+            'website' => 'url',
+            'bio' => 'string'
+
+        ]);
+
+        if($validation->fails()){
+            return redirect("companies/$id?edit=details")->withErrors($validation);
+        }else{
+            $company = \App\Company::where('id', $id)->first();
+
+            $ceo_name = explode(' ', $request->input('ceo'), 2);
+            $manager_name = explode(' ', $request->input('manager'), 2);
+            $city = explode(' ', $request->input('city'), 2);
+
+            $company->name = $request->input('name');
+            $company->field_sector = $request->input('sector');
+            $company->CEO_firstname = $ceo_name[0];
+            $company->CEO_lastname = $ceo_name[1];
+            $company->street_and_number = $request->input('street');
+            $company->zip_code = $city[0];
+            $company->city = $city[1];
+            $company->manager_firstname = $manager_name[0];
+            $company->manager_lastname = $manager_name[1];
+            $company->mobile_number = $request->input('number');
+            $company->email = $request->input('email');
+            $company->website = $request->input('website');
+            $company->linkedIn = $request->input('linkedIn');
+           // $company->profile_picture = $request->input('profile_picture');
+           // $company->background_picture = $request->input('background_picture');
+            $company->bio = $request->input('bio');
+
+            $company->save();
+
+            return redirect("/companies/$id")->with('success', "User has been updated!");
+
+
+        }
+
     }
 
 }
