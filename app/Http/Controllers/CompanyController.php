@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Hash;
 
 class CompanyController extends Controller
 {
     public static function handleRegister(Request $request)
     {
         $company = new \App\Company();
-        $company = $request->input('name');
+        $company->name = $request->input('name');
         $company->email = $request->input('email');
         $company->password = Hash::make($request->input('password'));
         $company->save();

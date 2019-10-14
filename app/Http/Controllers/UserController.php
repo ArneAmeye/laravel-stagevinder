@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 
 class UserController extends Controller
@@ -17,22 +18,23 @@ class UserController extends Controller
         $user = new \App\User();
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
+        $user->save();
 
         //Checkbox
-        $ifStudent = Request::input('isStudent');
+        $ifStudent = $request->has('isStudent');
 
         if ($ifStudent) {
             StudentController::handleRegister($request);
+
+            return redirect()->route('index')->with('full_name', $request->firstname);
         }
 
         if (!$ifStudent) {
             //If not checked, it is a company.
             CompanyController::handleRegister($request);
+
+            return redirect()->route('index')->with('full_name', $request->name);
         }
-
-        $user->save();
-
-        return redirect('/');
     }
 
     public function login()

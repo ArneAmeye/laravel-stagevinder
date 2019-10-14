@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -11,7 +12,7 @@ class StudentController extends Controller
     {
         $student = new \App\Student();
         $student->firstname = $request->input('firstname');
-        $student->firstname = $request->input('lastname');
+        $student->lastname = $request->input('lastname');
         $student->email = $request->input('email');
         $student->password = Hash::make($request->input('password'));
         $student->save();
