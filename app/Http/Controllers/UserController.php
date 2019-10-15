@@ -27,17 +27,19 @@ class UserController extends Controller
 
         $currentUser = Auth::user();
 
+        $lastInsertedId = $user->id;
+
         //Checkbox
         $ifStudent = $request->has('isStudent');
 
         if ($ifStudent) {
-            StudentController::handleRegister($request);
+            StudentController::handleRegister($request, $lastInsertedId);
             $this->handleLoginStudent($request, $user);
         }
 
         if (!$ifStudent) {
             //If not checked, it is a company.
-            CompanyController::handleRegister($request);
+            CompanyController::handleRegister($request, $lastInsertedId);
             $this->handleLoginStudent($request, $user);
         }
     }

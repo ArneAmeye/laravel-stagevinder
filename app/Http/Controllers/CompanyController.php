@@ -9,10 +9,10 @@ use Auth;
 
 class CompanyController extends Controller
 {
-    public static function handleRegister(Request $request)
+    public static function handleRegister(Request $request, int $lastInsertedId)
     {
         $company = new \App\Company();
-        $company->user_id = $request->input('id');
+        $company->user_id = $lastInsertedId;
         $company->name = $request->input('name');
         $company->email = $request->input('email');
         $company->password = $request->input('password');

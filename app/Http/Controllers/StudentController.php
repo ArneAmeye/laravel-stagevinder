@@ -8,10 +8,10 @@ use Auth;
 
 class StudentController extends Controller
 {
-    public static function handleRegister(Request $request)
+    public static function handleRegister(Request $request, int $lastInsertedId)
     {
         $student = new \App\Student();
-        $student->user_id = $request->input('id');
+        $student->user_id = $lastInsertedId;
         $student->firstname = $request->input('firstname');
         $student->lastname = $request->input('lastname');
         $student->email = $request->input('email');
