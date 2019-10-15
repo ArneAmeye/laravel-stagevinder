@@ -1,7 +1,7 @@
 @extends("layouts/authentication")
 
 @section('title')
-    Login
+    Register
 @endsection
 @section('stylesheet')
 	{{ asset('css/pages/register.css') }}
@@ -18,7 +18,7 @@
         <div class="container--disabled">
             <div class="input__container">
                 <span class="input__addon">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
                 <input type="text" class="input" name ="firstname" placeholder="Enter your first name">
             </div>

@@ -17,6 +17,8 @@ class CompanyController extends Controller
         $company->email = $request->input('email');
         $company->password = $request->input('password');
         $company->save();
+
+        return $company;
     }
 
     public function index()

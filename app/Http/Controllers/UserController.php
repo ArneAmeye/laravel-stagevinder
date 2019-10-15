@@ -25,22 +25,28 @@ class UserController extends Controller
         $user->password = Hash::make($request->input('password'));
         $user->save();
 
-        $currentUser = Auth::user();
-
         $lastInsertedId = $user->id;
 
         //Checkbox
         $ifStudent = $request->has('isStudent');
 
         if ($ifStudent) {
-            StudentController::handleRegister($request, $lastInsertedId);
-            $this->handleLoginStudent($request, $user);
+            /*
+                return student that is registered
+                and make a session based on student
+            */
+            $student = StudentController::handleRegister($request, $lastInsertedId);
+            //Session::put('user', $student);
+            $request->user_type = 'student';
+            $this->handleLogin($request);
         }
 
         if (!$ifStudent) {
             //If not checked, it is a company.
-            CompanyController::handleRegister($request, $lastInsertedId);
-            $this->handleLoginStudent($request, $user);
+            $company = CompanyController::handleRegister($request, $lastInsertedId);
+            //Session::put('user', $company);
+            $request->user_type = 'company';
+            $this->handleLogin($request);
         }
     }
 
