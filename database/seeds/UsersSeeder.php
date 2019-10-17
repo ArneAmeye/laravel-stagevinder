@@ -19,13 +19,18 @@ class UsersSeeder extends Seeder
         $student2->password = Hash::make('password');
         $student2->save();
         
+        $student3 = new \App\User();
+        $student3->email = 'lars@stagevinder.be';
+        $student3->password = Hash::make('password');
+        $student3->save();
+
         $student4 = new \App\User();
-        $student4->email = 'lars@stagevinder.be';
+        $student4->email = 'bram@stagevinder.be';
         $student4->password = Hash::make('password');
         $student4->save();
 
         $student5 = new \App\User();
-        $student5->email = 'bram@stagevinder.be';
+        $student5->email = 'skylux@stagevinder.be';
         $student5->password = Hash::make('password');
         $student5->save();
 
