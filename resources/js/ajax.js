@@ -1,8 +1,14 @@
+var autoFillBtn = document.querySelector('#ajaxFillBtn');
+if(autoFillBtn !== null){
+    autoFillBtn.addEventListener('click', getCompanyDetails());
+}
+
+
 //Ajax function to get company details when the getCompanyDetails() function is called on a btn click
 function getCompanyDetails(){
     //Get company name and location from form
-    let businessName =  document.querySelector('#businessName').innerHTML;
-    let businessLocation = document.querySelector('#businessLocation').innerHTML;
+    let businessName =  document.querySelector('#businessName').value;
+    let businessLocation = document.querySelector('#businessLocation').value;
     console.log(businessLocation + " " + businessName)
     //Make the actual API GET request
     axios.post('/getcompanydetails', {

@@ -94,7 +94,10 @@
 							{{ $company->CEO_firstname }} {{ $company->CEO_lastname}}
 						@endslot
 						@slot('city') 
-							{{ $company->zip_code }} {{ $company->city }}
+							{{ $company->city }}
+						@endslot
+						@slot('postal') 
+							{{ $company->zip_code }}
 						@endslot
 						@slot('email') 
 							{{ $user->email }}
