@@ -153,6 +153,9 @@
 		</section>
 	</div>
 @endsection
+@section('script')
+    {{ asset ('js/ajax.js') }}
+@endsection
 
 @if (\Session::has('success'))
 	@component('components/alert')

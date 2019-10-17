@@ -7,13 +7,7 @@
 	{{ asset('css/pages/index.css') }}
 @endsection
 @section('content')
-    @component('components/breadcrumb')
-        @slot('icon')
-			fa-plus
-		@endslot
-		@slot('breadcrumb')
-		@endslot
-	@endcomponent
+   
     <div class="preview__container">
        <form>
            <label for="companyName"></label>
