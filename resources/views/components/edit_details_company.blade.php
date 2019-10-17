@@ -34,7 +34,7 @@
 							<span class="input__addon">
 								<i class="fa fa-briefcase" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="sector" class="input" placeholder="Sector" value="{{ $sector }}">
+							<input type="text" name="sector" id="sector" class="input" placeholder="Sector" value="{{ $sector }}">
 						</div>
 					</td>
 				</tr>
@@ -54,7 +54,7 @@
 							<span class="input__addon">
 								<i class="fas fa-map" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="street" class="input" placeholder="Street" value="{{ $street }}">
+							<input type="text" name="street" id="street" class="input" placeholder="Street" value="{{ $street }}">
 						</div>
 					</td>
 				</tr>
@@ -74,7 +74,7 @@
 								<span class="input__addon">
 									<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
 								</span>
-								<input type="text" name="postal" class="input" placeholder="postal" value="{{ $postal }}">
+								<input type="text" name="postal" id="postal" class="input" placeholder="postal" value="{{ $postal }}">
 							</div>
 						</td>
 					</tr>
