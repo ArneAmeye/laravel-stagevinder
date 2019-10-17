@@ -93,11 +93,17 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//Ajax function to get company details when the getCompanyDetails() function is called on a btn click
+var autoFillBtn = document.querySelector('#ajaxFillBtn');
+
+if (autoFillBtn !== null) {
+  autoFillBtn.addEventListener('click', getCompanyDetails());
+} //Ajax function to get company details when the getCompanyDetails() function is called on a btn click
+
+
 function getCompanyDetails() {
   //Get company name and location from form
-  var businessName = document.querySelector('#businessName').innerHTML;
-  var businessLocation = document.querySelector('#businessLocation').innerHTML;
+  var businessName = document.querySelector('#businessName').value;
+  var businessLocation = document.querySelector('#businessLocation').value;
   console.log(businessLocation + " " + businessName); //Make the actual API GET request
 
   axios.post('/getcompanydetails', {
