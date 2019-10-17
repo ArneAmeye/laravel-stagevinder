@@ -51,6 +51,7 @@ class CompanyController extends Controller
             'ceo' => 'required',
             'street' => 'required',
             'city' => 'required',
+            'postal' => 'required',
             'email' => 'required|email|unique:users,email,'.$company->user_id,
             'manager' => 'string',
             'linkedIn' => 'url|nullable',
@@ -70,8 +71,8 @@ class CompanyController extends Controller
             $company->CEO_firstname = $ceo_name[0];
             $company->CEO_lastname = $ceo_name[1];
             $company->street_and_number = $request->input('street');
-            $company->zip_code = $city[0];
-            $company->city = $city[1];
+            $company->zip_code = $postal;
+            $company->city = $city;
             $company->manager_firstname = $manager_name[0];
             $company->manager_lastname = $manager_name[1];
             $company->mobile_number = $request->input('number');
