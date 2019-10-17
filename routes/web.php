@@ -27,7 +27,7 @@ Route::patch('/students/{student}', ['as' => 'student.update', 'uses' => 'Studen
 Route::get('/students/{student}', 'StudentController@show');
 
 Route::get('/companies', 'CompanyController@index');
-Route::get('/getcompanydetails', 'AjaxController.php@getCompanyDetails');
+Route::post('/getcompanydetails', 'AjaxController.php@getCompanyDetails');
 Route::get('/companies/add', 'CompanyController@getCompanyData'); //Route for a page where a company can be added via API lookup
 Route::get('/companies/{company}', 'CompanyController@show');
 Route::patch('/companies/{company}',  ['as' => 'company.update', 'uses' => 'CompanyController@update']);
