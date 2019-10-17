@@ -1,6 +1,10 @@
 var autoFillBtn = document.querySelector('#ajaxFillBtn');
+//Check if autoFillBtn is on page (Edit parameter in URL only)
 if(autoFillBtn !== null){
-    autoFillBtn.addEventListener('click', getCompanyDetails());
+    autoFillBtn.addEventListener('click', function(e){
+        getCompanyDetails(); //run Ajax function
+        e.preventDefault();
+    });
 }
 
 
@@ -18,9 +22,13 @@ function getCompanyDetails(){
     .then(res => {
         console.log(res.data.response);
         //Add response data to empty form fields
+        document.querySelector('#sector').value = res.data.response.venues[0].categories[0].name;
+        document.querySelector('#street').value = res.data.response.venues[0].location.address;
+        document.querySelector('#postal').value = res.data.response.venues[0].location.postalCode;
+        //etc...
     })
     .catch(function (error) {
-        //Log request error in console, maybe also show onpage?
+        //Log request error
         console.log(error);
     })
 
