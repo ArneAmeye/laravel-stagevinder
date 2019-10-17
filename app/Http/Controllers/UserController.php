@@ -9,6 +9,8 @@ use Session;
 
 class UserController extends Controller
 {
+    protected $redirectTo = 'index';
+
     public function register()
     {
         return view('/register');
@@ -48,6 +50,8 @@ class UserController extends Controller
             $request->user_type = 'company';
             $this->handleLogin($request);
         }
+
+        return view('/index');
     }
 
     public function login()
