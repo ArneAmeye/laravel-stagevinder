@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
 
-class Student extends Model
+class Student extends User implements Authenticatable
 {
-    protected $fillable = ['user_id', 'facebook_user_id', 'firstname', 'lastname', 'email', "password"];
+    protected $fillable = ['id', 'facebook_user_id', 'firstname', 'lastname', 'email', "password"];
     
     public function user()
     {

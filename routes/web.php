@@ -26,8 +26,9 @@ Route::patch('/students/{student}',  ['as' => 'student.update', 'uses' => 'Stude
 Route::get('/students/{student}', 'StudentController@show');
 
 Route::get('/companies', 'CompanyController@index');
+Route::get('/companies/add', 'CompanyController@getCompanyData'); //Route for a page where a company can be added via API lookup
 Route::get('/companies/{company}', 'CompanyController@show');
-Route::get('/companies-add', 'CompanyController@getCompanyData');
+Route::post('/getcompanydetails', 'AjaxController@getCompanyDetails'); //Route for ajax call made from JS file ajax.js
 
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{intership}', 'InternshipController@show');
