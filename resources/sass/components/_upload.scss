@@ -1,0 +1,40 @@
+.upload {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+	z-index: -9999;
+}
+
+.upload__visual {
+	width: 100%;
+	display: block;
+	margin: 0 auto 25px;
+	padding: 25px;
+	color: #97a1a8;
+	background: #f9fbfe;
+	border: 2px dashed #c8cbce;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: box-shadow 0.3s, border-color 0.3s;
+	-moz-transition: box-shadow 0.3s, border-color 0.3s;
+	transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.upload__visual__icon {
+	font-size: 48px;
+	margin-top: -10px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	margin-bottom: 10px;
+}
+
+.upload__visual__text {
+	font-size: 18px;
+}
+
+.upload__visual__subtext {
+	margin: 15px 0;
+	font-size: 12px;
+	display: block;
+}

@@ -52,6 +52,14 @@ ul {
   background: url(../images/bg.jpg) no-repeat center center fixed;
 }
 
+.container--active {
+  display: block;
+}
+
+.container--disabled {
+  display: none;
+}
+
 .container__inner {
   width: auto;
   margin-top: 80px;
@@ -225,6 +233,12 @@ ul {
   color: #303548;
 }
 
+.button--margin {
+  margin-right: 0;
+  font-weight: 600;
+  display: inline-block;
+}
+
 .button--right {
   margin: 0;
   padding: 8px 14px;
@@ -366,6 +380,74 @@ ul {
   font-size: 15px;
 }
 
+.radios__container {
+  margin-bottom: 2.75em;
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.radio__container {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.radio__label {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: left;
+  color: #303548;
+  display: block;
+  line-height: 1.8;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.radio {
+  width: auto;
+  opacity: 1e-8;
+  position: absolute;
+  left: 0;
+}
+
+.radio__visual {
+  position: absolute;
+  top: -0.15rem;
+  left: -0.25rem;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #999;
+}
+
+.radio__visual:before,
+.radio__visual:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  margin: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.28s ease;
+  border-radius: 50%;
+  border: 0.125rem solid #4680ff;
+}
+
+.radio__visual:after {
+  transform: scale(0);
+  background-color: #4680ff;
+  border-color: #4680ff;
+}
+
+.radio:checked ~ .radio__visual::after {
+  transform: scale(0.5);
+}
+
 .alert {
   background-color: #fff;
   color: #e0e0e0;
@@ -392,6 +474,7 @@ ul {
   position: absolute;
   left: -30px;
   top: 50%;
+  font-weight: 900;
   transform: translateY(-50%);
 }
 

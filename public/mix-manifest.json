@@ -1,10 +1,12 @@
 {
+    "/js/ajax.js": "/js/ajax.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/authentication.css": "/css/authentication.css",
     "/css/pages/index.css": "/css/pages/index.css",
-    "/css/pages/companies.css": "/css/pages/companies.css",
     "/css/pages/student.css": "/css/pages/student.css",
     "/css/pages/company.css": "/css/pages/company.css",
-    "/css/pages/login.css": "/css/pages/login.css"
+    "/css/pages/login.css": "/css/pages/login.css",
+    "/css/pages/upload.css": "/css/pages/upload.css",
+    "/css/pages/register.css": "/css/pages/register.css"
 }

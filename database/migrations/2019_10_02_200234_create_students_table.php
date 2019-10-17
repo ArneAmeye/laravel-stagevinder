@@ -19,6 +19,8 @@ class CreateStudentsTable extends Migration
             $table->string('facebook_user_id')->nullable(); //fb login ID
             $table->string('firstname')->default('');
             $table->string('lastname')->default('');
+            $table->string('email');
+            $table->string('password');
             $table->string('birth_date')->default('');
             $table->string('profile_picture')->default('');
             $table->string('background_picture')->nullable();

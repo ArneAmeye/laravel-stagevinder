@@ -8,9 +8,9 @@ $factory->define(\App\Company::class, function (Faker $faker) {
 
     return [
         'name' => $faker->company,
-        //'email' => $faker->email,
+        'email' => $faker->email,
         //'email_verified'
-        //'password' => Hash::make($faker->password),
+        'password' => Hash::make($faker->password),
         'field_sector' => $faker->jobTitle,
         'CEO_firstname' => $faker->firstName(),
         'CEO_lastname' => $faker->lastName,
@@ -23,8 +23,8 @@ $factory->define(\App\Company::class, function (Faker $faker) {
         'website' => $faker->url,
         'profile_picture' => $faker->imageUrl($width = 640, $height = 480),
         'background_picture' => $faker->imageUrl($width = 1920, $height = 1080),
-        'linkedIn'=>$faker->url,
-        'bio'=>$faker->text,
+        'linkedIn' => $faker->url,
+        'bio' => $faker->text,
         'user_id' => $student_id++,
         //'remember_token'
         //'remember_at'

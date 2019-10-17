@@ -7,7 +7,7 @@
 	<title>StageVinder | @yield('title')</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/authentication.css') }}">
 	<link rel="stylesheet" type="text/css" href="@yield('stylesheet')">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,5 +22,7 @@
     		</div>
     	</div>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

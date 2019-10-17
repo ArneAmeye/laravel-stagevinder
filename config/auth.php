@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -46,6 +45,16 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'company' => [
+            'driver' => 'session',
+            'provider' => 'companies',
+        ],
+        'company-api' => [
+            'driver' => 'token',
+            'provider' => 'companies',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -71,10 +80,10 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'companies' => [
+            'driver' => 'eloquent',
+            'model' => App\Company::class,
+        ],
     ],
 
     /*
@@ -98,6 +107,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-    ],
 
+        'companies' => [
+            'provider' => 'companies',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+    ],
 ];

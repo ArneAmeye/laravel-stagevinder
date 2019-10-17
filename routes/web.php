@@ -11,34 +11,31 @@
 |
 */
 
-Route::get('/', [ 'as' => 'index', 'uses' => 'IndexController@index']);
+Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
 
-/*Route::get('/login', function () {
-    return view('login');
-});*/
 Route::get('/login', 'UserController@login');
-Route::get('login', [ 'as' => 'login', 'uses' => 'UserController@login']);
+Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
 Route::post('/login', ['as' => 'user.login', 'uses' => 'UserController@handleLogin']);
 
-/*Route::get('/register', function () {
-    return view('register');
-});*/
 Route::get('/register', 'UserController@register');
-Route::post('/register', 'UserController@handleRegister');
+Route::post('/register', ['as' => 'user.register', 'uses' => 'UserController@handleRegister']);
 
 Route::get('/logout', ['as' => 'user.logout', 'uses' => 'UserController@logout']);
 
 Route::get('/students', 'StudentController@index');
-Route::patch('/students/{student}',  ['as' => 'student.update', 'uses' => 'StudentController@update']);
+Route::patch('/students/{student}', ['as' => 'student.update', 'uses' => 'StudentController@update']);
 Route::get('/students/{student}', 'StudentController@show');
 
 Route::get('/companies', 'CompanyController@index');
+Route::post('/getcompanydetails', 'AjaxController@getCompanyDetails');
+Route::get('/companies/add', 'CompanyController@getCompanyData'); //Route for a page where a company can be added via API lookup
 Route::get('/companies/{company}', 'CompanyController@show');
-Route::get('/companies-add', 'CompanyController@getCompanyData');
 Route::patch('/companies/{company}',  ['as' => 'company.update', 'uses' => 'CompanyController@update']);
 
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{intership}', 'InternshipController@show');
+
+Route::get('/upload', 'UploadController@index');
 
 //Socialite (Facebook) routes
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');

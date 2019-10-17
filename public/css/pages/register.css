@@ -1,0 +1,50 @@
+/*VARIABLES*/
+/*COMPONENTS CSS*/
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.slider__container {
+  width: 40px;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.slider__container--disabled {
+  border: 2px solid #cccccc;
+  background-color: #cccccc;
+}
+
+.slider__container--active {
+  border: 2px solid #4680ff;
+  background-color: #4680ff;
+}
+
+.slider__item {
+  position: relative;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.slider__item--disabled {
+  border: 2px solid #cccccc;
+  background-color: #fff;
+  left: 0%;
+}
+
+.slider__item--active {
+  border: 2px solid #4680ff;
+  background-color: #fff;
+  order: 2;
+  left: 50%;
+}
+
+.slider__item--checkbox {
+  visibility: hidden;
+}
+
+/*KEYFRAMES*/

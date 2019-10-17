@@ -10,9 +10,11 @@ $factory->define(\App\Student::class, function (Faker $faker) {
     return [
         'firstname' => $faker->firstName(),
         'lastname' => $faker->lastName,
+        'email' => $faker->email,
+        'password' => Hash::make($faker->password),
         'birth_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'profile_picture' => $faker->imageUrl($width = 200, $height = 200),
-        'background_picture' => $faker->imageUrl($width = 1180, $height = 213),
+        'background_picture' => $faker->imageUrl($width = 1180, $height = 500),
         //'email_verified'
         'field_study' => $faker->jobTitle,
         'school' => $faker->company,

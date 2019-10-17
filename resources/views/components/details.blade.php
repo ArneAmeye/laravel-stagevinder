@@ -66,7 +66,9 @@
 					LinkedIn
 				</th>
 				<td class="card__table__data">
-					{{ $linkedIn }}
+					<a href="{{ $linkedIn }}">
+						{{ $linkedIn }}
+					</a>
 				</td>
 			</tr>
 			<tr class="card__table__row">
@@ -82,7 +84,9 @@
 					website
 				</th>
 				<td class="card__table__data">
-					{{ $website }}
+					<a href="{{ $website }}">
+						{{ $website }}
+					</a>
 				</td>
 			</tr>
 		</table>

@@ -35,7 +35,11 @@
 				<a href="#" class="header__options__link">
 					<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="header__options__profilePic">
 					<p class="header__options__name">
-						John Doe
+						@if (Session::get('user')->type == 'student')
+							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
+						@elseif (Session::get('user')->type == 'company')
+							{{ Session::get('user')->name }}
+						@endif
 					</p>
 					<i class="fas fa-angle-down header__options__more" aria-hidden="true"></i>
 				</a>
@@ -47,7 +51,7 @@
 						</a>
 					</li>
 					<li class="options__more__item">
-						<a href="#" class="options__more__link">
+						<a href="@if (Session::get('user')->type == 'student')/students/{{ Session::get('user')->id }}@elseif (Session::get('user')->type == 'company')/companies/{{ Session::get('user')->id }}@endif" class="options__more__link">
 							<i class="fa fa-user options__more__icon" aria-hidden="true"></i>
 							Profile
 						</a>

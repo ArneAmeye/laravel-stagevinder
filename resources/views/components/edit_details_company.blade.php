@@ -24,7 +24,7 @@
 							<span class="input__addon">
 								<i class="fa fa-user" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="name" class="input" placeholder="Name" value="{{ $name }}">
+							<input type="text" name="name" id="businessName" class="input" placeholder="Name" value="{{ $name }}">
 						</div>
 					</td>
 				</tr>
@@ -34,7 +34,7 @@
 							<span class="input__addon">
 								<i class="fa fa-briefcase" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="sector" class="input" placeholder="Sector" value="{{ $sector }}">
+							<input type="text" name="sector" id="sector" class="input" placeholder="Sector" value="{{ $sector }}">
 						</div>
 					</td>
 				</tr>
@@ -54,7 +54,7 @@
 							<span class="input__addon">
 								<i class="fas fa-map" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="street" class="input" placeholder="Street" value="{{ $street }}">
+							<input type="text" name="street" id="street" class="input" placeholder="Street" value="{{ $street }}">
 						</div>
 					</td>
 				</tr>
@@ -62,12 +62,22 @@
 					<td class="card__table__data">
 						<div class="input__container">
 							<span class="input__addon">
-								<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+								<i class="fas fa-city" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="city" class="input" placeholder="city" value="{{ $city }}">
+							<input type="text" name="city" id="businessLocation" class="input" placeholder="city" value="{{ $city }}">
 						</div>
 					</td>
 				</tr>
+				<tr class="card__table__row">
+						<td class="card__table__data">
+							<div class="input__container">
+								<span class="input__addon">
+									<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+								</span>
+								<input type="text" name="postal" id="postal" class="input" placeholder="postal" value="{{ $postal }}">
+							</div>
+						</td>
+					</tr>
 			</table>
 		</div>
 		<div class="card__info">
@@ -126,6 +136,10 @@
 		</div>
 	</div>
 
+	<div class="button__center button__center--margin">
+			<p>Fill in company name and city to autofill.</p>
+			<a href="#" class="button button--big" id="ajaxFillBtn">Retrieve</a>
+	</div>
 	<div class="button__center button__center--margin">
 		<button type="submit" class="button button--big" name="update">Save</button>
 		<a href="{{ url('companies/') }}/{{ $id }}" class="button button--transparent">Cancel</a>

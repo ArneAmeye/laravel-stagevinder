@@ -9,25 +9,30 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-    	$student1 = new \App\User();
-        $student1->email = 'arne@stagevinder.be';
-        $student1->password = Hash::make('password');
-        $student1->save();
+    	$user1 = new \App\User();
+        $user1->email = 'arne@stagevinder.be';
+        $user1->password = Hash::make('password');
+        $user1->save();
 
-        $student2 = new \App\User();
-        $student2->email = 'irene@stagevinder.be';
-        $student2->password = Hash::make('password');
-        $student2->save();
+        $user2 = new \App\User();
+        $user2->email = 'irene@stagevinder.be';
+        $user2->password = Hash::make('password');
+        $user2->save();
         
-        $student4 = new \App\User();
-        $student4->email = 'lars@stagevinder.be';
-        $student4->password = Hash::make('password');
-        $student4->save();
+        $user3 = new \App\User();
+        $user3->email = 'lars@stagevinder.be';
+        $user3->password = Hash::make('password');
+        $user3->save();
 
-        $student5 = new \App\User();
-        $student5->email = 'bram@stagevinder.be';
-        $student5->password = Hash::make('password');
-        $student5->save();
+        $user4 = new \App\User();
+        $user4->email = 'bram@stagevinder.be';
+        $user4->password = Hash::make('password');
+        $user4->save();
+
+        $user5 = new \App\User();
+        $user5->email = 'thomasmore@stagevinder.be';
+        $user5->password = Hash::make('password');
+        $user5->save();
 
         factory(\App\User::class, 100)->create();
     }
