@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
 
-class Student extends Model
+class Student extends User implements Authenticatable
 {
     protected $table = 'students';
 
