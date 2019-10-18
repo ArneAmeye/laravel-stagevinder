@@ -69,7 +69,7 @@ If the problem is still there:
 #### Doing
 
 | Function                                     | Person                                                         | Function  |
-| -------------------------------------------- | -------------------------------------------------------------  |           |
+| -------------------------------------------- | -------------------------------------------------------------  | --------- |
 | Upload                                       | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |           |
 | Company Google Maps                          | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |           |
 | Intership link to student                    | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |           |
