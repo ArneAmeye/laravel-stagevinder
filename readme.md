@@ -68,14 +68,15 @@ If the problem is still there:
 
 #### Doing
 
-| Function                                     | Person                                                         |
-| -------------------------------------------- | -------------------------------------------------------------  |
-| Upload                                       | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |
-| Company Google Maps                          | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |
-| Intership link to student                    | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |
-| layout + create + update + tags + interships | ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) Bram  |
-| Search                                       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |
-| Sociallight                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |
+| Function                                     | Person    | Function  |
+| -------------------------------------------- | -------------------------------------------------------------  |  |
+| Upload                                       | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |  |
+| Company Google Maps                          | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |  |
+| Intership link to student                    | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |  |
+| layout + create + update + tags + interships | ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) Bram  |  |
+| Search                                       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |  |
+| Sociallight                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done |
+| Automated Scraping Behance                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |  |
 
 #### To Do
 
@@ -85,4 +86,3 @@ If the problem is still there:
 | Intership status                             |          |
 | API seperated classes                        |          |
 | Add vue.js                                   |          |
-| Automated Scraping Behance                   |          |
