@@ -57,4 +57,32 @@ If a new seeder is added or in case of an error try the following commands:
 If the problem is still there:
 `composer update` and `composer dump-autoload`
 
+### Planning
 
+#### History
+
+![#C100FF](https://placehold.it/15/f03c15/000000?text=+) `Lars`</br>
+![#FFA200](https://placehold.it/15/f03c15/000000?text=+) `Bram` <br/>
+![#FF00F7](https://placehold.it/15/f03c15/000000?text=+) `Irene` <br/>
+![#0AD500](https://placehold.it/15/f03c15/000000?text=+) `Arne` <br/>
+
+#### Doing
+
+| Function                                     | Person                                                         |
+| -------------------------------------------- | -------------------------------------------------------------  |
+| Upload                                       | ![#C100FF](https://placehold.it/15/f03c15/000000?text=+) Lars  |
+| Company Google Maps                          | ![#C100FF](https://placehold.it/15/f03c15/000000?text=+) Lars  |
+| Intership link to student                    | ![#C100FF](https://placehold.it/15/f03c15/000000?text=+) Lars  |
+| layout + create + update + tags + interships | ![#FFA200](https://placehold.it/15/f03c15/000000?text=+) Bram  |
+| Search                                       | ![#FF00F7](https://placehold.it/15/f03c15/000000?text=+) Irene |
+| Sociallight                                  | ![#0AD500](https://placehold.it/15/f03c15/000000?text=+) Arne  |
+
+#### To Do
+
+| Function                                     | Person   |
+| -------------------------------------------- | -------- |
+| Chat fot companies & students                |          |
+| Intership status                             |          |
+| API seperated classes                        |          |
+| Add vue.js                                   |          |
+| Automated Scraping Behance                   |          |
