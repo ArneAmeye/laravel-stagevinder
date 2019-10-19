@@ -60,7 +60,7 @@ If the problem is still there:
 ### Front-end
 
 To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browser:
-`npm run watch` (Live updates in browser + convert SASS/ES6 to CSS/JS)
+`npm run watch` (Updates live in browser)
 
 ### Planning
 
