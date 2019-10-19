@@ -57,9 +57,14 @@ If a new seeder is added or in case of an error try the following commands:
 If the problem is still there:
 `composer update` and `composer dump-autoload`
 
+### Front-end
+
+To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browser:
+`npm run watch` (Live updates in browser + convert SASS/ES6 to CSS/JS)
+
 ### Planning
 
-#### History
+#### Legend
 
 ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) `Lars`</br>
 ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) `Bram` <br/>
