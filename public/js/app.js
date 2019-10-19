@@ -169,7 +169,9 @@ $(document).ready(function () {
 
   $(".slider__container").click(function () {
     //Input fields form
-    $(".container--active, .container--disabled").toggleClass("container--active container--disabled"); //Checkbox value
+    $(".container--active, .container--disabled").toggleClass("container--active container--disabled");
+    $(".container--disabled input").attr("value", "empty");
+    $(".container--active input").attr("value", ""); //Checkbox value
 
     var CheckBox = $("input[name=isStudent]");
     CheckBox.prop("checked", !CheckBox.prop("checked")); //Container slider
@@ -279,15 +281,15 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\company.scss */"./resources/sass/pages/company.scss");
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
-__webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\upload.scss */"./resources/sass/pages/upload.scss");
-module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\company.scss */"./resources/sass/pages/company.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
+__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\upload.scss */"./resources/sass/pages/upload.scss");
+module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
 
 
 /***/ })

@@ -5,7 +5,7 @@
 				<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="navigation__header__image">
 				<div class="navigation__header__userInfo">
 					<p class="navigation__header__name">
-						@if (Session::get('user')->type == 'student')
+				        @if (Session::get('user')->type == 'student')
 							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
 						@elseif (Session::get('user')->type == 'company')
 							{{ Session::get('user')->name }}

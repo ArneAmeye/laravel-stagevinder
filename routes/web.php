@@ -18,6 +18,7 @@ Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
 Route::post('/login', ['as' => 'user.login', 'uses' => 'UserController@handleLogin']);
 
 Route::get('/register', 'UserController@register');
+Route::get('register', ['as' => 'register', 'uses' => 'UserController@register']);
 Route::post('/register', ['as' => 'user.register', 'uses' => 'UserController@handleRegister']);
 
 Route::get('/logout', ['as' => 'user.logout', 'uses' => 'UserController@logout']);

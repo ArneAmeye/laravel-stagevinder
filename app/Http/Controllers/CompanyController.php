@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Validator;
 use Auth;
+use Session;
 
 class CompanyController extends Controller
 {
@@ -19,6 +20,14 @@ class CompanyController extends Controller
         $company->save();
 
         return $company;
+    }
+
+    public static function handleLogin(Request $request, $data) {
+        $data['company']['type'] = 'company';
+        Session::put('user', $data['company']);
+        $name = $data['company']->name;
+
+        return $name;
     }
 
     public function index()

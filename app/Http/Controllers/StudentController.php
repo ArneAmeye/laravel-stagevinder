@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Auth;
+use Session;
 
 class StudentController extends Controller
 {
@@ -22,6 +23,14 @@ class StudentController extends Controller
         return $student;
     }
 
+    public static function handleLogin(Request $request, $data) {
+        $data['student']['type'] = 'student';
+        Session::put('user', $data['student']);
+        $name = $data['student']->firstname.' '.$data['student']->lastname;
+
+        return $name;
+    }
+
     public function index()
     {
         $data['students'] = \App\Student::get();
@@ -31,7 +40,6 @@ class StudentController extends Controller
 
     public function show($student)
     {
-        //$data['student'] = \App\User::with('student')->find($student)->where('id', $student)->first();
         $data['student'] = \App\User::find($student)->where('id', $student)->first()->student;
         $data['current'] = auth()->user()->id;
 
@@ -75,16 +83,16 @@ class StudentController extends Controller
         if ($validation->fails()) {
             return redirect("/students/$id?edit=bio")
                 ->withErrors($validation);
-        } else {
-            $student = \App\Student::where('id', $id)->first();
-
-            $student->bio = $request->input('bio');
-
-            $student->save();
-
-            return redirect("/students/$id")
-                ->with('success', 'Bio has been updated!');
         }
+
+        $student = \App\Student::where('id', $id)->first();
+
+        $student->bio = $request->input('bio');
+
+        $student->save();
+
+        return redirect("/students/$id")
+            ->with('success', 'Bio has been updated!');
     }
 
     private static function updateDetails($id, Request $request)
