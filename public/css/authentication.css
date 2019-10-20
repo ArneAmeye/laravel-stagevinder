@@ -247,6 +247,10 @@ ul {
   float: right;
 }
 
+.button--hidden {
+  display: none;
+}
+
 .button__icon {
   margin-right: 5px;
 }

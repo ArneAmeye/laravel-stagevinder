@@ -19,7 +19,6 @@ class UserController extends Controller
 
     public function handleRegister(Request $request)
     {
-        //dd($request);
         $user = new \App\User();
 
         $validation = Validator::make($request->all(), [

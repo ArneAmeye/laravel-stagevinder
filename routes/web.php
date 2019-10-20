@@ -37,6 +37,8 @@ Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{intership}', 'InternshipController@show');
 
 Route::get('/upload', 'UploadController@index');
+Route::get('upload', ['as' => 'upload', 'uses' => 'UploadController@index']);
+Route::patch('/upload', ['as' => 'upload.one', 'uses' => 'UploadController@updateOne']);
 
 //Socialite (Facebook) routes
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');

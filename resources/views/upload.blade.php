@@ -6,6 +6,9 @@
 @section('stylesheet')
 	{{ asset('css/pages/upload.css') }}
 @endsection
+@section('script')
+	{{ asset('js/upload.js') }}
+@endsection
 @section('content')
 	@component('components/breadcrumb')
 		@slot('title')
@@ -36,9 +39,12 @@
 				</h5>	
 			</div>
 			<div class="card__body">
-				<form method="get" action="">
+				<form method="post" action="{{ route('upload.one') }}" enctype="multipart/form-data" id="upload">
+					{{ csrf_field() }}
+    				{{ method_field('patch') }}
+
 					<label>
-						<input type="file" name="files[]" class="upload">
+						<input type="file" name="file" class="upload">
 						<div class="upload__visual">
 							<div class="upload__visual__icon">
 								<i class="fas fa-cloud-upload-alt"></i>
@@ -49,13 +55,31 @@
 							<span class="upload__visual__subtext">
 								or
 							</span>
-							<a type="submit" class="button button--margin">
+							<a class="button button--margin">
 								Browse Files
 							</a>
 						</div>
 					</label>
+					<div class="button__center">
+						<button type="submit" class="button button--margin button--big button--hidden" id="button_upload">
+							Upload
+						</button>
+					</div>
 				</form>
 			</div>
 		</div>
 	</section>
+
+	@if($errors->any())
+        @component('components/alert')
+            @slot('type', 'error')
+            <ul class="alert__container">
+                @foreach($errors->all() as $error)
+                    <li class="alert__item">
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        @endcomponent
+    @endif
 @endsection
