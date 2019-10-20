@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Socialite;
+use Session;
 use App\Services\SocialFacebookAccountService;
 
 class SocialAuthFacebookController extends Controller
@@ -34,6 +35,11 @@ class SocialAuthFacebookController extends Controller
         }
 
         $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
+
+        $data['student'] = \App\User::find($user->id)->where('id', $user->id)->first()->student;
+        $data['student']['type'] = 'student';
+        Session::put('user', $data['student']);
+
         Auth::login($user, true);
         return redirect()->to('/');
     }

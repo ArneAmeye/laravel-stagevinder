@@ -169,7 +169,9 @@ $(document).ready(function () {
 
   $(".slider__container").click(function () {
     //Input fields form
-    $(".container--active, .container--disabled").toggleClass("container--active container--disabled"); //Checkbox value
+    $(".container--active, .container--disabled").toggleClass("container--active container--disabled");
+    $(".container--disabled input").attr("value", "empty");
+    $(".container--active input").attr("value", ""); //Checkbox value
 
     var CheckBox = $("input[name=isStudent]");
     CheckBox.prop("checked", !CheckBox.prop("checked")); //Container slider

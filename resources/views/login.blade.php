@@ -51,22 +51,6 @@
 				</span>
 				<input type="password" name="password" class="input" placeholder="Password" value="password">
 			</div>
-			<div class="radios__container">
-				<div class="radio__container">
-					<label class="radio__label">
-						<input type="radio" name="user_type" checked="checked" class="radio" value="student">
-						<i class="radio__visual"></i>
-						Student
-					</label>
-				</div>
-				<div class="radio__container">
-					<label class="radio__label">
-						<input type="radio" name="user_type" class="radio" value="company">
-						<i class="radio__visual"></i>
-						Company
-					</label>
-				</div>
-			</div>
 			<div class="auth__checkbox clearfix">
 				<div class="checkbox__container">
 					<label class="checkbox__label">
@@ -91,14 +75,16 @@
 		</div>
 	</form>
 
-	@if (\Session::has('error'))
-	    @component('components/alert')
-			@slot('type', 'error')
-			<ul class="alert__container">
-				<li class="alert__item">
-					{!! \Session::get('error') !!}
-				</li>
-			</ul>
-		@endcomponent
-	@endif
+	@if($errors->any())
+        @component('components/alert')
+            @slot('type', 'error')
+            <ul class="alert__container">
+                @foreach($errors->all() as $error)
+                    <li class="alert__item">
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        @endcomponent
+    @endif
 @endsection

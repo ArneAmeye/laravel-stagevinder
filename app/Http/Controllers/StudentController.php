@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Auth;
+use Session;
 
 class StudentController extends Controller
 {
@@ -17,9 +18,18 @@ class StudentController extends Controller
         $student->lastname = $request->input('lastname');
         $student->email = $request->input('email');
         $student->password = Hash::make($request->input('password'));
+        $student->profile_picture = "default.png";
         $student->save();
 
         return $student;
+    }
+
+    public static function handleLogin(Request $request, $data) {
+        $data['student']['type'] = 'student';
+        Session::put('user', $data['student']);
+        $name = $data['student']->firstname.' '.$data['student']->lastname;
+
+        return $name;
     }
 
     public function index()
@@ -31,13 +41,13 @@ class StudentController extends Controller
 
     public function show($student)
     {
-        //$data['student'] = \App\User::with('student')->find($student)->where('id', $student)->first();
-        $data['student'] = \App\User::find($student)->where('id', $student)->first()->student;
+        $data['student'] = \App\Student::find($student)->where('id', $student)->first();
+        $data['user'] = \App\User::find($data['student']->user_id)->where('id', $data['student']->user_id)->first();
         $data['current'] = auth()->user()->id;
 
         if (!empty($_GET['edit'])) {
-            $user = auth()->user();
-            if ($user->id != $student) {
+            $id = session()->get("user")->id;
+            if ($id != $student) {
                 return redirect("/students/$student");
             }
             $data['edit'] = $_GET['edit'];
@@ -50,10 +60,11 @@ class StudentController extends Controller
 
     public function update($id, Request $request)
     {
-        $user = auth()->user();
+        $user = session()->get("user");
         if ($user->id != $id) {
             return redirect("/students/$id");
         }
+
         if ($request->has('update_details')) {
             return $this->updateDetails($id, $request);
         }
@@ -75,16 +86,16 @@ class StudentController extends Controller
         if ($validation->fails()) {
             return redirect("/students/$id?edit=bio")
                 ->withErrors($validation);
-        } else {
-            $student = \App\Student::where('id', $id)->first();
-
-            $student->bio = $request->input('bio');
-
-            $student->save();
-
-            return redirect("/students/$id")
-                ->with('success', 'Bio has been updated!');
         }
+
+        $student = \App\Student::where('id', $id)->first();
+
+        $student->bio = $request->input('bio');
+
+        $student->save();
+
+        return redirect("/students/$id")
+            ->with('success', 'Bio has been updated!');
     }
 
     private static function updateDetails($id, Request $request)
@@ -101,25 +112,25 @@ class StudentController extends Controller
         if ($validation->fails()) {
             return redirect("/students/$id?edit=details")
                 ->withErrors($validation);
-        } else {
-            $user = \App\User::where('id', $student->user_id)->first();
-            $username = explode(' ', $request->input('username'), 2);
-            $student->firstname = $username[0];
-            $student->lastname = $username[1];
-            $student->birth_date = $request->input('date');
-            $student->adress = $request->input('location');
-            $student->mobile_number = $request->input('number');
-            $student->linkedIn = $request->input('linkedIn');
-            $student->skype = $request->input('skype');
-            $student->website = $request->input('website');
-            $student->field_study = $request->input('profession');
-            $student->school = $request->input('school');
-            $user->email = $request->input('email');
-            $student->save();
-            $user->save();
-
-            return redirect("/students/$id")
-                ->with('success', 'User detials has been updated!');
         }
+
+        $user = \App\User::where('id', $student->user_id)->first();
+        $username = explode(' ', $request->input('username'), 2);
+        $student->firstname = $username[0];
+        $student->lastname = $username[1];
+        $student->birth_date = $request->input('date');
+        $student->adress = $request->input('location');
+        $student->mobile_number = $request->input('number');
+        $student->linkedIn = $request->input('linkedIn');
+        $student->skype = $request->input('skype');
+        $student->website = $request->input('website');
+        $student->field_study = $request->input('profession');
+        $student->school = $request->input('school');
+        $user->email = $request->input('email');
+        $student->save();
+        $user->save();
+
+        return redirect("/students/$id")
+            ->with('success', 'User detials has been updated!');
     }
 }

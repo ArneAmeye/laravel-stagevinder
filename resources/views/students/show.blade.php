@@ -1,7 +1,7 @@
 @extends("layouts/app")
 	
 @section('title')
-    {{ $student->firstname }}
+    {{ $student->firstname }} {{ $student->lasrname }}
 @endsection
 @section('stylesheet')
 	{{ asset('css/pages/student.css') }}
@@ -29,8 +29,8 @@
 				<div class="user__info">
 					<div class="user__inner clearfix">
 						<div class="user__profile">
-							<a href="{{ $student->profile_picture }}" target="_blank">
-								<div class="user__profile__image" style="background-image: url({{ $student->profile_picture }});">
+							<a href="{{ asset('images/students/profile_picture/'.$student->profile_picture) }}" target="_blank">
+								<div class="user__profile__image" style="background-image: url({{ asset('images/students/profile_picture/'.$student->profile_picture) }});">
 									
 								</div>
 							</a>

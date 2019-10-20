@@ -57,4 +57,37 @@ If a new seeder is added or in case of an error try the following commands:
 If the problem is still there:
 `composer update` and `composer dump-autoload`
 
+### Front-end
 
+To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browser:
+`npm run watch` (Updates live in browser)
+
+### Planning
+
+#### Legend
+
+![#C100FF](https://placehold.it/15/C100FF/000000?text=+) `Lars`</br>
+![#FFA200](https://placehold.it/15/FFA200/000000?text=+) `Bram` <br/>
+![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) `Irene` <br/>
+![#0AD500](https://placehold.it/15/0AD500/000000?text=+) `Arne` <br/>
+
+#### Doing
+
+| Function                                     | Person                                                         | Function  |
+| -------------------------------------------- | -------------------------------------------------------------  | --------- |
+| Upload                                       | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |           |
+| Company Google Maps                          | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |           |
+| Intership link to student                    | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |           |
+| layout + create + update + tags + interships | ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) Bram  |           |
+| Search                                       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |           |
+| Sociallight                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done      |
+| Automated Scraping Behance                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |           |
+
+#### To Do
+
+| Function                                     | Person   |
+| -------------------------------------------- | -------- |
+| Chat fot companies & students                |          |
+| Intership status                             |          |
+| API seperated classes                        |          |
+| Add vue.js                                   |          |

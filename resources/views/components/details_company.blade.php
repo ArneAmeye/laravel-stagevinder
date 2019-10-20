@@ -82,7 +82,7 @@
 					Website
 				</th>
 				<td class="card__table__data">
-					<a href="{{ $website }}">{{$website}}</a>
+					<a href="{{ $website }}" target="_blank">{{$website}}</a>
 				</td>
 			</tr>
 		</table>

@@ -18,12 +18,12 @@
 		@endslot
 	@endcomponent
     @auth
-        @if(!empty(session('full_name')))
+        @if(!empty(session('name')))
             @component('components/alert')
                 @slot('type', 'info')
                 <ul class="alert__container">
                     <li class="alert__item">
-                        Welcome back {{ session('full_name') }}!
+                        Welcome back {{ session('name') }}!
                     </li>
                 </ul>
             @endcomponent

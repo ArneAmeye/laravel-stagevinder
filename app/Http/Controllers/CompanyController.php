@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Validator;
+use App\Rules\Space;
 use Auth;
+use Session;
 
 class CompanyController extends Controller
 {
@@ -21,6 +23,14 @@ class CompanyController extends Controller
         return $company;
     }
 
+    public static function handleLogin(Request $request, $data) {
+        $data['company']['type'] = 'company';
+        Session::put('user', $data['company']);
+        $name = $data['company']->name;
+
+        return $name;
+    }
+
     public function index()
     {
         $data['companies'] = \App\Company::get();
@@ -33,7 +43,12 @@ class CompanyController extends Controller
         $data['company'] = \App\Company::find($company)->where('id', $company)->first();
         $data['user'] = \App\User::find($data['company']->user_id)->where('id', $data['company']->user_id)->first();
         $data['current'] = auth()->user()->id;
+
         if (!empty($_GET['edit'])) {
+            $id = session()->get("user")->id;
+            if ($id != $company) {
+                return redirect("/companies/$company");
+            }
             $data['edit'] = $_GET['edit'];
         } else {
             $data['edit'] = '';
@@ -87,12 +102,12 @@ class CompanyController extends Controller
         $validation = Validator::make($request->all(), [
             'name' => 'required|string',
             'sector' => 'required',
-            'ceo' => 'required',
+            'ceo' => ['required', new Space],
             'street' => 'required',
             'city' => 'required',
             'postal' => 'required',
             'email' => 'required|email|unique:users,email,'.$company->user_id,
-            'manager' => 'string',
+            'manager' => ['string', new Space],
             'linkedIn' => 'url|nullable',
             'website' => 'url',
         ]);
@@ -109,8 +124,8 @@ class CompanyController extends Controller
             $company->CEO_firstname = $ceo_name[0];
             $company->CEO_lastname = $ceo_name[1];
             $company->street_and_number = $request->input('street');
-            $company->zip_code = $postal;
-            $company->city = $city;
+            $company->zip_code = $request->input('postal');
+            $company->city = $request->input('city');
             $company->manager_firstname = $manager_name[0];
             $company->manager_lastname = $manager_name[1];
             $company->mobile_number = $request->input('number');

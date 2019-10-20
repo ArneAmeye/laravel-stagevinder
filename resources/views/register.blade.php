@@ -20,14 +20,14 @@
                 <span class="input__addon">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input" name ="firstname" placeholder="Enter your first name">
+                <input type="text" class="input" name ="firstname" placeholder="Enter your first name" value="empty">
             </div>
 
             <div class="input__container">
                 <span class="input__addon">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input" name ="lastname" placeholder="Enter your last name">
+                <input type="text" class="input" name ="lastname" placeholder="Enter your last name" value="empty">
             </div>
         </div>
 
@@ -78,4 +78,17 @@
 
         <button type="submit" class="button button--fullWidth">Sign up</button>
     </form>
+
+    @if($errors->any())
+        @component('components/alert')
+            @slot('type', 'error')
+            <ul class="alert__container">
+                @foreach($errors->all() as $error)
+                    <li class="alert__item">
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        @endcomponent
+    @endif
 @endsection 

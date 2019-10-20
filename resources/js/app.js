@@ -87,6 +87,9 @@ $(document).ready(function() {
             "container--active container--disabled"
         );
 
+        $(".container--disabled input").attr("value", "empty");
+        $(".container--active input").attr("value", "");
+
         //Checkbox value
         let CheckBox = $("input[name=isStudent]");
         CheckBox.prop("checked", !CheckBox.prop("checked"));
