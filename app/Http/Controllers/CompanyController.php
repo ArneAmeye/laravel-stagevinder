@@ -60,9 +60,7 @@ class CompanyController extends Controller
     public function update($id, Request $request)
     {
 
-        $user = auth()->user();
-        info($user);
-        info($id);
+        $user = session()->get("user");
         if ($user->id != $id) {
             return redirect("/companies/$id");
         }
@@ -113,7 +111,7 @@ class CompanyController extends Controller
             'email' => 'required|email|unique:users,email,'.$company->user_id,
             'manager' => ['string', new Space],
             'linkedIn' => 'url|nullable',
-            'website' => 'url',
+            'website' => 'url|nullable',
         ]);
 
         if ($validation->fails()) {
@@ -135,8 +133,6 @@ class CompanyController extends Controller
             $company->mobile_number = $request->input('number');
             $company->website = $request->input('website');
             $company->linkedIn = $request->input('linkedIn');
-            // $company->profile_picture = $request->input('profile_picture');
-            // $company->background_picture = $request->input('background_picture');
             $user->email = $request->input('email');
             $company->save();
             $user->save();

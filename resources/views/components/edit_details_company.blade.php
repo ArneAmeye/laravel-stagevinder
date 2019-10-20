@@ -141,7 +141,7 @@
 			<a href="#" class="button button--big" id="ajaxFillBtn">Retrieve</a>
 	</div>
 	<div class="button__center button__center--margin">
-		<button type="submit" class="button button--big" name="update">Save</button>
+		<button type="submit" class="button button--big" name="update_details">Save</button>
 		<a href="{{ url('companies/') }}/{{ $id }}" class="button button--transparent">Cancel</a>
 	</div>
 </form>
