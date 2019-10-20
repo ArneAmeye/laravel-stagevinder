@@ -14,7 +14,6 @@ class CompaniesSeeder extends Seeder
         $company1 = new \App\Company();
         $company1->user_id = '5';
         $company1->name = 'Thomas More';
-        $company1->email = 'stages.thomasmore@stagevinder.be';
         $company1->password = Hash::make('password');
         $company1->city = 'Mechelen';
 

@@ -59,10 +59,14 @@ class CompanyController extends Controller
 
     public function update($id, Request $request)
     {
+
         $user = auth()->user();
+        info($user);
+        info($id);
         if ($user->id != $id) {
             return redirect("/companies/$id");
         }
+
         if ($request->has('update_details')) {
             return $this->updateDetails($id, $request);
         }

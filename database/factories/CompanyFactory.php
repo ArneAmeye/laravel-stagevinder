@@ -8,7 +8,6 @@ $factory->define(\App\Company::class, function (Faker $faker) {
 
     return [
         'name' => $faker->company,
-        'email' => $faker->email,
         //'email_verified'
         'password' => Hash::make($faker->password),
         'field_sector' => $faker->jobTitle,
@@ -25,7 +24,7 @@ $factory->define(\App\Company::class, function (Faker $faker) {
         'background_picture' => $faker->imageUrl($width = 1920, $height = 1080),
         'linkedIn' => $faker->url,
         'bio' => $faker->text,
-        'user_id' => $student_id++,
+        'user_id' => $company_id++,
         //'remember_token'
         //'remember_at'
         //'updated_at'
