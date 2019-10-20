@@ -17,7 +17,7 @@
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
 				<a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
-						{{$company->name}}
+					{{$company->name}}
 				</a>
 			</li>
 		@endslot
@@ -25,12 +25,25 @@
 <div class="page__container">
 		<section class="user__container">
 			<div class="user__inner user__inner--padding">
-				<img src="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/bg-img1.jpg">
+				<div class="user__inner__image" style="background-image: url({{ asset('images/companies/background_picture/'.$company->background_picture) }});">
+					@if($current == $company->user_id)
+						<a href="/upload?edit=background&q=companies" class="button button--right button--hidden">
+							<i class="fas fa-edit" aria-hidden="true"></i>
+						</a>
+					@endif
+				</div>
 				<div class="user__info">
 					<div class="user__inner clearfix">
 						<div class="user__profile">
-							<a href="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg">
-								<img src="http://html.codedthemes.com/guru-able/files/assets/images/user-profile/user-img.jpg" class="user__profile__image">
+							@if($current == $company->user_id)
+								<a href="/upload?edit=profile&q=companies" class="button button--right button--hidden">
+									<i class="fas fa-edit" aria-hidden="true"></i>
+								</a>
+							@endif
+							<a href="{{ asset('images/companies/profile_picture/'.$company->profile_picture) }}" target="_blank">
+								<div class="user__profile__image" style="background-image: url({{ asset('images/companies/profile_picture/'.$company->profile_picture) }});">
+									
+								</div>
 							</a>
 						</div>
 						<div class="user__inner user__inner--inline">
@@ -158,16 +171,16 @@
 			</div>
 		</section>
 	</div>
+
+	@if (\Session::has('success'))
+		@component('components/alert')
+			@slot('type', 'success')
+				<ul class="alert__container">
+					<li class="alert__item">{!! \Session::get('success') !!}</li>
+				</ul>
+		@endcomponent
+	@endif
 @endsection
 @section('script')
     {{ asset ('js/ajax.js') }}
 @endsection
-
-@if (\Session::has('success'))
-	@component('components/alert')
-		@slot('type', 'success')
-			<ul class="alert__container">
-				<li class="alert__item">{!! \Session::get('success') !!}</li>
-			</ul>
-	@endcomponent
-@endif

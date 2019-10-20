@@ -18,7 +18,11 @@
   height: 213px;
   background-repeat: no-repeat;
   background-position: top;
-  background-size: 100% auto;
+  background-size: cover;
+}
+
+.user__inner__image:hover .button--hidden {
+  display: inline-block;
 }
 
 .user__info {
@@ -30,6 +34,10 @@
 
 .user__profile {
   vertical-align: middle;
+}
+
+.user__profile:hover .button--hidden {
+  display: inline-block;
 }
 
 .user__profile__image {

@@ -16,9 +16,8 @@ class StudentController extends Controller
         $student->user_id = $lastInsertedId;
         $student->firstname = $request->input('firstname');
         $student->lastname = $request->input('lastname');
-        $student->email = $request->input('email');
-        $student->password = Hash::make($request->input('password'));
         $student->profile_picture = "default.png";
+        $student->background_picture = "default.jpg";
         $student->save();
 
         return $student;

@@ -25,10 +25,21 @@
 	<div class="page__container">
 		<section class="user__container">
 			<div class="user__inner user__inner--padding">
-				<div class="user__inner__image" style="background-image: url({{ $student->background_picture }});"></div>
+				<div class="user__inner__image" style="background-image: url({{ asset('images/students/background_picture/'.$student->background_picture) }});">
+					@if($current == $student->user_id)
+						<a href="/upload?edit=background&q=students" class="button button--right button--hidden">
+							<i class="fas fa-edit" aria-hidden="true"></i>
+						</a>
+					@endif
+				</div>
 				<div class="user__info">
 					<div class="user__inner clearfix">
 						<div class="user__profile">
+							@if($current == $student->user_id)
+								<a href="/upload?edit=profile&q=students" class="button button--right button--hidden">
+									<i class="fas fa-edit" aria-hidden="true"></i>
+								</a>
+							@endif
 							<a href="{{ asset('images/students/profile_picture/'.$student->profile_picture) }}" target="_blank">
 								<div class="user__profile__image" style="background-image: url({{ asset('images/students/profile_picture/'.$student->profile_picture) }});">
 									

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use App\Rules\Space;
 use Auth;
 use Session;
@@ -16,8 +17,8 @@ class CompanyController extends Controller
         $company = new \App\Company();
         $company->user_id = $lastInsertedId;
         $company->name = $request->input('name');
-        $company->email = $request->input('email');
-        $company->password = $request->input('password');
+        $company->profile_picture = "default.png";
+        $company->background_picture = "default.jpg";
         $company->save();
 
         return $company;
@@ -74,7 +75,7 @@ class CompanyController extends Controller
         }
 
         return redirect("/companies/$id")
-                ->with('danger', 'Invalid request! Try again.');
+            ->with('danger', 'Invalid request! Try again.');
     }
 
     private static function updateBio($id, Request $request)

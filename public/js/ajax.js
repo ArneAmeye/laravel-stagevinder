@@ -134,7 +134,7 @@ function getCompanyDetails() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bram Ravijts\Desktop\school\jaar 3\Semester 1\Advanced Webtech Back\laravel-stagevinder\resources\js\ajax.js */"./resources/js/ajax.js");
+module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\js\ajax.js */"./resources/js/ajax.js");
 
 
 /***/ })

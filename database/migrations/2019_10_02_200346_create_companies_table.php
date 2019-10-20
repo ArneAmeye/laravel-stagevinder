@@ -17,9 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('name');
-            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->string('field_sector')->default('');
             $table->string('CEO_firstname')->nullable();
             $table->string('CEO_lastname')->nullable();

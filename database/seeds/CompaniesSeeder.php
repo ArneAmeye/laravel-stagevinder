@@ -14,9 +14,9 @@ class CompaniesSeeder extends Seeder
         $company1 = new \App\Company();
         $company1->user_id = '5';
         $company1->name = 'Thomas More';
-        $company1->password = Hash::make('password');
         $company1->city = 'Mechelen';
-
+        $company1->profile_picture = "default.png";
+        $company1->background_picture = "default.jpg";
         $company1->save();
         
         //Autocreate with Faker

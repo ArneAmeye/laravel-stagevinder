@@ -43,6 +43,8 @@
 					{{ csrf_field() }}
     				{{ method_field('patch') }}
 
+    				<input type="hidden" name="edit" value="{{ app('request')->input('edit') }}">
+    				<input type="hidden" name="q" value="{{ app('request')->input('q') }}">
 					<label>
 						<input type="file" name="file" class="upload">
 						<div class="upload__visual">
