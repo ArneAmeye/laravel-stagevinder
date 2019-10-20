@@ -91,3 +91,51 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 | Intership status                             |          |
 | API seperated classes                        |          |
 | Add vue.js                                   |          |
+
+
+## Server and laravel
+### Database
+Normally everybody should have mysql on their server. To check it run: `mysql --version`
+
+#### Login into mysql
+`mysql -u username -p`
+`Enter password:`
+
+#### Database settings
+`MariaDB [(none)]> CREATE DATABASE databasename;`
+`MariaDB [(none)]> create user 'name'@'ip' IDENTIFIED BY 'password';`
+`MariaDB [(none)]> GRANT ALL PRIVILEGES ON databasename.* TO 'name'@'ip';`
+
+#### Debugging
+`MariaDB [(none)]> SHOW DATABASES;`
+`MariaDB [(none)]> select * from mysql.user;`
+`MariaDB [(none)]> show grants for 'name'@'ip';`
+
+#### Check if everything worked correctly
+`mysql -h ip -u username -p`
+`Enter password:`
+`MariaDB [(none)]> show databases;`
+
+#### SSH tunnel
+
+Use following link to generate a keyname.pkk file to access the database server: https://linuxize.com/post/mysql-ssh-tunnel/
+
+##### HeidiSQL and Putty
+HeidiSQL > Settings
+Network Type: `MySQL (SSH tunnel)`
+IP: `enter ip of database server`
+User: `user of database`
+Password: `password of user`
+Port: `3306`
+
+HeidiSQL > SSH-tunnel
+Plink.exe location: `select file`
+SSH host + port: `ip database server 22`
+username: `username of database server`
+password: `(keep empty)`
+plink.exe time-out: `15`
+private key file: `(select file you generated in putty)`
+local port: `3307`
+
+##### Connect Laravel to SSH Tunnel
+TBA
