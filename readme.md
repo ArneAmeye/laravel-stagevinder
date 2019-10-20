@@ -98,44 +98,44 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 Normally everybody should have mysql on their server. To check it run: `mysql --version`
 
 #### Login into mysql
-`mysql -u username -p`
-`Enter password:`
+`mysql -u username -p`<br/>
+`Enter password:`<br/>
 
 #### Database settings
-`MariaDB [(none)]> CREATE DATABASE databasename;`
-`MariaDB [(none)]> create user 'name'@'ip' IDENTIFIED BY 'password';`
-`MariaDB [(none)]> GRANT ALL PRIVILEGES ON databasename.* TO 'name'@'ip';`
+`MariaDB [(none)]> CREATE DATABASE databasename;`<br/>
+`MariaDB [(none)]> create user 'name'@'ip' IDENTIFIED BY 'password';`<br/>
+`MariaDB [(none)]> GRANT ALL PRIVILEGES ON databasename.* TO 'name'@'ip';`<br/>
 
 #### Debugging
-`MariaDB [(none)]> SHOW DATABASES;`
-`MariaDB [(none)]> select * from mysql.user;`
-`MariaDB [(none)]> show grants for 'name'@'ip';`
+`MariaDB [(none)]> SHOW DATABASES;`<br/>
+`MariaDB [(none)]> select * from mysql.user;`<br/>
+`MariaDB [(none)]> show grants for 'name'@'ip';`<br/>
 
 #### Check if everything worked correctly
-`mysql -h ip -u username -p`
-`Enter password:`
-`MariaDB [(none)]> show databases;`
+`mysql -h ip -u username -p`<br/>
+`Enter password:`<br/>
+`MariaDB [(none)]> show databases;`<br/>
 
 #### SSH tunnel
 
 Use following link to generate a keyname.pkk file to access the database server: https://linuxize.com/post/mysql-ssh-tunnel/
 
 ##### HeidiSQL and Putty
-HeidiSQL > Settings
-Network Type: `MySQL (SSH tunnel)`
-IP: `enter ip of database server`
-User: `user of database`
-Password: `password of user`
-Port: `3306`
+HeidiSQL > Settings<br/>
+Network Type: `MySQL (SSH tunnel)`<br/>
+IP: `enter ip of database server`<br/>
+User: `user of database`<br/>
+Password: `password of user`<br/>
+Port: `3306`<br/>
 
-HeidiSQL > SSH-tunnel
-Plink.exe location: `select file`
-SSH host + port: `ip database server 22`
-username: `username of database server`
-password: `(keep empty)`
-plink.exe time-out: `15`
-private key file: `(select file you generated in putty)`
-local port: `3307`
+HeidiSQL > SSH-tunnel<br/>
+Plink.exe location: `select file`<br/>
+SSH host + port: `ip database server 22`<br/>
+username: `username of database server`<br/>
+password: `(keep empty)`<br/>
+plink.exe time-out: `15`<br/>
+private key file: `(select file you generated in putty)`<br/>
+local port: `3307`<br/>
 
 ##### Connect Laravel to SSH Tunnel
 TBA
