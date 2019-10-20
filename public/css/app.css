@@ -560,7 +560,7 @@ ul {
 }
 
 .alert:before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome";
   color: #fff;
   font-size: 16px;
   position: absolute;

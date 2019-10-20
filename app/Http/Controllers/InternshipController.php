@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 class InternshipController extends Controller{
 
     public function index(){
-        return view("internships/index");
+        $data['internships'] = \App\Internship::get();
+        return view("internships/index", $data);
     }
 
-    public function show(\App\Internship $company){
-        $data['internship'] = \App\Internship::where('id', $company)->first();
+    public function show($internship){
+        $data['internship'] = \App\Internship::find($internship)->where('id', $internship)->first();
+        $data['company'] = \App\Company::where('id', $data['internship']->company_id)->first();
         return view('internships/show', $data);
     }
 

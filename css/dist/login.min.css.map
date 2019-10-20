@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../../resources/sass/pages/login.scss"
-    ],
-    "names": [],
-    "file": "login.min.css"
-}

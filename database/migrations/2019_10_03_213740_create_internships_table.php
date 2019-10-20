@@ -18,6 +18,8 @@ class CreateInternshipsTable extends Migration
             $table->string('name');
             $table->string('company_id');
             $table->string('description');
+            $table->string('sector');
+            $table->string('background_picture');
             $table->boolean('is_available');
             $table->rememberToken();
             $table->timestamps();

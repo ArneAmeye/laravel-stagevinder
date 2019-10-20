@@ -9,7 +9,7 @@
 @section('content')
 	@component('components/breadcrumb')
 		@slot('title')
-			Company Profile
+			{{$company->name}}
 		@endslot
 		@slot('icon')
 			fa-building
@@ -17,7 +17,7 @@
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
 				<a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
-					Company Profile
+						{{$company->name}}
 				</a>
 			</li>
 		@endslot

@@ -10,7 +10,7 @@
 	<!--Add component breadcrumbs-->
 	<h1>Company List</h1>
 	@foreach($companies as $company)
-	<a href="{{ url('/companies/') }}/{{ $company->id }}">
+	<a href="{{ url('companies/') }}/{{ $company->id }}">
 		<p>
 			{{ $company->name }}
 		</p>

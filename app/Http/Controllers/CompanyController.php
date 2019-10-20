@@ -44,6 +44,45 @@ class CompanyController extends Controller
 
     public function update($id, Request $request)
     {
+        $user = auth()->user();
+        if ($user->id != $id) {
+            return redirect("/companies/$id");
+        }
+        if ($request->has('update_details')) {
+            return $this->updateDetails($id, $request);
+        }
+
+        if ($request->has('update_bio')) {
+            return $this->updateBio($id, $request);
+        }
+
+        return redirect("/companies/$id")
+                ->with('danger', 'Invalid request! Try again.');
+    }
+
+    private static function updateBio($id, Request $request)
+    {
+        $validation = Validator::make($request->all(), [
+            'bio' => 'required|string',
+        ]);
+
+        if ($validation->fails()) {
+            return redirect("/companies/$id?edit=bio")
+                ->withErrors($validation);
+        } else {
+            $company = \App\Company::where('id', $id)->first();
+
+            $company->bio = $request->input('bio');
+
+            $company->save();
+
+            return redirect("/companies/$id")
+                ->with('success', 'Bio has been updated!');
+        }
+    }
+
+    public function updateDetails($id, Request $request)
+    {
         $company = \App\Company::where('id', $id)->first();
         $validation = Validator::make($request->all(), [
             'name' => 'required|string',
@@ -56,7 +95,6 @@ class CompanyController extends Controller
             'manager' => 'string',
             'linkedIn' => 'url|nullable',
             'website' => 'url',
-            'bio' => 'string',
         ]);
 
         if ($validation->fails()) {
@@ -80,7 +118,6 @@ class CompanyController extends Controller
             $company->linkedIn = $request->input('linkedIn');
             // $company->profile_picture = $request->input('profile_picture');
             // $company->background_picture = $request->input('background_picture');
-            $company->bio = $request->input('bio');
             $user->email = $request->input('email');
             $company->save();
             $user->save();

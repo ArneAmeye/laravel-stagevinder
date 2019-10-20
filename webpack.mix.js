@@ -22,6 +22,7 @@ mix.js("resources/js/app.js", "public/js")
 mix.sass("resources/sass/pages/index.scss", "public/css/pages");
 mix.sass("resources/sass/pages/student.scss", "public/css/pages");
 mix.sass("resources/sass/pages/company.scss", "public/css/pages");
+mix.sass("resources/sass/pages/internship.scss", "public/css/pages");
 mix.sass("resources/sass/pages/login.scss", "public/css/pages");
 mix.sass("resources/sass/pages/upload.scss", "public/css/pages");
 mix.sass("resources/sass/pages/register.scss", "public/css/pages");
