@@ -34,7 +34,7 @@ class SocialAuthFacebookController extends Controller
             return redirect('/login');
         }
 
-        $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->fields(['name', 'first_name', 'last_name', 'email', 'birthday', 'verified'])->stateless()->user());
 
         $data['student'] = \App\User::find($user->id)->where('id', $user->id)->first()->student;
         $data['student']['type'] = 'student';
