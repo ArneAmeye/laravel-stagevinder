@@ -33,7 +33,7 @@
 			</li>
 			<li class="header__options__item">
 				<a href="#" class="header__options__link">
-					<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="header__options__profilePic">
+					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="header__options__profilePic">
 					<p class="header__options__name">
 						@if (Session::get('user')->type == 'student')
 							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
