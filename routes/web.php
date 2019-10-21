@@ -13,6 +13,8 @@
 
 Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
 
+Route::get('/privacy', 'PrivacyController@index');
+
 Route::get('/login', 'UserController@login');
 Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
 Route::post('/login', ['as' => 'user.login', 'uses' => 'UserController@handleLogin']);

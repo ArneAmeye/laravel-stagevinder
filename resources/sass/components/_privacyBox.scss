@@ -1,0 +1,41 @@
+.container{
+    position: relative;
+}
+
+.privacy__box{
+    background-color: $whiteColor;
+    border-radius: 8px;
+    margin: 20px 0 0;
+    padding: 20px;
+    -webkit-box-shadow: $authBoxShadow;
+    box-shadow: $authBoxShadow;
+}
+
+.privacy__title{
+    color: $navMoreColor;
+    font-size: $privacyTitleSize;
+    font-weight: $boldWeight;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.privacy__subtitle{
+    color: $navMoreColor;
+    font-size: $privacySubTitleSize;
+    font-weight: $boldWeight;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.privacy__paragraph{
+    color: $mainColor;
+    padding-bottom: 5px;
+    font-size: $authTextSize;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .auth__card {
+        width: 900px;
+    }
+}

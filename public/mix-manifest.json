@@ -10,5 +10,6 @@
     "/css/pages/login.css": "/css/pages/login.css",
     "/css/pages/upload.css": "/css/pages/upload.css",
     "/css/pages/register.css": "/css/pages/register.css",
+    "/css/pages/privacy.css": "/css/pages/privacy.css",
     "/js/upload.js": "/js/upload.js"
 }

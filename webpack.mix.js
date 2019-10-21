@@ -27,3 +27,4 @@ mix.sass("resources/sass/pages/internship.scss", "public/css/pages");
 mix.sass("resources/sass/pages/login.scss", "public/css/pages");
 mix.sass("resources/sass/pages/upload.scss", "public/css/pages");
 mix.sass("resources/sass/pages/register.scss", "public/css/pages");
+mix.sass("resources/sass/pages/privacy.scss", "public/css/pages");
