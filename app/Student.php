@@ -9,7 +9,7 @@ class Student extends User implements Authenticatable
 {
     protected $table = 'students';
 
-    protected $fillable = ['user_id', 'facebook_user_id', 'firstname', 'lastname', 'email', 'password'];
+    protected $fillable = ['user_id', 'facebook_user_id', 'firstname', 'lastname', 'email', 'password', 'profile_picture'];
 
     protected $hidden = [
         'password', 'remember_token',
