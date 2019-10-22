@@ -21,10 +21,13 @@
 				</div>
 			</div>
 			<div class="navigation__search">
-				<input type="text" name="" placeholder="Search" class="navigation__search__input">
-				<span class="navigation__search__icon">
-					<i class="fas fa-search" aria-hidden="true"></i>
-				</span>
+				<form action="/search" method="GET">
+					{{ csrf_field() }}
+					<input type="text" name="" placeholder="Search" class="navigation__search__input">
+					<Button class="navigation__search__icon">
+						<i class="fas fa-search" aria-hidden="true"></i>
+					</Button>
+				</form>
 			</div>
 			<div class="navigation__title">
 				Navigation

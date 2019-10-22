@@ -12,11 +12,13 @@
 	</div>
 	<div class="header__options__container clearfix">
 		<ul class="header__options__items--left header__options__items--desktop">
-			<li class="header__options__item">
-				<a href="#" class="header__options__link">
-					<i class="fas fa-search header__options__icon" aria-hidden="true"></i>
-				</a>
-			</li>
+			<form class="header__search" action ="/search" method="GET">
+				{{ csrf_field() }}
+				<input type="text" name="search" placeholder="Search" class="header__search--input header__options__search">
+				<Button class="header__search--btn header__options__link">
+					<i class="fas fa-search" aria-hidden="true"></i>
+				</Button>
+			</form>
 		</ul>
 		<ul class="header__options__items">
 			<li class="header__options__item">

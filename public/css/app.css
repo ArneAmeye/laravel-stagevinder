@@ -93,6 +93,27 @@ ul {
   height: auto;
 }
 
+.header__search {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: transparent;
+  border: 0px solid transparent;
+  border-bottom: 1px solid #303548;
+  margin: 20px 20px 5px;
+  position: relative;
+}
+
+.header__search--input {
+  border: 0 solid transparent;
+}
+
+.header__search--btn {
+  background: transparent;
+  border: 0 solid transparent;
+}
+
 .header__options {
   top: 50%;
   display: block;
@@ -344,6 +365,8 @@ ul {
   top: calc(50% + 7px);
   transform: translateY(-50%);
   color: #ccc;
+  background-color: transparent;
+  border: transparent;
 }
 
 .navigation__title {
