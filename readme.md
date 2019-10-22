@@ -144,6 +144,66 @@ plink.exe time-out: `15`<br/>
 private key file: `(select file you generated in putty)`<br/>
 local port: `3307`<br/>
 
-##### Connect Laravel to SSH Tunnel
+### Connect Laravel to SSH Tunnel
 
-TBA
+#### Have Linode and Apache ready for your webapp deployment
+
+Make sure you have a user folder in your /home folder where the webapp will run from, something like:
+/home/username (it's good to name this after your webapp).
+
+we create that by making a new user:
+NOTE: username in these commands is always the name of your webapp!
+`adduser username` br/>
+`passwd username`<br/>
+
+get root `su -` and cd into /home/username
+make 2 log files and 2 folders:
+`touch access.log`<br/>
+`touch error.log`<br/>
+`mkdir username` This is actually again the name of your webapp/username, in here will go all project files.<br/>
+`mkdir .ssh`<br/>
+
+change permissions on the whole webapp folder so apache can read and execute as a group:
+`chmod -R 750 username`<br/>
+`chgrp -R apache username`<br/>
+
+make sure your sites-available file is changed to correspond with the new directory for serving the webapp
+`nano /etc/httpd/sites-available/appYOURNAME.thecreativitygym.be.conf`
+Change 4 things here:
+-> 1st line: Directory "/home/username/username"
+->inside the VirtualHost:
+    => DocumentRoot /home/username/username
+    => ErrorLog /home/username/error.log
+    => CustomLog /home/username/access.log combined
+
+Save and exit this file
+
+Change the httpd.conf file's DocumentRoot
+`nano /etc/httpd/conf/httpd.conf`<br/>
+-> search for DocumentRoot and change the path to "/home/username/username"
+
+restart apache
+`systemctl restart httpd`<br/>
+
+
+#### Start generating the SSH deploy keys
+
+Create the SSH key for Github
+`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"` User your Github email address!<br/>
+
+It will ask for a place to save the file
+`/home/username/.ssh/id_rsa`<br/>
+Enter a passphrase if you want to, it will ask this later if you try to access the SSH key.
+
+Add your SSH key to the SSH agent:
+`eval "$(ssh-agent -s)"`<br/>
+`ssh-add /home/username/.ssh/id_rsa`<br/>
+
+Finally: 
+`cat /home/username/.ssh/id_rsa.pub` copy this output from "ssh-rsa" until your email address from the terminal window.<br/>
+Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
+
+
+#### Actually deploy the git project
+
+Coming soon...
