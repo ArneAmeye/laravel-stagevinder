@@ -32,9 +32,8 @@ Route::get('/students/{student}', 'StudentController@show');
 Route::get('/companies', 'CompanyController@index');
 Route::post('/getcompanydetails', 'AjaxController@getCompanyDetails');
 Route::get('/companies/add', 'CompanyController@getCompanyData'); //Route for a page where a company can be added via API lookup
-Route::patch('/companies/{company}',  ['as' => 'company.update', 'uses' => 'CompanyController@update']);
+Route::patch('/companies/{company}', ['as' => 'company.update', 'uses' => 'CompanyController@update']);
 Route::get('/companies/{company}', 'CompanyController@show');
-
 
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{intership}', 'InternshipController@show');
@@ -46,3 +45,5 @@ Route::patch('/upload', ['as' => 'upload.one', 'uses' => 'UploadController@updat
 //Socialite (Facebook) routes
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
+
+Route::get('/search', 'SearchController@show');
