@@ -40,6 +40,30 @@ ul {
 }
 
 /*COMPONENTS CSS*/
+/*BASIC CSS FOR PAGES*/
+.container {
+  margin-top: 80px;
+  padding: 30px 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.container__inner {
+  padding: 10px;
+}
+
+@media (min-width: 993px) {
+  .container {
+    margin-left: 270px;
+  }
+
+  .container__inner {
+    padding: 1.8rem;
+  }
+}
 .header__container {
   position: fixed;
   z-index: 999;
@@ -711,27 +735,3 @@ ul {
   }
 }
 /*KEYFRAMES*/
-/*BASIC CSS FOR PAGES*/
-.container {
-  margin-top: 80px;
-  padding: 30px 10px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-}
-
-.container__inner {
-  padding: 10px;
-}
-
-@media (min-width: 993px) {
-  .container {
-    margin-left: 270px;
-  }
-
-  .container__inner {
-    padding: 1.8rem;
-  }
-}
