@@ -201,11 +201,12 @@ Add your SSH key to the SSH agent:<br/>
 
 Finally: <br/>
 `cat /home/username/.ssh/id_rsa.pub` copy this output from "ssh-rsa" until your email address from the terminal window.<br/>
-Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Only for Owner repository` Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
 
 
 #### Actually deploy the git project
 
+<<<<<<< HEAD
 First clone the project to your server:<br/>
 `git clone CLONE_URL`
 
@@ -214,3 +215,8 @@ Test your SSH connection to Github:<br/>
 
 Git pull through SSH (deploy) from inside the git project folder (be sure to cd into the project's root folder)<br/>
 `git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git`
+||||||| merged common ancestors
+Coming soon...
+=======
+Coming soon...
+>>>>>>> 546f37d802f77dcfaf94a5fde2c3d070bd0b579c
