@@ -32,7 +32,7 @@
     <div class="preview__container">
         <section class="preview__container">
             @if(isset($internships))
-                @component('components/show_internships', ['internships' => {{internships}}])
+                @component('components/show_internships', ['internships' => $internships])
                 @endcomponent
             @endif
 		    </div>

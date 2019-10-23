@@ -20,7 +20,7 @@ class IndexController extends Controller
 
         $data['internships'] = \App\Internship::get();
 
-        return view('index', $data);
+        return View('index', $data);
     }
 
     /**
