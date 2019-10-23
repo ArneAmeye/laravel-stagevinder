@@ -2,7 +2,7 @@
 	<div class="navigation__scroll">
 		<div class="navigation__inner">
 			<div class="navigation__header">
-				<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="navigation__header__image">
+				<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
 				<div class="navigation__header__userInfo">
 					<p class="navigation__header__name">
 				        @if (Session::get('user')->type == 'student')
