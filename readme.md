@@ -201,7 +201,7 @@ Add your SSH key to the SSH agent:<br/>
 
 Finally: <br/>
 `cat /home/username/.ssh/id_rsa.pub` copy this output from "ssh-rsa" until your email address from the terminal window.<br/>
-Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Only for Owner repository` Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
 
 
 #### Actually deploy the git project
