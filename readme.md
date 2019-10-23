@@ -206,17 +206,13 @@ Finally: <br/>
 
 #### Actually deploy the git project
 
-<<<<<<< HEAD
 First clone the project to your server:<br/>
 `git clone CLONE_URL`
+Note: possibly change the root folder from where apache loads it's files and re-apply permissions for group apache to this newly cloned repo!!
 
 Test your SSH connection to Github:<br/>
 `ssh -T git@github.com`
 
 Git pull through SSH (deploy) from inside the git project folder (be sure to cd into the project's root folder)<br/>
 `git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git`
-||||||| merged common ancestors
-Coming soon...
-=======
-Coming soon...
->>>>>>> 546f37d802f77dcfaf94a5fde2c3d070bd0b579c
+
