@@ -4,10 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\Authenticatable;
-use Spatie\Searchable\Searchable;
-use Spatie\Searchable\SearchResult;
 
-class Company extends User implements Authenticatable, Searchable
+class Company extends User implements Authenticatable
 {
     use Notifiable;
 
@@ -45,16 +43,5 @@ class Company extends User implements Authenticatable, Searchable
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-
-    public function getSearchResult(): SearchResult
-    {
-        $url = route('companies.show', $this->id);
-
-        return new SearchResult(
-            $this,
-            $this->name,
-            $url
-        );
     }
 }
