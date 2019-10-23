@@ -35,7 +35,7 @@
                 @component('components/show_internships', ['internships' => $internships])
                 @endcomponent
             @endif
-            @if(isset($search))
+            @if(!isset($search))
                 @component('components/search')
                 @endcomponent
             @endif     
