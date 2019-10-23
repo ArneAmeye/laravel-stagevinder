@@ -33,7 +33,11 @@
 			</li>
 			<li class="header__options__item">
 				<a href="#" class="header__options__link">
-					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="header__options__profilePic">
+					@if (Session::get('user')->type == 'student')
+						<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+					@elseif (Session::get('user')->type == 'company')
+						<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+					@endif
 					<p class="header__options__name">
 						@if (Session::get('user')->type == 'student')
 							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}

@@ -2,7 +2,11 @@
 	<div class="navigation__scroll">
 		<div class="navigation__inner">
 			<div class="navigation__header">
-				<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+				@if (Session::get('user')->type == 'student')
+					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+				@elseif (Session::get('user')->type == 'company')
+					<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+				@endif
 				<div class="navigation__header__userInfo">
 					<p class="navigation__header__name">
 				        @if (Session::get('user')->type == 'student')
