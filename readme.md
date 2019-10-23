@@ -206,4 +206,11 @@ Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> giv
 
 #### Actually deploy the git project
 
-Coming soon...
+First clone the project to your server:<br/>
+`git clone CLONE_URL`
+
+Test your SSH connection to Github:<br/>
+`ssh -T git@github.com`
+
+Git pull through SSH (deploy) from inside the git project folder (be sure to cd into the project's root folder)<br/>
+`git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git`
