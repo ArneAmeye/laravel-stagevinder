@@ -12,3 +12,4 @@ npm-debug.log
 yarn-error.log
 .vagrant
 ca.homestead.laravel-app.crt
+ca.homestead.laravel-stagevinder.crt
