@@ -12,7 +12,7 @@ class CompaniesSeeder extends Seeder
 
         //Creating 1 manual company for development purposes
         $company1 = new \App\Company();
-        $company1->user_id = '5';
+        $company1->user_id = 5;
         $company1->name = 'Thomas More';
         $company1->city = 'Mechelen';
         $company1->profile_picture = "default.png";
