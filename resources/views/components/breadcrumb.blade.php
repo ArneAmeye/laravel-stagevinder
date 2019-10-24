@@ -7,8 +7,7 @@
 					{{ $title }}
 				</h4>
 				<span class="breadcrumb__info__text">
-					lorem ipsum dolor sit amet, consectetur adipisicing elit
-					<!--{{$student->field_study ?? ''}}-->
+						{{$sector}}
 				</span>
 			</div>
 		</div>

@@ -15,7 +15,9 @@
 			fa-home
 		@endslot
 		@slot('breadcrumb')
-		@endslot
+        @endslot
+        @slot('sector')
+        @endslot
 	@endcomponent
     @auth
         @if(!empty(session('name')))

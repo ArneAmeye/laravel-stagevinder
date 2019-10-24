@@ -2,7 +2,11 @@
 	<div class="navigation__scroll">
 		<div class="navigation__inner">
 			<div class="navigation__header">
-				<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="navigation__header__image">
+				@if (Session::get('user')->type == 'student')
+					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+				@elseif (Session::get('user')->type == 'company')
+					<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+				@endif
 				<div class="navigation__header__userInfo">
 					<p class="navigation__header__name">
 				        @if (Session::get('user')->type == 'student')
@@ -61,7 +65,7 @@
 					</a>
 				</li>
 				<li class="navigation__item">
-					<a href="internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
+					<a href="/internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
 							<i class="fas fa-file-alt navigation__link__icon--center" aria-hidden="true"></i>
 						</span>

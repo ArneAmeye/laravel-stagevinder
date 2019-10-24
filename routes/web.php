@@ -37,7 +37,9 @@ Route::get('/companies/{company}', 'CompanyController@show');
 
 
 Route::get('/internships', 'InternshipController@index');
-Route::get('/internships/{intership}', 'InternshipController@show');
+Route::get('/internships/{internship}', 'InternshipController@show');
+Route::post('/companies/{company}',  ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
+Route::patch('/internships/{internship}', ['as' => 'internship.update', 'uses' => 'InternshipController@update']);
 
 Route::get('/upload', 'UploadController@index');
 Route::get('upload', ['as' => 'upload', 'uses' => 'UploadController@index']);

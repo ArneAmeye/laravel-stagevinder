@@ -43,13 +43,13 @@
 				<span class="input__addon">
 					<i class="fas fa-envelope" aria-hidden="true"></i>
 				</span>
-				<input type="email" name="email" class="input" placeholder="Email Address" value="lars@stagevinder.be">
+				<input type="email" name="email" class="input" placeholder="johndoe@stagevinder.be">
 			</div>
 			<div class="input__container">
 				<span class="input__addon">
 					<i class="fas fa-lock" aria-hidden="true"></i>
 				</span>
-				<input type="password" name="password" class="input" placeholder="Password" value="password">
+				<input type="password" name="password" class="input" placeholder="Password">
 			</div>
 			<div class="auth__checkbox clearfix">
 				<div class="checkbox__container">
