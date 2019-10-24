@@ -1,7 +1,7 @@
 @extends("layouts/app")
 	
 @section('title')
-    {{ $student->firstname }} {{ $student->lasrname }}
+    {{ $student->firstname }} {{ $student->lastname }}
 @endsection
 @section('stylesheet')
 	{{ asset('css/pages/student.css') }}
@@ -9,10 +9,13 @@
 @section('content')
 	@component('components/breadcrumb')
 		@slot('title')
-			User Profile
+			{{ $student->firstname }} {{ $student->lastname }}
 		@endslot
 		@slot('icon')
 			fa-graduation-cap
+		@endslot
+		@slot('sector')
+			{{$student->field_study}}
 		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">

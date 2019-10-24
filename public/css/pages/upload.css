@@ -37,6 +37,10 @@
   display: block;
 }
 
+.card__table__data {
+  width: 50%;
+}
+
 .button__center {
   display: flex;
   justify-content: center;

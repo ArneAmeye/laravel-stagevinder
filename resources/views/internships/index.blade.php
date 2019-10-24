@@ -12,7 +12,7 @@
 	@foreach($internships as $internship)
 	<a href="{{ url('internships/') }}/{{ $internship->id }}">
 		<p>
-			{{ $internship->name }}
+			{{ $internship->title }}
 		</p>
 	</a>
 	@endforeach
