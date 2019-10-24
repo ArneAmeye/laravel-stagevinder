@@ -221,9 +221,9 @@ We don't have the .env file yet (it's excluded from the git repo).<br/>
 `nano .env` paste your local .env data here and save.<br/>
 Make sure you link up the DB credentials right!
 
-By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group.<br/>
+By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group, Laravel needs write access for logs.<br/>
 `cd /home`<br/>
-`chmod -R 750 username`<br/>
+`chmod -R 770 username`<br/>
 `chgrp -R apache username`
 
 Done! Feel free to ask questions, might have missed some stuff 🙃 
