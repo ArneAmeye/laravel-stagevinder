@@ -65,7 +65,7 @@
 					</a>
 				</li>
 				<li class="navigation__item">
-					<a href="internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
+					<a href="/internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
 							<i class="fas fa-file-alt navigation__link__icon--center" aria-hidden="true"></i>
 						</span>

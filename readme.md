@@ -40,7 +40,7 @@ That's it, you should now be able to use the external tool (see previous title) 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows and updated seeders with fillable content to tables 'companies' and 'students' on 15/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added Thomas More user and company for API testing to tables 'companies' and 'students' on 17/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added new seeder for standerd background/profile picture on 21/10/2019` <br/>
-
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to 'table 'internships' on 24/10/2019` <br/>
 Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
@@ -164,15 +164,16 @@ make 2 log files and 2 folders:<br/>
 `mkdir .ssh`
 
 change permissions on the whole webapp folder so apache can read and execute as a group:<br/>
+`cd /home`
 `chmod -R 750 username`<br/>
 `chgrp -R apache username`
 
 make sure your sites-available file is changed to correspond with the new directory for serving the webapp<br/>
 `nano /etc/httpd/sites-available/appYOURNAME.thecreativitygym.be.conf`<br/>
 Change 4 things here:<br/>
--> 1st line: Directory "/home/username/username"<br/>
+-> 1st line: Directory "/home/username/username/github_projectname/public"<br/>
 ->inside the VirtualHost:<br/>
-    => DocumentRoot /home/username/username<br/>
+    => DocumentRoot /home/username/username/github_projectname/public<br/>
     => ErrorLog /home/username/error.log<br/>
     => CustomLog /home/username/access.log combined
 
@@ -180,7 +181,7 @@ Save and exit this file
 
 Change the httpd.conf file's DocumentRoot<br/>
 `nano /etc/httpd/conf/httpd.conf`<br/>
--> search for DocumentRoot and change the path to "/home/username/username"
+-> search for DocumentRoot and change the path to "/home/username/username/github_projectname"
 
 restart apache
 `systemctl restart httpd`
@@ -216,3 +217,13 @@ Test your SSH connection to Github:<br/>
 Git pull through SSH (deploy) from inside the git project folder (be sure to cd into the project's root folder)<br/>
 `git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git`
 
+We don't have the .env file yet (it's excluded from the git repo).<br/>
+`nano .env` paste your local .env data here and save.<br/>
+Make sure you link up the DB credentials right!
+
+By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group, Laravel needs write access for logs.<br/>
+`cd /home`<br/>
+`chmod -R 770 username`<br/>
+`chgrp -R apache username`
+
+Done! Feel free to ask questions, might have missed some stuff 🙃 

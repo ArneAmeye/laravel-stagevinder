@@ -17,6 +17,8 @@
 		@slot('icon')
 			fa-upload
 		@endslot
+		@slot('sector')
+		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
 				<a href="/students/{{ Session::get('user')->id }}" class="breadcrumb__info__link">

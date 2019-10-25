@@ -1,0 +1,72 @@
+@if($errors->any())
+	@component('components/alert')
+		@slot('type', 'error')
+		<ul class="alert__container">
+			@foreach($errors->all() as $error)
+				<li class="alert__item">
+					{{ $error }}
+				</li>
+			@endforeach
+		</ul>
+	@endcomponent
+@endif
+
+
+
+	<section class="card__container">
+		<div class="card__inner">
+			<div class="card__header">
+				<h5 class="card__title">
+					Details
+				</h5>	
+			</div>
+			<form method="post" action="{{ route('internship.update', $id) }}">
+					{{ csrf_field() }}
+					{{ method_field('patch') }}
+				<div class="card__body card__body--padding clearfix">
+						<table class="card__table">
+							<tr class="card__table__row">
+								<td class="card__table__data">
+									<div class="input__container">
+										<span class="input__addon">
+											<i class="fas fa-id-card" aria-hidden="true"></i>
+										</span>
+									<input type="text" name="title" class="input" placeholder="Title" value="{{$title}}">
+									</div>
+								</td>
+								<td class="card__table__data">
+									<div class="input__container">
+										<span class="input__addon">
+											<i class="fas fa-briefcase" aria-hidden="true"></i>
+										</span>
+									<input type="text" name="sector" class="input" placeholder="Sector" value="{{$sector}}">
+									</div>
+								</td>
+							</tr>
+							<tr class="card__table__row">
+								<td class="card__table__data">
+									<div class="input__container">
+										<span class="input__addon">
+											<i class="fas fa-file-alt" aria-hidden="true"></i>
+										</span>
+									<textarea name="description" class="input" placeholder="Job Description">{{$description}}</textarea>
+									</div>
+								</td>
+								<td class="card__table__data">
+									<div class="input__container">
+										<span class="input__addon">
+											<i class="fas fa-list-ul" aria-hidden="true"></i>
+										</span>
+									<textarea name="requirements" class="input" placeholder="Job Requirements">{{$requirements}}</textarea>
+									</div>
+								</td>
+							</tr>
+						</table>
+				</div>
+				<div class="button__center">
+					<button type="submit" class="button button--margin" name="update_internship">update</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	

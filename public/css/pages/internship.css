@@ -1,25 +1,5 @@
 /*VARIABLES*/
 /*COMPONENTS CSS*/
-.internship__container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px;
-}
-
-.internship__inner {
-  width: 100%;
-  min-height: 1px;
-  padding: 0 15px;
-}
-
-.internship__inner__image {
-  width: 100%;
-  height: 213px;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: 100% auto;
-}
-
 .button__center {
   display: flex;
   justify-content: center;
@@ -276,4 +256,132 @@
   outline: 0;
 }
 
+.internship__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.internship__inner {
+  width: 100%;
+  min-height: 1px;
+  padding: 0 15px;
+}
+
+.internship__inner__image {
+  width: 100%;
+  height: 213px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% auto;
+}
+
+.internship__inner__image:hover .button--hidden {
+  display: inline-block;
+}
+
+.card__table__data {
+  width: 50%;
+}
+
+.user__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.user__inner {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding: 0 15px;
+}
+
+.user__inner__image {
+  width: 100%;
+  height: 213px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.user__inner__image:hover .button--hidden {
+  display: inline-block;
+}
+
+.user__info {
+  text-align: center;
+  background-color: #e0e0e0;
+  margin-bottom: 20px;
+  padding: 1.25rem;
+}
+
+.user__profile {
+  vertical-align: middle;
+}
+
+.user__profile:hover .button--hidden {
+  display: inline-block;
+}
+
+.user__profile__image {
+  border: 4px solid #fff;
+  border-radius: 5px;
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.user__details {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.user__name {
+  color: #fff;
+  text-shadow: 1px 1px 4px #373a3c;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.user__function {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.875em;
+}
+
+@media (min-width: 769px) {
+  .user__inner--padding {
+    margin-bottom: 50px;
+  }
+
+  .user__info {
+    position: absolute;
+    width: 100%;
+    bottom: calc(-25px - 1.25rem);
+    background-color: transparent;
+    margin-bottom: 0;
+  }
+
+  .user__profile {
+    padding-right: 20px;
+    display: inline-block;
+    float: left;
+  }
+
+  .user__details,
+.user__inner--inline {
+    display: inline-block;
+    width: auto;
+    float: left;
+  }
+
+  .user__details {
+    text-align: left;
+    margin: 0;
+  }
+}
 /*KEYFRAMES*/
