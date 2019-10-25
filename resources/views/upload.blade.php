@@ -45,8 +45,8 @@
 
     				<input type="hidden" name="edit" value="{{ app('request')->input('edit') }}">
     				<input type="hidden" name="q" value="{{ app('request')->input('q') }}">
-					<label>
-						<input type="file" name="file" class="upload">
+					<label for="input__upload" class="upload__label">
+						<input type="file" name="file" class="upload" id="input__upload" multiple>
 						<div class="upload__visual">
 							<div class="upload__visual__icon">
 								<i class="fas fa-cloud-upload-alt"></i>

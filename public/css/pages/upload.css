@@ -1,10 +1,7 @@
 /*VARIABLES*/
 /*COMPONENTS CSS*/
 .upload {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  z-index: -9999;
+  display: none;
 }
 
 .upload__visual {
