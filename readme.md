@@ -21,11 +21,16 @@
     5. [Check if everything worked correctly](#Check-if-everything-worked-correctly)
     6. [SSH tunnel](#SSH-tunnel)
         1. [HeidiSQL and Putty](#HeidiSQL-and-Putty)
-6. [Connect Laravel to SSH Tunnel](#Connect-Laravel-to-SSH-Tunnel)
+6. [Deployement of git repo and database](#Deployement-of-git-repo-and-database)
     1. [SSH public key permissions](#SSH-public-key-permissions)
     2. [Have Linode and Apache ready for your webapp deployment](#Have-Linode-and-Apache-ready-for-your-webapp-deployment)
     3. [Start generating the SSH deploy keys](#Start-generating-the-SSH-deploy-keys)
     4. [Actually deploy the git project](#Actually-deploy-the-git-project)
+7. [Deployment](#Deployment)
+    1. [Git repository](#Git-repository)
+    2. [Installing packages](#Installing-packages)
+    3. [Composer](Composer)
+    4. [Launching site](#Launching-site)
     
 
 ## Starting up Laravel
@@ -173,9 +178,11 @@ plink.exe time-out: `15`<br/>
 private key file: `(select file you generated in putty)`<br/>
 local port: `3307`<br/>
 
-### Connect Laravel to SSH Tunnel
+## Deployement of git repo and database
 
-#### SSH public key permissions
+### SSH public key permissions
+
+This section is added by request for SSH access to server ;)
 
 user = your name
 
@@ -202,7 +209,7 @@ user = your name
 
 Still problems with ssh public key access? [Check this link](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
-#### Have Linode and Apache ready for your webapp deployment
+### Have Linode and Apache ready for your webapp deployment
 
 Make sure you have a user folder in your /home folder where the webapp will run from, something like:<br/>
 /home/username (it's good to name this after your webapp).
@@ -243,7 +250,7 @@ restart apache
 `systemctl restart httpd`
 
 
-#### Start generating the SSH deploy keys
+### Start generating the SSH deploy keys
 
 Create the SSH key for Github<br/>
 `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"` User your Github email address!
@@ -258,28 +265,77 @@ Add your SSH key to the SSH agent:<br/>
 
 Finally: <br/>
 `cat /home/username/.ssh/id_rsa.pub` copy this output from "ssh-rsa" until your email address from the terminal window.<br/>
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Only for Owner repository` Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Only for owner repository` Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
 
 
-#### Actually deploy the git project
+## Deployment
+
+### Git repository
+
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `For all users expect owner of repository` Make sure the owner of the repository has your key :)
 
 First clone the project to your server:<br/>
-`git clone CLONE_URL`
-Note: possibly change the root folder from where apache loads it's files and re-apply permissions for group apache to this newly cloned repo!!
+`git clone CLONE_HTTPS_URL`<br/>
+
+Check if all permissions in .ssh are owned by USERNAME, grouped by USERNAME and nothing for world.<br/>
+This can be done by using following commands:<br/>
+`chown OWNERNAME FILE_NAME`<br/>
+`chgrp GROUPNAME FILE_NAME`<br/>
+`chmod PERMISSION_NUMBER FILE_NAME`<br/>
 
 Test your SSH connection to Github:<br/>
-`ssh -T git@github.com`
+`su - USERNAME`<br/>
+`ssh -T git@github.com`<br/>
+Enter passphrase for key 'path':<br/>
+Hi REPO_NAME! You've succesfully autheniticated, but GitHub does not provide shell access.<br/>
 
-Git pull through SSH (deploy) from inside the git project folder (be sure to cd into the project's root folder)<br/>
-`git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git`
+Git pull through SSH (deploy)<br/>
+`cd /home/USERNAME/USERNAME/laravel-stagevinder`<br/>
+`git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git`<br/>
 
 We don't have the .env file yet (it's excluded from the git repo).<br/>
-`nano .env` paste your local .env data here and save.<br/>
-Make sure you link up the DB credentials right!
+paste your local .env data here and save: `nano .env`<br/>
+Make sure you link up the DB credentials right!<br/>
+You need to change the following variables:<br/>
+`APP_URL=YOUR SITENAME`<br/>
+`DB_HOST`<br/>
+`DB_DATABASE`<br/>
+`DB_USERNAME`<br/>
+`DB_PASSWORD`<br/>
 
-By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group, Laravel needs write access for logs.<br/>
-`cd /home`<br/>
-`chmod -R 770 username`<br/>
-`chgrp -R apache username`
+By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group, Laravel needs write access for logs. As our site is located in the folder 'USERNAME', we change these permissions.<br/>
+`su -`<br/>
+Enter password:<br/>
+`cd /home/USERNAME/USERNAME`<br/>
+`chmod -R 770 USERNAME`<br/>
+`chgrp -R apache USERNAME`<br/>
 
-Done! Feel free to ask questions, might have missed some stuff 🙃 
+### Installing packages
+
+Installing following stuff for use of a laravel 6 project:<br/>
+`yum install php72w-mbstring`<br/>
+`yum install php72w-dom`<br/>
+`yum install php72w-pdo_mysql`<br/>
+
+### Composer
+
+Installing composer:<br/>
+`cd ~`<br/>
+`curl -sS https://getcomposer.org/installer | php`<br/>
+`sudo mv composer.phar /usr/local/bin/composer`<br/>
+
+Installing composer in laravel projects (this adds the vendor folder):<br/>
+`cd /home/USERNAME/USERNAME/laravel-stagevinder`<br/>
+`composer install --no-dev`<br/>
+`Change the permissions on vendor directory: chmod -R 770 vendor`<br/>
+`Change owner in vendor directory: chown -R USERNAME vendor`<br/>
+`Change the group in vendor directory: chgrp -R apache vendor`<br/>
+
+If everything went well: `php artisan migrate`<br/>
+If access denied, check `.env` file in laravel-stagevinder directory<br/>
+
+### Launching site
+
+TBA!<br/>
+
+(Almost) Done! Feel free to ask questions, might have missed some stuff 🙃 
