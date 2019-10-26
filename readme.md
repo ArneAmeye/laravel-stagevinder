@@ -1,13 +1,41 @@
 # Instructions on using this app as a developer:
 
-## Starting up Laravel:
+## Table of Contents
+
+1. [Starting up laravel](#Starting-up-Laravel)
+2. [Database](#Database)
+    1. [How to have a look into the DB](#How-to-have-a-look-into-the-DB)
+    2. [Migrate (make) tables](#Migrate-(make)-tables)
+    3. [Refresh (update) tables](#Refresh-(update)-tables)
+    4. [Seeders](#Seeders)
+3. [Front-end](#Front-end)
+4. [Planning](#Planning)
+    1. [Legend](#Legend)
+    2. [Doing](#Doing)
+    3. [To Do](#To-Do)
+5. [Server and laravel](#Server-and-laravel)
+    1. [MySQL](#MySQL)
+    2. [Login into mysql](#Login-into-mysql)
+    3. [Database settings](#Database-settings)
+    4. [Debugging](#Debugging)
+    5. [Check if everything worked correctly](#Check-if-everything-worked-correctly)
+    6. [SSH tunnel](#SSH-tunnel)
+        1. [HeidiSQL and Putty](#HeidiSQL-and-Putty)
+6. [Connect Laravel to SSH Tunnel](#Connect-Laravel-to-SSH-Tunnel)
+    1. [SSH public key permissions](#SSH-public-key-permissions)
+    2. [Have Linode and Apache ready for your webapp deployment](#Have-Linode-and-Apache-ready-for-your-webapp-deployment)
+    3. [Start generating the SSH deploy keys](#Start-generating-the-SSH-deploy-keys)
+    4. [Actually deploy the git project](#Actually-deploy-the-git-project)
+    
+
+## Starting up Laravel
 
 `vagrant up`
 Then go to URL: homestead.test
 
-## Database:
+## Database
 
-### How to have a look into the DB:
+### How to have a look into the DB
 
 Make use of an external tool like:
 
@@ -17,7 +45,7 @@ Make use of an external tool like:
 
 In this tool use the variables from the ".env" file to connect to the database.
 
-### Migrate (make) tables:
+### Migrate (make) tables
 
 First we need to go inside the virtual machine:
 `vagrant ssh`
@@ -58,21 +86,21 @@ If a new seeder is added or in case of an error try the following commands:
 If the problem is still there:
 `composer update` and `composer dump-autoload`
 
-### Front-end
+## Front end
 
 To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browser:
 `npm run watch` (Updates live in browser)
 
-### Planning
+## Planning
 
-#### Legend
+### Legend
 
 ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) `Lars`</br>
 ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) `Bram` <br/>
 ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) `Irene` <br/>
 ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) `Arne` <br/>
 
-#### Doing
+### Doing
 
 | Function                                     | Person                                                         | Function |
 | -------------------------------------------- | -------------------------------------------------------------- | -------- |
@@ -84,7 +112,7 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 | Sociallight                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done     |
 | Automated Scraping Behance                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |          |
 
-#### To Do
+### To Do
 
 | Function                      | Person |
 | ----------------------------- | ------ |
@@ -95,7 +123,7 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 
 ## Server and laravel
 
-### Database
+### MySQL
 
 Normally everybody should have mysql on their server. To check it run: `mysql --version`
 
