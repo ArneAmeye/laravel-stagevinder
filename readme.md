@@ -336,6 +336,18 @@ If access denied, check `.env` file in laravel-stagevinder directory<br/>
 
 ### Launching site
 
-TBA!<br/>
+Normally by following the tutorial above, your site should appear in appYOURNAME.thecreativitygym.be
 
-(Almost) Done! Feel free to ask questions, might have missed some stuff 🙃 
+If not, check appYOURNAME.thecreativitygym.be/index.php
+If it shows, check following step:
+- `nano /etc/httpd/sites-available/appYOURNAME.thecreativitygym.be.conf`
+- Change line `AllowOverride None` to `AllowOverride All`
+- `systemctl restart httpd` or even better `apachectl graceful`
+
+If the above didn't work:
+- Check errors on reload of your site: tail -f /home/USERNAME/error.log
+- Check if the path `cd /home/USERNAME` has permissions for owner USERNAME and group apache by using following command `ls -al` and later on `chmod -R 770 USERNAME`
+- Check if the index is correctly set: `nano /etc/httpd/conf/httpd.conf`, make sure `DirectoryIndex index.html` is set to `DirectoryIndex index.html index.php`
+- And of course `systemctl restart httpd` or even better `apachectl graceful`
+
+Done! Feel free to ask questions, might have missed some stuff 🙃 
