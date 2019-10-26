@@ -179,10 +179,12 @@ local port: `3307`<br/>
 
 user = your name
 
-`cd /home/user`<br/>
+`cd /home`<br/>
+`ls -al`<br />
 `drwx------. user user`<br/>
 
 `cd /home/user`<br/>
+`ls -al`<br />
 `drwx------. 4 user user 4096 Oct 20 15:23 .`<br/>
 `drwxr-xr-x. 5 root  root  4096 Oct 23 18:51 ..`<br/>
 `-rw-------. 1 user user 1305 Oct 23 19:57 .bash_history`<br/>
@@ -193,11 +195,12 @@ user = your name
 `-rw-------  1 user user 16 Oct 20 15:23 .mysql_history`<br/>
 `drwx------  2 user user 4096 Oct 20 09:32 .ssh`<br/>
 
-`cd /home/user`<br/>
+`cd /home/user/.ssh`<br/>
 `drwx------  2 user user 4096 Oct 20 09:32 .`<br/>
 `drwx------. 4 user user 4096 Oct 20 15:23 ..`<br/>
 `-rw-r--r--  1 user user 410 Oct 20 09:32 authorized_keys`<br/>
 
+Still problems with ssh public key access? [Check this link](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
 #### Have Linode and Apache ready for your webapp deployment
 
