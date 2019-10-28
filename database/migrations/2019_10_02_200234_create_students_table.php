@@ -30,7 +30,7 @@ class CreateStudentsTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('field_study')->nullable();
             $table->string('school')->nullable();
-            $table->string('bio')->nullable();
+            $table->string('bio', 255)->nullable();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->rememberToken();
             $table->timestamps();

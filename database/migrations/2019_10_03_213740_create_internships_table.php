@@ -17,8 +17,8 @@ class CreateInternshipsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('company_id');
-            $table->string('description');
-            $table->string('requirements');
+            $table->string('description', 255);
+            $table->string('requirements', 255);
             $table->string('field_sector');
             $table->string('background_picture');
             $table->boolean('is_available');

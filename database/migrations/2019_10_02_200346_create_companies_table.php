@@ -32,7 +32,7 @@ class CreateCompaniesTable extends Migration
             $table->string('linkedIn')->nullable();
             $table->string('profile_picture')->nullable();
             $table->string('background_picture')->nullable();
-            $table->string('bio')->nullable();
+            $table->string('bio', 255)->nullable();
             //$table->integer('user_id')->unsigned();
             //$table->foreign('user_id')->references('id')->on('companies');
             $table->rememberToken();
