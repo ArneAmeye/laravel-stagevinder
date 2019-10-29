@@ -25,7 +25,7 @@
 			</li>
 		@endslot
 	@endcomponent
-<div class="page__container">
+	<div class="page__container">
 		<section class="user__container">
 			<div class="user__inner user__inner--padding">
 				<div class="user__inner__image" style="background-image: url({{ asset('images/companies/background_picture/'.$company->background_picture) }});">
@@ -319,6 +319,14 @@
 				
 			</form>
 		@endif
+
+		<section class="card__container">
+			<div class="card__inner">
+				@component('components/google_maps')
+					@slot('adress', $company->street_and_number." ".$company->zip_code." ".$company->city);
+				@endcomponent
+			</div>
+		</section>
 	</div>
 
 	@if (\Session::has('success'))
@@ -331,5 +339,5 @@
 	@endif
 @endsection
 @section('script')
-    {{ asset ('js/ajax.js') }}
+    <script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
 @endsection

@@ -28,7 +28,7 @@ class CreateCompaniesTable extends Migration
             $table->string('city')->default('');
             $table->string('zip_code')->default('');
             $table->string('street_and_number')->default('');
-            $table->string('website')->default('');
+            $table->string('website')->default('')->nullable();
             $table->string('linkedIn')->nullable();
             $table->string('profile_picture')->nullable();
             $table->string('background_picture')->nullable();

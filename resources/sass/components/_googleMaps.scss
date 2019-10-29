@@ -1,0 +1,10 @@
+.googleMaps__iframe {
+	width: 100%;
+	height: 210px;
+}
+
+@media (min-width: 768px) {
+	.googleMaps__iframe {
+		height: 520px;
+	}
+}

@@ -6,9 +6,6 @@
 @section('stylesheet')
 	{{ asset('css/pages/upload.css') }}
 @endsection
-@section('script')
-	{{ asset('js/upload.js') }}
-@endsection
 @section('content')
 	@component('components/breadcrumb')
 		@slot('title')
@@ -100,4 +97,7 @@
             </ul>
         @endcomponent
     @endif
+@endsection
+@section('script')
+	<script type="text/javascript" src="{{ asset ('js/upload.js') }}"></script>
 @endsection

@@ -323,7 +323,7 @@
     width: calc(100% / 4);
   }
 }
-@media (min-width: 573px) {
+@media (min-width: 768px) {
   .card__menu__link {
     font-size: 16px;
   }
