@@ -233,6 +233,14 @@
 .card__body {
   padding: 1.25rem;
   padding-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__body--transparent {
+  background-image: url("../../images/transparent.png");
+  padding: 1.25rem;
+  margin: 1.25rem;
 }
 
 .card__text {

@@ -47,7 +47,7 @@
 
     				<input type="hidden" name="edit" value="{{ app('request')->input('edit') }}">
     				<input type="hidden" name="q" value="{{ app('request')->input('q') }}">
-					<label for="input__upload" class="upload__label">
+					<label for="input__upload">
 						<input type="file" name="file" class="upload" id="input__upload" multiple>
 						<div class="upload__visual">
 							<div class="upload__visual__icon">
@@ -70,6 +70,20 @@
 						</button>
 					</div>
 				</form>
+			</div>
+		</div>
+	</section>
+
+	<section class="card__container" id="preview__card">
+		<div class="card__inner">
+			<div class="card__header">
+				<h5 class="card__title">
+					Preview
+				</h5>	
+			</div>
+			<div class="card__body card__body--transparent">
+				<div class="card__body__preview" id="preview">
+				</div>
 			</div>
 		</div>
 	</section>

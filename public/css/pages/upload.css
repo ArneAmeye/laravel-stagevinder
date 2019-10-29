@@ -1,5 +1,9 @@
 /*VARIABLES*/
 /*COMPONENTS CSS*/
+#preview__card {
+  display: none;
+}
+
 .upload {
   display: none;
 }
@@ -36,6 +40,26 @@
 
 .card__table__data {
   width: 50%;
+}
+
+.card__body__preview {
+  height: 350px;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.card__body__preview--transparent {
+  background-size: cover;
+  background-image: url("../../images/transparent.png");
+  background-repeat: repeat;
+  background-size: auto;
+  padding: 1.25rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .button__center {
@@ -171,6 +195,14 @@
 .card__body {
   padding: 1.25rem;
   padding-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__body--transparent {
+  background-image: url("../../images/transparent.png");
+  padding: 1.25rem;
+  margin: 1.25rem;
 }
 
 .card__text {
