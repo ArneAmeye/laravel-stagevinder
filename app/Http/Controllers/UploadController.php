@@ -48,7 +48,7 @@ class UploadController extends Controller
 
     private static function uploadUser($name, $request)
     {
-        $currentUser = session()->get('user');
+        $currentUser = session()->get('user', []);
 
         if ($request->q == 'students') {
             $user = \App\Student::where('id', $currentUser->id)->first();
@@ -57,6 +57,11 @@ class UploadController extends Controller
         if ($request->q == 'companies') {
             $user = \App\Company::where('id', $currentUser->id)->first();
         }
+
+        $currentImage = $request->edit.'_picture';
+
+        $currentUser->$currentImage = $name;
+        session()->put("user", $currentUser);
 
         $field = $request->edit.'_picture';
         $user->$field = $name;

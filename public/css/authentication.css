@@ -217,6 +217,7 @@ ul {
   margin-bottom: 5px;
   box-shadow: none;
   border: none;
+  text-align: center;
 }
 
 .button--big {

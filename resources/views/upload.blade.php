@@ -6,9 +6,6 @@
 @section('stylesheet')
 	{{ asset('css/pages/upload.css') }}
 @endsection
-@section('script')
-	{{ asset('js/upload.js') }}
-@endsection
 @section('content')
 	@component('components/breadcrumb')
 		@slot('title')
@@ -47,8 +44,8 @@
 
     				<input type="hidden" name="edit" value="{{ app('request')->input('edit') }}">
     				<input type="hidden" name="q" value="{{ app('request')->input('q') }}">
-					<label for="input__upload" class="upload__label">
-						<input type="file" name="file" class="upload" id="input__upload" multiple>
+					<div class="upload__container">
+						<input type="file" name="file" class="upload" id="input__upload">
 						<div class="upload__visual">
 							<div class="upload__visual__icon">
 								<i class="fas fa-cloud-upload-alt"></i>
@@ -63,13 +60,27 @@
 								Browse Files
 							</a>
 						</div>
-					</label>
+					</div>
 					<div class="button__center">
 						<button type="submit" class="button button--margin button--big button--hidden" id="button_upload">
 							Upload
 						</button>
 					</div>
 				</form>
+			</div>
+		</div>
+	</section>
+
+	<section class="card__container" id="preview__card">
+		<div class="card__inner">
+			<div class="card__header">
+				<h5 class="card__title">
+					Preview
+				</h5>	
+			</div>
+			<div class="card__body card__body--transparent">
+				<div class="card__body__preview" id="preview">
+				</div>
 			</div>
 		</div>
 	</section>
@@ -86,4 +97,7 @@
             </ul>
         @endcomponent
     @endif
+@endsection
+@section('script')
+	<script type="text/javascript" src="{{ asset ('js/upload.js') }}"></script>
 @endsection

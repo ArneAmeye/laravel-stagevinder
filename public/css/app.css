@@ -684,6 +684,47 @@ ul {
     right: 0;
   }
 }
+.tooltip {
+  position: relative;
+}
+
+.tooltip:after {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  background: #444;
+  color: #fff;
+  content: attr(data-title);
+  position: absolute;
+  font-size: 12px;
+  padding: 5px 9px;
+  width: 220px;
+  border-radius: 2px;
+  left: 50%;
+  top: calc(100% + 14px);
+  transform: translateX(-50%);
+  z-index: 999;
+  transition: all 0.3s ease-in;
+}
+
+.tooltip:before {
+  opacity: 0;
+  border: solid;
+  border-color: #444 transparent;
+  border-width: 0 4px 9px 4px;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100% + 5px);
+  position: absolute;
+  transition: all 0.3s ease-in;
+}
+
+.tooltip:hover:after,
+.tooltip:hover:before {
+  opacity: 1;
+}
+
 /*KEYFRAMES*/
 /*BASIC CSS FOR PAGES*/
 .container {

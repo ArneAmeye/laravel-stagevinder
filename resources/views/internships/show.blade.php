@@ -91,7 +91,7 @@
     </div>
 @endsection
 @section('script')
-    {{ asset ('js/ajax.js') }}
+    <script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
 @endsection
 
 @if (\Session::has('success'))
