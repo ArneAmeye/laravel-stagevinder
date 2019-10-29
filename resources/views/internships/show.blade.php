@@ -44,7 +44,7 @@
 						<div class="user__info">
 							<div class="user__inner clearfix">
 								<div class="user__profile">
-								<a href="/companies/{{$company->id}}" target="_blank">
+								<a href="/companies/{{$company->id}}">
 										<div class="user__profile__image" style="background-image: url({{ asset('images/companies/profile_picture/'.$company->profile_picture) }});">
 											
 										</div>
