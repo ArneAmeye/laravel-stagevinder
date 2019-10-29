@@ -54,7 +54,6 @@
   background-image: url("../../images/transparent.png");
   background-repeat: repeat;
   background-size: auto;
-  padding: 1.25rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -87,6 +86,7 @@
   margin-bottom: 5px;
   box-shadow: none;
   border: none;
+  text-align: center;
 }
 
 .button--big {
@@ -160,6 +160,11 @@
   width: 100%;
   min-height: 1px;
   margin-bottom: 30px;
+}
+
+.card__container--menu {
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .card__inner {
@@ -245,6 +250,45 @@
   width: 40%;
 }
 
+.card__menu__items {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__menu__item {
+  width: 100%;
+  text-align: center;
+  margin-bottom: -1px;
+}
+
+.card__menu__link {
+  font-size: 14px;
+  color: #303548;
+  padding: 20px 0;
+  display: block;
+  transition: all 0.3s ease-in;
+}
+
+.card__menu__link--current {
+  border-bottom: 4px solid #4680ff;
+}
+
+.card__menu__link:hover {
+  color: #4680ff;
+}
+
+@media (min-width: 573px) {
+  .card__menu__item {
+    width: calc(100% / 4);
+  }
+}
+@media (min-width: 573px) {
+  .card__menu__link {
+    font-size: 16px;
+  }
+}
 @media (min-width: 1200px) {
   .card__info {
     flex: 0 0 50%;

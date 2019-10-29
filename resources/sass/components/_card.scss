@@ -5,6 +5,11 @@
 	margin-bottom: 30px;
 }
 
+.card__container--menu {
+	margin-bottom: 20px;
+	background-color: $whiteColor;
+}
+
 .card__inner {
 	border-radius: $profilePictureRadius;
 	-webkit-box-shadow: $breadcrumbShadow;
@@ -89,6 +94,50 @@
 
 .card__table__data--big {
 	width: 40%;
+}
+
+.card__menu__items {
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.card__menu__item {
+	width: 100%;
+	text-align: center;
+	margin-bottom: -1px;
+}
+
+.card__menu__link {
+	font-size: $navigationSize;
+	color: $mainColor;
+	padding: 20px 0;
+	display: block;
+	-webkit-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+}
+
+.card__menu__link--current {
+	border-bottom: 4px solid $highlightBackgroundColor;
+}
+
+.card__menu__link:hover {
+	color: $highlightBackgroundColor;
+}
+
+@media (min-width: 573px) {
+	.card__menu__item {
+		width: calc(100% / 4);
+	}
+}
+
+@media (min-width: 573px) {
+	.card__menu__link {
+		font-size: $mainFontSize;
+	}
 }
 
 @media (min-width: 1200px) {

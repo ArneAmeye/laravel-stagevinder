@@ -75,15 +75,29 @@
 		</section>
 
 		@if($current == $company->user_id)
-			<section class="card__container">
-				<div class="card__inner">
-					<div class="card__header">
-						<a href="{{ url('companies/') }}/{{ $company->id }}" class="button">Profile</a>
-						<a href="?internship=list" class="button">My Internships</a>
-						<a href="?internship=create" class="button">New Internship</a>
-						
-					</div>
-				</div>
+			<section class="card__container card__container--menu">
+				<ul class="card__menu__items">
+					<li class="card__menu__item">
+						<a href="{{ url('companies/') }}/{{ $company->id }}" class="card__menu__link {{ empty(app('request')->input('internship')) ? 'card__menu__link--current' : '' }}">
+							Personal Info
+						</a>
+					</li>
+					<li class="card__menu__item">
+						<a href="?internship=list" class="card__menu__link {{ app('request')->input('internship') === 'list' ? 'card__menu__link--current' : '' }}">
+							My Internships
+						</a>
+					</li>
+					<li class="card__menu__item">
+						<a href="?internship=create" class="card__menu__link {{ app('request')->input('internship') === 'create' ? 'card__menu__link--current' : '' }}">
+							New Internship
+						</a>
+					</li>
+					<li class="card__menu__item">
+						<a href="#" class="card__menu__link">
+							Misc
+						</a>
+					</li>
+				</ul>
 			</section>
 		@endif
 
