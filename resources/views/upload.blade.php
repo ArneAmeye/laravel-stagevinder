@@ -44,8 +44,8 @@
 
     				<input type="hidden" name="edit" value="{{ app('request')->input('edit') }}">
     				<input type="hidden" name="q" value="{{ app('request')->input('q') }}">
-					<label for="input__upload">
-						<input type="file" name="file" class="upload" id="input__upload" multiple>
+					<div class="upload__container">
+						<input type="file" name="file" class="upload" id="input__upload">
 						<div class="upload__visual">
 							<div class="upload__visual__icon">
 								<i class="fas fa-cloud-upload-alt"></i>
@@ -60,7 +60,7 @@
 								Browse Files
 							</a>
 						</div>
-					</label>
+					</div>
 					<div class="button__center">
 						<button type="submit" class="button button--margin button--big button--hidden" id="button_upload">
 							Upload

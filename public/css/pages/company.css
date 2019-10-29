@@ -461,8 +461,19 @@
   display: none;
 }
 
+.upload__container {
+  position: relative;
+}
+
 .upload {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .upload__visual {
@@ -475,7 +486,12 @@
   border: 2px dashed #c8cbce;
   text-align: center;
   cursor: pointer;
-  transition: box-shadow 0.3s, border-color 0.3s;
+  transition: border-color 0.3s ease;
+}
+
+.upload:hover ~ .upload__visual,
+.upload__visual--active {
+  border-color: #4680ff;
 }
 
 .upload__visual__icon {
