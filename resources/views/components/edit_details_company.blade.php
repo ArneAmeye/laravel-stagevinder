@@ -137,10 +137,7 @@
 	</div>
 
 	<div class="button__center button__center--margin">
-			<p>Fill in company name and city to autofill.</p>
-			<a href="#" class="button button--big" id="ajaxFillBtn">Retrieve</a>
-	</div>
-	<div class="button__center button__center--margin">
+		<a href="#" class="button button--big tooltip" id="ajaxFillBtn" data-title="Click to autofill know fields!">Retrieve</a>
 		<button type="submit" class="button button--big" name="update_details">Save</button>
 		<a href="{{ url('companies/') }}/{{ $id }}" class="button button--transparent">Cancel</a>
 	</div>
