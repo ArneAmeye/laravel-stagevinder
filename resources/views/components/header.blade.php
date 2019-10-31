@@ -1,3 +1,12 @@
+@php
+	$headerOfUser = [
+		["name" => "Settings", "href" => "#", "icon" => "fa-cog"],
+		["name" => "Companies", "href" => "@if (Session::get('user')->type == 'student')/students/{{ Session::get('user')->id }}@elseif (Session::get('user')->type == 'company')/companies/{{ Session::get('user')->id }}@endif", "icon" => "fa-user"],
+		["name" => "My Messages", "href" => "#", "icon" => "fa-envelope"],
+		["name" => "Lock Screen", "href" => "#", "icon" => "fa-lock"],
+		["name" => "Logout", "href" => "{{ route('user.logout') }}", "icon" => "fa-sign-out-alt"]
+	];
+@endphp
 <header class="header__container">
 	<div class="header__logo__inner">
 		<a href="#" class="header__link">
@@ -47,36 +56,14 @@
 					<i class="fas fa-angle-down header__options__more" aria-hidden="true"></i>
 				</a>
 				<ul class="options__more__items">
-					<li class="options__more__item">
-						<a href="#" class="options__more__link">
-							<i class="fa fa-cog options__more__icon" aria-hidden="true"></i>
-							Settings
-						</a>
-					</li>
-					<li class="options__more__item">
-						<a href="@if (Session::get('user')->type == 'student')/students/{{ Session::get('user')->id }}@elseif (Session::get('user')->type == 'company')/companies/{{ Session::get('user')->id }}@endif" class="options__more__link">
-							<i class="fa fa-user options__more__icon" aria-hidden="true"></i>
-							Profile
-						</a>
-					</li>
-					<li class="options__more__item">
-						<a href="#" class="options__more__link">
-							<i class="fa fa-envelope options__more__icon" aria-hidden="true"></i>
-							My Messages
-						</a>
-					</li>
-					<li class="options__more__item">
-						<a href="#" class="options__more__link">
-							<i class="fa fa-lock options__more__icon" aria-hidden="true"></i>
-							Lock Screen
-						</a>
-					</li>
-					<li class="options__more__item">
-						<a href="{{ route('user.logout') }}" class="options__more__link">
-							<i class="fas fa-sign-out-alt options__more__icon" aria-hidden="true"></i>
-							Logout
-						</a>
-					</li>
+					@foreach($headerOfUser as $item)
+						<li class="options__more__item">
+							<a href="{{$item['href']}}" class="options__more__link">
+								<i class="fa {{$item['icon']}} options__more__icon" aria-hidden="true"></i>
+								{{$item['name']}}
+							</a>
+						</li>
+					@endforeach
 				</ul>
 				@endif
 			</li>
