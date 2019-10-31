@@ -1,6 +1,7 @@
 <nav class="navigation__container">
 	<div class="navigation__scroll">
 		<div class="navigation__inner">
+			@if(Auth::check())
 			<div class="navigation__header">
 				<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="navigation__header__image">
 				<div class="navigation__header__userInfo">
@@ -20,6 +21,7 @@
 					</span>
 				</div>
 			</div>
+			@endif
 			<div class="navigation__search">
 				<form action="/search" method="GET">
 					{{ csrf_field() }}

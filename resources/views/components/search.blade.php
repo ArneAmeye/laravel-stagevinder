@@ -1,4 +1,4 @@
-<div class="search__field__container">
+<!--<div class="search__field__container">
     <form action="/search" method="GET" class="search__field">
 		{{ csrf_field() }}
 		<input type="text" name="" placeholder="Search" class="search__field--input">
@@ -11,4 +11,4 @@
     <ul>
         <li>test</li>
     </ul>
-</div>
+</div>-->

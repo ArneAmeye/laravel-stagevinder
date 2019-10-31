@@ -46,4 +46,4 @@ Route::patch('/upload', ['as' => 'upload.one', 'uses' => 'UploadController@updat
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
 
-Route::get('/search', 'SearchController@show');
+Route::get('/welcome', 'SearchController@index');

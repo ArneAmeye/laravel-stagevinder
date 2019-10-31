@@ -31,14 +31,14 @@
     @endauth
     <div class="preview__container">
         <section class="preview__container">
-            @if(!isset($internships))
+            @if(isset($internships))
                 @component('components/show_internships', ['internships' => $internships])
                 @endcomponent
             @endif
-            @if(!isset($search))
+            <!--@if(!isset($search))
                 @component('components/search')
                 @endcomponent
-            @endif     
+            @endif-->    
 		    </div>
 		</section>
     </div>

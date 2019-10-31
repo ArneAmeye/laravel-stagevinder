@@ -15,7 +15,7 @@ class IndexController extends Controller
     public function index()
     {
         if (!Auth::check()) {
-            return redirect('login');
+            return redirect('welcome');
         }
 
         $data['internships'] = \App\Internship::get();

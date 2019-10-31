@@ -20,6 +20,7 @@
 				</Button>
 			</form>
 		</ul>
+		@if(Auth::check())
 		<ul class="header__options__items">
 			<li class="header__options__item">
 				<a href="#" class="header__options__link">
@@ -77,6 +78,7 @@
 						</a>
 					</li>
 				</ul>
+				@endif
 			</li>
 		</ul>
 	</div>

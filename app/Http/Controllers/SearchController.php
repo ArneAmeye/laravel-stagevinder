@@ -13,6 +13,9 @@ class SearchController extends Controller
      */
     public function index()
     {
+        $data['internships'] = \App\Internship::get();
+
+        return view('welcome', $data);
     }
 
     /**
