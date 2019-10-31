@@ -338,16 +338,35 @@ If access denied, check `.env` file in laravel-stagevinder directory<br/>
 
 Normally by following the tutorial above, your site should appear in appYOURNAME.thecreativitygym.be
 
-If not, check appYOURNAME.thecreativitygym.be/index.php
-If it shows, check following step:
-- `nano /etc/httpd/sites-available/appYOURNAME.thecreativitygym.be.conf`
-- Change line `AllowOverride None` to `AllowOverride All`
-- `systemctl restart httpd` or even better `apachectl graceful`
+If not, check appYOURNAME.thecreativitygym.be/index.php<br/>
+If it shows, check following step:<br/>
+`nano /etc/httpd/sites-available/appYOURNAME.thecreativitygym.be.conf`<br/>
+Change line `AllowOverride None` to `AllowOverride All`<br/>
+`systemctl restart httpd` or even better `apachectl graceful`<br/>
 
-If the above didn't work:
-- Check errors on reload of your site: tail -f /home/USERNAME/error.log
-- Check if the path `cd /home/USERNAME` has permissions for owner USERNAME and group apache by using following command `ls -al` and later on `chmod -R 770 USERNAME`
-- Check if the index is correctly set: `nano /etc/httpd/conf/httpd.conf`, make sure `DirectoryIndex index.html` is set to `DirectoryIndex index.html index.php`
-- And of course `systemctl restart httpd` or even better `apachectl graceful`
+If the above didn't work:<br/>
+Check errors on reload of your site: tail -f /home/USERNAME/error.log<br/>
+Check if the path `cd /home/USERNAME` has permissions for owner USERNAME and group apache by using following command `ls -al` and later on `chmod -R 770 USERNAME`<br/>
+Check if the index is correctly set: `nano /etc/httpd/conf/httpd.conf`, make sure `DirectoryIndex index.html` is set to `DirectoryIndex index.html index.php`<br/>
+And of course `systemctl restart httpd` or even better `apachectl graceful`<br/>
+
+### HTTPS/SSL
+
+We are now going to add a https certificate to our site! This we need to use the Sociallight function :D<br/>
+`ssh name@ip`<br/>
+`su -`<br/>
+`yum install epel-release`<br/>
+now we are at it, make sure you are running the latest versions ;) : `yum update`<br/>
+`yum install wget`<br/>
+now you can follow [this](https://certbot.eff.org/lets-encrypt/centosrhel6-apache) tutorial starting with step 3<br/>
+Check the result!<br/>
+
+`nano /etc/httpd/sites-available/appYOURNAM.thecreativitygym.be.conf`<br/>
+add following lines to the section VirtualHost:<br/>
+`RewriteEngine On`<br/>
+`RewriteCond %{HTTPS} off`<br/>
+`RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}`<br/>
+`apachectl graceful`<br/>
+Check if it works :D<br/>
 
 Done! Feel free to ask questions, might have missed some stuff 🙃 
