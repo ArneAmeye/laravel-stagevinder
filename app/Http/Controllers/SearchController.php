@@ -90,6 +90,6 @@ class SearchController extends Controller
             //->registerModel(Category::class, 'name')
             ->perform($request->input('query'));
 
-        return view('search', compact('searchResults'));
+        return view('welcome', compact('searchResults'));
     }
 }
