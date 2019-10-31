@@ -6,8 +6,8 @@
 		["name" => "Internships", "url" => "/internships", "icon" => "fa-file-alt"]
 	];
 	$navigationOfGuest = [
-		["name" => "Sign in", "url" => "/login", "icon" => "fa-home"],
-		["name" => "Sign up", "url" => "/register", "icon" => "fa-graduation-cap"],
+		["name" => "Sign in", "url" => "/login", "icon" => "fa-sign-in-alt"],
+		["name" => "Sign up", "url" => "/register", "icon" => "fa-user-plus"],
 	]
 @endphp
 <nav class="navigation__container">
@@ -43,7 +43,7 @@
 					</Button>
 				</form>
 			</div>
-			<div class="navigation__title">
+			<div class="navigation__title"></div>
 				Navigation
 			</div>
 			@if(Auth::check())
