@@ -1,5 +1,4 @@
 @php
-	/*Array = name, url, icon and */
 	$navigationOfUser = [
 		["name" => "Home", "url" => "/index.php", "icon" => "fa-home"],
 		["name" => "Students", "url" => "/students", "icon" => "fa-graduation-cap"],
