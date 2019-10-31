@@ -4,9 +4,11 @@
     Home
 @endsection
 @section('stylesheet')
-	{{ asset('css/pages/index.css') }}
+	{{ asset('css/pages/welcome.css') }}
 @endsection
 @section('content')
+	@component('components/search')
+	@endcomponent
     <div class="preview__container">
         <section class="preview__container">
             @if(isset($internships))

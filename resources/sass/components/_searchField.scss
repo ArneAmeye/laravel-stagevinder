@@ -12,35 +12,34 @@
 
 .search__field {
     display: flex;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    flex-direction: row;
+    -ms-flex-direction: row;
     margin: 0 -15px;
+    border-bottom: 1px solid $mainColor;
 }
 
 .search__field--input {
-    display: block;
     margin: 0;
-    width: 100%;
-    color: $whiteColor;
-    background-color: $mainColor;
+    width: 95%;
+    color: $mainColor;
+    background-color: $whiteColor;
     font-size: $navigationSize;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-radius: $inputRadius;
     padding: 6px 22px 6px 10px;
-    border: 1px solid $whiteColor;
     outline: none;
+    border: 1px solid transparent;
 }
 
 .search__field--btn {
+    width: 5%;
     cursor: pointer;
-    padding: 6px;
-    position: absolute;
-    right: 25px;
-    top: calc(50% + 7px);
-    transform: translateY(-50%);
     color: $navigationIcon;
     background-color: transparent;
     border: transparent;
