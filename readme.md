@@ -113,6 +113,8 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 | Company Google Maps                          | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |          |
 | Intership link to student                    | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |          |
 | layout + create + update + tags + interships | ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) Bram  |          |
+| tutorial deployment site + certificate       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene | Done     |
+| figuring out database server 2 😤            | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
 | Search                                       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
 | Sociallight                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done     |
 | Automated Scraping Behance                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |          |
@@ -121,8 +123,8 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 
 | Function                      | Person |
 | ----------------------------- | ------ |
-| Chat fot companies & students |        |
-| Intership status              |        |
+| Chat bot companies & students |        |
+| Internship status              |        |
 | API seperated classes         |        |
 | Add vue.js                    |        |
 
@@ -338,16 +340,35 @@ If access denied, check `.env` file in laravel-stagevinder directory<br/>
 
 Normally by following the tutorial above, your site should appear in appYOURNAME.thecreativitygym.be
 
-If not, check appYOURNAME.thecreativitygym.be/index.php
-If it shows, check following step:
-- `nano /etc/httpd/sites-available/appYOURNAME.thecreativitygym.be.conf`
-- Change line `AllowOverride None` to `AllowOverride All`
-- `systemctl restart httpd` or even better `apachectl graceful`
+If not, check appYOURNAME.thecreativitygym.be/index.php<br/>
+If it shows, check following step:<br/>
+`nano /etc/httpd/sites-available/appYOURNAME.thecreativitygym.be.conf`<br/>
+Change line `AllowOverride None` to `AllowOverride All`<br/>
+`systemctl restart httpd` or even better `apachectl graceful`<br/>
 
-If the above didn't work:
-- Check errors on reload of your site: tail -f /home/USERNAME/error.log
-- Check if the path `cd /home/USERNAME` has permissions for owner USERNAME and group apache by using following command `ls -al` and later on `chmod -R 770 USERNAME`
-- Check if the index is correctly set: `nano /etc/httpd/conf/httpd.conf`, make sure `DirectoryIndex index.html` is set to `DirectoryIndex index.html index.php`
-- And of course `systemctl restart httpd` or even better `apachectl graceful`
+If the above didn't work:<br/>
+Check errors on reload of your site: tail -f /home/USERNAME/error.log<br/>
+Check if the path `cd /home/USERNAME` has permissions for owner USERNAME and group apache by using following command `ls -al` and later on `chmod -R 770 USERNAME`<br/>
+Check if the index is correctly set: `nano /etc/httpd/conf/httpd.conf`, make sure `DirectoryIndex index.html` is set to `DirectoryIndex index.html index.php`<br/>
+And of course `systemctl restart httpd` or even better `apachectl graceful`<br/>
+
+### HTTPS/SSL
+
+We are now going to add a https certificate to our site! This we need to use the Sociallight function :D<br/>
+`ssh name@ip`<br/>
+`su -`<br/>
+`yum install epel-release`<br/>
+now we are at it, make sure you are running the latest versions ;) : `yum update`<br/>
+`yum install wget`<br/>
+now you can follow [this](https://certbot.eff.org/lets-encrypt/centosrhel6-apache) tutorial starting with step 3<br/>
+Check the result!<br/>
+
+`nano /etc/httpd/sites-available/appYOURNAM.thecreativitygym.be.conf`<br/>
+add following lines to the section VirtualHost:<br/>
+`RewriteEngine On`<br/>
+`RewriteCond %{HTTPS} off`<br/>
+`RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}`<br/>
+`apachectl graceful`<br/>
+Check if it works :D<br/>
 
 Done! Feel free to ask questions, might have missed some stuff 🙃 
