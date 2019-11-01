@@ -211,6 +211,13 @@
 							@if($internship->is_available == 1)
 								<a href="{{ url('/internships/') }}/{{ $internship->id }}">
 									<div class="preview__inner" style="background-image: url({{ asset('images/internships/background_picture/'.$internship->background_picture) }}); background-size: auto 100%; background-position: center;">
+									<form method="post" action="{{route('internship.delete', $internship->id)}}">
+										{{ csrf_field() }}
+										{{ method_field('delete') }}
+										<button type="submit" class="button button--danger button--right">
+											<i class="fas fa-times" aria-hidden="true"></i>
+										</button>
+									</form>
 										<img class="preview__image" src="">
 										<div class="preview__text">
 											<p class="preview__text--internship">

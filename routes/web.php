@@ -40,6 +40,7 @@ Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{internship}', 'InternshipController@show');
 Route::post('/companies/{company}',  ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
 Route::patch('/internships/{internship}', ['as' => 'internship.update', 'uses' => 'InternshipController@update']);
+Route::delete('/companies/{company}', ['as' => 'internship.delete', 'uses' => 'InternshipController@delete']);
 
 Route::get('/upload', 'UploadController@index');
 Route::get('upload', ['as' => 'upload', 'uses' => 'UploadController@index']);
