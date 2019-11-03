@@ -72,6 +72,10 @@ class StudentController extends Controller
             return $this->updateBio($id, $request);
         }
 
+        if ($request->has('update_behance')){
+            return $this->updateBehance($id, $request);
+        }
+
         return redirect("/students/$id")
                 ->with('danger', 'Invalid request! Try again.');
     }
@@ -95,6 +99,27 @@ class StudentController extends Controller
 
         return redirect("/students/$id")
             ->with('success', 'Bio has been updated!');
+    }
+
+    private static function updateBehance($id, Request $request)
+    {
+        $validation = Validator::make($request->all(), [
+            'behance' => 'required|string',
+        ]);
+
+        if ($validation->fails()) {
+            return redirect("/students/$id?edit=behance")
+                ->withErrors($validation);
+        }
+
+        $student = \App\Student::where('id', $id)->first();
+
+        $student->behance = $request->input('behance');
+
+        $student->save();
+
+        return redirect("/students/$id")
+            ->with('success', 'Behance portfolio URL has been updated!');
     }
 
     private static function updateDetails($id, Request $request)
