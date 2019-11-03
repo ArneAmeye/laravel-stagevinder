@@ -21,8 +21,8 @@
 				</h5>	
 			</div>
 			<form method="post" action="{{ route('internship.update', $id) }}">
-					{{ csrf_field() }}
-					{{ method_field('patch') }}
+				{{ csrf_field() }}
+				{{ method_field('patch') }}
 				<div class="card__body card__body--padding clearfix">
 						<table class="card__table">
 							<tr class="card__table__row">

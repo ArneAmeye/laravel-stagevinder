@@ -88,4 +88,12 @@ class InternshipController extends Controller
             return redirect("/internships/$id")->with('success', 'Internship details have been updated!');
         }
     }
+
+    public function delete($id){
+        $internship = \App\Internship::where('id', $id)->first();
+        $company_id = $internship->company_id;
+        $internship->delete();
+        
+        return redirect("/companies/$company_id?internship=list")->with('success', 'Internship successfully deleted!');
+    }
 }
