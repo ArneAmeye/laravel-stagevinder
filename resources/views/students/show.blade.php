@@ -170,6 +170,44 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="card__container">
+			<div class="card__inner">
+				<div class="card__header">
+					<h5 class="card__title">
+						Dribbble portfolio
+					</h5>
+					@if($current == $student->user_id)
+						@if (empty($edit) || $edit != "dribbble")
+							<a href="?edit=dribbble" class="button button--right">
+								<i class="fas fa-edit" aria-hidden="true"></i>
+							</a>
+						@else
+							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
+								<i class="fas fa-times" aria-hidden="true"></i>
+							</a>
+						@endif
+					@endif
+				</div>
+				<div class="card__body">
+					@if (empty($edit) || $edit != "dribbble")
+						<p class="card__text">
+							*TODO* show Dribbble portfolio items here.
+						</p>
+					@else
+						@component('components/edit_dribbble')
+							@slot('dribbbleUsername')
+								{{ $student->dribbble }}
+							@endslot
+							@slot('id')
+								{{ $student->id }}
+							@endslot
+						@endcomponent
+					@endif
+				</div>
+			</div>
+		</section>
+
 	</div>
 @endsection
 

@@ -72,6 +72,10 @@ class StudentController extends Controller
             return $this->updateBio($id, $request);
         }
 
+        if ($request->has('update_dribbble')){
+            return $this->updateDribbble($id, $request);
+        }
+
         return redirect("/students/$id")
                 ->with('danger', 'Invalid request! Try again.');
     }
@@ -95,6 +99,28 @@ class StudentController extends Controller
 
         return redirect("/students/$id")
             ->with('success', 'Bio has been updated!');
+    }
+
+    private static function updateDribbble($id, Request $request)
+    {
+        $validation = Validator::make($request->all(), [
+            'dribbble' => 'required|string',
+        ]);
+
+        if ($validation->fails()) {
+            return redirect("/students/$id?edit=dribbble")
+                ->withErrors($validation);
+        }
+        
+        $student = \App\Student::where('id', $id)->first();
+
+        $student->dribbble = $request->input('dribbble');
+        $student->save(); //Saving dribbble username, the authorization callback will need it!
+
+        //Authorize user
+        $dribble_client_id = env('DRIBBBLE_CLIENT_ID');
+        redirect('https://dribbble.com/oauth/authorize?client_id=' . $dribble_client_id);
+
     }
 
     private static function updateDetails($id, Request $request)

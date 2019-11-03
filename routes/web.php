@@ -49,3 +49,7 @@ Route::patch('/upload', ['as' => 'upload.one', 'uses' => 'UploadController@updat
 //Socialite (Facebook) routes
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
+
+//Dribbble portfolio routes
+Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');
+Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');

@@ -30,7 +30,10 @@ class CreateStudentsTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('field_study')->nullable();
             $table->string('school')->nullable();
-            $table->string('bio', 255)->nullable();
+            $table->string('bio')->nullable();
+            $table->string('dribbble')->nullable();
+            $table->string('dribbble_access_token')->nullable();
+            $table->string('dribbble_api_result')->nullable();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->rememberToken();
             $table->timestamps();

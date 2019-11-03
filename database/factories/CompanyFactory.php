@@ -22,7 +22,7 @@ $factory->define(\App\Company::class, function (Faker $faker) {
         'profile_picture' => "default.png",
         'background_picture' => "default.jpg",
         'linkedIn' => $faker->url,
-        'bio' => $faker->text(150),
+        'bio' => $faker->text(191),
         'user_id' => $company_id++,
         //'remember_token'
         //'remember_at'
