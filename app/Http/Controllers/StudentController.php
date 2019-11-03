@@ -116,10 +116,15 @@ class StudentController extends Controller
 
         $student->behance = $request->input('behance');
 
+        //Make the first API call and save the portfolio items (JSON response)
+        $student->behance_api_result = \App\Behance::getBehancePortfolio($request->input('behance'));
+        //Check if API call returns data, if not show error.
+        // ** TODO: redirect("/students/$id?edit=behance")->withErrors
+
         $student->save();
 
         return redirect("/students/$id")
-            ->with('success', 'Behance portfolio URL has been updated!');
+            ->with('success', 'Behance portfolio has been updated!');
     }
 
     private static function updateDetails($id, Request $request)
