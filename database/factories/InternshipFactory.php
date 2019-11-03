@@ -7,8 +7,8 @@ $factory->define(\App\Internship::class, function (Faker $faker) {
     return [
         'title' => $faker->jobTitle,
         'company_id' => 1,
-        'description' => $faker->realText(200),
-        'requirements' => $faker->realText(200),
+        'description' => $faker->realText(191),
+        'requirements' => $faker->realText(191),
         'field_sector' => $faker->jobTitle,
         'background_picture' => "default.jpg",
         'is_available' => 1,

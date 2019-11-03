@@ -21,7 +21,7 @@ $factory->define(\App\Student::class, function (Faker $faker) {
         'linkedIn' => $faker->url,
         'skype' => $faker->url,
         'website' => $faker->url,
-        'bio' => $faker->realText(200),
+        'bio' => $faker->realText(191),
         'user_id' => $student_id++,
         //'remember_token'
         //'remember_at'
