@@ -72,8 +72,8 @@ class StudentController extends Controller
             return $this->updateBio($id, $request);
         }
 
-        if ($request->has('update_behance')){
-            return $this->updateBehance($id, $request);
+        if ($request->has('update_dribbble')){
+            return $this->updateDribbble($id, $request);
         }
 
         return redirect("/students/$id")
@@ -101,30 +101,26 @@ class StudentController extends Controller
             ->with('success', 'Bio has been updated!');
     }
 
-    private static function updateBehance($id, Request $request)
+    private static function updateDribbble($id, Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'behance' => 'required|string',
+            'dribbble' => 'required|string',
         ]);
 
         if ($validation->fails()) {
-            return redirect("/students/$id?edit=behance")
+            return redirect("/students/$id?edit=dribbble")
                 ->withErrors($validation);
         }
-
+        
         $student = \App\Student::where('id', $id)->first();
 
-        $student->behance = $request->input('behance');
+        $student->dribbble = $request->input('dribbble');
+        $student->save(); //Saving dribbble username, the authorization callback will need it!
 
-        //Make the first API call and save the portfolio items (JSON response)
-        $student->behance_api_result = \App\BehanceApi::getBehancePortfolio($request->input('behance'));
-        //Check if API call returns data, if not show error.
-        // ** TODO: redirect("/students/$id?edit=behance")->withErrors
+        //Authorize user
+        $dribble_client_id = env('DRIBBBLE_CLIENT_ID');
+        redirect('https://dribbble.com/oauth/authorize?client_id=' . $dribble_client_id);
 
-        $student->save();
-
-        return redirect("/students/$id")
-            ->with('success', 'Behance portfolio has been updated!');
     }
 
     private static function updateDetails($id, Request $request)
