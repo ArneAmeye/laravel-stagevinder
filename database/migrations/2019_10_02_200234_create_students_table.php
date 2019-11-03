@@ -31,6 +31,8 @@ class CreateStudentsTable extends Migration
             $table->string('field_study')->nullable();
             $table->string('school')->nullable();
             $table->string('bio')->nullable();
+            $table->string('behance')->nullable();
+            $table->string('behance_api_result')->nullable();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->rememberToken();
             $table->timestamps();
