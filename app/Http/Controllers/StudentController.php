@@ -119,7 +119,7 @@ class StudentController extends Controller
 
         //Authorize user
         $dribble_client_id = env('DRIBBBLE_CLIENT_ID');
-        redirect('https://dribbble.com/oauth/authorize?client_id=' . $dribble_client_id);
+        return redirect('https://dribbble.com/oauth/authorize?client_id=' . $dribble_client_id);
 
     }
 

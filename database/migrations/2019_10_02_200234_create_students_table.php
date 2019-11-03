@@ -33,7 +33,7 @@ class CreateStudentsTable extends Migration
             $table->string('bio')->nullable();
             $table->string('dribbble')->nullable();
             $table->string('dribbble_access_token')->nullable();
-            $table->string('dribbble_api_result')->nullable();
+            $table->json('dribbble_api_result')->nullable();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->rememberToken();
             $table->timestamps();
