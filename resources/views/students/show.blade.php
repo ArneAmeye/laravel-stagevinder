@@ -170,6 +170,44 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="card__container">
+			<div class="card__inner">
+				<div class="card__header">
+					<h5 class="card__title">
+						Behance portfolio
+					</h5>
+					@if($current == $student->user_id)
+						@if (empty($edit) || $edit != "behance")
+							<a href="?edit=behance" class="button button--right">
+								<i class="fas fa-edit" aria-hidden="true"></i>
+							</a>
+						@else
+							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
+								<i class="fas fa-times" aria-hidden="true"></i>
+							</a>
+						@endif
+					@endif
+				</div>
+				<div class="card__body">
+					@if (empty($edit) || $edit != "behance")
+						<p class="card__text">
+							*TODO* show Behance portfolio items here.
+						</p>
+					@else
+						@component('components/edit_behance')
+							@slot('behanceUrl')
+								{{ $student->behance }}
+							@endslot
+							@slot('id')
+								{{ $student->id }}
+							@endslot
+						@endcomponent
+					@endif
+				</div>
+			</div>
+		</section>
+
 	</div>
 @endsection
 
