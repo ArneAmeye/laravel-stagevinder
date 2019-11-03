@@ -74,6 +74,7 @@ That's it, you should now be able to use the external tool (see previous title) 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added Thomas More user and company for API testing to tables 'companies' and 'students' on 17/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added new seeder for standerd background/profile picture on 21/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to 'table 'internships' on 24/10/2019` <br/>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added Dribble columns to 'table 'students' on 04/11/2019` <br/>
 Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
