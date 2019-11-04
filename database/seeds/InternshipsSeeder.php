@@ -9,6 +9,28 @@ class InternshipsSeeder extends Seeder
      */
     public function run()
     {
+        $internship1 = new \App\Internship();
+        $internship1->id = '1';
+        $internship1->name = 'UX/UI designer';
+        $internship1->company_id = '2';
+        $internship1->description = '';
+        /*$internship1->requirements = 'Adobe Illustrator, Adobe Experience Design, Adobe Photoshop';*/
+        $internship1->sector = 'Design';
+        $internship1->background_picture = 'default.jpg';
+        $internship1->is_available = '1';
+        $internship1->save();
+
+        $internship2 = new \App\Internship();
+        $internship2->id = '2';
+        $internship2->name = 'Drupal developer';
+        $internship2->company_id = '2';
+        $internship2->description = 'Ben je op zoek naar een uitdagende stage waar je klant en merk in naadloze ervaring kan samenbrengen? Je weet dat een doordachte UX de BX kan versterken? Dan is Intracto het ideale stagebedrijf voor jou.';
+        /*$internship2->requirements = 'PHP, twig';*/
+        $internship2->sector = 'Drupal development';
+        $internship2->background_picture = 'default.jpg';
+        $internship2->is_available = '1';
+        $internship2->save();
+
         factory(\App\Internship::class, 5)->create();
     }
 }
