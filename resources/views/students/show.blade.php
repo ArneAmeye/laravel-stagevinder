@@ -196,9 +196,6 @@
 						</p>
 					@else
 						@component('components/edit_dribbble')
-							@slot('dribbbleUsername')
-								{{ $student->dribbble }}
-							@endslot
 							@slot('id')
 								{{ $student->id }}
 							@endslot

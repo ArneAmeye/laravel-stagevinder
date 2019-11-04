@@ -103,21 +103,7 @@ class StudentController extends Controller
 
     private static function updateDribbble($id, Request $request)
     {
-        $validation = Validator::make($request->all(), [
-            'dribbble' => 'required|string',
-        ]);
-
-        if ($validation->fails()) {
-            return redirect("/students/$id?edit=dribbble")
-                ->withErrors($validation);
-        }
-        
-        $student = \App\Student::where('id', $id)->first();
-
-        $student->dribbble = $request->input('dribbble');
-        $student->save(); //Saving dribbble username, the authorization callback will need it!
-
-        //Authorize user
+        //Authorize user, callback URL will be called after that, which then redirects to the DribbbleApiController.
         $dribble_client_id = env('DRIBBBLE_CLIENT_ID');
         return redirect('https://dribbble.com/oauth/authorize?client_id=' . $dribble_client_id);
 
