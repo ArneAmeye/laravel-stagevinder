@@ -82,14 +82,4 @@ class SearchController extends Controller
     public function destroy($id)
     {
     }
-
-    public function search(Request $request)
-    {
-        $searchResults = (new Search())
-            ->registerModel(Company::class, 'name')
-            //->registerModel(Category::class, 'name')
-            ->perform($request->input('query'));
-
-        return view('welcome', compact('searchResults'));
-    }
 }

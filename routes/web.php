@@ -47,4 +47,3 @@ Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
 
 Route::get('/welcome', 'SearchController@index');
-Route::get('/search', 'SearchController@search');
