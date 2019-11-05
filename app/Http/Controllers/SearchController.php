@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Internship;
+
+/*
+use App\Students;
+use App\Company;
+use App\ReviewInternship;
+use App\ReviewCompany;
+*/
 
 class SearchController extends Controller
 {
@@ -13,7 +21,7 @@ class SearchController extends Controller
      */
     public function index()
     {
-        $data['internships'] = \App\Internship::get();
+        $data['internships'] = Internship::get();
 
         return view('welcome', $data);
     }
