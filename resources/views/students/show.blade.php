@@ -191,9 +191,23 @@
 				</div>
 				<div class="card__body">
 					@if (empty($edit) || $edit != "dribbble")
-						<p class="card__text">
-							*TODO* show Dribbble portfolio items here.
-						</p>
+						@if (empty($student->dribbble))
+							<p class="">Edit me and sync with your Dribbble portfolio!</p>
+						@else
+							<div class="dribbble__container">
+							@forelse ($student->dribbble_api_result as $item)
+							
+								<a class="dribbble__item" href="{{ $item->html_url }}" target="_blank">
+									<p class="dribbble__item__title">{{ $item->title }}</p>
+									<img class="dribbble__item__img" src="{{ $item->images->teaser }}" alt="dribbble shot teaser image">
+								</a>
+								
+							@empty
+								<p>Empty Dribble portfolio 😞. Try uploading your work to Dribbble!</p>
+							@endforelse
+							</div>
+						@endif
+						
 					@else
 						@component('components/edit_dribbble')
 							@slot('id')
