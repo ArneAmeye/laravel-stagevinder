@@ -25,8 +25,8 @@ class SearchController extends Controller
             /*$applications;*/
 
             $results = [
-                'users' => '${users}',
-                'internships' => '${internships}',
+                'users' => '{$users}',
+                'internships' => '{$internships}',
                 /*"applications" => ...*/
             ];
 
