@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 use Session;
+use App\User;
 
 class UserController extends Controller
 {
@@ -19,7 +20,7 @@ class UserController extends Controller
 
     public function handleRegister(Request $request)
     {
-        $user = new \App\User();
+        $user = new User();
 
         $validation = Validator::make($request->all(), [
             'firstname' => 'required|string',
@@ -27,7 +28,7 @@ class UserController extends Controller
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email,'.$user->id,
             'verificateEmail' => 'required|email|same:email',
-            'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*#?&]/'
+            'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*#?&]/',
         ]);
 
         if ($validation->fails()) {
@@ -47,8 +48,7 @@ class UserController extends Controller
         //Checkbox
         $ifStudent = $request->has('isStudent');
 
-        if ($ifStudent) 
-        {
+        if ($ifStudent) {
             /*
                 return student that is registered
                 and make a session based on student
@@ -59,8 +59,7 @@ class UserController extends Controller
             $this->handleLogin($request);
         }
 
-        if (!$ifStudent) 
-        {
+        if (!$ifStudent) {
             //If not checked, it is a company.
             $company = CompanyController::handleRegister($request, $lastInsertedId);
             //Session::put('user', $company);
@@ -80,7 +79,7 @@ class UserController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'email' => 'required|email',
-            'password' => 'required|string'
+            'password' => 'required|string',
         ]);
 
         if ($validation->fails()) {
@@ -90,27 +89,24 @@ class UserController extends Controller
 
         $creadentials = $request->only(['email', 'password']);
 
-        if (\Auth::attempt($creadentials)) 
-        {
+        if (\Auth::attempt($creadentials)) {
             $user = auth()->user();
 
-            $data['student'] = \App\User::find($user->id)->where('id', $user->id)->first()->student;
-            $data['company'] = \App\User::find($user->id)->where('id', $user->id)->first()->company;
+            $data['student'] = User::find($user->id)->where('id', $user->id)->first()->student;
+            $data['company'] = User::find($user->id)->where('id', $user->id)->first()->company;
 
-            if ($data['student'] != null) 
-            {
+            if ($data['student'] != null) {
                 $name = StudentController::handleLogin($request, $data);
             }
 
-            if ($data['company'] != null) 
-            {
+            if ($data['company'] != null) {
                 $name = CompanyController::handleLogin($request, $data);
             }
 
             return redirect()->route('index')->with('name', $name);
         }
-        
-        return redirect()->route('login')->withErrors("Your email or password was incorrect!");
+
+        return redirect()->route('login')->withErrors('Your email or password was incorrect!');
     }
 
     public function logout()
