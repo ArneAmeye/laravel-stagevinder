@@ -12,5 +12,6 @@
     "/css/pages/register.css": "/css/pages/register.css",
     "/css/pages/privacy.css": "/css/pages/privacy.css",
     "/css/pages/welcome.css": "/css/pages/welcome.css",
+    "/js/search.js": "/js/search.js",
     "/js/upload.js": "/js/upload.js"
 }

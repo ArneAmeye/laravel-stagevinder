@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
 use Auth;
 use Session;
 
@@ -16,14 +15,15 @@ class StudentController extends Controller
         $student->user_id = $lastInsertedId;
         $student->firstname = $request->input('firstname');
         $student->lastname = $request->input('lastname');
-        $student->profile_picture = "default.png";
-        $student->background_picture = "default.jpg";
+        $student->profile_picture = 'default.png';
+        $student->background_picture = 'default.jpg';
         $student->save();
 
         return $student;
     }
 
-    public static function handleLogin(Request $request, $data) {
+    public static function handleLogin(Request $request, $data)
+    {
         $data['student']['type'] = 'student';
         Session::put('user', $data['student']);
         $name = $data['student']->firstname.' '.$data['student']->lastname;
@@ -45,7 +45,7 @@ class StudentController extends Controller
         $data['current'] = auth()->user()->id;
 
         if (!empty($_GET['edit'])) {
-            $id = session()->get("user")->id;
+            $id = session()->get('user')->id;
             if ($id != $student) {
                 return redirect("/students/$student");
             }
@@ -59,7 +59,7 @@ class StudentController extends Controller
 
     public function update($id, Request $request)
     {
-        $user = session()->get("user");
+        $user = session()->get('user');
         if ($user->id != $id) {
             return redirect("/students/$id");
         }

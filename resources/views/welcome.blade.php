@@ -6,19 +6,20 @@
 @section('stylesheet')
 	{{ asset('css/pages/welcome.css') }}
 @endsection
+@section('script')
+	{{ asset('js/search.js') }}
+@endsection
 @section('content')
 	@component('components/search')
 	@endcomponent
     <div class="preview__container">
         <section class="preview__container">
-            @if(isset($internships))
-                @component('components/show_internships', ['internships' => $internships])
-                @endcomponent
-            @endif
+            @component('components/preview')
+            @endcomponent
             <!--@if(!isset($search))
                 @component('components/search')
                 @endcomponent
-            @endif-->  
+            @endif-->
 		    </div>
 		</section>
     </div>

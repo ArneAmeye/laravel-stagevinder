@@ -24,13 +24,19 @@ class SearchController extends Controller
             $internships = Internship::search($request->get('q'))->get();
             /*$applications;*/
 
-            $results = [
+            /*$results = [
                 'users' => '{$users}',
                 'internships' => '{$internships}',
                 /*"applications" => ...*/
-            ];
 
-            return sizeof($results, 1) ? $results : $error;
+            $arr = array();
+            $arrUsers = ['users' => '{$users}'];
+            $arr = array_push($arrUsers);
+            //$resultsUsers = $results['users'];
+            //array($resultsUsers, $users);
+
+            return dd($arr);
+            //return sizeof($results, 1) ? $results : $error;
         }
 
         return $error;
