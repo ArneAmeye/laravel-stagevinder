@@ -373,3 +373,14 @@ add following lines to the section VirtualHost:<br/>
 Check if it works :D<br/>
 
 Done! Feel free to ask questions, might have missed some stuff 🙃 
+
+## Envoy
+Commands
+`cd /home/...`<br/>
+`php artisan down`<br/>
+`git reset --hard HEAD`<br/>
+`git pull origin master`<br/>
+`php composer.phar install`<br/>
+`php composer.phar dump-autoload`<br/>
+`php artisan migrate --force`<br/>
+`php artisan up`<br/>
