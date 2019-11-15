@@ -30,7 +30,7 @@ Route::patch('/students/{student}', ['as' => 'student.update', 'uses' => 'Studen
 Route::get('/students/{student}', 'StudentController@show');
 
 Route::get('/companies', 'CompanyController@index');
-Route::post('/getcompanydetails', 'AjaxController@getCompanyDetails');
+Route::post('/getcompanydetails', 'FoursquareApiController@getCompanyDetails');
 Route::get('/companies/add', 'CompanyController@getCompanyData'); //Route for a page where a company can be added via API lookup
 Route::patch('/companies/{company}',  ['as' => 'company.update', 'uses' => 'CompanyController@update']);
 Route::get('/companies/{company}', 'CompanyController@show');
