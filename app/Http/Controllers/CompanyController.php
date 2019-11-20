@@ -54,6 +54,15 @@ class CompanyController extends Controller
             $data['edit'] = '';
         }
 
+        if( !empty($_GET['internship'])){
+            $data["internship"] = $_GET['internship'];
+            if($data['internship'] == "list"){
+                $data["internships"] = \App\Internship::where('company_id', $company)->get();
+            }
+        }else{
+            $data['internship'] = '';
+        }
+
         return view('companies/show', $data);
     }
 

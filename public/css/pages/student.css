@@ -125,6 +125,7 @@
   margin-bottom: 5px;
   box-shadow: none;
   border: none;
+  text-align: center;
 }
 
 .button--big {
@@ -200,6 +201,11 @@
   margin-bottom: 30px;
 }
 
+.card__container--menu {
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
 .card__inner {
   border-radius: 5px;
   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
@@ -233,6 +239,14 @@
 .card__body {
   padding: 1.25rem;
   padding-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__body--transparent {
+  background-image: url("../../images/transparent.png");
+  padding: 1.25rem;
+  margin: 1.25rem;
 }
 
 .card__text {
@@ -275,6 +289,45 @@
   width: 40%;
 }
 
+.card__menu__items {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__menu__item {
+  width: 100%;
+  text-align: center;
+  margin-bottom: -1px;
+}
+
+.card__menu__link {
+  font-size: 14px;
+  color: #303548;
+  padding: 20px 0;
+  display: block;
+  transition: all 0.3s ease-in;
+}
+
+.card__menu__link--current {
+  border-bottom: 4px solid #4680ff;
+}
+
+.card__menu__link:hover {
+  color: #4680ff;
+}
+
+@media (min-width: 573px) {
+  .card__menu__item {
+    width: calc(100% / 4);
+  }
+}
+@media (min-width: 768px) {
+  .card__menu__link {
+    font-size: 16px;
+  }
+}
 @media (min-width: 1200px) {
   .card__info {
     flex: 0 0 50%;
@@ -356,4 +409,45 @@
   outline: 0;
 }
 
+.dribbble__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.dribbble__item {
+  width: calc(50% - 2em);
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dribbble__item:hover .dribbble__item__title {
+  color: #fff;
+  z-index: 2;
+}
+
+.dribbble__item:hover .dribbble__item__img {
+  -webkit-filter: brightness(50%) saturate(120%);
+          filter: brightness(50%) saturate(120%);
+}
+
+.dribbble__item__title {
+  font-weight: 600;
+  position: absolute;
+  color: transparent;
+  text-align: center;
+}
+
+.dribbble__item__img {
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .dribbble__item {
+    width: calc(20% - 2em);
+  }
+}
 /*KEYFRAMES*/

@@ -72,6 +72,10 @@ class StudentController extends Controller
             return $this->updateBio($id, $request);
         }
 
+        if ($request->has('update_dribbble')){
+            return $this->updateDribbble($id, $request);
+        }
+
         return redirect("/students/$id")
                 ->with('danger', 'Invalid request! Try again.');
     }
@@ -95,6 +99,14 @@ class StudentController extends Controller
 
         return redirect("/students/$id")
             ->with('success', 'Bio has been updated!');
+    }
+
+    private static function updateDribbble($id, Request $request)
+    {
+        //Authorize user, callback URL will be called after that, which then redirects to the DribbbleApiController.
+        $dribble_client_id = env('DRIBBBLE_CLIENT_ID');
+        return redirect('https://dribbble.com/oauth/authorize?client_id=' . $dribble_client_id);
+
     }
 
     private static function updateDetails($id, Request $request)

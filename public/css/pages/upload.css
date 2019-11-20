@@ -1,10 +1,22 @@
 /*VARIABLES*/
 /*COMPONENTS CSS*/
+#preview__card {
+  display: none;
+}
+
+.upload__container {
+  position: relative;
+}
+
 .upload {
+  opacity: 0;
   position: absolute;
-  left: -9999px;
-  top: -9999px;
-  z-index: -9999;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .upload__visual {
@@ -17,7 +29,12 @@
   border: 2px dashed #c8cbce;
   text-align: center;
   cursor: pointer;
-  transition: box-shadow 0.3s, border-color 0.3s;
+  transition: border-color 0.3s ease;
+}
+
+.upload:hover ~ .upload__visual,
+.upload__visual--active {
+  border-color: #4680ff;
 }
 
 .upload__visual__icon {
@@ -35,6 +52,29 @@
   margin: 15px 0;
   font-size: 12px;
   display: block;
+}
+
+.card__table__data {
+  width: 50%;
+}
+
+.card__body__preview {
+  height: 350px;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.card__body__preview--transparent {
+  background-size: cover;
+  background-image: url("../../images/transparent.png");
+  background-repeat: repeat;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .button__center {
@@ -62,6 +102,7 @@
   margin-bottom: 5px;
   box-shadow: none;
   border: none;
+  text-align: center;
 }
 
 .button--big {
@@ -137,6 +178,11 @@
   margin-bottom: 30px;
 }
 
+.card__container--menu {
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
 .card__inner {
   border-radius: 5px;
   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
@@ -170,6 +216,14 @@
 .card__body {
   padding: 1.25rem;
   padding-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__body--transparent {
+  background-image: url("../../images/transparent.png");
+  padding: 1.25rem;
+  margin: 1.25rem;
 }
 
 .card__text {
@@ -212,6 +266,45 @@
   width: 40%;
 }
 
+.card__menu__items {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__menu__item {
+  width: 100%;
+  text-align: center;
+  margin-bottom: -1px;
+}
+
+.card__menu__link {
+  font-size: 14px;
+  color: #303548;
+  padding: 20px 0;
+  display: block;
+  transition: all 0.3s ease-in;
+}
+
+.card__menu__link--current {
+  border-bottom: 4px solid #4680ff;
+}
+
+.card__menu__link:hover {
+  color: #4680ff;
+}
+
+@media (min-width: 573px) {
+  .card__menu__item {
+    width: calc(100% / 4);
+  }
+}
+@media (min-width: 768px) {
+  .card__menu__link {
+    font-size: 16px;
+  }
+}
 @media (min-width: 1200px) {
   .card__info {
     flex: 0 0 50%;

@@ -1,7 +1,7 @@
 @extends("layouts/app")
 	
 @section('title')
-    {{ $internship->name }}
+    {{ $internship->title }}
 @endsection
 @section('stylesheet')
 	{{ asset('css/pages/internship.css') }}
@@ -9,32 +9,89 @@
 @section('content')
 	@component('components/breadcrumb')
 		@slot('title')
-			{{$internship->name}}
+			{{$internship->title}}
 		@endslot
 		@slot('icon')
 			fa-building
 		@endslot
+		@slot('sector')
+			{{$internship->field_sector}}
+		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
 				<a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
-                    {{$internship->name}}
+                    {{$internship->title}}
 				</a>
 			</li>
 		@endslot
     @endcomponent
     <div class="page__container">
+			<section class="user__container">
+					<div class="user__inner user__inner--padding">
+						<div class="user__inner__image" style="background-image: url({{ asset('images/internships/background_picture/'.$internship->background_picture) }});">
+							@if($current == $company->user_id)
+								@if(empty($edit) || $edit != "details")
+									<a href="?edit=details" class="button button--right">
+										<i class="fas fa-edit" aria-hidden="true"></i>
+									</a>
+								@else
+									<a href="{{ url('internships/') }}/{{ $internship->id }}" class="button button--right">
+										<i class="fas fa-times" aria-hidden="true"></i>
+									</a>
+								@endif
+							@endif
+						</div>
+						<div class="user__info">
+							<div class="user__inner clearfix">
+								<div class="user__profile">
+								<a href="/companies/{{$company->id}}">
+										<div class="user__profile__image" style="background-image: url({{ asset('images/companies/profile_picture/'.$company->profile_picture) }});">
+											
+										</div>
+									</a>
+								</div>
+								<div class="user__inner user__inner--inline">
+									<div class="user__details">
+										<h2 class="user__name">
+											{{ $company->name }}
+										</h2>
+										<span class="user__function">
+											{{ $company->field_ssector }}
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
 		<section class="internship__container">
-			<div class="internship__inner internship__inner--padding">
-			<div class="internship__inner__image" style="background-image: url({{$internship->background_picture}})"></div>
-
-
-			</div>
-		</section>
-        
+		@if(empty($edit) || $edit != "details")
+			@component('components/details_internship')
+		@else
+			@component('components/edit_details_internship')
+		@endif
+				@slot("title")
+					{{$internship->title}}
+				@endslot
+				@slot("sector")
+					{{$internship->field_sector}}
+				@endslot
+				@slot("description")
+					{{$internship->description}}
+				@endslot
+				@slot("requirements")
+					{{$internship->requirements}}
+				@endslot
+				@slot('id')
+					{{$internship->id}}
+				@endslot
+			@endcomponent
+		</section> 
     </div>
 @endsection
 @section('script')
-    {{ asset ('js/ajax.js') }}
+    <script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
 @endsection
 
 @if (\Session::has('success'))

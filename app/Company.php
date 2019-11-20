@@ -44,4 +44,8 @@ class Company extends User implements Authenticatable
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function internships(){
+        return $this->hasMany(Internship::class);
+    }
 }

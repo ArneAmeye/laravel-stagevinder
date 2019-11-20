@@ -15,10 +15,11 @@ class CreateInternshipsTable extends Migration
     {
         Schema::create('internships', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('title');
             $table->string('company_id');
-            $table->string('description');
-            $table->string('sector');
+            $table->string('description', 255);
+            $table->string('requirements', 255);
+            $table->string('field_sector');
             $table->string('background_picture');
             $table->boolean('is_available');
             $table->rememberToken();

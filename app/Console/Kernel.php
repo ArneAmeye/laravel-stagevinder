@@ -24,8 +24,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        //Call Behance API daily
+        $schedule->call(function () {
+            //Logic goes here
+            //1. For each student profile
+            //2. Do the API request
+            //3. Save the response to the DB for that user? as a serialized string? so we can deserialize on the user page?
+        })->daily();
     }
 
     /**

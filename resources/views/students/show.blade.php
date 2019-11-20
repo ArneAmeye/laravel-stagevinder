@@ -1,7 +1,7 @@
 @extends("layouts/app")
 	
 @section('title')
-    {{ $student->firstname }} {{ $student->lasrname }}
+    {{ $student->firstname }} {{ $student->lastname }}
 @endsection
 @section('stylesheet')
 	{{ asset('css/pages/student.css') }}
@@ -9,10 +9,13 @@
 @section('content')
 	@component('components/breadcrumb')
 		@slot('title')
-			User Profile
+			{{ $student->firstname }} {{ $student->lastname }}
 		@endslot
 		@slot('icon')
 			fa-graduation-cap
+		@endslot
+		@slot('sector')
+			{{$student->field_study}}
 		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
@@ -167,6 +170,55 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="card__container">
+			<div class="card__inner">
+				<div class="card__header">
+					<h5 class="card__title">
+						Dribbble portfolio
+					</h5>
+					@if($current == $student->user_id)
+						@if (empty($edit) || $edit != "dribbble")
+							<a href="?edit=dribbble" class="button button--right">
+								<i class="fas fa-edit" aria-hidden="true"></i>
+							</a>
+						@else
+							<a href="{{ url('students/') }}/{{ $student->id }}" class="button button--right">
+								<i class="fas fa-times" aria-hidden="true"></i>
+							</a>
+						@endif
+					@endif
+				</div>
+				<div class="card__body">
+					@if (empty($edit) || $edit != "dribbble")
+						@if (empty($student->dribbble))
+							<p class="">Edit me and sync with your Dribbble portfolio!</p>
+						@else
+							<div class="dribbble__container">
+							@forelse ($student->dribbble_api_result as $item)
+							
+								<a class="dribbble__item" href="{{ $item->html_url }}" target="_blank">
+									<p class="dribbble__item__title">{{ $item->title }}</p>
+									<img class="dribbble__item__img" src="{{ $item->images->teaser }}" alt="dribbble shot teaser image">
+								</a>
+								
+							@empty
+								<p>Empty Dribble portfolio 😞. Try uploading your work to Dribbble!</p>
+							@endforelse
+							</div>
+						@endif
+						
+					@else
+						@component('components/edit_dribbble')
+							@slot('id')
+								{{ $student->id }}
+							@endslot
+						@endcomponent
+					@endif
+				</div>
+			</div>
+		</section>
+
 	</div>
 @endsection
 

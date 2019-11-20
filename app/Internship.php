@@ -8,4 +8,8 @@ use Laravel\Scout\Searchable;
 class Internship extends Model
 {
     use Searchable;
+
+    public function company(){
+        return $this->belongsTo(Company::class);
+    }
 }

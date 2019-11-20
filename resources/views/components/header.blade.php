@@ -1,7 +1,7 @@
 @php
 	$headerOfUser = [
 		["name" => "Settings", "href" => "#", "icon" => "fa-cog"],
-		["name" => "Companies", "href" => `@if (Session::get('user')->type == 'student')/students/{{ Session::get('user')->id }}@elseif (Session::get('user')->type == 'company')/companies/{{ Session::get('user')->id }}@endif`, "icon" => "fa-user"],
+		["name" => "Profile", "href" => `@if (Session::get('user')->type == 'student')/students/{{ Session::get('user')->id }}@elseif (Session::get('user')->type == 'company')/companies/{{ Session::get('user')->id }}@endif`, "icon" => "fa-user"],
 		["name" => "My Messages", "href" => "#", "icon" => "fa-envelope"],
 		["name" => "Lock Screen", "href" => "#", "icon" => "fa-lock"],
 		["name" => "Logout", "href" => "/logout", "icon" => "fa-sign-out-alt"]
@@ -44,17 +44,22 @@
 					</a>
 				</li>
 				<li class="header__options__item">
-					<a href="#" class="header__options__link">
-						<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="header__options__profilePic">
-						<p class="header__options__name">
-							@if (Session::get('user')->type == 'student')
-								{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
-							@elseif (Session::get('user')->type == 'company')
-								{{ Session::get('user')->name }}
-							@endif
-						</p>
-						<i class="fas fa-angle-down header__options__more" aria-hidden="true"></i>
-					</a>
+				<a href="#" class="header__options__link">
+					@if (Session::get('user')->type == 'student')
+						<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+					@elseif (Session::get('user')->type == 'company')
+						<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+					@endif
+					<p class="header__options__name">
+						@if (Session::get('user')->type == 'student')
+							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
+						@elseif (Session::get('user')->type == 'company')
+							{{ Session::get('user')->name }}
+						@endif
+					</p>
+					<i class="fas fa-angle-down header__options__more" aria-hidden="true"></i>
+				</a>
+				<li class="header__options__item">
 					<ul class="options__more__items">
 						@foreach($headerOfUser as $item)
 							<li class="options__more__item">

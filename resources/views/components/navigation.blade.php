@@ -15,7 +15,11 @@
 		<div class="navigation__inner">
 			@if(Auth::check())
 			<div class="navigation__header">
-				<img src="http://html.codedthemes.com/guru-able/files/assets/images/avatar-4.jpg" class="navigation__header__image">
+				@if (Session::get('user')->type == 'student')
+					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+				@elseif (Session::get('user')->type == 'company')
+					<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+				@endif
 				<div class="navigation__header__userInfo">
 					<p class="navigation__header__name">
 				        @if (Session::get('user')->type == 'student')
@@ -66,7 +70,7 @@
 			<ul class="navigation__items">
 				@foreach($navigationOfGuest as $nav)
 				<li class="navigation__item">
-					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
+					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">ster
 						<span class="navigation__link__icon">
 							<i class="fas {{$nav['icon']}} navigation__link__icon--center" aria-hidden="true"></i>
 						</span>

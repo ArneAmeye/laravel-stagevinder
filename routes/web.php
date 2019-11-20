@@ -30,13 +30,16 @@ Route::patch('/students/{student}', ['as' => 'student.update', 'uses' => 'Studen
 Route::get('/students/{student}', 'StudentController@show');
 
 Route::get('/companies', 'CompanyController@index');
-Route::post('/getcompanydetails', 'AjaxController@getCompanyDetails');
+Route::post('/getcompanydetails', 'FoursquareApiController@getCompanyDetails');
 Route::get('/companies/add', 'CompanyController@getCompanyData'); //Route for a page where a company can be added via API lookup
 Route::patch('/companies/{company}', ['as' => 'company.update', 'uses' => 'CompanyController@update']);
 Route::get('/companies/{company}', 'CompanyController@show');
 
 Route::get('/internships', 'InternshipController@index');
-Route::get('/internships/{intership}', 'InternshipController@show');
+Route::get('/internships/{internship}', 'InternshipController@show');
+Route::post('/companies/{company}',  ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
+Route::patch('/internships/{internship}', ['as' => 'internship.update', 'uses' => 'InternshipController@update']);
+Route::delete('/companies/{company}', ['as' => 'internship.delete', 'uses' => 'InternshipController@delete']);
 
 Route::get('/upload', 'UploadController@index');
 Route::get('upload', ['as' => 'upload', 'uses' => 'UploadController@index']);
@@ -49,3 +52,7 @@ Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
 //Search
 Route::get('/welcome', 'SearchController@index');
 Route::post('/search', 'SearchController@filter');
+
+//Dribbble portfolio routes
+Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');
+Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');

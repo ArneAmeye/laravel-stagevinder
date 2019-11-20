@@ -27,5 +27,6 @@ class Student extends User implements Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'dribbble_api_result' => 'object',
     ];
 }
