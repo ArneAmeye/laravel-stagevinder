@@ -21,21 +21,22 @@ class SearchController extends Controller
 
         if ($request->has('q')) {
             $users = User::search($request->get('q'))->get();
-            $internships = Internship::search($request->get('q'))->get();
+            //$internships = Internship::search($request->get('q'))->get();
             /*$applications;*/
 
             /*$results = [
                 'users' => '{$users}',
-                'internships' => '{$internships}',
-                /*"applications" => ...*/
+                /*'internships' => '{$internships}',*/
+            /*"applications" => ...*/
+            //];
 
-            $arr = array();
+            /*$arr = array();
             $arrUsers = ['users' => '{$users}'];
             $arr = array_push($arrUsers);
-            //$resultsUsers = $results['users'];
-            //array($resultsUsers, $users);
+            $resultsUsers = $results['users'];
+            array($resultsUsers, $users);*/
 
-            return dd($arr);
+            return $users->count() ? $users : $error;
             //return sizeof($results, 1) ? $results : $error;
         }
 

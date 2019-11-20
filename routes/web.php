@@ -37,7 +37,7 @@ Route::get('/companies/{company}', 'CompanyController@show');
 
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{internship}', 'InternshipController@show');
-Route::post('/companies/{company}',  ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
+Route::post('/companies/{company}', ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
 Route::patch('/internships/{internship}', ['as' => 'internship.update', 'uses' => 'InternshipController@update']);
 Route::delete('/companies/{company}', ['as' => 'internship.delete', 'uses' => 'InternshipController@delete']);
 
@@ -51,7 +51,9 @@ Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
 
 //Search
 Route::get('/welcome', 'SearchController@index');
-Route::post('/search', 'SearchController@filter');
+//Route::post('/search', 'SearchController@filter');
+Route::get('/search', 'Api\SearchController@search');
+//Route::post('/search', 'SearchController@filter');
 
 //Dribbble portfolio routes
 Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');
