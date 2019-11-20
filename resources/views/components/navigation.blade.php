@@ -70,7 +70,7 @@
 			<ul class="navigation__items">
 				@foreach($navigationOfGuest as $nav)
 				<li class="navigation__item">
-					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">ster
+					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
 							<i class="fas {{$nav['icon']}} navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
