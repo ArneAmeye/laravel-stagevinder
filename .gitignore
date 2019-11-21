@@ -13,3 +13,4 @@ yarn-error.log
 .vagrant
 ca.homestead.laravel-app.crt
 ca.homestead.laravel-stagevinder.crt
+Envoy.blade.php
