@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
 use App\Rules\Space;
 use Auth;
 use Session;
@@ -17,14 +15,15 @@ class CompanyController extends Controller
         $company = new \App\Company();
         $company->user_id = $lastInsertedId;
         $company->name = $request->input('name');
-        $company->profile_picture = "default.png";
-        $company->background_picture = "default.jpg";
+        $company->profile_picture = 'default.png';
+        $company->background_picture = 'default.jpg';
         $company->save();
 
         return $company;
     }
 
-    public static function handleLogin(Request $request, $data) {
+    public static function handleLogin(Request $request, $data)
+    {
         $data['company']['type'] = 'company';
         Session::put('user', $data['company']);
         $name = $data['company']->name;
@@ -46,7 +45,7 @@ class CompanyController extends Controller
         $data['current'] = auth()->user()->id;
 
         if (!empty($_GET['edit'])) {
-            $id = session()->get("user")->id;
+            $id = session()->get('user')->id;
             if ($id != $company) {
                 return redirect("/companies/$company");
             }
@@ -69,8 +68,7 @@ class CompanyController extends Controller
 
     public function update($id, Request $request)
     {
-
-        $user = session()->get("user");
+        $user = session()->get('user');
         if ($user->id != $id) {
             return redirect("/companies/$id");
         }
@@ -114,12 +112,12 @@ class CompanyController extends Controller
         $validation = Validator::make($request->all(), [
             'name' => 'required|string',
             'sector' => 'required',
-            'ceo' => ['required', new Space],
+            'ceo' => ['required', new Space()],
             'street' => 'required',
             'city' => 'required',
             'postal' => 'required',
             'email' => 'required|email|unique:users,email,'.$company->user_id,
-            'manager' => ['string', new Space],
+            'manager' => ['string', new Space()],
             'linkedIn' => 'url|nullable',
             'website' => 'url|nullable',
         ]);

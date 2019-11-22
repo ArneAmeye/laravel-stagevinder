@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use App\Internship;
 
-class IndexController extends Controller
+/*
+use App\Students;
+use App\Company;
+use App\ReviewInternship;
+use App\ReviewCompany;
+*/
+
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +21,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('welcome');
-        }
+        $data['internships'] = Internship::get();
 
-        $data['internships'] = \App\Internship::get();
-
-        return View('index', $data);
+        return view('welcome', $data);
     }
 
     /**

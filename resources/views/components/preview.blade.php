@@ -1,0 +1,1 @@
+<result v-for="result in results" v-bind:result="result"></result>
