@@ -59,18 +59,16 @@
 					</p>
 					<i class="fas fa-angle-down header__options__more" aria-hidden="true"></i>
 				</a>
-				<li class="header__options__item">
-					<ul class="options__more__items">
-						@foreach($headerOfUser as $item)
-							<li class="options__more__item">
-								<a href="{{$item['href']}}" class="options__more__link">
-									<i class="fa {{$item['icon']}} options__more__icon" aria-hidden="true"></i>
-									{{$item['name']}}
-								</a>
-							</li>
-						@endforeach
-					</ul>
-				</li>
+				<ul class="options__more__items">
+					@foreach($headerOfUser as $item)
+						<li class="options__more__item">
+							<a href="{{$item['href']}}" class="options__more__link">
+								<i class="fa {{$item['icon']}} options__more__icon" aria-hidden="true"></i>
+								{{$item['name']}}
+							</a>
+						</li>
+					@endforeach
+				</ul>
 			</ul>
 		@endif
 	</div>
