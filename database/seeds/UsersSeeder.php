@@ -34,6 +34,11 @@ class UsersSeeder extends Seeder
         $user5->password = Hash::make('password');
         $user5->save();
 
+        $user6 = new \App\User();
+        $user6->email = 'intracto@stagevinder.be';
+        $user6->password = Hash::make('password');
+        $user6->save();
+
         factory(\App\User::class, 100)->create();
     }
 }
