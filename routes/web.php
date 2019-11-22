@@ -52,7 +52,7 @@ Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
 //Search
 Route::get('/welcome', 'SearchController@index');
 //Route::post('/search', 'SearchController@filter');
-Route::get('/search', 'Api\SearchController@search');
+Route::get('/search', 'SearchController@filter');
 //Route::post('/search', 'SearchController@filter');
 
 //Dribbble portfolio routes

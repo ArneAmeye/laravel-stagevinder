@@ -37,6 +37,7 @@ class SearchController extends Controller
             array($resultsUsers, $users);*/
 
             return $users->count() ? $users : $error;
+            //return view('/search', $users->count() ? $users : $error);
             //return sizeof($results, 1) ? $results : $error;
         }
 
