@@ -32,13 +32,12 @@ Route::get('/students/{student}', 'StudentController@show');
 Route::get('/companies', 'CompanyController@index');
 Route::post('/getcompanydetails', 'FoursquareApiController@getCompanyDetails');
 Route::get('/companies/add', 'CompanyController@getCompanyData'); //Route for a page where a company can be added via API lookup
-Route::patch('/companies/{company}',  ['as' => 'company.update', 'uses' => 'CompanyController@update']);
+Route::patch('/companies/{company}', ['as' => 'company.update', 'uses' => 'CompanyController@update']);
 Route::get('/companies/{company}', 'CompanyController@show');
-
 
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{internship}', 'InternshipController@show');
-Route::post('/companies/{company}',  ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
+Route::post('/companies/{company}', ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
 Route::patch('/internships/{internship}', ['as' => 'internship.update', 'uses' => 'InternshipController@update']);
 Route::delete('/companies/{company}', ['as' => 'internship.delete', 'uses' => 'InternshipController@delete']);
 
@@ -49,6 +48,12 @@ Route::patch('/upload', ['as' => 'upload.one', 'uses' => 'UploadController@updat
 //Socialite (Facebook) routes
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
+
+//Search
+Route::get('/welcome', 'SearchController@index');
+//Route::post('/search', 'SearchController@filter');
+Route::get('/search', 'SearchController@filter');
+//Route::post('/search', 'SearchController@filter');
 
 //Dribbble portfolio routes
 Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');

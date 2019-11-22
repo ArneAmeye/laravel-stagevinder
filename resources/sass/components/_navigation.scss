@@ -95,6 +95,8 @@
     top: calc(50% + 7px);
     transform: translateY(-50%);
     color: $navigationIcon;
+    background-color: transparent;
+    border: transparent;
 }
 
 .navigation__title {

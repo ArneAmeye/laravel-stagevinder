@@ -81,63 +81,61 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/upload.js":
-/*!********************************!*\
-  !*** ./resources/js/upload.js ***!
-  \********************************/
+/***/ "./resources/js/vue/search.js":
+/*!************************************!*\
+  !*** ./resources/js/vue/search.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).ready(function () {
-  /* ADD BUTTON WHEN UPLOAD CONTAINS FILE */
-  $("#input__upload").change(function () {
-    if ($(this).val()) {
-      readURL(this);
-      $("#button_upload").fadeIn(300);
-    } else {
-      $("#button_upload").fadeOut(300);
-      $("#preview__card").fadeOut(650);
-    }
-  });
-  /* SHOW PREVIEW OF THE IMAGE */
+Vue.component("get", {
+  template: "<a href=\"#\">\n\t\t<div class=\"preview__inner\">\n\t\t\t<img class=\"preview__image\" src=\"@{{profile_picture}}\">\n\t\t\t<div class=\"preview__text\">\n\t\t\t\t<p class=\"preview__text--internship\">\n\t\t\t\t\t@{{firstname}} @{{lastname}}\n\t\t\t\t</p>\n\t\t\t\t<p class=\"preview__text--position\">\n\t\t\t\t\t@{{bio}}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n    </a>",
+  props: ["result"]
+});
+var app = new Vue({
+  el: "body",
+  data: {
+    results: [],
+    query: "irene"
+  },
+  mounted: function mounted() {
+    this.search();
+  },
+  methods: {
+    search: function search() {
+      var that = this; // Clear the error message.
 
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
+      this.error = ""; // Empty the products array so we can fill it with the new products.
 
-      reader.onload = function (e) {
-        $("#preview").css("background-image", "url(" + e.target.result + ")");
-        $("#preview__card").fadeIn(650);
-      };
+      this.products = []; // Making a get request to our API and passing the query to it.
 
-      reader.readAsDataURL(input.files[0]);
+      fetch("/api/search?q=" + this.query).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        console.log(json.users);
+        that.results.push(json.users);
+      }); // Clear the query.
+
+      this.query = "";
     }
   }
-  /* CHANGE STYLE OP DROPZONE ON DRAG OVER */
-
-
-  $("#input__upload").on("dragenter", function (e) {
-    $(".upload__visual").addClass("upload__visual--active");
-  }).on("dragleave dragend mouseout drop", function (e) {
-    $(".upload__visual").removeClass("upload__visual--active");
-  });
 });
 
 /***/ }),
 
-/***/ 2:
-/*!**************************************!*\
-  !*** multi ./resources/js/upload.js ***!
-  \**************************************/
+/***/ 3:
+/*!******************************************!*\
+  !*** multi ./resources/js/vue/search.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\upload.js */"./resources/js/upload.js");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\vue\search.js */"./resources/js/vue/search.js");
 
 
 /***/ })
