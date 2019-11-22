@@ -117,7 +117,7 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 | tutorial deployment site + certificate       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene | Done     |
 | figuring out database server 2 😤            | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
 | Search                                       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
-| Sociallight                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done     |
+| Sociallite                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done     |
 | Automated Scraping Behance                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |          |
 
 ### To Do
@@ -306,12 +306,17 @@ You need to change the following variables:<br/>
 `DB_USERNAME`<br/>
 `DB_PASSWORD`<br/>
 
-By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group, Laravel needs write access for logs. As our site is located in the folder 'USERNAME', we change these permissions.<br/>
+By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group. As our site is located in the folder 'USERNAME', we change these permissions.<br/>
 `su -`<br/>
 Enter password:<br/>
 `cd /home/USERNAME/USERNAME`<br/>
-`chmod -R 770 USERNAME`<br/>
+`chmod -R 750 USERNAME`<br/>
 `chgrp -R apache USERNAME`<br/>
+
+NOTE: Laravel needs write access for logs but also in the public/images folder to save our profile and banner pictures. Only these folders should have write access too!
+CD into the laravel project folder.
+`chmod -R 770 storage`<br/>
+`chmod -R 770 public/images`<br/>
 
 ### Installing packages
 
@@ -355,7 +360,7 @@ And of course `systemctl restart httpd` or even better `apachectl graceful`<br/>
 
 ### HTTPS/SSL
 
-We are now going to add a https certificate to our site! This we need to use the Sociallight function :D<br/>
+We are now going to add a https certificate to our site! This we need to use the Sociallite function :D<br/>
 `ssh name@ip`<br/>
 `su -`<br/>
 `yum install epel-release`<br/>
