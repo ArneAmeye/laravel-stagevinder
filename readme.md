@@ -8,6 +8,7 @@
     2. [Migrate (make) tables](<#Migrate-(make)-tables>)
     3. [Refresh (update) tables](<#Refresh-(update)-tables>)
     4. [Seeders](#Seeders)
+    5. [Update after search pull](#Update-after-search-pull)
 3. [Front-end](#Front-end)
 4. [Planning](#Planning)
     1. [Legend](#Legend)
