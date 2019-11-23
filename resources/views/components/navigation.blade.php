@@ -14,6 +14,7 @@
 	<div class="navigation__scroll">
 		<div class="navigation__inner">
 			@if(Auth::check())
+			@if(Session::has('user'))
 			<div class="navigation__header">
 				@if (Session::get('user')->type == 'student')
 					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
@@ -37,6 +38,9 @@
 					</span>
 				</div>
 			</div>
+			@else
+			//login here
+			@endif
 			@endif
 			<div class="navigation__search">
 				<form action="/search" method="GET">
@@ -50,7 +54,7 @@
 			<div class="navigation__title"></div>
 				Navigation
 			</div>
-			@if(Auth::check())
+			@if(Auth::check() and Session::has('user'))
 			<ul class="navigation__items">
 				@foreach($navigationOfUser as $nav)
 				<li class="navigation__item">
@@ -66,7 +70,7 @@
 				@endforeach
 			</ul>
 			@endif
-			@if(!Auth::check())
+			@if(!Auth::check() or !Session::has('user'))
 			<ul class="navigation__items">
 				@foreach($navigationOfGuest as $nav)
 				<li class="navigation__item">

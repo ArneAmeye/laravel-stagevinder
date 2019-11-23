@@ -29,7 +29,7 @@
 				</Button>
 			</form>
 		</ul>-->
-		@if(Auth::check())
+		@if(Auth::check() and Session::has('user'))
 			<ul class="header__options__items">
 				<li class="header__options__item">
 					<a href="#" class="header__options__link">
