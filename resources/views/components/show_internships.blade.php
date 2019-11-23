@@ -2,7 +2,7 @@
     @if($internship->is_available == 1)
 	    <a href="{{ url('/internships/') }}/{{ $internship->id }}">
             <div class="preview__inner">
-                <img class="preview__image" src="https://via.placeholder.com/500">
+                <img class="preview__image" src="https://picsum.photos/500/500">
                 <div class="preview__text">
                     <p class="preview__text--internship">
                         {{ $internship->name }}
