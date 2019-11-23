@@ -1,7 +1,12 @@
 @php
+	if(Session::get('user')->type == 'student'){
+		$profileLink = '/' .'students/' . Session::get('user')->id;
+	}elseif(Session::get('user')->type == 'company'){
+		$profileLink = '/'. 'companies/' . Session::get('user')->id;
+	}
 	$headerOfUser = [
 		["name" => "Settings", "href" => "#", "icon" => "fa-cog"],
-		["name" => "Profile", "href" => `@if (Session::get('user')->type == 'student')/students/{{ Session::get('user')->id }}@elseif (Session::get('user')->type == 'company')/companies/{{ Session::get('user')->id }}@endif`, "icon" => "fa-user"],
+		["name" => "Profile", "href" => $profileLink, "icon" => "fa-user"],
 		["name" => "My Messages", "href" => "#", "icon" => "fa-envelope"],
 		["name" => "Lock Screen", "href" => "#", "icon" => "fa-lock"],
 		["name" => "Logout", "href" => "/logout", "icon" => "fa-sign-out-alt"]
