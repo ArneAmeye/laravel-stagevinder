@@ -49,7 +49,7 @@
   text-overflow: ellipsis;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .preview__container {
     justify-content: initial;
   }

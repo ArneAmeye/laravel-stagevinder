@@ -113,7 +113,7 @@ ul {
 
 .header__logo__image {
   display: block;
-  max-width: 100%;
+  max-width: 3em;
   height: auto;
 }
 
@@ -265,6 +265,7 @@ ul {
     display: flex;
     width: 270px;
     justify-content: left;
+    padding-left: 1em;
   }
 
   .header__link {
