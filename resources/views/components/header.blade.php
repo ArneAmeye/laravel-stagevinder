@@ -49,22 +49,21 @@
 					</a>
 				</li>
 				<li class="header__options__item">
-				<a href="#" class="header__options__link">
-					@if (Session::get('user')->type == 'student')
-						<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
-					@elseif (Session::get('user')->type == 'company')
-						<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
-					@endif
-					<p class="header__options__name">
+					<a href="#" class="header__options__link">
 						@if (Session::get('user')->type == 'student')
-							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
+							<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
 						@elseif (Session::get('user')->type == 'company')
-							{{ Session::get('user')->name }}
+							<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
 						@endif
-					</p>
-					<i class="fas fa-angle-down header__options__more" aria-hidden="true"></i>
-				</a>
-				<li class="header__options__item">
+						<p class="header__options__name">
+							@if (Session::get('user')->type == 'student')
+								{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
+							@elseif (Session::get('user')->type == 'company')
+								{{ Session::get('user')->name }}
+							@endif
+						</p>
+						<i class="fas fa-angle-down header__options__more" aria-hidden="true"></i>
+					</a>
 					<ul class="options__more__items">
 						@foreach($headerOfUser as $item)
 							<li class="options__more__item">
