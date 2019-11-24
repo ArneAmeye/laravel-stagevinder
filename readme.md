@@ -393,13 +393,48 @@ Check if it works :D<br/>
 Done! Feel free to ask questions, might have missed some stuff 🙃
 
 ## Envoy
+Envoy needs to be configured LOCALLY!<br/>
+Install Envoy: `composer global require laravel/envoy` <br/>
+Make sure you have 2 environments: production and staging folders in Linode, a separate DB for each of them and working URL's.<br/>
 
-Commands
-`cd /home/...`<br/>
-`php artisan down`<br/>
-`git reset --hard HEAD`<br/>
-`git pull origin master`<br/>
-`php composer.phar install`<br/>
-`php composer.phar dump-autoload`<br/>
-`php artisan migrate --force`<br/>
-`php artisan up`<br/>
+Create an Envoy file in the root of the Laravel project called 'Envoy.blade.php'.<br/>
+It looks like this: (Replace your deploy username, IP adresss and foldernames!)<br/>
+
+```
+@servers(['production' => ['deployUsername@139.XXX.XXX.XX -p22'], 'staging' => ['deployUsername@139.XXX.XXX.XX -p22']])
+
+@task('deploy-production', ['on' => 'production'])
+    cd /home/FOLDERNAME/FOLDERNAME/laravel-stagevinder
+    php artisan down
+    git reset --hard HEAD
+    git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git
+    php artisan migrate --force
+    php artisan up
+@endtask
+
+@task('deploy-staging', ['on' => 'staging'])
+    cd /home/FOLDERNAME-beta/FOLDERNAME-beta/laravel-stagevinder
+    php artisan down
+    git reset --hard HEAD
+    git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git
+    php artisan migrate --force
+    php artisan up
+@endtask
+```
+
+Now run the deployment with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
+
+ISSUES?<br/>
+SSH key for the deploy user must be setup! <br/>
+If you have done this but it tries to load it from "C/users/yourname/.ssh/id_rsa" then we need to tell Windows where this Linode host can find our Private Key:<br/>
+Go to "C:/User/Yourname/.ssh" and create a `config` file if it doesn't exist yet. <br/>
+Paste this and adapt to your configuration:<br/>
+```
+Host 139.XXX.XXX.XXX
+ HostName 139.XXX.XXX.XXX
+ User deployUsername
+ IdentityFile ~/.ssh/YourPrivateKeyFileName
+ ``` 
+ 
+NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
+
