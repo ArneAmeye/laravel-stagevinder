@@ -33,6 +33,9 @@
     2. [Installing packages](#Installing-packages)
     3. [Composer](Composer)
     4. [Launching site](#Launching-site)
+    5. [HTTPS and SSL](#HTTPS/SSL)
+8. [Envoy](#Envoy)
+9. [Docker](#Docker)
 
 ## Starting up Laravel
 
@@ -438,3 +441,9 @@ Host 139.XXX.XXX.XXX
  
 NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
 
+## Docker
+- First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).
+- Follow the tutorial on [this website](https://dev.to/baliachbryan/deploying-your-laravel-app-on-docker-with-nginx-and-mysql-56ni).
+- Tips when following the turorial:
+    - I recommend spliting following command in `docker-compose up -d --build database && docker-compose up -d --build app && docker-compose up -d --build web ` into `docker-compose up -d --build database`, `docker-compose up -d --build app` and `docker-compose up -d --build web` ;)
+    - Did you get an error after running the command `docker-compose up -d --build app`? It is about the php artisan optimize command? Then delete that line in the development > app.dockerfile.
