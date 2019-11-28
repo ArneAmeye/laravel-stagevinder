@@ -1,6 +1,6 @@
 @php
 	if(!Session::has('user')){ 
-		header('Location: /login');
+		
 	}else{
 		if(Session::get('user')->type == 'student'){
 			$profileLink = '/' .'students/' . Session::get('user')->id;
