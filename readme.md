@@ -447,3 +447,29 @@ NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh
 - Tips when following the turorial:
     - I recommend spliting following command in `docker-compose up -d --build database && docker-compose up -d --build app && docker-compose up -d --build web ` into `docker-compose up -d --build database`, `docker-compose up -d --build app` and `docker-compose up -d --build web` ;)
     - Did you get an error after running the command `docker-compose up -d --build app`? It is about the php artisan optimize command? Then delete that line in the development > app.dockerfile.
+
+
+## Dusk (tests)
+### Install & Dusk setup
+Add Dusk with composer: `composer require --dev laravel/dusk`<br/>
+Install Dusk:<br/>
+- `vagrant ssh`<br/>
+- `cd code`<br/>
+- `php artisan dusk:install`<br/>
+
+Make sure our .env file has the right URL (http://homestead.test) for "APP_URL".<br/>
+Within the .env also change the DB HOST (ip) to the IP found in Homestead.yaml<br/>
+Add `DUSK_USER=yourname@stagevinder.be` and `DUSK_PASSWORD=yourpassword` to the .env file, this is needed for a login test that i've written!<br/>
+
+You can make a ".env.dusk.local" file filled with a copy of the ".env" file in case you want Dusk to use other settings of your .env file, however right now this is not needed.<br/>
+
+All Dusk tests can be found in (folders): "tests->Browser"<br/>
+
+We can run a test with: `php artisan dusk`<br/>
+Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
+
+### Problem running dusk?<br/>
+Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/>
+
+### Add dusk tests
+You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>
