@@ -477,3 +477,7 @@ Error: Failed to connect to localhost port 9515: Connection refused <br/>
 
 ### Add dusk tests
 You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>
+
+### To Do
+Arne ==> Login & home page
+Lars ==> company page & register Student
