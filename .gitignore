@@ -5,6 +5,7 @@
 /vendor
 .env
 .env.backup
+.env.dusk.local
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -13,3 +14,4 @@ yarn-error.log
 .vagrant
 ca.homestead.laravel-app.crt
 ca.homestead.laravel-stagevinder.crt
+Envoy.blade.php

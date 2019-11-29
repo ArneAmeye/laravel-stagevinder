@@ -5,9 +5,10 @@
 1. [Starting up laravel](#Starting-up-Laravel)
 2. [Database](#Database)
     1. [How to have a look into the DB](#How-to-have-a-look-into-the-DB)
-    2. [Migrate (make) tables](#Migrate-(make)-tables)
-    3. [Refresh (update) tables](#Refresh-(update)-tables)
+    2. [Migrate (make) tables](<#Migrate-(make)-tables>)
+    3. [Refresh (update) tables](<#Refresh-(update)-tables>)
     4. [Seeders](#Seeders)
+    5. [Update after search pull](#Update-after-search-pull)
 3. [Front-end](#Front-end)
 4. [Planning](#Planning)
     1. [Legend](#Legend)
@@ -27,11 +28,14 @@
     3. [Start generating the SSH deploy keys](#Start-generating-the-SSH-deploy-keys)
     4. [Actually deploy the git project](#Actually-deploy-the-git-project)
 7. [Deployment](#Deployment)
+
     1. [Git repository](#Git-repository)
     2. [Installing packages](#Installing-packages)
     3. [Composer](Composer)
     4. [Launching site](#Launching-site)
-    
+    5. [HTTPS and SSL](#HTTPS/SSL)
+8. [Envoy](#Envoy)
+9. [Docker](#Docker)
 
 ## Starting up Laravel
 
@@ -75,11 +79,25 @@ That's it, you should now be able to use the external tool (see previous title) 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added new seeder for standerd background/profile picture on 21/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to 'table 'internships' on 24/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added Dribble columns to 'table 'students' on 04/11/2019` <br/>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Fixed Intracto bug in database on 22/11/2019` <br/>
 Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
 Refreshing tables and simultaniously add seeders
 `php artisan migrate:refresh --seed`
+
+### Update after search pull
+
+-   Add credentials
+-   `composer update`
+-   If you want to try with own Algolia API, you can change the credentials but you need to perform following commands to bring all the information of you database into the api.
+    `php artisan scout:import "App\User"` <br/>
+    `php artisan scout:import "App\Student"` <br/>
+    `php artisan scout:import "App\Company"` <br/>
+    `php artisan scout:import "App\Internship"` <br/>
+    `php artisan scout:import "App\ReviewInternship"` <br/>
+    `php artisan scout:import "App\ReviewCompany"` <br/>
+-   If something went wrong, please say it in the fb group ^^
 
 ### Seeders
 
@@ -117,7 +135,7 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 | tutorial deployment site + certificate       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene | Done     |
 | figuring out database server 2 😤            | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
 | Search                                       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
-| Sociallight                                  | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done     |
+| Sociallite                                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done     |
 | Automated Scraping Behance                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |          |
 
 ### To Do
@@ -125,7 +143,7 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 | Function                      | Person |
 | ----------------------------- | ------ |
 | Chat bot companies & students |        |
-| Internship status              |        |
+| Internship status             |        |
 | API seperated classes         |        |
 | Add vue.js                    |        |
 
@@ -196,19 +214,19 @@ user = your name
 `cd /home/user`<br/>
 `ls -al`<br />
 `drwx------. 4 user user 4096 Oct 20 15:23 .`<br/>
-`drwxr-xr-x. 5 root  root  4096 Oct 23 18:51 ..`<br/>
+`drwxr-xr-x. 5 root root 4096 Oct 23 18:51 ..`<br/>
 `-rw-------. 1 user user 1305 Oct 23 19:57 .bash_history`<br/>
-`-rw-r--r--. 1 user user 18 Oct 30  2018 .bash_logout`<br/>
-`-rw-r--r--. 1 user user 193 Oct 30  2018 .bash_profile`<br/>
-`-rw-r--r--. 1 user user 231 Oct 30  2018 .bashrc`<br/>
-`drwx------  2 user user 4096 Sep 27 12:28 MyNotes`<br/>
-`-rw-------  1 user user 16 Oct 20 15:23 .mysql_history`<br/>
-`drwx------  2 user user 4096 Oct 20 09:32 .ssh`<br/>
+`-rw-r--r--. 1 user user 18 Oct 30 2018 .bash_logout`<br/>
+`-rw-r--r--. 1 user user 193 Oct 30 2018 .bash_profile`<br/>
+`-rw-r--r--. 1 user user 231 Oct 30 2018 .bashrc`<br/>
+`drwx------ 2 user user 4096 Sep 27 12:28 MyNotes`<br/>
+`-rw------- 1 user user 16 Oct 20 15:23 .mysql_history`<br/>
+`drwx------ 2 user user 4096 Oct 20 09:32 .ssh`<br/>
 
 `cd /home/user/.ssh`<br/>
-`drwx------  2 user user 4096 Oct 20 09:32 .`<br/>
+`drwx------ 2 user user 4096 Oct 20 09:32 .`<br/>
 `drwx------. 4 user user 4096 Oct 20 15:23 ..`<br/>
-`-rw-r--r--  1 user user 410 Oct 20 09:32 authorized_keys`<br/>
+`-rw-r--r-- 1 user user 410 Oct 20 09:32 authorized_keys`<br/>
 
 Still problems with ssh public key access? [Check this link](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
@@ -239,9 +257,9 @@ make sure your sites-available file is changed to correspond with the new direct
 Change 4 things here:<br/>
 -> 1st line: Directory "/home/username/username/github_projectname/public"<br/>
 ->inside the VirtualHost:<br/>
-    => DocumentRoot /home/username/username/github_projectname/public<br/>
-    => ErrorLog /home/username/error.log<br/>
-    => CustomLog /home/username/access.log combined
+=> DocumentRoot /home/username/username/github_projectname/public<br/>
+=> ErrorLog /home/username/error.log<br/>
+=> CustomLog /home/username/access.log combined
 
 Save and exit this file
 
@@ -251,7 +269,6 @@ Change the httpd.conf file's DocumentRoot<br/>
 
 restart apache
 `systemctl restart httpd`
-
 
 ### Start generating the SSH deploy keys
 
@@ -269,7 +286,6 @@ Add your SSH key to the SSH agent:<br/>
 Finally: <br/>
 `cat /home/username/.ssh/id_rsa.pub` copy this output from "ssh-rsa" until your email address from the terminal window.<br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Only for owner repository` Go online to the Github repo -> settings -> Deploy keys -> add deploy key -> give it a name and paste in the public key.
-
 
 ## Deployment
 
@@ -306,12 +322,17 @@ You need to change the following variables:<br/>
 `DB_USERNAME`<br/>
 `DB_PASSWORD`<br/>
 
-By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group, Laravel needs write access for logs. As our site is located in the folder 'USERNAME', we change these permissions.<br/>
+By now we added a whole new git repo in the server and a .env file, all of them need permissions for the apache group. As our site is located in the folder 'USERNAME', we change these permissions.<br/>
 `su -`<br/>
 Enter password:<br/>
 `cd /home/USERNAME/USERNAME`<br/>
-`chmod -R 770 USERNAME`<br/>
+`chmod -R 750 USERNAME`<br/>
 `chgrp -R apache USERNAME`<br/>
+
+NOTE: Laravel needs write access for logs but also in the public/images folder to save our profile and banner pictures. Only these folders should have write access too!
+CD into the laravel project folder.
+`chmod -R 770 storage`<br/>
+`chmod -R 770 public/images`<br/>
 
 ### Installing packages
 
@@ -355,7 +376,7 @@ And of course `systemctl restart httpd` or even better `apachectl graceful`<br/>
 
 ### HTTPS/SSL
 
-We are now going to add a https certificate to our site! This we need to use the Sociallight function :D<br/>
+We are now going to add a https certificate to our site! This we need to use the Sociallite function :D<br/>
 `ssh name@ip`<br/>
 `su -`<br/>
 `yum install epel-release`<br/>
@@ -372,4 +393,83 @@ add following lines to the section VirtualHost:<br/>
 `apachectl graceful`<br/>
 Check if it works :D<br/>
 
-Done! Feel free to ask questions, might have missed some stuff 🙃 
+Done! Feel free to ask questions, might have missed some stuff 🙃
+
+## Envoy
+Envoy needs to be configured LOCALLY!<br/>
+Install Envoy: `composer global require laravel/envoy` <br/>
+Make sure you have 2 environments: production and staging folders in Linode, a separate DB for each of them and working URL's.<br/>
+
+Create an Envoy file in the root of the Laravel project called 'Envoy.blade.php'.<br/>
+It looks like this: (Replace your deploy username, IP adresss and foldernames!)<br/>
+
+```
+@servers(['production' => ['deployUsername@139.XXX.XXX.XX -p22'], 'staging' => ['deployUsername@139.XXX.XXX.XX -p22']])
+
+@task('deploy-production', ['on' => 'production'])
+    cd /home/FOLDERNAME/FOLDERNAME/laravel-stagevinder
+    php artisan down
+    git reset --hard HEAD
+    git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git
+    php artisan migrate --force
+    php artisan up
+@endtask
+
+@task('deploy-staging', ['on' => 'staging'])
+    cd /home/FOLDERNAME-beta/FOLDERNAME-beta/laravel-stagevinder
+    php artisan down
+    git reset --hard HEAD
+    git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git
+    php artisan migrate --force
+    php artisan up
+@endtask
+```
+
+Now run the deployment with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
+
+ISSUES?<br/>
+SSH key for the deploy user must be setup! <br/>
+If you have done this but it tries to load it from "C/users/yourname/.ssh/id_rsa" then we need to tell Windows where this Linode host can find our Private Key:<br/>
+Go to "C:/User/Yourname/.ssh" and create a `config` file if it doesn't exist yet. <br/>
+Paste this and adapt to your configuration:<br/>
+```
+Host 139.XXX.XXX.XXX
+ HostName 139.XXX.XXX.XXX
+ User deployUsername
+ IdentityFile ~/.ssh/YourPrivateKeyFileName
+ ``` 
+ 
+NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
+
+## Docker
+- First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).
+- Follow the tutorial on [this website](https://dev.to/baliachbryan/deploying-your-laravel-app-on-docker-with-nginx-and-mysql-56ni).
+- Tips when following the turorial:
+    - I recommend spliting following command in `docker-compose up -d --build database && docker-compose up -d --build app && docker-compose up -d --build web ` into `docker-compose up -d --build database`, `docker-compose up -d --build app` and `docker-compose up -d --build web` ;)
+    - Did you get an error after running the command `docker-compose up -d --build app`? It is about the php artisan optimize command? Then delete that line in the development > app.dockerfile.
+
+
+## Dusk (tests)
+### Install & Dusk setup
+Add Dusk with composer: `composer require --dev laravel/dusk`<br/>
+Install Dusk:<br/>
+- `vagrant ssh`<br/>
+- `cd code`<br/>
+- `php artisan dusk:install`<br/>
+
+Make sure our .env file has the right URL (http://homestead.test) for "APP_URL".<br/>
+Within the .env also change the DB HOST (ip) to the IP found in Homestead.yaml<br/>
+Add `DUSK_USER=yourname@stagevinder.be` and `DUSK_PASSWORD=yourpassword` to the .env file, this is needed for a login test that i've written!<br/>
+
+You can make a ".env.dusk.local" file filled with a copy of the ".env" file in case you want Dusk to use other settings of your .env file, however right now this is not needed.<br/>
+
+All Dusk tests can be found in (folders): "tests->Browser"<br/>
+
+We can run a test with: `php artisan dusk`<br/>
+Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
+
+### Problem running dusk?<br/>
+Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/>
+
+### Add dusk tests
+You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>

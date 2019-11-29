@@ -5,7 +5,7 @@
     flex-direction: row;
     -ms-flex-direction: row;
     width: 100%;
-    justify-content: initial;
+    justify-content: space-evenly;
 }
 
 .preview__inner {
@@ -25,13 +25,14 @@
 }
 
 .preview__text {
-    position: relative;
+    position: absolute;
     padding: 10%;
-    top: 70%;
+    bottom: 0%;
     color: $cardTitleColor;
     background-color: $whiteColor;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: inherit;
 }
 
 .preview__text--internship {
@@ -47,4 +48,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media (min-width: 1024px) {
+	.preview__container {
+		justify-content: initial;;
+	}
 }

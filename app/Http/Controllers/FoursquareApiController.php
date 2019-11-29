@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
-class AjaxController extends Controller
+class FoursquareApiController extends Controller
 {
     //Make Foursquare API request with Guzzle!
     public function getCompanyDetails(Request $req) {

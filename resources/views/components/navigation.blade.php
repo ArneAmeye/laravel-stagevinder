@@ -1,6 +1,20 @@
+@php
+	$navigationOfUser = [
+		["name" => "Home", "url" => "/index.php", "icon" => "fa-home"],
+		["name" => "Students", "url" => "/students", "icon" => "fa-graduation-cap"],
+		["name" => "Companies", "url" => "/companies", "icon" => "fa-building"],
+		["name" => "Internships", "url" => "/internships", "icon" => "fa-file-alt"]
+	];
+	$navigationOfGuest = [
+		["name" => "Sign in", "url" => "/login", "icon" => "fa-sign-in-alt"],
+		["name" => "Sign up", "url" => "/register", "icon" => "fa-user-plus"],
+	]
+@endphp
 <nav class="navigation__container">
 	<div class="navigation__scroll">
 		<div class="navigation__inner">
+			@if(Auth::check())
+			@if(Session::has('user'))
 			<div class="navigation__header">
 				@if (Session::get('user')->type == 'student')
 					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
@@ -24,57 +38,54 @@
 					</span>
 				</div>
 			</div>
+			@else
+			//login here
+			@endif
+			@endif
 			<div class="navigation__search">
-				<input type="text" name="" placeholder="Search" class="navigation__search__input">
-				<span class="navigation__search__icon">
-					<i class="fas fa-search" aria-hidden="true"></i>
-				</span>
+				<form action="/search" method="GET">
+					{{ csrf_field() }}
+					<input type="text" name="" placeholder="Search" class="navigation__search__input">
+					<Button class="navigation__search__icon">
+						<i class="fas fa-search" aria-hidden="true"></i>
+					</Button>
+				</form>
 			</div>
-			<div class="navigation__title">
+			<div class="navigation__title"></div>
 				Navigation
 			</div>
+			@if(Auth::check() and Session::has('user'))
 			<ul class="navigation__items">
+				@foreach($navigationOfUser as $nav)
 				<li class="navigation__item">
-					<a href="/index.php" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
+					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
-							<i class="fas fa-home navigation__link__icon--center" aria-hidden="true"></i>
+							<i class="fas {{$nav['icon']}} navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
 						<span class="navigation__link__title">
-							Home
+							{{$nav['name']}}
 						</span>
 					</a>
 				</li>
-				<li class="navigation__item">
-					<a href="/students" class="navigation__link {{ Request::is('students') ? 'navigation__link--current' : '' }}">
-						<span class="navigation__link__icon">
-							<i class="fas fa-graduation-cap navigation__link__icon--center" aria-hidden="true"></i>
-						</span>
-						<span class="navigation__link__title">
-							Students
-						</span>
-					</a>
-				</li>
-				<li class="navigation__item">
-					<a href="/companies" class="navigation__link {{ Request::is('companies') ? 'navigation__link--current' : '' }}">
-						<span class="navigation__link__icon">
-							<i class="fas fa-building navigation__link__icon--center" aria-hidden="true"></i>
-						</span>
-						<span class="navigation__link__title">
-							Companies
-						</span>
-					</a>
-				</li>
-				<li class="navigation__item">
-					<a href="/internships" class="navigation__link {{ Request::is('internships') ? 'navigation__link--current' : '' }}">
-						<span class="navigation__link__icon">
-							<i class="fas fa-file-alt navigation__link__icon--center" aria-hidden="true"></i>
-						</span>
-						<span class="navigation__link__title">
-							Internships
-						</span>
-					</a>
-				</li>
+				@endforeach
 			</ul>
+			@endif
+			@if(!Auth::check() or !Session::has('user'))
+			<ul class="navigation__items">
+				@foreach($navigationOfGuest as $nav)
+				<li class="navigation__item">
+					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
+						<span class="navigation__link__icon">
+							<i class="fas {{$nav['icon']}} navigation__link__icon--center" aria-hidden="true"></i>
+						</span>
+						<span class="navigation__link__title">
+							{{$nav['name']}}
+						</span>
+					</a>
+				</li>
+				@endforeach
+			</ul>
+			@endif
 		</div>
 	</div>
 </nav>
