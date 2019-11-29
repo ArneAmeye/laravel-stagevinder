@@ -36,6 +36,7 @@
     5. [HTTPS and SSL](#HTTPS/SSL)
 8. [Envoy](#Envoy)
 9. [Docker](#Docker)
+10. [Dusk](#Dusk)
 
 ## Starting up Laravel
 
@@ -469,7 +470,10 @@ We can run a test with: `php artisan dusk`<br/>
 Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
 
 ### Problem running dusk?<br/>
-Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/>
+Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/><br/>
+Error: Failed to connect to localhost port 9515: Connection refused <br/>
+`sudo apt-get update`
+`sudo apt-get -y install libnss3 chromium-browser`
 
 ### Add dusk tests
 You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>
