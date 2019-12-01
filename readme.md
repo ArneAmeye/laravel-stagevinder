@@ -36,7 +36,7 @@
     5. [HTTPS and SSL](#HTTPS/SSL)
 8. [Envoy](#Envoy)
 9. [Docker](#Docker)
-10. [Dusk (tests)](#Dusk-(tests))
+10. [Dusk (tests)](<#Dusk-(tests)>)
 
 ## Starting up Laravel
 
