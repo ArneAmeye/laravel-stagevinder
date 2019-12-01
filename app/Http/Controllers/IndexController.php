@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 
 class IndexController extends Controller
 {
@@ -14,12 +15,15 @@ class IndexController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('welcome');
-        }
 
         $data['internships'] = \App\Internship::get();
-
+        
+        if(Session::has('user') and Session::get('user')->type == 'company'){
+            $currentUserId = auth()->user()->id;
+            $company = \App\Company::where('user_id', $currentUserId)->first();
+            $data['companyInternships'] = \App\Internship::where('company_id', $company->id)->get();
+        }
+        
         return View('index', $data);
     }
 
