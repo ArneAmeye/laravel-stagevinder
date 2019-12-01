@@ -8,6 +8,13 @@
   justify-content: space-evenly;
 }
 
+.preview__container__title {
+  display: block;
+  width: 100%;
+  padding-bottom: 1em;
+  color: #303548;
+}
+
 .preview__inner {
   position: relative;
   border-radius: 5px;
@@ -97,4 +104,98 @@
   border: transparent;
 }
 
+.button__center {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.button__center--margin {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-right: 10px;
+  background-color: #4680ff;
+  border-color: #4680ff;
+  color: #fff;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+  border-radius: 2px;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 10px 19px;
+  margin-bottom: 5px;
+  box-shadow: none;
+  border: none;
+  text-align: center;
+}
+
+.button--big {
+  width: 120px;
+}
+
+.button--fullWidth {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.button--transparent {
+  background-color: transparent;
+  color: #303548;
+}
+
+.button--margin {
+  margin-right: 0;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.button--right {
+  margin: 0;
+  padding: 8px 14px;
+  line-height: 16px;
+  font-size: 11px;
+  float: right;
+}
+
+.button--hidden {
+  display: none;
+}
+
+.button__icon {
+  margin-right: 5px;
+}
+
+.button__social {
+  background-color: #3c5a99;
+  border-color: #3c5a99;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 10px 19px;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+}
+
+.button__social__icon {
+  padding: 5px 0;
+  display: inline-block !important;
+  border-radius: 3px 0 0 3px;
+  margin: -7px 0 -7px -13px;
+  margin-right: 5px;
+}
+
+@media (min-width: 769px) {
+  .buttons__container {
+    float: right;
+    bottom: 38px;
+    right: 35px;
+    position: absolute;
+  }
+}
 /*KEYFRAMES*/

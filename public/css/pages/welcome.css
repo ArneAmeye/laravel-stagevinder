@@ -8,6 +8,13 @@
   justify-content: space-evenly;
 }
 
+.preview__container__title {
+  display: block;
+  width: 100%;
+  padding-bottom: 1em;
+  color: #303548;
+}
+
 .preview__inner {
   position: relative;
   border-radius: 5px;
