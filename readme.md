@@ -36,6 +36,7 @@
     5. [HTTPS and SSL](#HTTPS/SSL)
 8. [Envoy](#Envoy)
 9. [Docker](#Docker)
+10. [Dusk (tests)](<#Dusk-(tests)>)
 
 ## Starting up Laravel
 
@@ -469,7 +470,16 @@ We can run a test with: `php artisan dusk`<br/>
 Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
 
 ### Problem running dusk?<br/>
-Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/>
+Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/><br/>
+Error: Failed to connect to localhost port 9515: Connection refused <br/>
+`sudo apt-get update`<br/>
+`sudo apt-get -y install libnss3 chromium-browser`<br/>
+Error: session not created: Chrome version must be between 70 and 73 <br/>
+Exit the Virtual Box and run `composer require --dev staudenmeir/dusk-updater`. Go back in your Virtual Box. Here you run `php artisan dusk:update`. Test it again: `php artisan dusk`.
 
 ### Add dusk tests
 You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>
+
+### To Do
+Arne ==> Login & home page <br/>
+Lars ==> company page & register Student
