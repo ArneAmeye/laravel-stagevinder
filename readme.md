@@ -472,7 +472,7 @@ Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
 ### Problem running dusk?<br/>
 Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/><br/>
 Error: Failed to connect to localhost port 9515: Connection refused <br/>
-`sudo apt-get update`
+`sudo apt-get update`<br>
 `sudo apt-get -y install libnss3 chromium-browser`
 
 ### Add dusk tests
