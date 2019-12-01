@@ -473,7 +473,7 @@ Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
 Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/><br/>
 Error: Failed to connect to localhost port 9515: Connection refused <br/>
 `sudo apt-get update`<br/>
-`sudo apt-get -y install libnss3 chromium-browser`
+`sudo apt-get -y install libnss3 chromium-browser`<br/>
 Error: session not created: Chrome version must be between 70 and 73 <br/>
 Exit the Virtual Box and run `composer require --dev staudenmeir/dusk-updater`. Go back in your Virtual Box. Here you run `php artisan dusk:update`. Test it again: `php artisan dusk`.
 
