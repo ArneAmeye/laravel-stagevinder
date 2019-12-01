@@ -67,7 +67,7 @@ class UserController extends Controller
             $this->handleLogin($request);
         }
 
-        return view('/index');
+        return redirect()->route('index');
     }
 
     public function login()

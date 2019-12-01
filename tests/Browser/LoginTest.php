@@ -16,7 +16,6 @@ class LoginTest extends DuskTestCase
      */
     public function testLogin()
     {
-
         $this->browse(function (Browser $browser){
             $browser->visit('/login')
                     ->type('email', env('DUSK_USER'))
