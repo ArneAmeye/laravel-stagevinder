@@ -482,4 +482,4 @@ You can make a new Dusk test with: `php artisan dusk:make TestName` => replace w
 
 ### To Do
 Arne ==> Login & home page <br/>
-Lars ==> company page & register Student
+Lars ==> Regsiter for Companies/Students & Checking if you can visit the student page without Auth. <br/>
