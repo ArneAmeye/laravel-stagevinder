@@ -204,6 +204,7 @@ ul {
 }
 
 .button {
+  display: block;
   margin-right: 10px;
   background-color: #4680ff;
   border-color: #4680ff;
@@ -238,6 +239,14 @@ ul {
   margin-right: 0;
   font-weight: 600;
   display: inline-block;
+}
+
+.button--green {
+  background-color: #93be52;
+}
+
+.button--green:hover {
+  background-color: #fc6180;
 }
 
 .button--right {

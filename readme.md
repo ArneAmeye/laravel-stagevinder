@@ -81,7 +81,8 @@ That's it, you should now be able to use the external tool (see previous title) 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to 'table 'internships' on 24/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added Dribble columns to 'table 'students' on 04/11/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Fixed Intracto bug in database on 22/11/2019` <br/>
-Refreshing tables when changes were made
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added table students_internships for many to many on 02/12/2019` <br/>
+<br/>Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
 Refreshing tables and simultaniously add seeders

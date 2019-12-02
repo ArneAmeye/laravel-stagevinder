@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -128,14 +128,14 @@ var app = new Vue({
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************************!*\
   !*** multi ./resources/js/vue/search.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\vue\search.js */"./resources/js/vue/search.js");
+module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\js\vue\search.js */"./resources/js/vue/search.js");
 
 
 /***/ })

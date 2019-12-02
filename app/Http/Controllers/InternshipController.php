@@ -34,6 +34,8 @@ class InternshipController extends Controller
             $data['edit'] = '';
         }
 
+        $data["applied"] = $this->isApplied($internship);
+
         return view('internships/show', $data);
     }
 
@@ -95,5 +97,61 @@ class InternshipController extends Controller
         $internship->delete();
         
         return redirect("/companies/$company_id?internship=list")->with('success', 'Internship successfully deleted!');
+    }
+
+    public function isApplied($id) {
+        $apply = \App\StudentInternship::where([
+            ['internship_id', $id],
+            ['student_id', session()->get('user')->id]
+        ])->first();
+
+        if ($apply == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public function isStudent($user) {
+        if ($user->type != "student") {
+            return false;
+        }
+        return true;
+    }
+
+    public function apply($id) {
+        $user = session()->get('user');
+        if (!$this->isStudent($user)) {
+            return redirect("/internships/$id")->with('error', "A company can't apply for an internship");
+        }
+
+        if ($this->isApplied($id)) {
+            return redirect("/internships/$id")->with('error', 'You already applied for this internship!');
+        }
+
+        $internship = new \App\StudentInternship();
+        $internship->student_id = $user->id;
+        $internship->internship_id = $id;
+        $internship->save();
+
+        return redirect("/internships/$id")->with('success', 'Successfully applied for internship!');
+    }
+
+    public function removeApply($id) {
+        $user = session()->get('user');
+        if (!$this->isStudent($user)) {
+            return redirect("/internships/$id")->with('error', "A company can't remove an apply for an internship");
+        }
+
+        if (!$this->isApplied($id)) {
+            return redirect("/internships/$id")->with('error', "You didn't apply for this internship!");
+        }
+
+        $internship = \App\StudentInternship::where([
+            ['internship_id', $id],
+            ['student_id', session()->get('user')->id]
+        ])->first();
+        $internship->delete();
+
+        return redirect("/internships/$id")->with('success', 'Successfully removed apply for internship!');
     }
 }
