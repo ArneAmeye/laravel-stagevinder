@@ -37,6 +37,8 @@ Route::get('/companies/{company}', 'CompanyController@show');
 
 Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{internship}', 'InternshipController@show');
+Route::get('/internships/{internship}/apply', ['as' => 'internships.apply', 'uses' => 'InternshipController@apply']);
+Route::get('/internships/{internship}/apply/remove', ['as' => 'internships.removeApply', 'uses' => 'InternshipController@removeApply']);
 Route::post('/companies/{company}', ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
 Route::patch('/internships/{internship}', ['as' => 'internship.update', 'uses' => 'InternshipController@update']);
 Route::delete('/companies/{company}', ['as' => 'internship.delete', 'uses' => 'InternshipController@delete']);

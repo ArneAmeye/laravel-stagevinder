@@ -81,63 +81,39 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/upload.js":
-/*!********************************!*\
-  !*** ./resources/js/upload.js ***!
-  \********************************/
+/***/ "./resources/js/remove_button.js":
+/*!***************************************!*\
+  !*** ./resources/js/remove_button.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  /* ADD BUTTON WHEN UPLOAD CONTAINS FILE */
-  $("#input__upload").change(function () {
-    if ($(this).val()) {
-      readURL(this);
-      $("#button_upload").fadeIn(300);
-    } else {
-      $("#button_upload").fadeOut(300);
-      $("#preview__card").fadeOut(650);
-    }
+  $(".button--green").mouseover(function () {
+    $(this).find(".fas").removeClass("fa-briefcase").addClass("fa-times");
+    $(this).find("span").text("Remove");
   });
-  /* SHOW PREVIEW OF THE IMAGE */
-
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        $("#preview").css("background-image", "url(" + e.target.result + ")");
-        $("#preview__card").fadeIn(650);
-      };
-
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-  /* CHANGE STYLE OP DROPZONE ON DRAG OVER */
-
-
-  $("#input__upload").on("dragenter", function (e) {
-    $(".upload__visual").addClass("upload__visual--active");
-  }).on("dragleave dragend mouseout drop", function (e) {
-    $(".upload__visual").removeClass("upload__visual--active");
+  $(".button--green").mouseout(function () {
+    $(this).find(".fas").removeClass("fa-times").addClass("fa-briefcase");
+    $(this).find("span").text("Applied");
   });
 });
 
 /***/ }),
 
-/***/ 2:
-/*!**************************************!*\
-  !*** multi ./resources/js/upload.js ***!
-  \**************************************/
+/***/ 3:
+/*!*********************************************!*\
+  !*** multi ./resources/js/remove_button.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\upload.js */"./resources/js/upload.js");
+module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\remove_button.js */"./resources/js/remove_button.js");
 
 
 /***/ })

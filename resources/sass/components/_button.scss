@@ -13,6 +13,7 @@
 }
 
 .button {
+	display: block;
 	margin-right: 10px;
 	background-color: $highlightBackgroundColor;
 	border-color: $highlightBackgroundColor;
@@ -48,6 +49,14 @@
 	margin-right: 0;
 	font-weight: $boldWeight;
 	display: inline-block;
+}
+
+.button--green {
+	background-color: $alertSuccessColor;
+}
+
+.button--green:hover {
+	background-color: $alertErrorColor;
 }
 
 .button--right {

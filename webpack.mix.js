@@ -16,6 +16,7 @@ mix.disableNotifications();
 mix.js("resources/js/app.js", "public/js")
     .js("resources/js/ajax.js", "public/js")
     .js("resources/js/upload.js", "public/js")
+    .js("resources/js/remove_button.js", "public/js")
     .js("resources/js/vue/search.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .sass("resources/sass/authentication.scss", "public/css")

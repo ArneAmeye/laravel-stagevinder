@@ -1,0 +1,71 @@
+.header__options__item--notifications:hover .notifications {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.notifications {
+	background: $whiteColor;
+    -webkit-box-shadow: $notificationsShadow;
+    box-shadow: $notificationsShadow;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    visibility: hidden;
+    width: 24rem;
+    overflow-y: scroll;
+    max-height: 250px;
+}
+
+.notification {
+	padding: 10px 20px;
+    width: 100%;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.notification:hover {
+	background-color: #f1f1f1;
+}
+
+.notification__image {
+	width: 40px;
+    margin-right: 10px;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+
+.notification__body {
+	line-height: normal;
+}
+
+.notification__user {
+	font-size: $navMoreSize;
+    font-weight: $boldWeight;
+    margin-bottom: 5px;
+}
+
+.notification__msg {
+	font-size: $authTextSize;
+	margin-bottom: 5px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: calc(24rem - 90px);
+}
+
+.notification__time {
+	font-size: $navigationSmallSize;
+    color: #919aa3;
+    display: inline-block;
+}

@@ -33,6 +33,10 @@
     2. [Installing packages](#Installing-packages)
     3. [Composer](Composer)
     4. [Launching site](#Launching-site)
+    5. [HTTPS and SSL](#HTTPS/SSL)
+8. [Envoy](#Envoy)
+9. [Docker](#Docker)
+10. [Dusk (tests)](<#Dusk-(tests)>)
 
 ## Starting up Laravel
 
@@ -77,7 +81,8 @@ That's it, you should now be able to use the external tool (see previous title) 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to 'table 'internships' on 24/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added Dribble columns to 'table 'students' on 04/11/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Fixed Intracto bug in database on 22/11/2019` <br/>
-Refreshing tables when changes were made
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added table students_internships for many to many on 02/12/2019` <br/>
+<br/>Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
 Refreshing tables and simultaniously add seeders
@@ -393,13 +398,89 @@ Check if it works :D<br/>
 Done! Feel free to ask questions, might have missed some stuff 🙃
 
 ## Envoy
+Envoy needs to be configured LOCALLY!<br/>
+Install Envoy: `composer global require laravel/envoy` <br/>
+Make sure you have 2 environments: production and staging folders in Linode, a separate DB for each of them and working URL's.<br/>
 
-Commands
-`cd /home/...`<br/>
-`php artisan down`<br/>
-`git reset --hard HEAD`<br/>
-`git pull origin master`<br/>
-`php composer.phar install`<br/>
-`php composer.phar dump-autoload`<br/>
-`php artisan migrate --force`<br/>
-`php artisan up`<br/>
+Create an Envoy file in the root of the Laravel project called 'Envoy.blade.php'.<br/>
+It looks like this: (Replace your deploy username, IP adresss and foldernames!)<br/>
+
+```
+@servers(['production' => ['deployUsername@139.XXX.XXX.XX -p22'], 'staging' => ['deployUsername@139.XXX.XXX.XX -p22']])
+
+@task('deploy-production', ['on' => 'production'])
+    cd /home/FOLDERNAME/FOLDERNAME/laravel-stagevinder
+    php artisan down
+    git reset --hard HEAD
+    git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git
+    php artisan migrate --force
+    php artisan up
+@endtask
+
+@task('deploy-staging', ['on' => 'staging'])
+    cd /home/FOLDERNAME-beta/FOLDERNAME-beta/laravel-stagevinder
+    php artisan down
+    git reset --hard HEAD
+    git pull ssh://git@github.com/ArneAmeye/laravel-stagevinder.git
+    php artisan migrate --force
+    php artisan up
+@endtask
+```
+
+Now run the deployment with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
+
+ISSUES?<br/>
+SSH key for the deploy user must be setup! <br/>
+If you have done this but it tries to load it from "C/users/yourname/.ssh/id_rsa" then we need to tell Windows where this Linode host can find our Private Key:<br/>
+Go to "C:/User/Yourname/.ssh" and create a `config` file if it doesn't exist yet. <br/>
+Paste this and adapt to your configuration:<br/>
+```
+Host 139.XXX.XXX.XXX
+ HostName 139.XXX.XXX.XXX
+ User deployUsername
+ IdentityFile ~/.ssh/YourPrivateKeyFileName
+ ``` 
+ 
+NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
+
+## Docker
+- First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).
+- Follow the tutorial on [this website](https://dev.to/baliachbryan/deploying-your-laravel-app-on-docker-with-nginx-and-mysql-56ni).
+- Tips when following the turorial:
+    - I recommend spliting following command in `docker-compose up -d --build database && docker-compose up -d --build app && docker-compose up -d --build web ` into `docker-compose up -d --build database`, `docker-compose up -d --build app` and `docker-compose up -d --build web` ;)
+    - Did you get an error after running the command `docker-compose up -d --build app`? It is about the php artisan optimize command? Then delete that line in the development > app.dockerfile.
+
+
+## Dusk (tests)
+### Install & Dusk setup
+Add Dusk with composer: `composer require --dev laravel/dusk`<br/>
+Install Dusk:<br/>
+- `vagrant ssh`<br/>
+- `cd code`<br/>
+- `php artisan dusk:install`<br/>
+
+Make sure our .env file has the right URL (http://homestead.test) for "APP_URL".<br/>
+Within the .env also change the DB HOST (ip) to the IP found in Homestead.yaml<br/>
+Add `DUSK_USER=yourname@stagevinder.be` and `DUSK_PASSWORD=yourpassword` to the .env file, this is needed for a login test that i've written!<br/>
+
+You can make a ".env.dusk.local" file filled with a copy of the ".env" file in case you want Dusk to use other settings of your .env file, however right now this is not needed.<br/>
+
+All Dusk tests can be found in (folders): "tests->Browser"<br/>
+
+We can run a test with: `php artisan dusk`<br/>
+Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
+
+### Problem running dusk?<br/>
+Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/><br/>
+Error: Failed to connect to localhost port 9515: Connection refused <br/>
+`sudo apt-get update`<br/>
+`sudo apt-get -y install libnss3 chromium-browser`<br/>
+Error: session not created: Chrome version must be between 70 and 73 <br/>
+Exit the Virtual Box and run `composer require --dev staudenmeir/dusk-updater`. Go back in your Virtual Box. Here you run `php artisan dusk:update`. Test it again: `php artisan dusk`.
+
+### Add dusk tests
+You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>
+
+### To Do
+Arne ==> Login & home page <br/>
+Lars ==> Regsiter for Companies/Students & Checking if you can visit the student page without Auth. <br/>

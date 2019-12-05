@@ -5,7 +5,20 @@
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
-  justify-content: initial;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+.preview__container__title {
+  display: block;
+  width: 100%;
+  padding-bottom: 1em;
+  color: #303548;
 }
 
 .preview__inner {
@@ -24,13 +37,14 @@
 }
 
 .preview__text {
-  position: relative;
+  position: absolute;
   padding: 10%;
-  top: 70%;
+  bottom: 0%;
   color: #505458;
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: inherit;
 }
 
 .preview__text--internship {
@@ -48,6 +62,17 @@
   text-overflow: ellipsis;
 }
 
+.preview__button--add {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1024px) {
+  .preview__container {
+    justify-content: initial;
+  }
+}
 .search__field__container {
   margin-bottom: 30px;
   background-color: #fff;
@@ -91,4 +116,192 @@
   border: transparent;
 }
 
-/*KEYFRAMES*/
+.button__center {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.button__center--margin {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: block;
+  margin-right: 10px;
+  background-color: #4680ff;
+  border-color: #4680ff;
+  color: #fff;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+  border-radius: 2px;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 10px 19px;
+  margin-bottom: 5px;
+  box-shadow: none;
+  border: none;
+  text-align: center;
+}
+
+.button--big {
+  width: 120px;
+}
+
+.button--fullWidth {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.button--transparent {
+  background-color: transparent;
+  color: #303548;
+}
+
+.button--margin {
+  margin-right: 0;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.button--green {
+  background-color: #93be52;
+}
+
+.button--green:hover {
+  background-color: #fc6180;
+}
+
+.button--right {
+  margin: 0;
+  padding: 8px 14px;
+  line-height: 16px;
+  font-size: 11px;
+  float: right;
+}
+
+.button--hidden {
+  display: none;
+}
+
+.button__icon {
+  margin-right: 5px;
+}
+
+.button__social {
+  background-color: #3c5a99;
+  border-color: #3c5a99;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 10px 19px;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+}
+
+.button__social__icon {
+  padding: 5px 0;
+  display: inline-block !important;
+  border-radius: 3px 0 0 3px;
+  margin: -7px 0 -7px -13px;
+  margin-right: 5px;
+}
+
+@media (min-width: 769px) {
+  .buttons__container {
+    float: right;
+    bottom: 38px;
+    right: 35px;
+    position: absolute;
+  }
+}
+.applications__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+.application__single__container {
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  background: #fff;
+  width: 250px;
+  height: 250px;
+  margin: 0px 10px 30px -5px;
+}
+
+.application__student__profile {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(70, 128, 255, 0.5);
+  position: relative;
+  z-index: 5;
+}
+
+.application__internship__photo {
+  position: absolute;
+  top: 0;
+}
+
+.student__image {
+  width: 4em;
+  height: 4em;
+  margin-right: 0.5em;
+}
+
+.student__name {
+  color: #fff;
+}
+
+.application__internship__preview {
+  z-index: 5;
+}
+
+.application____internship__text {
+  position: absolute;
+  padding: 10%;
+  bottom: 0%;
+  color: #505458;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 250px;
+}
+
+.application____internship__text--title {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.application____internship__text--description {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 1024px) {
+  .applications__container {
+    justify-content: initial;
+  }
+}

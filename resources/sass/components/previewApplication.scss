@@ -1,4 +1,4 @@
-.preview__container {
+.applications__container {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
@@ -15,14 +15,7 @@
     border: none;
 }
 
-.preview__container__title{
-    display: block;
-    width: 100%;
-    padding-bottom: 1em;
-    color: $mainColor;
-}
-
-.preview__inner {
+.application__single__container{
     position: relative;
     border-radius: $profilePictureRadius;
     -webkit-box-shadow: $breadcrumbShadow;
@@ -34,11 +27,38 @@
     margin: 0px 10px 30px -5px;
 }
 
-.preview__image {
-    position: absolute;
+.application__student__profile{
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: (rgba(70 ,128,255,0.5));
+    position: relative;
+    z-index: 5;
 }
 
-.preview__text {
+.application__internship__photo{
+    position: absolute;
+    top: 0;
+}
+
+.student__image{
+    width: 4em;
+    height: 4em;
+    margin-right: 0.5em;
+}
+
+.student__name{
+    color: #fff;
+}
+
+.application__internship__preview{
+    z-index: 5;
+}
+
+.application____internship__text{
     position: absolute;
     padding: 10%;
     bottom: 0%;
@@ -46,10 +66,10 @@
     background-color: $whiteColor;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: inherit;
+    width: 250px;
 }
 
-.preview__text--internship {
+.application____internship__text--title{
     font-size: $navigationSize;
     font-weight: $boldWeight;
     white-space: nowrap;
@@ -57,21 +77,15 @@
     text-overflow: ellipsis;
 }
 
-.preview__text--position {
+.application____internship__text--description{
     font-size: $breadcrumbTextSize;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.preview__button--add{
-    display: block;
-    width: 100%;
-    margin-bottom: 1em;
-}
-
 @media (min-width: 1024px) {
-	.preview__container {
+	.applications__container {
 		justify-content: initial;;
 	}
 }

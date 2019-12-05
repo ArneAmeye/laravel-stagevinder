@@ -112,6 +112,7 @@
 }
 
 .button {
+  display: block;
   margin-right: 10px;
   background-color: #4680ff;
   border-color: #4680ff;
@@ -146,6 +147,14 @@
   margin-right: 0;
   font-weight: 600;
   display: inline-block;
+}
+
+.button--green {
+  background-color: #93be52;
+}
+
+.button--green:hover {
+  background-color: #fc6180;
 }
 
 .button--right {
@@ -414,7 +423,20 @@
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
-  justify-content: initial;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+.preview__container__title {
+  display: block;
+  width: 100%;
+  padding-bottom: 1em;
+  color: #303548;
 }
 
 .preview__inner {
@@ -433,13 +455,14 @@
 }
 
 .preview__text {
-  position: relative;
+  position: absolute;
   padding: 10%;
-  top: 70%;
+  bottom: 0%;
   color: #505458;
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: inherit;
 }
 
 .preview__text--internship {
@@ -457,6 +480,17 @@
   text-overflow: ellipsis;
 }
 
+.preview__button--add {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1024px) {
+  .preview__container {
+    justify-content: initial;
+  }
+}
 #preview__card {
   display: none;
 }

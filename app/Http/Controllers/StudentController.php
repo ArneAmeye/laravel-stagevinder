@@ -42,9 +42,13 @@ class StudentController extends Controller
     {
         $data['student'] = \App\Student::find($student)->where('id', $student)->first();
         $data['user'] = \App\User::find($data['student']->user_id)->where('id', $data['student']->user_id)->first();
-        $data['current'] = auth()->user()->id;
+        $data['current'] = false;
+        
+        if (auth()->user() != null) {
+            $data['current'] = auth()->user()->id;
+        }
 
-        if (!empty($_GET['edit'])) {
+        if (!empty($_GET['edit']) && auth()->user() != null) {
             $id = session()->get('user')->id;
             if ($id != $student) {
                 return redirect("/students/$student");
