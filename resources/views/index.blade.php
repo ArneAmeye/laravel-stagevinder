@@ -42,6 +42,8 @@
             @if(Auth::check() and Session::has('user'))
                 @if(Session::get('user')->type == 'student')
                     @if(isset($internships))
+                        @component('components/show_my_applications', ['applications' => $applications])
+                        @endcomponent
                         @component('components/show_internships', ['internships' => $internships])
                         @endcomponent
                     @endif
