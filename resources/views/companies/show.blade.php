@@ -60,11 +60,11 @@
 							</div>
 						</div>
 						<div class="buttons__container">
-							<button class="button">
+							<button class="button button--follow">
 								<i class="fa fa-plus button__icon" aria-hidden="true"></i>
 								follow
 							</button>
-							<button class="button">
+							<button class="button button--message">
 								<i class="fa fa-comment button__icon" aria-hidden="true"></i>
 								message
 							</button>
@@ -170,7 +170,7 @@
 				<div class="card__inner">
 					<div class="card__header">
 						<h5 class="card__title">
-							Description About Me
+							Description
 						</h5>
 						@if($current == $company->user_id)
 							@if (empty($edit) || $edit != "bio")
