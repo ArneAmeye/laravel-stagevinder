@@ -12,7 +12,7 @@
             @if($myInternship->is_available == 1)
                 <a href="{{ url('/internships/') }}/{{ $myInternship->id }}">
                     <div class="preview__inner">
-                        <img class="preview__image" src="{{asset('images/internships/profile_picture')}}/{{ $myInternship->profile_picture }}">
+                        <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $myInternship->background_picture }}">
                         <div class="preview__text">
                             <p class="preview__text--internship">
                                 {{ $myInternship->title }}
