@@ -307,7 +307,7 @@ ul {
 }
 
 .button {
-  display: block;
+  display: inline-block;
   margin-right: 10px;
   background-color: #4680ff;
   border-color: #4680ff;
@@ -349,6 +349,14 @@ ul {
 }
 
 .button--green:hover {
+  background-color: #fc6180;
+}
+
+.button--accept {
+  background-color: #93be52;
+}
+
+.button--decline {
   background-color: #fc6180;
 }
 

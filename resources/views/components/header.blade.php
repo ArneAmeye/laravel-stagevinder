@@ -50,57 +50,121 @@
 						<li class="notification">
 							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
 							<div class="notification__body">
-								<h5 class="notification__user">
-									John Doe
-								</h5>
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
 								<p class="notification__msg">
 									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
 								</p>
-								<span class="notification__time">
-									30 minutes ago
-								</span>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
 							</div>
 						</li>
 						<li class="notification">
 							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
 							<div class="notification__body">
-								<h5 class="notification__user">
-									John Doe
-								</h5>
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
 								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit.
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
 								</p>
-								<span class="notification__time">
-									30 minutes ago
-								</span>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
 							</div>
 						</li>
 						<li class="notification">
 							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
 							<div class="notification__body">
-								<h5 class="notification__user">
-									John Doe
-								</h5>
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
 								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit.
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
 								</p>
-								<span class="notification__time">
-									30 minutes ago
-								</span>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
 							</div>
 						</li>
 						<li class="notification">
 							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
 							<div class="notification__body">
-								<h5 class="notification__user">
-									John Doe
-								</h5>
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
 								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit.
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
 								</p>
-								<span class="notification__time">
-									30 minutes ago
-								</span>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="notification">
+							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
+							<div class="notification__body">
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
+								<p class="notification__msg">
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+								</p>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
 							</div>
 						</li>
 					</ul>

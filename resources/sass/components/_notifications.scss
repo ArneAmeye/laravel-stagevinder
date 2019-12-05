@@ -31,11 +31,14 @@
     display: flex;
     -ms-flex-align: start;
     align-items: flex-start;
-    cursor: pointer;
 }
 
 .notification:hover {
 	background-color: #f1f1f1;
+}
+
+.notification:hover .notification__buttons {
+    display: block;
 }
 
 .notification__image {
@@ -53,6 +56,8 @@
 	font-size: $navMoreSize;
     font-weight: $boldWeight;
     margin-bottom: 5px;
+    display: inline-block;
+    float: left;
 }
 
 .notification__msg {
@@ -62,10 +67,16 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	width: calc(24rem - 90px);
+    margin-bottom: 20px;
 }
 
 .notification__time {
 	font-size: $navigationSmallSize;
     color: #919aa3;
     display: inline-block;
+    float: right;
+}
+
+.notification__buttons {
+    display: none;
 }

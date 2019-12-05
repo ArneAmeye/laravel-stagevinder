@@ -33,7 +33,11 @@
 }
 
 .preview__image {
-  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  height: 100%;
 }
 
 .preview__text {
@@ -128,7 +132,7 @@
 }
 
 .button {
-  display: block;
+  display: inline-block;
   margin-right: 10px;
   background-color: #4680ff;
   border-color: #4680ff;
@@ -170,6 +174,14 @@
 }
 
 .button--green:hover {
+  background-color: #fc6180;
+}
+
+.button--accept {
+  background-color: #93be52;
+}
+
+.button--decline {
   background-color: #fc6180;
 }
 
