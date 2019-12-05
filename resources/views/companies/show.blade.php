@@ -60,11 +60,11 @@
 							</div>
 						</div>
 						<div class="buttons__container">
-							<button class="button">
+							<button class="button button--follow">
 								<i class="fa fa-plus button__icon" aria-hidden="true"></i>
 								follow
 							</button>
-							<button class="button">
+							<button class="button button--message">
 								<i class="fa fa-comment button__icon" aria-hidden="true"></i>
 								message
 							</button>
