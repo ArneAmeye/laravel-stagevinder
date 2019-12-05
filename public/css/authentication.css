@@ -177,6 +177,74 @@ ul {
   width: 100%;
 }
 
+.homepage__reference {
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  margin-left: 1em;
+  background-color: transparent;
+  text-align: right;
+}
+
+.homepage__reference__mascotte {
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  background-color: #4680ff;
+  margin-top: 1.5em;
+  box-shadow: 0 2px 18px -2px #000;
+}
+
+.homepage__reference__message {
+  background-color: #fff;
+  text-align: left;
+  padding: 1em;
+  box-shadow: 0 2px 18px -2px #000;
+  position: relative;
+}
+
+.homepage__reference__message::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 2%;
+  width: 0;
+  height: 0;
+  border: 1em solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+  margin-bottom: -0.9em;
+}
+
+.homepage__reference__message--title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #505458;
+}
+
+.homepage__reference__message--text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #303548;
+}
+
+.homepage__reference__button {
+  margin-top: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.homepage__reference__close {
+  color: #505458;
+  position: absolute;
+  right: 1em;
+  bottom: 1.25em;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
 @media (min-width: 576px) {
   .container__center {
     flex: 0 0 100%;
@@ -216,6 +284,15 @@ ul {
 
   .auth__login {
     margin-top: 30px;
+  }
+
+  .homepage__reference {
+    max-width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .homepage__reference {
+    max-width: 25%;
   }
 }
 .button__center {

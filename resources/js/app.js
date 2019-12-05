@@ -110,5 +110,15 @@ $(document).ready(function() {
                 ? "Now you are a company!"
                 : "Now you are a student!"
         );
+
+        
     });
+
+    //Login popup: close and open with fading
+    $(".homepage__reference__close").click(function() {
+        $(".homepage__reference__message").fadeOut();
+    })
+    $(".homepage__reference__mascotte").click(function() {
+        $(".homepage__reference__message").fadeIn();
+    })
 });
