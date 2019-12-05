@@ -1,0 +1,36 @@
+.single__company__card{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $whiteColor;
+    position: relative;
+    border-radius: $profilePictureRadius;
+    -webkit-box-shadow: $breadcrumbShadow;
+    box-shadow: $breadcrumbShadow;
+    border: none;
+    background: $whiteColor;
+    padding: 0.5em;
+    margin: 0em 1em 1em 0em;
+    width: 250px;
+}
+
+.single__company__card__photo{
+    width: 4em;
+    height: 4em;
+}
+
+.single__company__card__text{
+    text-align: left;
+    padding-left: 1em;
+}
+
+.single__company__card__text--name{
+    font-weight: $boldWeight;
+    color: $cardTitleColor;
+}
+
+.single__company__card__text--internships{
+    font-weight: $lightWeight;
+    color: $cardTitleColor;
+    font-size: $companySmallSize;
+}
