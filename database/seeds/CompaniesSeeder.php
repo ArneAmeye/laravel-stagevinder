@@ -16,8 +16,8 @@ class CompaniesSeeder extends Seeder
         $company1->zip_code = '3000';
         $company1->street_and_number = 'Lange Ridderstraat 44';
         $company1->city = 'Mechelen';
-        $company1->profile_picture = 'default.png';
-        $company1->background_picture = 'default.jpg';
+        $company1->profile_picture = 'tm.png';
+        $company1->background_picture = 'tm.jpg';
         $company1->save();
 
         $company2 = new \App\Company();
