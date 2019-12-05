@@ -154,13 +154,13 @@
     font-size: $navMoreSize;
     padding: 4px;
     margin-right: 10px;
-    color: #4680ff;
+    //color: $accentColor;
     width: 30px;
     display: inline-block;
     height: 30px;
     text-align: center;
     position: relative;
-    background-color: rgba(70, 128, 255, 0.5);
+    background-color: $navigationOpacity;
     border-radius: $inputRadius;
 }
 

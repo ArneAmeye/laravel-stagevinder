@@ -114,8 +114,8 @@
 .button {
   display: inline-block;
   margin-right: 10px;
-  background-color: #4680ff;
-  border-color: #4680ff;
+  background-color: #DE4A43;
+  border-color: #DE4A43;
   color: #fff;
   cursor: pointer;
   transition: all ease-in 0.3s;
@@ -140,7 +140,7 @@
 
 .button--transparent {
   background-color: transparent;
-  color: #303548;
+  color: #472421;
 }
 
 .button--margin {
@@ -321,18 +321,18 @@
 
 .card__menu__link {
   font-size: 14px;
-  color: #303548;
+  color: #472421;
   padding: 20px 0;
   display: block;
   transition: all 0.3s ease-in;
 }
 
 .card__menu__link--current {
-  border-bottom: 4px solid #4680ff;
+  border-bottom: 4px solid #DE4A43;
 }
 
 .card__menu__link:hover {
-  color: #4680ff;
+  color: #DE4A43;
 }
 
 @media (min-width: 573px) {
@@ -365,7 +365,7 @@
 }
 
 .input__addon {
-  background-color: #4680ff;
+  background-color: #DE4A43;
   color: #fff;
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
@@ -444,7 +444,7 @@
   display: block;
   width: 100%;
   padding-bottom: 1em;
-  color: #303548;
+  color: #472421;
 }
 
 .preview__inner {
@@ -537,7 +537,7 @@
 
 .upload:hover ~ .upload__visual,
 .upload__visual--active {
-  border-color: #4680ff;
+  border-color: #DE4A43;
 }
 
 .upload__visual__icon {

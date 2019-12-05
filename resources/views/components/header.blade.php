@@ -23,7 +23,7 @@
 			<i class="fas fa-bars header__menu__icon"></i>
 		</a>
 		<a href="index.php" class="header__logo">
-			<img src="{{ asset('branding/logo_3.png') }}" class="header__logo__image">
+			<img src="{{ asset('branding/logo.png') }}" class="header__logo__image">
 		</a>
 		<a href="#" class="header__options header__options--mobile">
 			<i class="fas fa-ellipsis-h header__options__icon" aria-hidden="true"></i>

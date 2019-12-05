@@ -10,7 +10,7 @@
     <form action="{{ route('user.register') }}" method="post" class="auth__box">
         {{csrf_field()}}
         <div class="auth__branding">
-            <img src="{{ asset('branding/mascotte_1.png') }}" alt="Kingtrainee logo" class="auth__branding__logo">
+            <img src="{{ asset('branding/mascotte.png') }}" alt="Kingtrainee logo" class="auth__branding__logo">
             <h1 class="auth__branding__name">KingTrainee</h1>
         </div>
         <h3 class="auth__header__title">Sign up</h3>

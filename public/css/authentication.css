@@ -11,7 +11,7 @@ body {
   background-color: #f3f3f3;
   font-size: 16px;
   overflow-x: hidden;
-  color: #303548;
+  color: #472421;
   font-family: open sans, sans-serif;
 }
 
@@ -101,7 +101,7 @@ ul {
 }
 
 .auth__branding__name {
-  color: #4680ff;
+  color: #DE4A43;
 }
 
 .auth__header {
@@ -125,7 +125,7 @@ ul {
 }
 
 .auth__header__text {
-  color: #303548;
+  color: #472421;
   margin: 25px 0;
   text-align: center;
   font-size: 13px;
@@ -133,7 +133,7 @@ ul {
 
 .auth__text {
   border-bottom: 1px solid #e0e0e0;
-  color: #303548;
+  color: #472421;
   padding-bottom: 5px;
   font-size: 13px;
   margin-bottom: 1rem;
@@ -168,7 +168,7 @@ ul {
 .auth__forgot__text {
   display: inline-block;
   font-weight: 600;
-  color: #303548;
+  color: #472421;
   font-size: 13px;
 }
 
@@ -232,8 +232,8 @@ ul {
 .button {
   display: inline-block;
   margin-right: 10px;
-  background-color: #4680ff;
-  border-color: #4680ff;
+  background-color: #DE4A43;
+  border-color: #DE4A43;
   color: #fff;
   cursor: pointer;
   transition: all ease-in 0.3s;
@@ -258,7 +258,7 @@ ul {
 
 .button--transparent {
   background-color: transparent;
-  color: #303548;
+  color: #472421;
 }
 
 .button--margin {
@@ -337,7 +337,7 @@ ul {
 }
 
 .input__addon {
-  background-color: #4680ff;
+  background-color: #DE4A43;
   color: #fff;
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
@@ -396,7 +396,7 @@ ul {
 }
 
 .checkbox__visual {
-  border: 2px solid #4680ff;
+  border: 2px solid #DE4A43;
   border-radius: 0;
   cursor: pointer;
   display: flex;
@@ -412,7 +412,7 @@ ul {
   transform: scale(3) rotateZ(-20deg);
   opacity: 0;
   transition: all 0.3s ease-in;
-  color: #4680ff;
+  color: #DE4A43;
   font-size: 0.8em;
   line-height: 0;
 }
@@ -423,7 +423,7 @@ ul {
 }
 
 .checkbox__text {
-  color: #303548;
+  color: #472421;
   font-weight: 400;
   font-size: 15px;
 }
@@ -498,8 +498,8 @@ ul {
 }
 
 .alert--info {
-  border-color: #4680ff;
-  color: #4680ff;
+  border-color: #DE4A43;
+  color: #DE4A43;
 }
 
 .alert__close {

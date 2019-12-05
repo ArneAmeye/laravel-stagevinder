@@ -18,7 +18,7 @@
   display: block;
   width: 100%;
   padding-bottom: 1em;
-  color: #303548;
+  color: #472421;
 }
 
 .preview__inner {
@@ -94,13 +94,13 @@
   flex-wrap: wrap;
   flex-direction: row;
   margin: 0 -15px;
-  border-bottom: 1px solid #303548;
+  border-bottom: 1px solid #472421;
 }
 
 .search__field--input {
   margin: 0;
   width: 95%;
-  color: #303548;
+  color: #472421;
   background-color: #fff;
   font-size: 14px;
   -webkit-appearance: none;
@@ -134,8 +134,8 @@
 .button {
   display: inline-block;
   margin-right: 10px;
-  background-color: #4680ff;
-  border-color: #4680ff;
+  background-color: #DE4A43;
+  border-color: #DE4A43;
   color: #fff;
   cursor: pointer;
   transition: all ease-in 0.3s;
@@ -160,7 +160,7 @@
 
 .button--transparent {
   background-color: transparent;
-  color: #303548;
+  color: #472421;
 }
 
 .button--margin {
