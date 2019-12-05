@@ -16,6 +16,13 @@
                             <p class="preview__text--position">
                                 {{ $internship->description }}
                             </p>
+
+                            @php
+                                $companyName = \App\Company::where('id', $internship->company_id)->first()->name;
+                            @endphp
+                            <p class="preview__text--company">
+                                @ {{ $companyName }}
+                            </p>
                         </div>
                     </div>
                 </a>

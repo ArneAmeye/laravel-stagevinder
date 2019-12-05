@@ -487,7 +487,7 @@
 
 .preview__text {
   position: absolute;
-  padding: 10%;
+  padding: 1em;
   bottom: 0%;
   color: #505458;
   background-color: #fff;
@@ -509,6 +509,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.preview__text--company {
+  font-size: 13px;
+  font-weight: 300;
+  padding-top: 0.5em;
 }
 
 .preview__button--add {
@@ -609,4 +615,40 @@
     height: 520px;
   }
 }
+.single__company__card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  background: #fff;
+  padding: 0.5em;
+  margin: 0em 1em 1em 0em;
+  width: 250px;
+}
+
+.single__company__card__photo {
+  width: 4em;
+  height: 4em;
+}
+
+.single__company__card__text {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.single__company__card__text--name {
+  font-weight: 600;
+  color: #505458;
+}
+
+.single__company__card__text--internships {
+  font-weight: 300;
+  color: #505458;
+  font-size: 13px;
+}
+
 /*KEYFRAMES*/
