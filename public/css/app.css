@@ -802,11 +802,14 @@ ul {
   transition: all 0.3s ease-in-out;
   display: flex;
   align-items: flex-start;
-  cursor: pointer;
 }
 
 .notification:hover {
   background-color: #f1f1f1;
+}
+
+.notification:hover .notification__buttons {
+  display: block;
 }
 
 .notification__image {
@@ -823,6 +826,8 @@ ul {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 5px;
+  display: inline-block;
+  float: left;
 }
 
 .notification__msg {
@@ -832,12 +837,18 @@ ul {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: calc(24rem - 90px);
+  margin-bottom: 20px;
 }
 
 .notification__time {
   font-size: 12px;
   color: #919aa3;
   display: inline-block;
+  float: right;
+}
+
+.notification__buttons {
+  display: none;
 }
 
 /*KEYFRAMES*/

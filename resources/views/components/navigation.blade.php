@@ -58,7 +58,7 @@
 			<ul class="navigation__items">
 				@foreach($navigationOfUser as $nav)
 				<li class="navigation__item">
-					<a href="{{ $nav['url'] }}" class="navigation__link {{ strpos($_SERVER['REQUEST_URI'], $nav['url']) || $_SERVER['REQUEST_URI'].$nav['url'] == '/index.php' ? 'navigation__link--current' : '' }}">
+					<a href="/{{ $nav['url'] }}" class="navigation__link {{ strpos($_SERVER['REQUEST_URI'], $nav['url']) || $_SERVER['REQUEST_URI'].$nav['url'] == '/index.php' ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
 							<i class="fas {{$nav['icon']}} navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
