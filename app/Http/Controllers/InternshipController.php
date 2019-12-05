@@ -131,6 +131,7 @@ class InternshipController extends Controller
         $internship = new \App\StudentInternship();
         $internship->student_id = $user->id;
         $internship->internship_id = $id;
+        $internship->company_id = \App\Internship::where('id', $id)->first()->company_id;
         $internship->save();
 
         return redirect("/internships/$id")->with('success', 'Successfully applied for internship!');

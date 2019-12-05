@@ -424,6 +424,12 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
 }
 
 .preview__container__title {
@@ -472,6 +478,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.preview__button--add {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 @media (min-width: 1024px) {

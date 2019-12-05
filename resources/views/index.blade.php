@@ -38,8 +38,7 @@
             @endcomponent
         @endif
     @endauth
-    <div class="preview__container">
-        <section class="preview__container">
+    
             @if(Auth::check() and Session::has('user'))
                 @if(Session::get('user')->type == 'student')
                     @if(isset($internships))
@@ -48,14 +47,9 @@
                     @endif
                 @endif
                 @if(Session::get('user')->type == 'company')
-                    @php
-                     $companyId = Session::get('user')->id;   
-                    @endphp
-                    <a href="{{ url('/companies/') }}/{{ $companyId }}?internship=create"><button class="button">
-                        <i class="fa fa-plus button__icon"></i>
-                        Add Internship
-                    </button></a>
-                    @component('components/show_applications', ['companyInternships' => $companyInternships])
+                    @component('components/show_applications_from_students', ['applications' => $applications])
+                    @endcomponent
+                    @component('components/show_my_company_internships', ['companyInternships' => $companyInternships])
                     @endcomponent
                 @endif
             @else
