@@ -17,7 +17,7 @@
                         </div>
                     </a>
 
-                    <img class="application__internship__photo" src="{{asset('images/internships/profile_picture')}}/{{ $internship->profile_picture }}" alt="internship picture">
+                    <img class="application__internship__photo" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture }}" alt="internship picture">
 
                     <a href="{{ url('/internships/') }}/{{ $application->internship_id }}">
                         <div class="application__internship__preview">
