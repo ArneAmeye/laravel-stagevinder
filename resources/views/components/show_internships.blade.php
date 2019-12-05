@@ -8,7 +8,7 @@
                 <a href="/login">
             @endif
                     <div class="preview__inner">
-                        <img class="preview__image" src="{{asset('images/internships/profile_picture')}}/{{ $internship->profile_picture }}">
+                        <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture}}">
                         <div class="preview__text">
                             <p class="preview__text--internship">
                                 {{ $internship->title }}

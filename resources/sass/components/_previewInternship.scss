@@ -35,7 +35,10 @@
 }
 
 .preview__image {
-    position: absolute;
+    //position: absolute;
+    object-fit: cover;
+    object-position: 50% 50%;
+    height: 100%;
 }
 
 .preview__text {

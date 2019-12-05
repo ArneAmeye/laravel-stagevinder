@@ -451,7 +451,11 @@
 }
 
 .preview__image {
-  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  height: 100%;
 }
 
 .preview__text {
