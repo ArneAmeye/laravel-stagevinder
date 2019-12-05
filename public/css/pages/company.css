@@ -106,6 +106,7 @@
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .button__center--margin {
