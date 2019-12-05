@@ -1,4 +1,5 @@
 <div class="preview__container">
+    <h3 class="preview__container__title">All available internships:</h3>
     @foreach($internships as $internship)
         @if($internship->is_available == 1)
             <a href="{{ url('/internships/') }}/{{ $internship->id }}">
