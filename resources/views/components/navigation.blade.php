@@ -1,7 +1,6 @@
 @php
 	$navigationOfUser = [
 		["name" => "Home", "url" => "index.php", "icon" => "fa-home"],
-		["name" => "Students", "url" => "students", "icon" => "fa-graduation-cap"],
 		["name" => "Companies", "url" => "companies", "icon" => "fa-building"],
 		["name" => "Internships", "url" => "internships", "icon" => "fa-file-alt"]
 	];
