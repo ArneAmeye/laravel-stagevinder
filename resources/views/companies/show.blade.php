@@ -170,7 +170,7 @@
 				<div class="card__inner">
 					<div class="card__header">
 						<h5 class="card__title">
-							Description About Me
+							Description
 						</h5>
 						@if($current == $company->user_id)
 							@if (empty($edit) || $edit != "bio")
