@@ -106,9 +106,9 @@ $(document).ready(function() {
 
         //Text next to slider
         $(".slider__item--label").html(
-            $(".slider__item--label").html() == "You are a student!"
-                ? "You are a company!"
-                : "You are a student!"
+            $(".slider__item--label").html() == "Now you are a student!"
+                ? "Now you are a company!"
+                : "Now you are a student!"
         );
     });
 });
