@@ -13,7 +13,7 @@
 }
 
 .button {
-	display: block;
+	display: inline-block;
 	margin-right: 10px;
 	background-color: $highlightBackgroundColor;
 	border-color: $highlightBackgroundColor;
@@ -56,6 +56,14 @@
 }
 
 .button--green:hover {
+	background-color: $alertErrorColor;
+}
+
+.button--accept {
+	background-color: $alertSuccessColor;
+}
+
+.button--decline {
 	background-color: $alertErrorColor;
 }
 
