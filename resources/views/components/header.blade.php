@@ -1,4 +1,6 @@
 @php
+	use App\Helpers\Notification;
+
 	if(!Session::has('user')){ 
 		
 	}else{
@@ -47,126 +49,35 @@
 						<span class="header__options__badge header__options__badge--pink"></span>
 					</a>
 					<ul class="notifications">
-						<li class="notification">
-							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
-							<div class="notification__body">
-								<div class="clearfix">
-									<h5 class="notification__user">
-										John Doe
-									</h5>
-									<span class="notification__time">
-										30 minutes ago
-									</span>
+						@foreach(Notification::getNotifications(Session::get('user')->id) as $notification)
+							@php
+							$data = Notification::getNotificationDetails($notification->student_id)
+							@endphp
+							<li class="notification">
+								<img src="{{ asset('images/students/profile_picture/'.$data->profile_picture) }}" class="notification__image">
+								<div class="notification__body">
+									<div class="clearfix">
+										<h5 class="notification__user">
+											{{ $data->firstname." ".$data->lastname }}
+										</h5>
+										<span class="notification__time">
+											{{ $notification->created_at->diffForHumans() }}
+										</span>
+									</div>
+									<p class="notification__msg">
+										Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+									</p>
+									<div class="notification__buttons">
+										<a href="#" class="button button--accept">
+											Accept
+										</a>
+										<a href="#" class="button button--decline">
+											Decline
+										</a>
+									</div>
 								</div>
-								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
-								</p>
-								<div class="notification__buttons">
-									<a href="#" class="button button--accept">
-										Accept
-									</a>
-									<a href="#" class="button button--decline">
-										Decline
-									</a>
-								</div>
-							</div>
-						</li>
-						<li class="notification">
-							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
-							<div class="notification__body">
-								<div class="clearfix">
-									<h5 class="notification__user">
-										John Doe
-									</h5>
-									<span class="notification__time">
-										30 minutes ago
-									</span>
-								</div>
-								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
-								</p>
-								<div class="notification__buttons">
-									<a href="#" class="button button--accept">
-										Accept
-									</a>
-									<a href="#" class="button button--decline">
-										Decline
-									</a>
-								</div>
-							</div>
-						</li>
-						<li class="notification">
-							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
-							<div class="notification__body">
-								<div class="clearfix">
-									<h5 class="notification__user">
-										John Doe
-									</h5>
-									<span class="notification__time">
-										30 minutes ago
-									</span>
-								</div>
-								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
-								</p>
-								<div class="notification__buttons">
-									<a href="#" class="button button--accept">
-										Accept
-									</a>
-									<a href="#" class="button button--decline">
-										Decline
-									</a>
-								</div>
-							</div>
-						</li>
-						<li class="notification">
-							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
-							<div class="notification__body">
-								<div class="clearfix">
-									<h5 class="notification__user">
-										John Doe
-									</h5>
-									<span class="notification__time">
-										30 minutes ago
-									</span>
-								</div>
-								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
-								</p>
-								<div class="notification__buttons">
-									<a href="#" class="button button--accept">
-										Accept
-									</a>
-									<a href="#" class="button button--decline">
-										Decline
-									</a>
-								</div>
-							</div>
-						</li>
-						<li class="notification">
-							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
-							<div class="notification__body">
-								<div class="clearfix">
-									<h5 class="notification__user">
-										John Doe
-									</h5>
-									<span class="notification__time">
-										30 minutes ago
-									</span>
-								</div>
-								<p class="notification__msg">
-									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
-								</p>
-								<div class="notification__buttons">
-									<a href="#" class="button button--accept">
-										Accept
-									</a>
-									<a href="#" class="button button--decline">
-										Decline
-									</a>
-								</div>
-							</div>
-						</li>
+							</li>
+						@endforeach
 					</ul>
 				</li>
 				<li class="header__options__item">
