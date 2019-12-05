@@ -15,9 +15,9 @@
 .button {
 	display: inline-block;
 	margin-right: 10px;
-	background-color: $highlightBackgroundColor;
-	border-color: $highlightBackgroundColor;
-	color: $whiteColor;
+	background-color: $accentColor;
+	border-color: $accentColor;
+	color: $mainColor;
 	cursor: pointer;
 	-webkit-transition: all ease-in 0.3s;
 	transition: all ease-in 0.3s;
@@ -29,6 +29,16 @@
 	box-shadow: none;
 	border: none;
 	text-align: center;
+}
+
+.button--follow{
+	background-color: $accentColor;
+	color: $mainColor;
+}
+
+.button--message{
+	background-color: $whiteColor;
+	color: $mainColor;
 }
 
 .button--big {

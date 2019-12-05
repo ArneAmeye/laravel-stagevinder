@@ -14,9 +14,9 @@
 .button {
   display: inline-block;
   margin-right: 10px;
-  background-color: #4680ff;
-  border-color: #4680ff;
-  color: #fff;
+  background-color: #FECF5B;
+  border-color: #FECF5B;
+  color: #252421;
   cursor: pointer;
   transition: all ease-in 0.3s;
   border-radius: 2px;
@@ -27,6 +27,16 @@
   box-shadow: none;
   border: none;
   text-align: center;
+}
+
+.button--follow {
+  background-color: #FECF5B;
+  color: #252421;
+}
+
+.button--message {
+  background-color: #fff;
+  color: #252421;
 }
 
 .button--big {
@@ -40,7 +50,7 @@
 
 .button--transparent {
   background-color: transparent;
-  color: #303548;
+  color: #252421;
 }
 
 .button--margin {
@@ -221,18 +231,18 @@
 
 .card__menu__link {
   font-size: 14px;
-  color: #303548;
+  color: #252421;
   padding: 20px 0;
   display: block;
   transition: all 0.3s ease-in;
 }
 
 .card__menu__link--current {
-  border-bottom: 4px solid #4680ff;
+  border-bottom: 4px solid #DE4A43;
 }
 
 .card__menu__link:hover {
-  color: #4680ff;
+  color: #DE4A43;
 }
 
 @media (min-width: 573px) {
@@ -265,8 +275,8 @@
 }
 
 .input__addon {
-  background-color: #4680ff;
-  color: #fff;
+  background-color: #252421;
+  color: #FECF5B;
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;

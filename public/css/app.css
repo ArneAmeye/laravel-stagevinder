@@ -11,7 +11,7 @@ body {
   background-color: #f3f3f3;
   font-size: 16px;
   overflow-x: hidden;
-  color: #303548;
+  color: #252421;
   font-family: open sans, sans-serif;
 }
 
@@ -80,7 +80,7 @@ ul {
   text-align: center;
   text-transform: uppercase;
   padding: 10px;
-  background-color: #4680ff;
+  background-color: #DE4A43;
   justify-content: center;
   width: 100%;
 }
@@ -124,7 +124,7 @@ ul {
   flex-wrap: wrap;
   background-color: transparent;
   border: 0px solid transparent;
-  border-bottom: 2px solid #303548;
+  border-bottom: 2px solid #252421;
   margin: 30px 30px 5px 30px;
   position: relative;
   width: 300px;
@@ -181,7 +181,7 @@ ul {
 
 .header__options__link {
   padding: 0 0.6rem;
-  color: #303548;
+  color: #252421;
 }
 
 .header__options__icon {
@@ -214,7 +214,7 @@ ul {
 
 .header__options__name {
   font-size: 16px;
-  color: #303548;
+  color: #252421;
   display: inline-block;
 }
 
@@ -287,7 +287,7 @@ ul {
 }
 .navigation__container {
   margin-top: 80px;
-  background: #303548;
+  background: #252421;
   min-height: calc(100vh - 80px);
   position: fixed;
   width: 270px;
@@ -353,7 +353,7 @@ ul {
   margin: 0;
   width: 100%;
   color: #fff;
-  background-color: #303548;
+  background-color: #252421;
   font-size: 14px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -430,7 +430,7 @@ ul {
   left: 0;
   position: absolute;
   top: 0;
-  border-left-color: #4680ff;
+  border-left-color: #FECF5B;
 }
 
 .navigation__link:after {
@@ -451,13 +451,12 @@ ul {
   font-size: 15px;
   padding: 4px;
   margin-right: 10px;
-  color: #4680ff;
   width: 30px;
   display: inline-block;
   height: 30px;
   text-align: center;
   position: relative;
-  background-color: rgba(70, 128, 255, 0.5);
+  background-color: rgba(243, 243, 243, 0.1);
   border-radius: 4px;
 }
 
@@ -516,14 +515,14 @@ ul {
   color: #fff;
   box-shadow: 0 2px 12px -3px rgba(0, 0, 0, 0.5);
   align-items: center;
-  background-color: #4680ff;
+  background-color: #DE4A43;
 }
 
 .breadcrumb__info__title {
   display: block;
   margin-bottom: 0;
   font-weight: 600;
-  color: #303548;
+  color: #252421;
   font-size: 20px;
   text-transform: capitalize;
 }
@@ -661,8 +660,8 @@ ul {
 }
 
 .alert--info {
-  border-color: #4680ff;
-  color: #4680ff;
+  border-color: #252421;
+  color: #252421;
 }
 
 .alert__close {

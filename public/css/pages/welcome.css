@@ -18,7 +18,7 @@
   display: block;
   width: 100%;
   padding-bottom: 1em;
-  color: #303548;
+  color: #252421;
 }
 
 .preview__inner {
@@ -94,13 +94,13 @@
   flex-wrap: wrap;
   flex-direction: row;
   margin: 0 -15px;
-  border-bottom: 1px solid #303548;
+  border-bottom: 1px solid #252421;
 }
 
 .search__field--input {
   margin: 0;
   width: 95%;
-  color: #303548;
+  color: #252421;
   background-color: #fff;
   font-size: 14px;
   -webkit-appearance: none;
