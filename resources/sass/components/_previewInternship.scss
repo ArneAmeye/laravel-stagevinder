@@ -6,6 +6,20 @@
     -ms-flex-direction: row;
     width: 100%;
     justify-content: space-evenly;
+    margin-bottom: 30px;
+    background-color: $whiteColor;
+    padding: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: $breadcrumbShadow;
+    box-shadow: $breadcrumbShadow;
+    border: none;
+}
+
+.preview__container__title{
+    display: block;
+    width: 100%;
+    padding-bottom: 1em;
+    color: $mainColor;
 }
 
 .preview__inner {
@@ -21,7 +35,10 @@
 }
 
 .preview__image {
-    position: absolute;
+    //position: absolute;
+    object-fit: cover;
+    object-position: 50% 50%;
+    height: 100%;
 }
 
 .preview__text {
@@ -48,6 +65,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.preview__button--add{
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
 }
 
 @media (min-width: 1024px) {

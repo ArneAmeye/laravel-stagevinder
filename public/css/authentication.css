@@ -86,11 +86,29 @@ ul {
   box-shadow: 0 2px 18px -2px #000;
 }
 
+.auth__branding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  -ms-align-items: center;
+  justify-content: center;
+  margin: 0 -15px;
+}
+
+.auth__branding__logo {
+  width: 5em;
+  height: 5em;
+}
+
+.auth__branding__name {
+  color: #4680ff;
+}
+
 .auth__header {
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
+  margin: 0 0px;
 }
 
 .auth__header__left,
@@ -170,6 +188,10 @@ ul {
     width: 550px;
   }
 
+  .auth__branding {
+    justify-content: flex-start;
+  }
+
   .auth__header__left {
     flex: 0 0 25%;
     max-width: 25%;
@@ -178,6 +200,10 @@ ul {
   .auth__header__right {
     flex: 0 0 75%;
     max-width: 75%;
+  }
+
+  .auth__header__title {
+    text-align: left;
   }
 
   .auth__header__text {
@@ -204,6 +230,7 @@ ul {
 }
 
 .button {
+  display: inline-block;
   margin-right: 10px;
   background-color: #4680ff;
   border-color: #4680ff;
@@ -238,6 +265,22 @@ ul {
   margin-right: 0;
   font-weight: 600;
   display: inline-block;
+}
+
+.button--green {
+  background-color: #93be52;
+}
+
+.button--green:hover {
+  background-color: #fc6180;
+}
+
+.button--accept {
+  background-color: #93be52;
+}
+
+.button--decline {
+  background-color: #fc6180;
 }
 
 .button--right {

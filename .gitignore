@@ -15,3 +15,4 @@ yarn-error.log
 ca.homestead.laravel-app.crt
 ca.homestead.laravel-stagevinder.crt
 Envoy.blade.php
+tests/Browser/ExampleTest.php

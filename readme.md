@@ -36,7 +36,7 @@
     5. [HTTPS and SSL](#HTTPS/SSL)
 8. [Envoy](#Envoy)
 9. [Docker](#Docker)
-10. [Dusk (tests)](#Dusk-(tests))
+10. [Dusk (tests)](<#Dusk-(tests)>)
 
 ## Starting up Laravel
 
@@ -81,7 +81,9 @@ That's it, you should now be able to use the external tool (see previous title) 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added rows to 'table 'internships' on 24/10/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added Dribble columns to 'table 'students' on 04/11/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Fixed Intracto bug in database on 22/11/2019` <br/>
-Refreshing tables when changes were made
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added table students_internships for many to many on 02/12/2019` <br/>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Changes on seeders (and removed factories) for user testing on 05/12/2019` <br/>
+<br/>Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
 Refreshing tables and simultaniously add seeders
@@ -472,8 +474,14 @@ Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
 ### Problem running dusk?<br/>
 Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/><br/>
 Error: Failed to connect to localhost port 9515: Connection refused <br/>
-`sudo apt-get update`
-`sudo apt-get -y install libnss3 chromium-browser`
+`sudo apt-get update`<br/>
+`sudo apt-get -y install libnss3 chromium-browser`<br/>
+Error: session not created: Chrome version must be between 70 and 73 <br/>
+Exit the Virtual Box and run `composer require --dev staudenmeir/dusk-updater`. Go back in your Virtual Box. Here you run `php artisan dusk:update`. Test it again: `php artisan dusk`.
 
 ### Add dusk tests
 You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>
+
+### To Do
+Arne ==> Login & home page <br/>
+Lars ==> Regsiter for Companies/Students & Checking if you can visit the student page without Auth. <br/>

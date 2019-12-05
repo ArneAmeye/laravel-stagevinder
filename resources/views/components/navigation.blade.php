@@ -1,9 +1,9 @@
 @php
 	$navigationOfUser = [
-		["name" => "Home", "url" => "/index.php", "icon" => "fa-home"],
-		["name" => "Students", "url" => "/students", "icon" => "fa-graduation-cap"],
-		["name" => "Companies", "url" => "/companies", "icon" => "fa-building"],
-		["name" => "Internships", "url" => "/internships", "icon" => "fa-file-alt"]
+		["name" => "Home", "url" => "index.php", "icon" => "fa-home"],
+		["name" => "Students", "url" => "students", "icon" => "fa-graduation-cap"],
+		["name" => "Companies", "url" => "companies", "icon" => "fa-building"],
+		["name" => "Internships", "url" => "internships", "icon" => "fa-file-alt"]
 	];
 	$navigationOfGuest = [
 		["name" => "Sign in", "url" => "/login", "icon" => "fa-sign-in-alt"],
@@ -58,7 +58,7 @@
 			<ul class="navigation__items">
 				@foreach($navigationOfUser as $nav)
 				<li class="navigation__item">
-					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
+					<a href="/{{ $nav['url'] }}" class="navigation__link {{ strpos($_SERVER['REQUEST_URI'], $nav['url']) || $_SERVER['REQUEST_URI'].$nav['url'] == '/index.php' ? 'navigation__link--current' : '' }}">
 						<span class="navigation__link__icon">
 							<i class="fas {{$nav['icon']}} navigation__link__icon--center" aria-hidden="true"></i>
 						</span>
@@ -74,7 +74,7 @@
 			<ul class="navigation__items">
 				@foreach($navigationOfGuest as $nav)
 				<li class="navigation__item">
-					<a href="{{ $nav['url'] }}" class="navigation__link {{ Request::is('/') ? 'navigation__link--current' : '' }}">
+					<a href="{{ $nav['url'] }}" class="navigation__link">
 						<span class="navigation__link__icon">
 							<i class="fas {{$nav['icon']}} navigation__link__icon--center" aria-hidden="true"></i>
 						</span>

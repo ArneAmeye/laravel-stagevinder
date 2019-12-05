@@ -67,7 +67,7 @@ class UserController extends Controller
             $this->handleLogin($request);
         }
 
-        return view('/index');
+        return redirect()->route('index');
     }
 
     public function login()
@@ -112,6 +112,7 @@ class UserController extends Controller
     public function logout()
     {
         Auth::logout();
+        Session::flush();
 
         return redirect('/login');
     }

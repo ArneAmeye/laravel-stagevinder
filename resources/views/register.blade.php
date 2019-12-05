@@ -9,10 +9,39 @@
 @section('content')
     <form action="{{ route('user.register') }}" method="post" class="auth__box">
         {{csrf_field()}}
-
+        <div class="auth__branding">
+            <img src="{{ asset('branding/mascotte_1.png') }}" alt="Kingtrainee logo" class="auth__branding__logo">
+            <h1 class="auth__branding__name">KingTrainee</h1>
+        </div>
         <h3 class="auth__header__title">Sign up</h3>
         <p class="auth__header__text">Already have an account? <a href="/login">Login</a> here!</p>
         <!--Firstname and lastname for students, name for company-->
+
+        <!--Social signup with Facebook-->
+        <p class="auth__text">
+			Sign up easily with your social account:
+		</p>
+		<div class="auth__buttons">
+			<div class="auth__button">
+				<a href="{{ url('/fb-login') }}" class="button__social">
+					<i class="fab fa-facebook-f button__social__icon" aria-hidden="true"></i>
+					Sign up with facebook
+				</a>
+			</div>
+		</div>
+
+        <!--Checkbox for student/company signup-->
+        <p class=auth__text>Regular sign up. Are you a company or a student?</p>
+        <div class="slider">
+            <div class="slider__container slider__container--disabled">
+                <div class="slider__item slider__item--disabled">
+                    <input type="checkbox" name="isStudent" class="slider__item--checkbox">
+                </div>
+            </div>
+            <div>
+            <label for="checkbox" class="slider__item--label auth__header__text">Now you are a company!</label>
+            </div>
+        </div>
 
         <!--Student-->
         <div class="container--disabled">
@@ -62,18 +91,6 @@
 	    		<i class="fa fa-lock" aria-hidden="true"></i>
 			</span>
             <input type="password" class="input" name="password" placeholder="Password">
-        </div>
-
-        <p class=auth__text>Check if you are a student!</p>
-        <div class="slider">
-            <div class="slider__container slider__container--disabled">
-                <div class="slider__item slider__item--disabled">
-                    <input type="checkbox" name="isStudent" class="slider__item--checkbox">
-                </div>
-            </div>
-            <div>
-            <label for="checkbox" class="slider__item--label auth__header__text">You are a company!</label>
-            </div>
         </div>
 
         <button type="submit" class="button button--fullWidth">Sign up</button>

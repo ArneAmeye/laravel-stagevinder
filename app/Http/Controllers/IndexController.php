@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 
 class IndexController extends Controller
 {
@@ -14,12 +15,29 @@ class IndexController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('welcome');
-        }
 
         $data['internships'] = \App\Internship::get();
+        
+        //add applied internships to data for homepage
+        if(Session::has('user') and Session::get('user')->type == 'company'){
+            $currentUserId = auth()->user()->id;
+            $company = \App\Company::where('user_id', $currentUserId)->first();
+            $data['applications'] = \App\StudentInternship::where('company_id', $company->id)->get();
 
+        }elseif(Session::has('user') and Session::get('user')->type == 'student'){
+            $currentUserId = auth()->user()->id;
+            $student = \App\Student::where('user_id', $currentUserId)->first();
+            $data['applications'] = \App\StudentInternship::where('student_id', $student->id)->get();
+        }
+
+
+        //Add current company's internships (all) to data for company homepage
+        if(Session::has('user') and Session::get('user')->type == 'company'){
+            $currentUserId = auth()->user()->id;
+            $company = \App\Company::where('user_id', $currentUserId)->first();
+            $data['companyInternships'] = \App\Internship::where('company_id', $company->id)->get();
+        }
+        
         return View('index', $data);
     }
 

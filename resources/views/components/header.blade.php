@@ -41,11 +41,133 @@
 		</ul>-->
 		@if(Auth::check() and Session::has('user'))
 			<ul class="header__options__items">
-				<li class="header__options__item">
+				<li class="header__options__item header__options__item--notifications">
 					<a href="#" class="header__options__link">
 						<i class="fas fa-bell header__options__icon" aria-hidden="true"></i>
 						<span class="header__options__badge header__options__badge--pink"></span>
 					</a>
+					<ul class="notifications">
+						<li class="notification">
+							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
+							<div class="notification__body">
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
+								<p class="notification__msg">
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+								</p>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="notification">
+							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
+							<div class="notification__body">
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
+								<p class="notification__msg">
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+								</p>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="notification">
+							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
+							<div class="notification__body">
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
+								<p class="notification__msg">
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+								</p>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="notification">
+							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
+							<div class="notification__body">
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
+								<p class="notification__msg">
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+								</p>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="notification">
+							<img src="http://html.codedthemes.com/guru-able/files/assets/images/user.png" class="notification__image">
+							<div class="notification__body">
+								<div class="clearfix">
+									<h5 class="notification__user">
+										John Doe
+									</h5>
+									<span class="notification__time">
+										30 minutes ago
+									</span>
+								</div>
+								<p class="notification__msg">
+									Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+								</p>
+								<div class="notification__buttons">
+									<a href="#" class="button button--accept">
+										Accept
+									</a>
+									<a href="#" class="button button--decline">
+										Decline
+									</a>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</li>
 				<li class="header__options__item">
 					<a href="#" class="header__options__link">

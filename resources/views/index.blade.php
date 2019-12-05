@@ -6,18 +6,25 @@
 @section('stylesheet')
 	{{ asset('css/pages/index.css') }}
 @endsection
+@section('script')
+	{{ asset('js/search.js') }}
+@endsection
 @section('content')
-    @component('components/breadcrumb')
-        @slot('title')
-            Home
-        @endslot
-        @slot('icon')
-			fa-home
-		@endslot
-		@slot('breadcrumb')
-        @endslot
-        @slot('sector')
-        @endslot
+    @if(Auth::check() and Session::has('user'))
+        @component('components/breadcrumb')
+            @slot('title')
+                Home
+            @endslot
+            @slot('icon')
+                fa-home
+            @endslot
+            @slot('breadcrumb')
+            @endslot
+            @slot('sector')
+            @endslot
+        @endcomponent
+    @endif
+    @component('components/search')
 	@endcomponent
     @auth
         @if(!empty(session('name')))
@@ -31,12 +38,28 @@
             @endcomponent
         @endif
     @endauth
-    <div class="preview__container">
-        <section class="preview__container">
-            @if(isset($internships))
-                @component('components/show_internships', ['internships' => $internships])
-                @endcomponent
-            @endif   
+    
+            @if(Auth::check() and Session::has('user'))
+                @if(Session::get('user')->type == 'student')
+                    @if(isset($internships))
+                        @component('components/show_my_applications', ['applications' => $applications])
+                        @endcomponent
+                        @component('components/show_internships', ['internships' => $internships])
+                        @endcomponent
+                    @endif
+                @endif
+                @if(Session::get('user')->type == 'company')
+                    @component('components/show_applications_from_students', ['applications' => $applications])
+                    @endcomponent
+                    @component('components/show_my_company_internships', ['companyInternships' => $companyInternships])
+                    @endcomponent
+                @endif
+            @else
+                @if(isset($internships))
+                    @component('components/show_internships', ['internships' => $internships])
+                    @endcomponent
+                @endif
+            @endif  
 		    </div>
 		</section>
     </div>

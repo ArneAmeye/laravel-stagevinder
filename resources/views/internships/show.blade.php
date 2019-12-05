@@ -46,7 +46,6 @@
 								<div class="user__profile">
 								<a href="/companies/{{$company->id}}">
 										<div class="user__profile__image" style="background-image: url({{ asset('images/companies/profile_picture/'.$company->profile_picture) }});">
-											
 										</div>
 									</a>
 								</div>
@@ -60,6 +59,21 @@
 										</span>
 									</div>
 								</div>
+								@if($applied)
+									<div class="buttons__container">
+										<a href="{{ route('internships.removeApply', $internship->id) }}" class="button button--green">
+											<i class="fas fa-briefcase button__icon" aria-hidden="true"></i>
+											<span>Applied</span>
+										</a>
+									</div>
+								@elseif(Session::get('user')->type == 'student')
+									<div class="buttons__container">
+										<a href="{{ route('internships.apply', $internship->id) }}" class="button">
+											<i class="fas fa-briefcase button__icon" aria-hidden="true"></i>
+											Apply
+										</a>
+									</div>
+								@endif
 							</div>
 						</div>
 					</div>
@@ -92,6 +106,7 @@
 @endsection
 @section('script')
     <script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
+    <script type="text/javascript" src="{{ asset ('js/remove_button.js') }}"></script>
 @endsection
 
 @if (\Session::has('success'))
@@ -99,6 +114,15 @@
 		@slot('type', 'success')
 			<ul class="alert__container">
 				<li class="alert__item">{!! \Session::get('success') !!}</li>
+			</ul>
+	@endcomponent
+@endif
+
+@if (\Session::has('error'))
+	@component('components/alert')
+		@slot('type', 'error')
+			<ul class="alert__container">
+				<li class="alert__item">{!! \Session::get('error') !!}</li>
 			</ul>
 	@endcomponent
 @endif

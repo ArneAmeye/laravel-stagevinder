@@ -86,25 +86,34 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/google_maps.js":
-/*!*************************************!*\
-  !*** ./resources/js/google_maps.js ***!
-  \*************************************/
+/***/ "./resources/js/remove_button.js":
+/*!***************************************!*\
+  !*** ./resources/js/remove_button.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\larsp\\OneDrive\\Bureaublad\\projects\\laravel-stagevinder\\resources\\js\\google_maps.js'");
+$(document).ready(function () {
+  $(".button--green").mouseover(function () {
+    $(this).find(".fas").removeClass("fa-briefcase").addClass("fa-times");
+    $(this).find("span").text("Remove");
+  });
+  $(".button--green").mouseout(function () {
+    $(this).find(".fas").removeClass("fa-times").addClass("fa-briefcase");
+    $(this).find("span").text("Applied");
+  });
+});
 
 /***/ }),
 
 /***/ 3:
-/*!*******************************************!*\
-  !*** multi ./resources/js/google_maps.js ***!
-  \*******************************************/
+/*!*********************************************!*\
+  !*** multi ./resources/js/remove_button.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\js\google_maps.js */"./resources/js/google_maps.js");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\remove_button.js */"./resources/js/remove_button.js");
 
 
 /***/ })
