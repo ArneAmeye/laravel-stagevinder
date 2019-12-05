@@ -91,9 +91,9 @@
 .button {
   display: inline-block;
   margin-right: 10px;
-  background-color: #DE4A43;
-  border-color: #DE4A43;
-  color: #fff;
+  background-color: #FECF5B;
+  border-color: #FECF5B;
+  color: #252421;
   cursor: pointer;
   transition: all ease-in 0.3s;
   border-radius: 2px;
@@ -104,6 +104,16 @@
   box-shadow: none;
   border: none;
   text-align: center;
+}
+
+.button--follow {
+  background-color: #FECF5B;
+  color: #252421;
+}
+
+.button--message {
+  background-color: #fff;
+  color: #252421;
 }
 
 .button--big {
@@ -117,7 +127,7 @@
 
 .button--transparent {
   background-color: transparent;
-  color: #472421;
+  color: #252421;
 }
 
 .button--margin {
@@ -298,7 +308,7 @@
 
 .card__menu__link {
   font-size: 14px;
-  color: #472421;
+  color: #252421;
   padding: 20px 0;
   display: block;
   transition: all 0.3s ease-in;

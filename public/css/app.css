@@ -11,7 +11,7 @@ body {
   background-color: #f3f3f3;
   font-size: 16px;
   overflow-x: hidden;
-  color: #472421;
+  color: #252421;
   font-family: open sans, sans-serif;
 }
 
@@ -124,7 +124,7 @@ ul {
   flex-wrap: wrap;
   background-color: transparent;
   border: 0px solid transparent;
-  border-bottom: 2px solid #472421;
+  border-bottom: 2px solid #252421;
   margin: 30px 30px 5px 30px;
   position: relative;
   width: 300px;
@@ -181,7 +181,7 @@ ul {
 
 .header__options__link {
   padding: 0 0.6rem;
-  color: #472421;
+  color: #252421;
 }
 
 .header__options__icon {
@@ -214,7 +214,7 @@ ul {
 
 .header__options__name {
   font-size: 16px;
-  color: #472421;
+  color: #252421;
   display: inline-block;
 }
 
@@ -287,7 +287,7 @@ ul {
 }
 .navigation__container {
   margin-top: 80px;
-  background: #472421;
+  background: #252421;
   min-height: calc(100vh - 80px);
   position: fixed;
   width: 270px;
@@ -353,7 +353,7 @@ ul {
   margin: 0;
   width: 100%;
   color: #fff;
-  background-color: #472421;
+  background-color: #252421;
   font-size: 14px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -430,7 +430,7 @@ ul {
   left: 0;
   position: absolute;
   top: 0;
-  border-left-color: #DE4A43;
+  border-left-color: #FECF5B;
 }
 
 .navigation__link:after {
@@ -522,7 +522,7 @@ ul {
   display: block;
   margin-bottom: 0;
   font-weight: 600;
-  color: #472421;
+  color: #252421;
   font-size: 20px;
   text-transform: capitalize;
 }
@@ -660,8 +660,8 @@ ul {
 }
 
 .alert--info {
-  border-color: #DE4A43;
-  color: #DE4A43;
+  border-color: #252421;
+  color: #252421;
 }
 
 .alert__close {
