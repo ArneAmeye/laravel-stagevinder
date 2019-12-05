@@ -22,7 +22,7 @@
 		<a href="#" class="header__link">
 			<i class="fas fa-bars header__menu__icon"></i>
 		</a>
-		<a href="index.php" class="header__logo">
+		<a href="/" class="header__logo">
 			<img src="{{ asset('branding/logo.png') }}" class="header__logo__image">
 		</a>
 		<a href="#" class="header__options header__options--mobile">
