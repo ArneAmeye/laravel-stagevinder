@@ -479,6 +479,12 @@
   height: 100%;
 }
 
+.preview__form {
+  position: absolute;
+  left: 86%;
+  top: -1px;
+}
+
 .preview__text {
   position: absolute;
   padding: 10%;
