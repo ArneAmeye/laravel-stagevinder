@@ -42,7 +42,7 @@
 
 .preview__text {
   position: absolute;
-  padding: 10%;
+  padding: 1em;
   bottom: 0%;
   color: #505458;
   background-color: #fff;
@@ -64,6 +64,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.preview__text--company {
+  font-size: 13px;
+  font-weight: 300;
+  padding-top: 0.5em;
 }
 
 .preview__button--add {
@@ -303,7 +309,7 @@
 
 .application____internship__text {
   position: absolute;
-  padding: 10%;
+  padding: 1em;
   bottom: 0%;
   color: #505458;
   background-color: #fff;

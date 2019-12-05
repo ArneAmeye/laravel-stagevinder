@@ -43,7 +43,7 @@
 
 .preview__text {
     position: absolute;
-    padding: 10%;
+    padding: 1em;
     bottom: 0%;
     color: $cardTitleColor;
     background-color: $whiteColor;
@@ -65,6 +65,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.preview__text--company{
+    font-size: $companySmallSize;
+    font-weight: $lightWeight;
+    padding-top: 0.5em;
 }
 
 .preview__button--add{
