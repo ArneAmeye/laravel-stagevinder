@@ -181,6 +181,13 @@ $(document).ready(function () {
     $(".slider__item--disabled, .slider__item--active").toggleClass("slider__item--disabled slider__item--active"); //Text next to slider
 
     $(".slider__item--label").html($(".slider__item--label").html() == "Now you are a student!" ? "Now you are a company!" : "Now you are a student!");
+  }); //Login popup: close and open with fading
+
+  $(".homepage__reference__close").click(function () {
+    $(".homepage__reference__message").fadeOut();
+  });
+  $(".homepage__reference__mascotte").click(function () {
+    $(".homepage__reference__message").fadeIn();
   });
 });
 

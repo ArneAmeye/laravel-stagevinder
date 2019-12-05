@@ -79,6 +79,16 @@
 		</div>
 	</form>
 
+	<div class="homepage__reference">
+		<div class="homepage__reference__message">
+			<h4 class="homepage__reference__message--title">Hey trainee, want a sneak peak?</h4>
+			<p class="homepage__reference__message--text">Want to be the king of all trainees ever? Be my guest, have a look at what's available in our internship kingdom!</p>
+			<a href="/" class="button homepage__reference__button">Show internships!</a>
+			<i class="fa fa-times homepage__reference__close"></i>
+		</div>
+	<img class="homepage__reference__mascotte" src="{{ asset('branding/mascotte_1.png')}}" alt="Kingtrainee mascotte">
+	</div>
+
 	@if($errors->any())
         @component('components/alert')
             @slot('type', 'error')
