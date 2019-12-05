@@ -454,4 +454,172 @@
     margin: 0;
   }
 }
+.preview__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+.preview__container__title {
+  display: block;
+  width: 100%;
+  padding-bottom: 1em;
+  color: #303548;
+}
+
+.preview__inner {
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  background: #fff;
+  width: 250px;
+  height: 250px;
+  margin: 0px 10px 30px -5px;
+}
+
+.preview__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  height: 100%;
+}
+
+.preview__text {
+  position: absolute;
+  padding: 10%;
+  bottom: 0%;
+  color: #505458;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: inherit;
+}
+
+.preview__text--internship {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview__text--position {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview__button--add {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1024px) {
+  .preview__container {
+    justify-content: initial;
+  }
+}
+.applications__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+.application__single__container {
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  background: #fff;
+  width: 250px;
+  height: 250px;
+  margin: 0px 10px 30px -5px;
+}
+
+.application__student__profile {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(70, 128, 255, 0.5);
+  position: relative;
+  z-index: 5;
+}
+
+.application__internship__photo {
+  position: absolute;
+  top: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+  height: 100%;
+}
+
+.student__image {
+  width: 4em;
+  height: 4em;
+  margin-right: 0.5em;
+}
+
+.student__name {
+  color: #fff;
+}
+
+.application__internship__preview {
+  z-index: 5;
+}
+
+.application____internship__text {
+  position: absolute;
+  padding: 10%;
+  bottom: 0%;
+  color: #505458;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 250px;
+}
+
+.application____internship__text--title {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.application____internship__text--description {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 1024px) {
+  .applications__container {
+    justify-content: initial;
+  }
+}
 /*KEYFRAMES*/

@@ -4,17 +4,13 @@
     Internships
 @endsection
 @section('stylesheet')
-	{{ asset('css/pages/internships.css') }}
+	{{ asset('css/pages/internship.css') }}
 @endsection
 @section('content')
 	<!--Add component breadcrumbs-->
-	<h1>Internship List</h1>
-	@foreach($internships as $internship)
-	<a href="{{ url('internships/') }}/{{ $internship->id }}">
-		<p>
-			{{ $internship->title }}
-		</p>
-	</a>
-	@endforeach
+	@if(isset($internships))
+    	@component('components/show_internships', ['internships' => $internships])
+    	@endcomponent
+    @endif
 	
 @endsection

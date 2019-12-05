@@ -270,6 +270,11 @@
 .application__internship__photo {
   position: absolute;
   top: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+  height: 100%;
 }
 
 .student__image {
@@ -317,3 +322,4 @@
     justify-content: initial;
   }
 }
+/*KEYFRAMES*/
