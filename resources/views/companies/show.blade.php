@@ -326,14 +326,15 @@
 				
 			</form>
 		@endif
-
-		<section class="card__container">
-			<div class="card__inner">
-				@component('components/google_maps')
-					@slot('adress', $company->street_and_number." ".$company->zip_code." ".$company->city);
-				@endcomponent
-			</div>
-		</section>
+		@if(!$internship == "list")
+			<section class="card__container">
+				<div class="card__inner">
+					@component('components/google_maps')
+						@slot('adress', $company->street_and_number." ".$company->zip_code." ".$company->city);
+					@endcomponent
+				</div>
+			</section>
+		@endif
 	</div>
 
 	@if (\Session::has('success'))
