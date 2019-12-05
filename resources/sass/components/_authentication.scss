@@ -51,13 +51,33 @@
     box-shadow: $authBoxShadow;
 }
 
+.auth__branding{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    -ms-align-items: center;
+    justify-content: center;
+    margin: 0 -15px;
+}
+
+.auth__branding__logo{
+    width: 5em;
+    height: 5em;
+}
+
+.auth__branding__name{
+    color: $highlightBackgroundColor;
+}
+
 .auth__header {
     margin-bottom: 20px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 0 -15px;
+    margin: 0 0px;
 }
 
 .auth__header__left,
@@ -144,6 +164,10 @@
         width: 550px;
     }
 
+    .auth__branding{
+        justify-content: flex-start;
+    }  
+
     .auth__header__left {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 25%;
@@ -156,6 +180,10 @@
         -ms-flex: 0 0 75%;
         flex: 0 0 75%;
         max-width: 75%;
+    }
+
+    .auth__header__title {
+        text-align: left;
     }
 
     .auth__header__text {
