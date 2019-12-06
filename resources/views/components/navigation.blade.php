@@ -7,36 +7,46 @@
 	$navigationOfGuest = [
 		["name" => "Sign in", "url" => "/login", "icon" => "fa-sign-in-alt"],
 		["name" => "Sign up", "url" => "/register", "icon" => "fa-user-plus"],
-	]
+	];
+
+	if(Session::get('user')->type == 'student'){
+		$userLink = "students";
+		$userLinkId =  Session::get('user')->id;
+	}elseif(Session::get('user')->type == 'company'){
+		$userLink = "companies";
+		$userLinkId =  Session::get('user')->id;
+	}
 @endphp
 <nav class="navigation__container">
 	<div class="navigation__scroll">
 		<div class="navigation__inner">
 			@if(Auth::check())
 			@if(Session::has('user'))
-			<div class="navigation__header">
-				@if (Session::get('user')->type == 'student')
-					<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
-				@elseif (Session::get('user')->type == 'company')
-					<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
-				@endif
-				<div class="navigation__header__userInfo">
-					<p class="navigation__header__name">
-				        @if (Session::get('user')->type == 'student')
-							{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
-						@elseif (Session::get('user')->type == 'company')
-							{{ Session::get('user')->name }}
-						@endif
-					</p>
-					<span class="navigation__header__title">
-						@if (Session::get('user')->type == 'student')
-							{{ Session::get('user')->field_study }}
-						@elseif (Session::get('user')->type == 'company')
-							{{ Session::get('user')->field_sector }}
-						@endif
-					</span>
+			<a href="/{{ $userLink }}/{{ $userLinkId }}">
+				<div class="navigation__header">
+					@if (Session::get('user')->type == 'student')
+						<img src="/images/students/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+					@elseif (Session::get('user')->type == 'company')
+						<img src="/images/companies/profile_picture/{{ Session::get('user')->profile_picture }}" class="navigation__header__image">
+					@endif
+					<div class="navigation__header__userInfo">
+						<p class="navigation__header__name">
+							@if (Session::get('user')->type == 'student')
+								{{ Session::get('user')->firstname }} {{ Session::get('user')->lastname }}
+							@elseif (Session::get('user')->type == 'company')
+								{{ Session::get('user')->name }}
+							@endif
+						</p>
+						<span class="navigation__header__title">
+							@if (Session::get('user')->type == 'student')
+								{{ Session::get('user')->field_study }}
+							@elseif (Session::get('user')->type == 'company')
+								{{ Session::get('user')->field_sector }}
+							@endif
+						</span>
+					</div>
 				</div>
-			</div>
+			</a>
 			@else
 			//login here
 			@endif
