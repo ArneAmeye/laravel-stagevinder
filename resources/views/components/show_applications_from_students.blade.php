@@ -52,10 +52,10 @@
 
                     <!--accept/decline buttons-->
                     <div class="application__internship__notification__buttons">
-                            <a href="#" class="button button--accept">
+                    <a href="{{ url('/internships/') }}/{{ $application->internship_id }}/status?=student={{ $application->student_id }}&status=accept" class="button button--accept">
                                 Accept
                             </a>
-                            <a href="#" class="button button--decline">
+                            <a href="{{ url('/internships/') }}/{{ $application->internship_id }}/status?=student={{ $application->student_id }}&status=decline" class="button button--decline">
                                 Decline
                             </a>
                     </div>
