@@ -37,7 +37,14 @@ class Notification
     }
 
 	public static function getNotificationDetails($id) {
-		$user = \App\Student::where('id', $id)->first();
+		$user = session()->get('user');
+		if (Notification::isStudent($user)) {
+			$user = \App\Company::where('id', $id)->first();
+			$user["image_location"] = "companies";
+		} else {
+			$user = \App\Student::where('id', $id)->first();
+			$user["image_location"] = "students";
+		}
 
 		return $user;
 	}

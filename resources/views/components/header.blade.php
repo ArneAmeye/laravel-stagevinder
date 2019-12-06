@@ -60,30 +60,50 @@
 							</li>
 							@foreach(Notification::getNotifications(Session::get('user')->id) as $notification)
 								@php
-								$data = Notification::getNotificationDetails($notification->student_id)
+									if(Session::get('user')->type == "company") {
+										$id = $notification->student_id;
+									} else {
+										$id = $notification->company_id;
+									}
+									
+									$data = Notification::getNotificationDetails($id);
 								@endphp
-								<li class="notification notification--gray">
-									<img src="{{ asset('images/students/profile_picture/'.$data->profile_picture) }}" class="notification__image">
+								<li class="notification notification--{{ $notification->status }}">
+									<img src="{{ asset('images/'.$data->image_location.'/profile_picture/'.$data->profile_picture) }}" class="notification__image">
 									<div class="notification__body">
 										<div class="clearfix">
 											<h5 class="notification__user">
-												{{ $data->firstname." ".$data->lastname }}
+												@if(Session::get('user')->type == "company")
+													{{ $data->firstname." ".$data->lastname }}
+												@else
+													{{ $data->name }}
+												@endif
 											</h5>
 											<span class="notification__time">
-												{{ $notification->created_at->diffForHumans() }}
+												{{ $notification->updated_at->diffForHumans() }}
 											</span>
 										</div>
 										<p class="notification__msg">
-											Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+											@if(Session::get('user')->type == "company")
+												{{ $data->firstname." ".$data->lastname." Sended you a requist!" }}
+											@else
+												@if($notification->status == 1)
+													{{ $data->name." accepted your requist!" }}
+												@elseif($notification->status == 2)
+													{{ $data->name." declined your requist!" }}
+												@endif
+											@endif
 										</p>
-										<div class="notification__buttons">
-											<a href="{{ route('internships.status', $notification->internship_id) }}?student={{ $data->id }}&status=accept" class="button button--accept">
-												Accept
-											</a>
-											<a href="{{ route('internships.status', $notification->internship_id) }}?student={{ $data->id }}&status=decline" class="button button--decline">
-												Decline
-											</a>
-										</div>
+										@if(Session::get('user')->type == "company")
+											<div class="notification__buttons">
+												<a href="{{ route('internships.status', $notification->internship_id) }}?student={{ $data->id }}&status=accept" class="button button--accept">
+													Accept
+												</a>
+												<a href="{{ route('internships.status', $notification->internship_id) }}?student={{ $data->id }}&status=decline" class="button button--decline">
+													Decline
+												</a>
+											</div>
+										@endif
 									</div>
 								</li>
 							@endforeach
