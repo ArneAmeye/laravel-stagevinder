@@ -11,14 +11,20 @@
 	@if(Auth::check() and Session::has('user'))
         @component('components/breadcrumb')
             @slot('title')
-                Home
+                Internships
             @endslot
             @slot('icon')
-                fa-home
+                fa-file-alt
             @endslot
             @slot('breadcrumb')
+                <li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
+                    <a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
+                        Internships
+                    </a>
+                </li>
             @endslot
             @slot('sector')
+                Don't know what internship you wan't to do? Just look around!
             @endslot
         @endcomponent
 	@endif

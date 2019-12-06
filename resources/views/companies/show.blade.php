@@ -19,6 +19,11 @@
 		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
+				<a href="/Companies" class="breadcrumb__info__link">
+                    Companies
+				</a>
+			</li>
+			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
 				<a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
 					{{$company->name}}
 				</a>

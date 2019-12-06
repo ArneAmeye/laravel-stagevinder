@@ -35,11 +35,26 @@
     position: relative;
 }
 
-.notification--gray:hover {
+.notification--0:hover {
 	background-color: #f1f1f1;
 }
 
-.notification--gray:hover .notification__buttons {
+.notification--1:hover {
+    background-color: $alertSuccessColor;
+}
+
+.notification--2:hover {
+    background-color: $alertErrorColor;
+}
+
+.notification--1:hover,
+.notification--2:hover,
+.notification--1:hover .notification__time,
+.notification--2:hover .notification__time {
+    color: $whiteColor;
+}
+
+.notification--0:hover .notification__buttons {
     display: block;
 }
 

@@ -11,14 +11,20 @@
 	@if(Auth::check() and Session::has('user'))
         @component('components/breadcrumb')
             @slot('title')
-                Home
+                Companies
             @endslot
             @slot('icon')
-                fa-home
+                fa-building
             @endslot
             @slot('breadcrumb')
+                <li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
+                    <a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
+                        Companies
+                    </a>
+                </li>
             @endslot
             @slot('sector')
+                Find your company right now!
             @endslot
         @endcomponent
 	@endif

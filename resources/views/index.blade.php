@@ -21,6 +21,7 @@
             @slot('breadcrumb')
             @endslot
             @slot('sector')
+                Be sure to check if a company is intrested in you!
             @endslot
         @endcomponent
     @endif

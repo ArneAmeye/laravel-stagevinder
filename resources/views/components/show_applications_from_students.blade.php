@@ -1,7 +1,8 @@
 <div class="applications__container">
         <h3 class="preview__container__title">You have student applications waiting:</h3>
         @foreach($applications as $application)
-                
+            @if($application->status == 0) 
+
                 @php
                     $student = \App\Student::where('id', $application->student_id)->first();
                     $internship = \App\Internship::where('id', $application->internship_id)->first();
@@ -52,15 +53,15 @@
 
                     <!--accept/decline buttons-->
                     <div class="application__internship__notification__buttons">
-                    <a href="{{ url('/internships/') }}/{{ $application->internship_id }}/status?=student={{ $application->student_id }}&status=accept" class="button button--accept">
+                    <a href="{{ url('/internships/') }}/{{ $application->internship_id }}/status?student={{ $application->student_id }}&status=accept" class="button button--accept">
                                 Accept
                             </a>
-                            <a href="{{ url('/internships/') }}/{{ $application->internship_id }}/status?=student={{ $application->student_id }}&status=decline" class="button button--decline">
+                            <a href="{{ url('/internships/') }}/{{ $application->internship_id }}/status?student={{ $application->student_id }}&status=decline" class="button button--decline">
                                 Decline
                             </a>
                     </div>
                 </div>
-                
+            @endif 
         @endforeach
 </div>
 
