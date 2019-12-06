@@ -39,6 +39,18 @@
     z-index: 5;
 }
 
+.application____internship__status--waiting{
+    background-color: (rgba(254,207,91,0.5));
+}
+
+.application____internship__status--denied{
+    background-color: (rgba(222,74,67,0.5));
+}
+
+.application____internship__status--accepted{
+    background-color: (rgba(147,190,82,0.5));
+}
+
 .application__internship__photo{
     position: absolute;
     top: 0;
@@ -55,8 +67,22 @@
     margin-right: 0.5em;
 }
 
+.student__text{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
 .student__name{
-    color: #fff;
+    color: $whiteColor;
+    font-weight: $boldWeight;
+}
+
+.student__status{
+    color: $whiteColor;
+    width: 100%;
+    display: block;
+    font-style: italic;
 }
 
 .application__internship__preview{
@@ -87,6 +113,23 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.application__internship__notification__buttons{
+    display: none;
+    z-index: 5;
+    position: relative;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.application__single__container:hover .application__internship__notification__buttons{
+    display: block;
+}
+
+.application__single__container:hover .application__internship__photo{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 @media (min-width: 1024px) {
