@@ -1,5 +1,9 @@
 <div class="applications__container">
-        <h3 class="preview__container__title">You have student applications waiting:</h3>
+    @php
+        $totalApplications = count($applications);
+        $applicationWord = ($totalApplications === 1) ? "application" : "applications";
+    @endphp
+        <h3 class="preview__container__title">You have {{ $totalApplications }} student {{ $applicationWord }} waiting:</h3>
         @foreach($applications as $application)
                 
                 @php
