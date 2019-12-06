@@ -8,13 +8,14 @@
 		["name" => "Sign in", "url" => "/login", "icon" => "fa-sign-in-alt"],
 		["name" => "Sign up", "url" => "/register", "icon" => "fa-user-plus"],
 	];
-
-	if(Session::get('user')->type == 'student'){
-		$userLink = "students";
-		$userLinkId =  Session::get('user')->id;
-	}elseif(Session::get('user')->type == 'company'){
-		$userLink = "companies";
-		$userLinkId =  Session::get('user')->id;
+	if(Auth::check()){
+		if(Session::get('user')->type == 'student'){
+			$userLink = "students";
+			$userLinkId =  Session::get('user')->id;
+		}elseif(Session::get('user')->type == 'company'){
+			$userLink = "companies";
+			$userLinkId =  Session::get('user')->id;
+		}
 	}
 @endphp
 <nav class="navigation__container">
