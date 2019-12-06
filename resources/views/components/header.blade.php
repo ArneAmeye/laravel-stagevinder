@@ -46,38 +46,60 @@
 				<li class="header__options__item header__options__item--notifications">
 					<a href="#" class="header__options__link">
 						<i class="fas fa-bell header__options__icon" aria-hidden="true"></i>
-						<span class="header__options__badge header__options__badge--pink"></span>
+						@if(Notification::newNotifications(Session::get('user')->id))
+							<span class="header__options__badge header__options__badge--pink"></span>
+						@endif
 					</a>
 					<ul class="notifications">
-						@foreach(Notification::getNotifications(Session::get('user')->id) as $notification)
-							@php
-							$data = Notification::getNotificationDetails($notification->student_id)
-							@endphp
+						@if(Notification::newNotifications(Session::get('user')->id))
 							<li class="notification">
-								<img src="{{ asset('images/students/profile_picture/'.$data->profile_picture) }}" class="notification__image">
-								<div class="notification__body">
-									<div class="clearfix">
-										<h5 class="notification__user">
-											{{ $data->firstname." ".$data->lastname }}
-										</h5>
-										<span class="notification__time">
-											{{ $notification->created_at->diffForHumans() }}
-										</span>
-									</div>
-									<p class="notification__msg">
-										Lorem ipsum dolor sit amet, consectetuer elit gunhy.
-									</p>
-									<div class="notification__buttons">
-										<a href="#" class="button button--accept">
-											Accept
-										</a>
-										<a href="#" class="button button--decline">
-											Decline
-										</a>
-									</div>
-								</div>
+								<h6 class="notification__title">
+									Notifications
+								</h6>
+								<label class="notification__label notification__label--red">New</label>
 							</li>
-						@endforeach
+							@foreach(Notification::getNotifications(Session::get('user')->id) as $notification)
+								@php
+								$data = Notification::getNotificationDetails($notification->student_id)
+								@endphp
+								<li class="notification notification--gray">
+									<img src="{{ asset('images/students/profile_picture/'.$data->profile_picture) }}" class="notification__image">
+									<div class="notification__body">
+										<div class="clearfix">
+											<h5 class="notification__user">
+												{{ $data->firstname." ".$data->lastname }}
+											</h5>
+											<span class="notification__time">
+												{{ $notification->created_at->diffForHumans() }}
+											</span>
+										</div>
+										<p class="notification__msg">
+											Lorem ipsum dolor sit amet, consectetuer elit gunhy.
+										</p>
+										<div class="notification__buttons">
+											<a href="{{ route('internships.status', $notification->internship_id) }}?student={{ $data->id }}&status=accept" class="button button--accept">
+												Accept
+											</a>
+											<a href="{{ route('internships.status', $notification->internship_id) }}?student={{ $data->id }}&status=decline" class="button button--decline">
+												Decline
+											</a>
+										</div>
+									</div>
+								</li>
+							@endforeach
+						@else
+							<li class="notification">
+								<h6 class="notification__title">
+									Notifications
+								</h6>
+								<label class="notification__label notification__label--green">Up-to-date</label>
+							</li>
+							<li class="notification">
+								<h4 class="notification__upToDate">
+									You are up-to-date with your notifications!
+								</h4>
+							</li>
+						@endif
 					</ul>
 				</li>
 				<li class="header__options__item">

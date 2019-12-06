@@ -64,3 +64,21 @@
 		</section>
     </div>
 @endsection
+
+@if (\Session::has('error'))
+    @component('components/alert')
+        @slot('type', 'error')
+            <ul class="alert__container">
+                <li class="alert__item">{!! \Session::get('error') !!}</li>
+            </ul>
+    @endcomponent
+@endif
+
+@if (\Session::has('success'))
+    @component('components/alert')
+        @slot('type', 'success')
+            <ul class="alert__container">
+                <li class="alert__item">{!! \Session::get('success') !!}</li>
+            </ul>
+    @endcomponent
+@endif

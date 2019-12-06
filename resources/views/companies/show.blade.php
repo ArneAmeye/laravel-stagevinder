@@ -74,19 +74,19 @@
 			</div>
 		</section>
 
-		@if($current == $company->user_id)
-			<section class="card__container card__container--menu">
-				<ul class="card__menu__items">
-					<li class="card__menu__item">
-						<a href="{{ url('companies/') }}/{{ $company->id }}" class="card__menu__link {{ empty(app('request')->input('internship')) ? 'card__menu__link--current' : '' }}">
-							Personal Info
-						</a>
-					</li>
-					<li class="card__menu__item">
-						<a href="?internship=list" class="card__menu__link {{ app('request')->input('internship') === 'list' ? 'card__menu__link--current' : '' }}">
-							My Internships
-						</a>
-					</li>
+		<section class="card__container card__container--menu">
+			<ul class="card__menu__items">
+				<li class="card__menu__item">
+					<a href="{{ url('companies/') }}/{{ $company->id }}" class="card__menu__link {{ empty(app('request')->input('internship')) ? 'card__menu__link--current' : '' }}">
+						Companies Info
+					</a>
+				</li>
+				<li class="card__menu__item">
+					<a href="?internship=list" class="card__menu__link {{ app('request')->input('internship') === 'list' ? 'card__menu__link--current' : '' }}">
+						{{ $current == $company->user_id ? 'My Internships' : 'Companies Internships' }}
+					</a>
+				</li>
+				@if($current == $company->user_id)
 					<li class="card__menu__item">
 						<a href="?internship=create" class="card__menu__link {{ app('request')->input('internship') === 'create' ? 'card__menu__link--current' : '' }}">
 							New Internship
@@ -97,9 +97,9 @@
 							Misc
 						</a>
 					</li>
-				</ul>
-			</section>
-		@endif
+				@endif
+			</ul>
+		</section>
 
 
 		@if(empty($internship))
@@ -211,13 +211,15 @@
 							@if($internship->is_available == 1)
 								<a href="{{ url('/internships/') }}/{{ $internship->id }}">
 									<div class="preview__inner">
-										<form method="post" action="{{route('internship.delete', $internship->id)}}" class="preview__form">
-											{{ csrf_field() }}
-											{{ method_field('delete') }}
-											<button type="submit" class="button button--danger button--right">
-												<i class="fas fa-times" aria-hidden="true"></i>
-											</button>
-										</form>
+										@if($current == $company->user_id)
+											<form method="post" action="{{route('internship.delete', $internship->id)}}" class="preview__form">
+												{{ csrf_field() }}
+												{{ method_field('delete') }}
+												<button type="submit" class="button button--danger button--right">
+													<i class="fas fa-times" aria-hidden="true"></i>
+												</button>
+											</form>
+										@endif
 										<img class="preview__image" src="{{ asset('images/internships/background_picture/'.$internship->background_picture) }}">
 										<div class="preview__text">
 											<p class="preview__text--internship">

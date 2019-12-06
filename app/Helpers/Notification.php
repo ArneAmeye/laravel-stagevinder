@@ -4,6 +4,14 @@ namespace App\Helpers;
 
 class Notification
 {
+	public static function newNotifications($id) {
+		$notifications = Notification::getNotifications($id);
+		if (count($notifications) == 0) {
+			return false;
+		}
+		return true;
+	}
+
 	public static function getNotifications($id) {
 		$user = session()->get('user');
 		if (!Notification::isStudent($user)) {
