@@ -86,7 +86,7 @@
 			<a href="/" class="button homepage__reference__button">Show internships!</a>
 			<i class="fa fa-times homepage__reference__close"></i>
 		</div>
-	<img class="homepage__reference__mascotte" src="{{ asset('branding/mascotte_1.png')}}" alt="Kingtrainee mascotte">
+	<img class="homepage__reference__mascotte" src="{{ asset('branding/mascotte.png')}}" alt="Kingtrainee mascotte">
 	</div>
 
 	@if($errors->any())
