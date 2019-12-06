@@ -15,7 +15,7 @@
                             $status['text'] = "accepted";
                             break;
                         case 2:
-                            $status = "application____internship__status--denied";
+                            $status['class'] = "application____internship__status--denied";
                             $status['text'] = "declined";
                             break;
                     }
