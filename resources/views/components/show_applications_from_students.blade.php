@@ -5,15 +5,33 @@
                 @php
                     $student = \App\Student::where('id', $application->student_id)->first();
                     $internship = \App\Internship::where('id', $application->internship_id)->first();
+                    switch ($application->status) {
+                        case 0:
+                            $status['class'] = "application____internship__status--waiting";
+                            $status['text'] = "waiting";
+                            break;
+                        case 1:
+                            $status['class'] = "application____internship__status--accepted";
+                            $status['text'] = "accepted";
+                            break;
+                        case 2:
+                            $status = "application____internship__status--denied";
+                            $status['text'] = "declined";
+                            break;
+                    }
                 @endphp
 
                 <div class="application__single__container">
                     <a href="{{ url('/students/') }}/{{ $application->student_id }}">
-                        <div class="application__student__profile">
+                        <div class="application__student__profile {{$status['class']}}">
                         <img class="student__image" src="{{asset('images/students/profile_picture')}}/{{ $student->profile_picture }}" alt="student profile picture">
-                            <p class="student__name">
-                                {{ $student->firstname }} {{ $student->lastname }}
-                            </p>
+                            <div class="student__text">
+                                    <p class="student__name">
+                                        {{ $student->firstname }} {{ $student->lastname }}
+                                    </p>
+                                    <p class="student__status">{{$status['text']}}</p>
+                            </div>
+                            
                         </div>
                     </a>
 
@@ -31,7 +49,19 @@
                             </div>
                         </div>
                     </a>
+
+                    <!--accept/decline buttons-->
+                    <div class="application__internship__notification__buttons">
+                            <a href="#" class="button button--accept">
+                                Accept
+                            </a>
+                            <a href="#" class="button button--decline">
+                                Decline
+                            </a>
+                    </div>
                 </div>
                 
         @endforeach
 </div>
+
+
