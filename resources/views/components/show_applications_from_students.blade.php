@@ -1,6 +1,11 @@
 <div class="applications__container">
     @php
-        $totalApplications = count($applications);
+        $totalApplications = 0;
+        foreach($applications as $appl){
+            if($appl->status == 0){
+                $totalApplications++;
+            }
+        }
         $applicationWord = ($totalApplications === 1) ? "application" : "applications";
     @endphp
         <h3 class="preview__container__title">You have {{ $totalApplications }} student {{ $applicationWord }} waiting:</h3>
