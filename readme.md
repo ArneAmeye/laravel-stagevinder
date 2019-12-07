@@ -122,33 +122,67 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 
 ### Legend
 
-![#C100FF](https://placehold.it/15/C100FF/000000?text=+) `Lars`</br>
-![#FFA200](https://placehold.it/15/FFA200/000000?text=+) `Bram` <br/>
-![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) `Irene` <br/>
-![#0AD500](https://placehold.it/15/0AD500/000000?text=+) `Arne` <br/>
-
-### Doing
-
-| Function                                     | Person                                                         | Function |
-| -------------------------------------------- | -------------------------------------------------------------- | -------- |
-| Upload                                       | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  | Done     |
-| Company Google Maps                          | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |          |
-| Intership link to student                    | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Lars  |          |
-| layout + create + update + tags + interships | ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) Bram  |          |
-| tutorial deployment site + certificate       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene | Done     |
-| figuring out database server 2 😤            | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
-| Search                                       | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Irene |          |
-| Sociallite                                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  | Done     |
-| Automated Scraping Behance                   | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Arne  |          |
+| **Legende**                                                  | **Betekenis**                                              |
+| ------------------------------------------------------------ |:----------------------------------------------------------:|
+| 👑                                                           | Nieuwe to do                                               |
+|![#0AD500](https://placehold.it/15/0AD500/000000?text=+)      | Arne                                                       |
+|![#FFA200](https://placehold.it/15/FFA200/000000?text=+)      | Bram                                                       |
+|![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)      | Irene                                                      |
+|![#C100FF](https://placehold.it/15/C100FF/000000?text=+)      | Lars                                                       |
 
 ### To Do
 
-| Function                      | Person |
-| ----------------------------- | ------ |
-| Chat bot companies & students |        |
-| Internship status             |        |
-| API seperated classes         |        |
-| Add vue.js                    |        |
+| **Function**                                                 |                                                            |
+| ------------------------------------------------------------ |:----------------------------------------------------------:|
+| **Person**                                                   | **Status**                                                 |
+| 👑 Duidelijker weergave van   registratie link ('/login')                                                                 |
+| Person                                                       | Status                                                     |
+| 👑 Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                              |
+| Person                                                       | Status                                                     |         
+| 👑 Knop Apply duidelijker (student, internship)                                                                           |
+| Person                                                       | Status                                                     |
+| 👑 Session:flush gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship)     |                                                       
+| Person                                                       | Status                                                     |
+| 👑 Validaties op profiel duidelijker of weglaten (student & company)                                                      |         
+| Person                                                       | Status                                                     |
+| 👑 Foute zinsverwoording: notificatie (requist > request) en bij breadcrumbs (home)                                       |                                                       
+| Person                                                       | Status                                                     |
+| 👑 Informatie over Kingtrainnee mist (/index)                                                                             |
+| Person                                                       | Status                                                     |
+| 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)           |
+| Person                                                       | Status                                                     |
+| 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                |                                                       
+| Person                                                       | Status                                                     |
+| 👑 Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                       |         
+| Person                                                       | Status                                                     |
+| 👑 Eerst registreren als student en daarna pas als bedrijf (/register)                                                    |                                                       
+| Person                                                       | Status                                                     |
+| 👑 Slechts eenmalig e-mail vragen bij registratie                                                                         |                                                       
+| Person                                                       | Status                                                     |
+| 👑 Na registratie het bericht (Welcome back) wijzigen                                                                     |                                                       
+| Person                                                       | Status                                                     |
+| 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                            |
+| Person                                                       | Status                                                     |
+| 👑 Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)  |
+| Person                                                       | Status                                                     |
+| 👑 Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                      |
+| Person                                                       | Status                                                     |
+| 👑 Recente internships misschien eerst plaatsen bij weergave? (vooral index, misschien ook bij company)                   |
+| Person                                                       | Status                                                     |
+| 👑 Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                              |
+| Person                                                       | Status                                                     |
+| 👑 Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                           |
+| Person                                                       | Status                                                     |
+| 👑 Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)   |
+| Person                                                       | Status                                                     |
+| 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest) |
+| Person                                                       | Status                                                     |
+| 👑 Bijwerken van afbeelding van een internship lukt niet (company, op homestead.test per ongeluk getest)                  |
+| Person                                                       | Status                                                     |
+| 👑 Preview van uploaden afbeelding bij internship)                                                                        |
+| Person                                                       | Status                                                     |
+| 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                               |
+| Person                                                       | Status                                                     |
 
 ## Server and laravel
 
