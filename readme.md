@@ -132,6 +132,8 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 
 ### To Do
 
+Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d/1EONhy5d7Q7JDloX7UC3OkLKlEE4s2yvwaC_pqeFDuRs/edit#heading=h.qjhtyun2njki (doorstreep als iets klaar is)
+
 | **Function**                                                 |                                                            |
 | ------------------------------------------------------------ |:----------------------------------------------------------:|
 | **Person**                                                   | **Status**                                                 |
