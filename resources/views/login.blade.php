@@ -47,7 +47,7 @@
 				<span class="input__addon">
 					<i class="fas fa-envelope" aria-hidden="true"></i>
 				</span>
-				<input type="email" name="email" class="input" placeholder="johndoe@stagevinder.be">
+			<input type="email" name="email" class="input" placeholder="johndoe@stagevinder.be" value="{{old('email')}}">
 			</div>
 			<div class="input__container">
 				<span class="input__addon">

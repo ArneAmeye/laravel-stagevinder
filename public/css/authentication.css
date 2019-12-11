@@ -50,6 +50,7 @@ ul {
   color: #fff;
   background-size: cover;
   background: url(../images/bg.jpg) no-repeat center center fixed;
+  overflow-y: auto;
 }
 
 .container--active {
