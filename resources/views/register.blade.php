@@ -35,33 +35,33 @@
         <div class="slider">
             <div class="slider__container slider__container--disabled">
                 <div class="slider__item slider__item--disabled">
-                    <input type="checkbox" name="isStudent" class="slider__item--checkbox">
+                    <input type="checkbox" name="isCompany" class="slider__item--checkbox">
                 </div>
             </div>
             <div>
-            <label for="checkbox" class="slider__item--label auth__header__text">Now you are a company!</label>
+            <label for="checkbox" class="slider__item--label auth__header__text">Now you are a student!</label>
             </div>
         </div>
 
         <!--Student-->
-        <div class="container--disabled">
+        <div class="container--active">
             <div class="input__container">
                 <span class="input__addon">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input" name ="firstname" placeholder="Enter your first name" value="empty">
+                <input type="text" class="input" name ="firstname" placeholder="Enter your first name">
             </div>
 
             <div class="input__container">
                 <span class="input__addon">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input" name ="lastname" placeholder="Enter your last name" value="empty">
+                <input type="text" class="input" name ="lastname" placeholder="Enter your last name">
             </div>
         </div>
 
         <!--Company-->
-        <div class="container--active">
+        <div class="container--disabled">
             <div class="input__container">
                 <span class="input__addon">
                     <i class="fas fa-user" aria-hidden="true"></i>
@@ -78,14 +78,6 @@
 			</span>
             <input type="email" class="input" name="email" aria-describedby="emailHelp" placeholder="Enter your email">
         </div>
-
-        <div class="input__container">
-            <span class="input__addon">
-				<i class="fa fa-envelope" aria-hidden="true"></i>
-			</span>
-            <input type="email" class="input" name="verificateEmail" aria-describedby="emailHelp" placeholder="Verify your email">
-        </div>
-
         <div class="input__container">
             <span class="input__addon">
 	    		<i class="fa fa-lock" aria-hidden="true"></i>

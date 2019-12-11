@@ -157,8 +157,6 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                       | Status                                                     |
 | 👑 Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                       |         
 | Person                                                       | Status                                                     |
-| 👑 Eerst registreren als student en daarna pas als bedrijf (/register)                                                    |                                                       
-| Person                                                       | Status                                                     |
 | 👑 Slechts eenmalig e-mail vragen bij registratie                                                                         |                                                       
 | Person                                                       | Status                                                     |
 | 👑 Na registratie het bericht (Welcome back) wijzigen                                                                     |                                                       

@@ -91,7 +91,7 @@ $(document).ready(function() {
         $(".container--active input").attr("value", "");
 
         //Checkbox value
-        let CheckBox = $("input[name=isStudent]");
+        let CheckBox = $("input[name=isCompany]");
         CheckBox.prop("checked", !CheckBox.prop("checked"));
 
         //Container slider
