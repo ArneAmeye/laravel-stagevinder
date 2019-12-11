@@ -458,7 +458,7 @@ It looks like this: (Replace your deploy username, IP adresss and foldernames!)<
 @endtask
 ```
 
-Now run the deployment with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
+Now run the deployment (in vagrant) with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
 
 ISSUES?<br/>
 - SSH key for the deploy user must be setup! <br/>
