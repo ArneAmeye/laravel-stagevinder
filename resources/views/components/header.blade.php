@@ -85,12 +85,12 @@
 										</div>
 										<p class="notification__msg">
 											@if(Session::get('user')->type == "company")
-												{{ $data->firstname." ".$data->lastname." Sended you a requist!" }}
+												{{ $data->firstname." ".$data->lastname." has send you a request!" }}
 											@else
 												@if($notification->status == 1)
-													{{ $data->name." accepted your requist!" }}
+													{{ $data->name." has accepted your request!" }}
 												@elseif($notification->status == 2)
-													{{ $data->name." declined your requist!" }}
+													{{ $data->name." has declined your request!" }}
 												@endif
 											@endif
 										</p>

@@ -147,8 +147,6 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                       | Status                                                     |
 | 👑 Validaties op profiel duidelijker of weglaten (student & company)                                                      |         
 | Person                                                       | Status                                                     |
-| 👑 Foute zinsverwoording: notificatie (requist > request) en bij breadcrumbs (home)                                       |                                                       
-| Person                                                       | Status                                                     |
 | 👑 Informatie over Kingtrainnee mist (/index)                                                                             |
 | Person                                                       | Status                                                     |
 | 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)           |
