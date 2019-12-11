@@ -131,6 +131,12 @@ ul {
   font-size: 13px;
 }
 
+.auth__header__text--link {
+  color: #DE4A43;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
 .auth__text {
   border-bottom: 1px solid #e0e0e0;
   color: #252421;

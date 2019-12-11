@@ -14,7 +14,7 @@
             <h1 class="auth__branding__name">KingTrainee</h1>
         </div>
         <h3 class="auth__header__title">Sign up</h3>
-        <p class="auth__header__text">Already have an account? <a href="/login">Login</a> here!</p>
+        <p class="auth__header__text">Already have an account? <a class="auth__header__text--link" href="/login">Login</a> here!</p>
         <!--Firstname and lastname for students, name for company-->
 
         <!--Social signup with Facebook-->

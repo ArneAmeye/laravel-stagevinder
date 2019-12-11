@@ -137,8 +137,6 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | **Function**                                                 |                                                            |
 | ------------------------------------------------------------ |:----------------------------------------------------------:|
 | **Person**                                                   | **Status**                                                 |
-| 👑 Duidelijker weergave van   registratie link ('/login')                                                                 |
-| Person                                                       | Status                                                     |
 | 👑 Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                              |
 | Person                                                       | Status                                                     |         
 | 👑 Knop Apply duidelijker (student, internship)                                                                           |
