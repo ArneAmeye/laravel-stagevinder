@@ -475,10 +475,35 @@ Host 139.XXX.XXX.XXX
 NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
 - No access to remote repository? Then change the line `ssh://git@github.com/ArneAmeye/laravel-stagevinder.git` into `https://USERNAME:PASSWORD_WITHOUT_SPECIALCHARS@github.com/ArneAmeye/laravel-stagevinder.git`
 What is `PASSWORD_WITHOUT_SPECIALCHARS`? If you use special characters in your password, you need to replace it by (following this link)[https://support.brightcove.com/special-characters-usernames-and-passwords].
+Adding this to your github link in your .env is recommended.
+
+```
+@setup
+    require __DIR__.'/vendor/autoload.php';
+
+    $dotenv = Dotenv\Dotenv::create(__DIR__);
+
+    try {
+        $dotenv->load();
+        $dotenv->required(['DEPLOY_USER', 'DEPLOY_SERVER', 'DEPLOY_BASE_DIR', 'DEPLOY_REPO'])->notEmpty();
+    } catch ( Exception $e )  {
+        echo $e->getMessage();
+    }
+
+    $gitUrl = env('GIT_URL');
+@endsetup
+
+@task('deploy-production', ['on' => 'production'])
+    ...
+    git pull {{ $gitUrl }}
+    ...
+@endtask
+```
+
 - Error on bootstrap folder? `chmod -R 775 bootstrap/cache` and `systemctl restart httpd`
 - Error on storage folder with permissions denied? `chmod -R 775 storage` and `chgrp -R apache storage`
 - Errors about a package not found? Then add `composer install` after the git pull line in your Envoy.blade.php
-- Still errors? Then ask in chat 
+- Still errors? Then ask in chat 😉
 
 ## Docker
 - First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).
