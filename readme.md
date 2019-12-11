@@ -434,6 +434,8 @@ Make sure you have 2 environments: production and staging folders in Linode, a s
 Create an Envoy file in the root of the Laravel project called 'Envoy.blade.php'.<br/>
 It looks like this: (Replace your deploy username, IP adresss and foldernames!)<br/>
 
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) The people who don't have a beta server, remove all parts with staging.
+
 ```
 @servers(['production' => ['deployUsername@139.XXX.XXX.XX -p22'], 'staging' => ['deployUsername@139.XXX.XXX.XX -p22']])
 
@@ -459,7 +461,7 @@ It looks like this: (Replace your deploy username, IP adresss and foldernames!)<
 Now run the deployment with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
 
 ISSUES?<br/>
-SSH key for the deploy user must be setup! <br/>
+- SSH key for the deploy user must be setup! <br/>
 If you have done this but it tries to load it from "C/users/yourname/.ssh/id_rsa" then we need to tell Windows where this Linode host can find our Private Key:<br/>
 Go to "C:/User/Yourname/.ssh" and create a `config` file if it doesn't exist yet. <br/>
 Paste this and adapt to your configuration:<br/>
@@ -471,6 +473,12 @@ Host 139.XXX.XXX.XXX
  ``` 
  
 NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
+- No access to remote repository? Then change the line `ssh://git@github.com/ArneAmeye/laravel-stagevinder.git` into `https://USERNAME:PASSWORD_WITHOUT_SPECIALCHARS@github.com/ArneAmeye/laravel-stagevinder.git`
+What is `PASSWORD_WITHOUT_SPECIALCHARS`? If you use special characters in your password, you need to replace it by (following this link)[https://support.brightcove.com/special-characters-usernames-and-passwords].
+- Error on bootstrap folder? `chmod -R 775 bootstrap/cache` and `systemctl restart httpd`
+- Error on storage folder with permissions denied? `chmod -R 775 storage` and `chgrp -R apache storage`
+- Errors about a package not found? Then add `composer install` after the git pull line in your Envoy.blade.php
+- Still errors? Then ask in chat 
 
 ## Docker
 - First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).
