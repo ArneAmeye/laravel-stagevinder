@@ -153,8 +153,6 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                       | Status                                                     |
 | 👑 Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                       |         
 | Person                                                       | Status                                                     |
-| 👑 Slechts eenmalig e-mail vragen bij registratie                                                                         |                                                       
-| Person                                                       | Status                                                     |
 | 👑 Na registratie het bericht (Welcome back) wijzigen                                                                     |                                                       
 | Person                                                       | Status                                                     |
 | 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                            |
@@ -175,7 +173,7 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                       | Status                                                     |
 | 👑 Bijwerken van afbeelding van een internship lukt niet (company, op homestead.test per ongeluk getest)                  |
 | Person                                                       | Status                                                     |
-| 👑 Preview van uploaden afbeelding bij internship)                                                                        |
+| 👑 Preview van uploaden afbeelding bij internship                                                                        |
 | Person                                                       | Status                                                     |
 | 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                               |
 | Person                                                       | Status                                                     |
