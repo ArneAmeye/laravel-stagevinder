@@ -177,6 +177,22 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                       | Status                                                     |
 | 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                               |
 | Person                                                       | Status                                                     |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)  Slechts eenmalig e-mail vragen bij registratie                                                                         |                                                       
+| Irene                                                       | DONE                                                     |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)  Foute zinsverwoording: notificatie (requist > request) en bij breadcrumbs (home)                                       |                                                       
+| Irene                                                       | DONE                                                     |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)  Eerst registreren als student en daarna pas als bedrijf (/register)                                                    |                                                       
+| Irene                                                       | DONE                                                     |
+| 👑 Een beoordeling geven aan een internship (review)                                               |
+| Person                                                       | Status                                                     |
+| 👑 Een student kan op zijn profiel zien op welke hij/zij geapplied heeft.                                              |
+| Person                                                       | Status                                                     |
+| 👑 Een notification wordt ook verstuurd via mail.                                               |
+| Person                                                       | Status                                                     |
+| 👑 Als een notificatie geaccepteerd heeft, kan een student (en company?) zijn/haar notificatie verwijderen.                                              |
+| Person                                                       | Status                                                     |
+| 👑 Tutorial (UX/UI)                                              |
+| Person                                                       | Status                                                     |
 
 ## Server and laravel
 
