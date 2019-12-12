@@ -119,10 +119,14 @@ $(document).ready(function () {
             id: id
           },
           success: function success(data) {
-            console.log(data);
-
             if (data.status == "success") {
-              Distance.getDistance(data.data, api_url, id);
+              if (!data.data.saved) {
+                console.log("Send Request!");
+                Distance.getDistance(data.data, api_url, id);
+              } else {
+                console.log("Already have Request!");
+                Distance.setDistance(data.data.distance, id);
+              }
             }
           }
         });
@@ -137,21 +141,37 @@ $(document).ready(function () {
         fetch("".concat(api_url, "key=").concat(key).concat(query)).then(function (response) {
           return response.json();
         }).then(function (json) {
-          var distance = Math.round(json.route.distance * 100) / 100;
-          $(".preview__text--distance[data-id=".concat(id, "]")).text(distance + " km"); //json.route.distance
+          Distance.addDistance(json.route.distance, id);
+          Distance.setDistance(json.route.distance, id);
         });
+      }
+    }, {
+      key: "addDistance",
+      value: function addDistance(data, id) {
+        $.ajaxSetup({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
+        $.ajax({
+          method: "POST",
+          url: "/addLocation",
+          data: {
+            id: id,
+            data: data
+          }
+        });
+      }
+    }, {
+      key: "setDistance",
+      value: function setDistance(data, id) {
+        var distance = Math.round(data * 100) / 100;
+        $(".preview__text--distance[data-id=".concat(id, "]")).text(distance + " km");
       }
     }]);
 
     return Distance;
   }();
-  /*let amount = $("*[data-id]").length;
-  for (var i = 0; i < amount; i++) {
-  	let id = $(this).data("id");
-  	console.log(id);
-  	Distance.getLocation(api_url, id);
-  }*/
-
 
   $.each($("*[data-id]"), function (i, v) {
     var id = $(v).data("id");
@@ -168,7 +188,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\distance.js */"./resources/js/distance.js");
+module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\js\distance.js */"./resources/js/distance.js");
 
 
 /***/ })
