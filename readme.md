@@ -156,7 +156,7 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                      |
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Na registratie het bericht (Welcome back) wijzigen                                                                                                                          |
-| Lars                                                                                                                                                                         |   Bezig   |
+| Lars                                                                                                                                                                         |   DONE   |
 | 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                                                                                 |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)                                                       |

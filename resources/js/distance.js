@@ -10,10 +10,8 @@ $(document).ready(function() {
 			    success: function(data){
 			      	if (data.status == "success") {
 			      		if (!data.data.saved) {
-			      			console.log("Send Request!");
 			      			Distance.getDistance(data.data, api_url, id);
 			      		} else {
-			      			console.log("Already have Request!");
 			      			Distance.setDistance(data.data.distance, id);
 			      		}
 			      	}

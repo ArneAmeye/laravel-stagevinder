@@ -34,7 +34,11 @@
                 @slot('type', 'info')
                 <ul class="alert__container">
                     <li class="alert__item">
-                        Welcome back {{ session('name') }}!
+                        @if(basename(url()->previous()) == "register")
+                            Welcome to King Trainee, {{ session('name') }}!
+                        @else
+                            Welcome back to King Trainee, {{ session('name') }}!
+                        @endif
                     </li>
                 </ul>
             @endcomponent
