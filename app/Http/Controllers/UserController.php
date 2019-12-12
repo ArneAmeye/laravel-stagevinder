@@ -28,7 +28,12 @@ class UserController extends Controller
         $isCompany = $request->has('isCompany');
 
         //Validate
-        $ifValidated = $this->handleValidation($user, $request, $isCompany);
+        $validation = $this->handleValidation($user, $request, $isCompany);
+
+        if ($validation->fails()) {
+            return redirect()->route('register')
+                ->withErrors($validation)->withInput($request->except('password'));
+        }
 
         $email = $request->input('email');
         $user->email = $request->input('email');
@@ -69,7 +74,7 @@ class UserController extends Controller
 
         if ($validation->fails()) {
             return redirect()->route('login')
-                ->withErrors($validation)->withInput($request->except('password'));;
+                ->withErrors($validation)->withInput($request->except('password'));
         }
 
         $creadentials = $request->only(['email', 'password']);
@@ -94,22 +99,25 @@ class UserController extends Controller
         return redirect()->route('login')->withErrors('Your email or password was incorrect!');
     }
 
-    public function handleValidation($user, $request, $isCompany){
-        $validation = Validator::make($request->all(), [
-            'firstname' => 'required|string',
-            'lastname' => 'required|string',
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email,'.$user->id,
-            'verificateEmail' => 'required|email|same:email',
-            'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$.!%*#?&,;:+-]/',
-        ]);
-
-        if ($validation->fails()) {
-            return redirect()->route('register')
-                ->withErrors($validation)->withInput($request->except('password'));;
+    public function handleValidation($user, Request $request, $isCompany)
+    {
+        if ($isCompany) {
+            $validation = Validator::make($request->all(), [
+                'name' => 'required|string',
+                'email' => 'required|email|unique:users,email,'.$user->id,
+                'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$.!%*#?&,;:+-]/',
+            ]);
+        }
+        if (!$isCompany) {
+            $validation = Validator::make($request->all(), [
+                'firstname' => 'required|string',
+                'lastname' => 'required|string',
+                'email' => 'required|email|unique:users,email,'.$user->id,
+                'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$.!%*#?&,;:+-]/',
+            ]);
         }
 
-        return true;
+        return $validation;
     }
 
     public function logout()
