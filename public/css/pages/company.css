@@ -510,6 +510,7 @@
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: -webkit-fill-available;
   width: 100%;
 }
 
