@@ -21,6 +21,12 @@
   color: #252421;
 }
 
+.preview__flex__child {
+  flex: 1;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
 .preview__inner {
   position: relative;
   border-radius: 5px;
@@ -28,7 +34,8 @@
   border: none;
   background: #fff;
   height: 250px;
-  margin: 0px 10px 30px -5px;
+  width: initial;
+  margin: 0px 5px 30px 5px;
 }
 
 .preview__image {
@@ -53,7 +60,7 @@
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
+  width: -webkit-fill-available;
 }
 
 .preview__text--internship {
@@ -98,9 +105,26 @@
   flex: 1 1 250px;
 }
 
+@media (min-width: 768px) {
+  .preview__flex__child {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
 @media (min-width: 1024px) {
   .preview__container {
     justify-content: initial;
+  }
+
+  .preview__flex__child {
+    flex: 1;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .preview__inner {
+    width: initial;
+    margin: 0px 5px 30px 5px;
   }
 }
 .search__field__container {
@@ -160,15 +184,21 @@
   border: none;
 }
 
+.preview__flex__child {
+  flex: 1;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
 .application__single__container {
   position: relative;
   border-radius: 5px;
   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
   border: none;
   background: #fff;
-  width: 250px;
   height: 250px;
-  margin: 0px 10px 30px -5px;
+  width: initial;
+  margin: 0px 5px 30px 5px;
 }
 
 .application__student__profile {
@@ -240,7 +270,7 @@
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 250px;
+  width: -webkit-fill-available;
 }
 
 .application____internship__text--title {
@@ -275,8 +305,25 @@
   filter: grayscale(100%);
 }
 
+@media (min-width: 768px) {
+  .preview__flex__child {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
 @media (min-width: 1024px) {
   .applications__container {
     justify-content: initial;
+  }
+
+  .preview__flex__child {
+    flex: 1;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .application__single__container {
+    width: initial;
+    margin: 0px 5px 30px 5px;
   }
 }

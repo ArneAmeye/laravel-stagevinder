@@ -471,6 +471,12 @@
   color: #252421;
 }
 
+.preview__flex__child {
+  flex: 1;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
 .preview__inner {
   position: relative;
   border-radius: 5px;
@@ -478,7 +484,8 @@
   border: none;
   background: #fff;
   height: 250px;
-  margin: 0px 10px 30px -5px;
+  width: initial;
+  margin: 0px 5px 30px 5px;
 }
 
 .preview__image {
@@ -503,7 +510,7 @@
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
+  width: -webkit-fill-available;
 }
 
 .preview__text--internship {
@@ -548,9 +555,26 @@
   flex: 1 1 250px;
 }
 
+@media (min-width: 768px) {
+  .preview__flex__child {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
 @media (min-width: 1024px) {
   .preview__container {
     justify-content: initial;
+  }
+
+  .preview__flex__child {
+    flex: 1;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .preview__inner {
+    width: initial;
+    margin: 0px 5px 30px 5px;
   }
 }
 #preview__card {
@@ -651,8 +675,14 @@
   border: none;
   background: #fff;
   padding: 0.5em;
-  margin: 0em 1em 1em 0em;
-  width: 250px;
+  margin: 0em 0.5em 1em 0.5em;
+  width: initial;
+}
+
+.company__flex__child {
+  flex: 1;
+  flex-basis: 100%;
+  max-width: 100%;
 }
 
 .single__company__card__photo {
@@ -676,4 +706,21 @@
   font-size: 13px;
 }
 
+@media (min-width: 768px) {
+  .company__flex__child {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .company__flex__child {
+    flex: 1;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .single__company__card {
+    width: initial;
+  }
+}
 /*KEYFRAMES*/

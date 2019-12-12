@@ -2,7 +2,7 @@
         <h3 class="preview__container__title">All registered companies:</h3>
         @foreach($companies as $company)
                 @if(Auth::check() and Session::has('user'))
-                    <a class="preview__container--link" href="{{ url('/companies/') }}/{{ $company->id }}">
+                    <a class="company__flex__child" href="{{ url('/companies/') }}/{{ $company->id }}">
                 @else
                     <a class="preview__container--link" href="/login">
                 @endif

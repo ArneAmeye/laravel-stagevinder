@@ -5,7 +5,7 @@
         @endphp
         @foreach($companyInternships as $myInternship)
             @if($myInternship->is_available == 1)
-                <a class="preview__container--link" href="{{ url('/internships/') }}/{{ $myInternship->id }}">
+                <a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $myInternship->id }}">
                     <div class="preview__inner">
                         <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $myInternship->background_picture }}">
                         <div class="preview__text">

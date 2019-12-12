@@ -8,9 +8,12 @@ $(document).ready(function() {
 			    url: "/getLocation",
 			    data: {id: id},
 			    success: function(data){
-			    	console.log(data);
 			      	if (data.status == "success") {
-			      		Distance.getDistance(data.data, api_url, id);
+			      		if (!data.data.saved) {
+			      			Distance.getDistance(data.data, api_url, id);
+			      		} else {
+			      			Distance.setDistance(data.data.distance, id);
+			      		}
 			      	}
 			    }
 			});
@@ -26,19 +29,29 @@ $(document).ready(function() {
                     return response.json();
                 })
                 .then(json => {
-                	let distance = Math.round(json.route.distance * 100) / 100;
-                    $(`.preview__text--distance[data-id=${id}]`).text(distance+" km");
-                    //json.route.distance
+                	Distance.addDistance(json.route.distance, id);
+                	Distance.setDistance(json.route.distance, id);
                 });
 		}
-	}
 
-	/*let amount = $("*[data-id]").length;
-	for (var i = 0; i < amount; i++) {
-		let id = $(this).data("id");
-		console.log(id);
-		Distance.getLocation(api_url, id);
-	}*/
+		static addDistance(data, id) {
+			$.ajaxSetup({
+			  headers: {
+			    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			  }
+			});
+			$.ajax({
+				method: "POST",
+			    url: "/addLocation",
+			    data: {id: id, data: data}
+			});
+		}
+
+		static setDistance(data, id) {
+			let distance = Math.round(data * 100) / 100;
+            $(`.preview__text--distance[data-id=${id}]`).text(distance+" km");
+		}
+	}
 
 	$.each($("*[data-id]"), function(i, v) {
 		let id = $(v).data("id");

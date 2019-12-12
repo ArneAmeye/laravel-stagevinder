@@ -84,6 +84,7 @@ That's it, you should now be able to use the external tool (see previous title) 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Fixed Intracto bug in database on 22/11/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added table students_internships for many to many on 02/12/2019` <br/>
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Changes on seeders (and removed factories) for user testing on 05/12/2019` <br/>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Added a students_companies table to save the distance in database on 12/12/2019` <br/>
 <br/>Refreshing tables when changes were made
 `php artisan migrate:refresh`
 
@@ -154,8 +155,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                                                                                                                                         |   Status   |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                      |
 | Irene                                                                                                                                                                          |    DONE    |
-| 👑 Na registratie het bericht (Welcome back) wijzigen                                                                                                                          |
-| Person                                                                                                                                                                         |   Status   |
+| ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Na registratie het bericht (Welcome back) wijzigen                                                                                                                          |
+| Lars                                                                                                                                                                         |   DONE   |
 | 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                                                                                 |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)                                                       |
