@@ -76,6 +76,16 @@
   font-size: 13px;
   font-weight: 300;
   padding-top: 0.5em;
+  display: inline-block;
+  float: left;
+}
+
+.preview__text--distance {
+  font-size: 13px;
+  font-weight: 300;
+  padding-top: 0.5em;
+  display: inline-block;
+  float: right;
 }
 
 .preview__button--add {

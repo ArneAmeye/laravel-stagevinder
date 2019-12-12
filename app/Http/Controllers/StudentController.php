@@ -145,6 +145,9 @@ class StudentController extends Controller
         $student->save();
         $user->save();
 
+        $student['type'] = 'student';
+        Session::put('user', $student);
+
         return redirect("/students/$id")
             ->with('success', 'User detials has been updated!');
     }
