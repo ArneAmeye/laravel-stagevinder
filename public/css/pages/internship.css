@@ -494,7 +494,6 @@
   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
   border: none;
   background: #fff;
-  width: 250px;
   height: 250px;
   margin: 0px 10px 30px -5px;
 }
@@ -521,7 +520,7 @@
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: inherit;
+  width: 100%;
 }
 
 .preview__text--internship {
@@ -549,6 +548,10 @@
   display: block;
   width: 100%;
   margin-bottom: 1em;
+}
+
+.preview__container--link {
+  flex: 1 1 250px;
 }
 
 @media (min-width: 1024px) {

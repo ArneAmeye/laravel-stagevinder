@@ -5,7 +5,7 @@
             @if(Auth::check() and Session::has('user'))
                 <a href="{{ url('/internships/') }}/{{ $internship->id }}">
             @else
-                <a href="/login">
+                <a class="preview__container--link" href="/login">
             @endif
                     <div class="preview__inner">
                         <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture}}">
