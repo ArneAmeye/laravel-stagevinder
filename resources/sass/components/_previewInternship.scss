@@ -15,7 +15,7 @@
     border: none;
 }
 
-.preview__container__title{
+.preview__container__title {
     display: block;
     width: 100%;
     padding-bottom: 1em;
@@ -47,7 +47,7 @@
     height: 100%;
 }
 
-.preview__form{
+.preview__form {
     position: absolute;
     left: 86%;
     top: -1px;
@@ -79,7 +79,7 @@
     text-overflow: ellipsis;
 }
 
-.preview__text--company{
+.preview__text--company {
     font-size: $companySmallSize;
     font-weight: $lightWeight;
     padding-top: 0.5em;
@@ -95,10 +95,15 @@
     float: right;
 }
 
-.preview__button--add{
+.preview__button--add {
     display: block;
     width: 100%;
     margin-bottom: 1em;
+    text-align: center;
+}
+
+.preview__container--link {
+    flex: 1 1 250px;
 }
 
 @media (min-width: 768px) {

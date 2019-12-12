@@ -548,6 +548,11 @@
   display: block;
   width: 100%;
   margin-bottom: 1em;
+  text-align: center;
+}
+
+.preview__container--link {
+  flex: 1 1 250px;
 }
 
 @media (min-width: 768px) {
