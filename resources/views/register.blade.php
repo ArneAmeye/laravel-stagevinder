@@ -33,18 +33,22 @@
         <!--Checkbox for student/company signup-->
         <p class=auth__text>Regular sign up. Are you a company or a student?</p>
         <div class="slider">
-            <div class="slider__container slider__container--disabled">
-                <div class="slider__item slider__item--disabled">
-                    <input type="checkbox" name="isCompany" class="slider__item--checkbox">
+            <div class="slider__container @if (old('isCompany')) slider__container--active @else slider__container--disabled @endif">
+                <div class="slider__item @if (old('isCompany')) slider__item--active @else slider__item--disabled @endif">
+                    <input type="checkbox" name="isCompany" class="slider__item--checkbox" @if (old('isCompany')) checked="checked" @endif>
                 </div>
             </div>
             <div>
-            <label for="checkbox" class="slider__item--label auth__header__text">Now you are a student!</label>
+                @if(((old('isCompany')) ?? "student ") == "on")
+                    <label for="checkbox" class="slider__item--label auth__header__text">Now you are a company !</label>
+                @else
+                    <label for="checkbox" class="slider__item--label auth__header__text">Now you are a student !</label>
+                @endif
             </div>
         </div>
 
         <!--Student-->
-        <div class="container--active">
+        <div class="@if (old('isCompany')) container--disabled @else container--active @endif">
             <div class="input__container">
                 <span class="input__addon">
                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -61,7 +65,7 @@
         </div>
 
         <!--Company-->
-        <div class="container--disabled">
+        <div class="@if (old('isCompany')) container--active @else container--disabled @endif">
             <div class="input__container">
                 <span class="input__addon">
                     <i class="fas fa-user" aria-hidden="true"></i>
