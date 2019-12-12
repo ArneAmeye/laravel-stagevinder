@@ -141,8 +141,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                       | Status                                                     |         
 | 👑 Knop Apply duidelijker (student, internship)                                                                           |
 | Person                                                       | Status                                                     |
-| 👑 Session:flush gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship)     |                                                       
-| Person                                                       | Status                                                     |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) $request->flash gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship)     |                                                       
+| Arne                                                       | Doing                                                     |
 | 👑 Validaties op profiel duidelijker of weglaten (student & company)                                                      |         
 | Person                                                       | Status                                                     |
 | 👑 Informatie over Kingtrainnee mist (/index)                                                                             |
@@ -167,8 +167,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                       | Status                                                     |
 | 👑 Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                           |
 | Person                                                       | Status                                                     |
-| 👑 Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)   |
-| Person                                                       | Status                                                     |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)   |
+| Arne                                                       | DONE                                                     |
 | 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest) |
 | Person                                                       | Status                                                     |
 | 👑 Bijwerken van afbeelding van een internship lukt niet (company, op homestead.test per ongeluk getest)                  |
@@ -434,6 +434,8 @@ Make sure you have 2 environments: production and staging folders in Linode, a s
 Create an Envoy file in the root of the Laravel project called 'Envoy.blade.php'.<br/>
 It looks like this: (Replace your deploy username, IP adresss and foldernames!)<br/>
 
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) The people who don't have a beta server, remove all parts with staging.
+
 ```
 @servers(['production' => ['deployUsername@139.XXX.XXX.XX -p22'], 'staging' => ['deployUsername@139.XXX.XXX.XX -p22']])
 
@@ -456,10 +458,10 @@ It looks like this: (Replace your deploy username, IP adresss and foldernames!)<
 @endtask
 ```
 
-Now run the deployment with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
+Now run the deployment (in vagrant) with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
 
 ISSUES?<br/>
-SSH key for the deploy user must be setup! <br/>
+- SSH key for the deploy user must be setup! <br/>
 If you have done this but it tries to load it from "C/users/yourname/.ssh/id_rsa" then we need to tell Windows where this Linode host can find our Private Key:<br/>
 Go to "C:/User/Yourname/.ssh" and create a `config` file if it doesn't exist yet. <br/>
 Paste this and adapt to your configuration:<br/>
@@ -471,6 +473,37 @@ Host 139.XXX.XXX.XXX
  ``` 
  
 NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
+- No access to remote repository? Then change the line `ssh://git@github.com/ArneAmeye/laravel-stagevinder.git` into `https://USERNAME:PASSWORD_WITHOUT_SPECIALCHARS@github.com/ArneAmeye/laravel-stagevinder.git`
+What is `PASSWORD_WITHOUT_SPECIALCHARS`? If you use special characters in your password, you need to replace it by (following this link)[https://support.brightcove.com/special-characters-usernames-and-passwords].
+Adding this to your github link in your .env is recommended.
+
+```
+@setup
+    require __DIR__.'/vendor/autoload.php';
+
+    $dotenv = Dotenv\Dotenv::create(__DIR__);
+
+    try {
+        $dotenv->load();
+        $dotenv->required(['DEPLOY_USER', 'DEPLOY_SERVER', 'DEPLOY_BASE_DIR', 'DEPLOY_REPO'])->notEmpty();
+    } catch ( Exception $e )  {
+        echo $e->getMessage();
+    }
+
+    $gitUrl = env('GIT_URL');
+@endsetup
+
+@task('deploy-production', ['on' => 'production'])
+    ...
+    git pull {{ $gitUrl }}
+    ...
+@endtask
+```
+
+- Error on bootstrap folder? `chmod -R 775 bootstrap/cache` and `systemctl restart httpd`
+- Error on storage folder with permissions denied? `chmod -R 775 storage` and `chgrp -R apache storage`
+- Errors about a package not found? Then add `composer install` after the git pull line in your Envoy.blade.php
+- Still errors? Then ask in chat 😉
 
 ## Docker
 - First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).

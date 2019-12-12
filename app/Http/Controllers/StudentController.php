@@ -126,7 +126,7 @@ class StudentController extends Controller
         ]);
         if ($validation->fails()) {
             return redirect("/students/$id?edit=details")
-                ->withErrors($validation);
+                ->withErrors($validation)->withInput();
         }
 
         $user = \App\User::where('id', $student->user_id)->first();

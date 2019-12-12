@@ -24,7 +24,7 @@
 							<span class="input__addon">
 								<i class="fa fa-user" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="name" id="businessName" class="input" placeholder="Name" value="{{ $name }}">
+							<input required type="text" name="name" id="businessName" class="input" placeholder="Name" value="{{ $name }}">
 						</div>
 					</td>
 				</tr>
@@ -34,7 +34,7 @@
 							<span class="input__addon">
 								<i class="fa fa-briefcase" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="sector" id="sector" class="input" placeholder="Sector" value="{{ $sector }}">
+							<input required type="text" name="sector" id="sector" class="input" placeholder="Sector" value="{{ $sector }}">
 						</div>
 					</td>
 				</tr>
@@ -44,7 +44,7 @@
 							<span class="input__addon">
 								<i class="fas fa-user-tie" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="ceo" class="input" placeholder="Name CEO" value="{{ $ceo }}">
+							<input required type="text" name="ceo" class="input" placeholder="Name CEO" value="{{ $ceo }}">
 						</div>
 					</td>
 				</tr>
@@ -54,7 +54,7 @@
 							<span class="input__addon">
 								<i class="fas fa-map" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="street" id="street" class="input" placeholder="Street" value="{{ $street }}">
+							<input required type="text" name="street" id="street" class="input" placeholder="Street" value="{{ $street }}">
 						</div>
 					</td>
 				</tr>
@@ -64,7 +64,7 @@
 							<span class="input__addon">
 								<i class="fas fa-city" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="city" id="businessLocation" class="input" placeholder="city" value="{{ $city }}">
+							<input required type="text" name="city" id="businessLocation" class="input" placeholder="city" value="{{ $city }}">
 						</div>
 					</td>
 				</tr>
@@ -74,7 +74,7 @@
 								<span class="input__addon">
 									<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
 								</span>
-								<input type="text" name="postal" id="postal" class="input" placeholder="postal" value="{{ $postal }}">
+								<input required type="text" name="postal" id="postal" class="input" placeholder="postal" value="{{ $postal }}">
 							</div>
 						</td>
 					</tr>
@@ -88,7 +88,7 @@
 							<span class="input__addon">
 								<i class="fas fa-envelope" aria-hidden="true"></i>
 							</span>
-							<input type="email" name="email" class="input" placeholder="Email" value="{{ $email }}">
+							<input required type="email" name="email" class="input" placeholder="Email" value="{{ $email }}">
 						</div>
 					</td>
 				</tr>

@@ -49,14 +49,14 @@
                 <span class="input__addon">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input" name ="firstname" placeholder="Enter your first name">
+                <input type="text" class="input" name ="firstname" placeholder="Enter your first name" value="{{old('firstname')}}">
             </div>
 
             <div class="input__container">
                 <span class="input__addon">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input" name ="lastname" placeholder="Enter your last name">
+                <input type="text" class="input" name ="lastname" placeholder="Enter your last name" value="{{old('lastname')}}">
             </div>
         </div>
 
@@ -66,7 +66,7 @@
                 <span class="input__addon">
                     <i class="fas fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input" name ="name" placeholder="Enter your name">
+                <input type="text" class="input" name ="name" placeholder="Enter your company name" value="{{old('name')}}">
             </div>
         </div>
 
@@ -76,7 +76,7 @@
             <span class="input__addon">
 				<i class="fa fa-envelope" aria-hidden="true"></i>
 			</span>
-            <input type="email" class="input" name="email" aria-describedby="emailHelp" placeholder="Enter your email">
+            <input type="email" class="input" name="email" aria-describedby="emailHelp" placeholder="Enter your email" value="{{old('email')}}">
         </div>
         <div class="input__container">
             <span class="input__addon">
