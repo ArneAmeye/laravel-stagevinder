@@ -10,8 +10,14 @@
     border: none;
     background: $whiteColor;
     padding: 0.5em;
-    margin: 0em 1em 1em 0em;
-    width: 250px;
+    margin: 0em 0.5em 1em 0.5em;
+    width: initial;
+}
+
+.company__flex__child{
+    flex: 1;
+    flex-basis: 100%;
+    max-width: 100%;
 }
 
 .single__company__card__photo{
@@ -33,4 +39,25 @@
     font-weight: $lightWeight;
     color: $cardTitleColor;
     font-size: $companySmallSize;
+}
+
+@media (min-width: 768px) {
+
+    .company__flex__child{
+       flex-basis: 50%; 
+       max-width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .company__flex__child{
+       flex: 1;
+       flex-basis: 25%;
+       max-width: 25%; 
+    }
+
+    .single__company__card{
+        width: initial;
+    }
 }

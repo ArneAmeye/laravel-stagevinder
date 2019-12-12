@@ -3,9 +3,9 @@
     @foreach($internships as $internship)
         @if($internship->is_available == 1)
             @if(Auth::check() and Session::has('user'))
-                <a href="{{ url('/internships/') }}/{{ $internship->id }}">
+                <a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
             @else
-                <a href="/login">
+                <a class="preview__flex__child" href="/login">
             @endif
                     <div class="preview__inner">
                         <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture}}">

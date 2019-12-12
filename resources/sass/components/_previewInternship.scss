@@ -22,6 +22,12 @@
     color: $mainColor;
 }
 
+.preview__flex__child{
+    flex: 1;
+    flex-basis: 100%; 
+    max-width: 100%;
+ }
+
 .preview__inner {
     position: relative;
     border-radius: $profilePictureRadius;
@@ -29,9 +35,9 @@
     box-shadow: $breadcrumbShadow;
     border: none;
     background: $whiteColor;
-    width: 250px;
     height: 250px;
-    margin: 0px 10px 30px -5px;
+    width: initial;
+    margin: 0px 5px 30px 5px;
 }
 
 .preview__image {
@@ -55,7 +61,7 @@
     background-color: $whiteColor;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: inherit;
+    width: -webkit-fill-available;
 }
 
 .preview__text--internship {
@@ -95,8 +101,27 @@
     margin-bottom: 1em;
 }
 
+@media (min-width: 768px) {
+
+    .preview__flex__child{
+       flex-basis: 50%; 
+       max-width: 50%;
+    }
+}
+
 @media (min-width: 1024px) {
 	.preview__container {
 		justify-content: initial;;
-	}
+    }
+
+    .preview__flex__child{
+       flex: 1;
+       flex-basis: 25%;
+       max-width: 25%; 
+    }
+
+    .preview__inner{
+        width: initial;
+        margin: 0px 5px 30px 5px;
+    }
 }

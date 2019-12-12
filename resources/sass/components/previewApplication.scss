@@ -15,6 +15,12 @@
     border: none;
 }
 
+.preview__flex__child{
+    flex: 1;
+    flex-basis: 100%; 
+    max-width: 100%;
+}
+
 .application__single__container{
     position: relative;
     border-radius: $profilePictureRadius;
@@ -22,9 +28,9 @@
     box-shadow: $breadcrumbShadow;
     border: none;
     background: $whiteColor;
-    width: 250px;
     height: 250px;
-    margin: 0px 10px 30px -5px;
+    width: initial;
+    margin: 0px 5px 30px 5px;
 }
 
 .application__student__profile{
@@ -97,7 +103,7 @@
     background-color: $whiteColor;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 250px;
+    width: -webkit-fill-available;
 }
 
 .application____internship__text--title{
@@ -132,8 +138,27 @@
     filter: grayscale(100%);
 }
 
+@media (min-width: 768px) {
+
+    .preview__flex__child{
+       flex-basis: 50%;
+       max-width: 50%; 
+    }
+}
+
 @media (min-width: 1024px) {
 	.applications__container {
 		justify-content: initial;;
-	}
+    }
+
+    .preview__flex__child{
+        flex: 1;
+        flex-basis: 25%; 
+        max-width: 25%;
+    }
+    
+    .application__single__container{
+        width: initial;
+        margin: 0px 5px 30px 5px;
+    }
 }

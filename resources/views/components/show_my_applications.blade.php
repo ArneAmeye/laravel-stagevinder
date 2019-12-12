@@ -21,34 +21,36 @@
                     }
                 @endphp
 
-                <div class="application__single__container">
-                    <a href="{{ url('/companies/') }}/{{ $application->company_id }}">
-                        <div class="application__student__profile {{$status['class']}}">
-                        <img class="student__image" src="{{asset('images/companies/profile_picture')}}/{{ $company->profile_picture }}" alt="company profile picture">
-                        <div class="student__text">
-                            <p class="student__name">
-                                {{ $company->name }}
-                            </p>
-                            <p class="student__status">{{$status['text']}}</p>
-                        </div>    
-                        
-                        </div>
-                    </a>
-
-                    <img class="application__internship__photo" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture }}" alt="internship picture">
-
-                    <a href="{{ url('/internships/') }}/{{ $application->internship_id }}">
-                    <div class="application__internship__preview">
-                            <div class="application____internship__text">
-                            <p class="application____internship__text--title">
-                                {{ $internship->title }}
-                            </p>
-                            <p class="application____internship__text--description">
-                                {{ $internship->description }}
-                            </p>
+                <div class="preview__flex__child">
+                    <div class="application__single__container ">
+                        <a href="{{ url('/companies/') }}/{{ $application->company_id }}">
+                            <div class="application__student__profile {{$status['class']}}">
+                            <img class="student__image" src="{{asset('images/companies/profile_picture')}}/{{ $company->profile_picture }}" alt="company profile picture">
+                            <div class="student__text">
+                                <p class="student__name">
+                                    {{ $company->name }}
+                                </p>
+                                <p class="student__status">{{$status['text']}}</p>
+                            </div>    
+                            
                             </div>
-                        </div>
-                    </a>
+                        </a>
+
+                        <img class="application__internship__photo" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture }}" alt="internship picture">
+
+                        <a href="{{ url('/internships/') }}/{{ $application->internship_id }}">
+                        <div class="application__internship__preview">
+                                <div class="application____internship__text">
+                                <p class="application____internship__text--title">
+                                    {{ $internship->title }}
+                                </p>
+                                <p class="application____internship__text--description">
+                                    {{ $internship->description }}
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 
         @endforeach
