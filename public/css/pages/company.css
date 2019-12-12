@@ -419,6 +419,17 @@
   outline: 0;
 }
 
+.required__field {
+  color: tomato;
+  display: inline-block;
+}
+
+.required__info {
+  padding: 0px 34px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
 .textarea {
   resize: none;
   height: 470px;
@@ -514,6 +525,16 @@
   font-size: 13px;
   font-weight: 300;
   padding-top: 0.5em;
+  display: inline-block;
+  float: left;
+}
+
+.preview__text--distance {
+  font-size: 13px;
+  font-weight: 300;
+  padding-top: 0.5em;
+  display: inline-block;
+  float: right;
 }
 
 .preview__button--add {

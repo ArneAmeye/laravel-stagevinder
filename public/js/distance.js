@@ -81,61 +81,94 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/vue/search.js":
-/*!************************************!*\
-  !*** ./resources/js/vue/search.js ***!
-  \************************************/
+/***/ "./resources/js/distance.js":
+/*!**********************************!*\
+  !*** ./resources/js/distance.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-Vue.component("get", {
-  template: "<a href=\"#\">\n\t\t<div class=\"preview__inner\">\n\t\t\t<img class=\"preview__image\" src=\"@{{profile_picture}}\">\n\t\t\t<div class=\"preview__text\">\n\t\t\t\t<p class=\"preview__text--internship\">\n\t\t\t\t\t@{{firstname}} @{{lastname}}\n\t\t\t\t</p>\n\t\t\t\t<p class=\"preview__text--position\">\n\t\t\t\t\t@{{bio}}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n    </a>",
-  props: ["result"]
-});
-var app = new Vue({
-  el: "body",
-  data: {
-    results: [],
-    query: "irene"
-  },
-  mounted: function mounted() {
-    this.search();
-  },
-  methods: {
-    search: function search() {
-      var that = this; // Clear the error message.
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-      this.error = ""; // Empty the products array so we can fill it with the new products.
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-      this.products = []; // Making a get request to our API and passing the query to it.
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-      fetch("/api/search?q=" + this.query).then(function (response) {
-        return response.json();
-      }).then(function (json) {
-        console.log(json.users);
-        that.results.push(json.users);
-      }); // Clear the query.
+$(document).ready(function () {
+  var api_url = "http://www.mapquestapi.com/directions/v2/route?";
 
-      this.query = "";
+  var Distance =
+  /*#__PURE__*/
+  function () {
+    function Distance() {
+      _classCallCheck(this, Distance);
     }
-  }
+
+    _createClass(Distance, null, [{
+      key: "getLocation",
+      value: function getLocation(api_url, id) {
+        $.ajax({
+          method: "GET",
+          url: "/getLocation",
+          data: {
+            id: id
+          },
+          success: function success(data) {
+            console.log(data);
+
+            if (data.status == "success") {
+              Distance.getDistance(data.data, api_url, id);
+            }
+          }
+        });
+      }
+    }, {
+      key: "getDistance",
+      value: function getDistance(data, api_url, id) {
+        var fromLocation = data.from;
+        var toLocation = data.to;
+        var key = data.key;
+        var query = "&routeType=fastest&unit=k&from=".concat(fromLocation, "&to=").concat(toLocation);
+        fetch("".concat(api_url, "key=").concat(key).concat(query)).then(function (response) {
+          return response.json();
+        }).then(function (json) {
+          var distance = Math.round(json.route.distance * 100) / 100;
+          $(".preview__text--distance[data-id=".concat(id, "]")).text(distance + " km"); //json.route.distance
+        });
+      }
+    }]);
+
+    return Distance;
+  }();
+  /*let amount = $("*[data-id]").length;
+  for (var i = 0; i < amount; i++) {
+  	let id = $(this).data("id");
+  	console.log(id);
+  	Distance.getLocation(api_url, id);
+  }*/
+
+
+  $.each($("*[data-id]"), function (i, v) {
+    var id = $(v).data("id");
+    Distance.getLocation(api_url, id);
+  });
 });
 
 /***/ }),
 
-/***/ 5:
-/*!******************************************!*\
-  !*** multi ./resources/js/vue/search.js ***!
-  \******************************************/
+/***/ 4:
+/*!****************************************!*\
+  !*** multi ./resources/js/distance.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\vue\search.js */"./resources/js/vue/search.js");
+module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\distance.js */"./resources/js/distance.js");
 
 
 /***/ })

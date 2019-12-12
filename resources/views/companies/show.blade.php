@@ -285,6 +285,7 @@
 								Details
 							</h5>	
 						</div>
+						<p class="required__info">Fields with a <span class="required__field">*</span> are required.</p>
 						<div class="card__body card__body--padding clearfix">
 								<table class="card__table">
 									<tr class="card__table__row">
@@ -292,16 +293,18 @@
 											<div class="input__container">
 												<span class="input__addon">
 													<i class="fas fa-id-card" aria-hidden="true"></i>
+													<p class="required__field">*</p>
 												</span>
-												<input type="text" name="title" class="input" placeholder="Title" value="">
+												<input required type="text" name="title" class="input" placeholder="Title" value="">
 											</div>
 										</td>
 										<td class="card__table__data">
 											<div class="input__container">
 												<span class="input__addon">
 													<i class="fas fa-briefcase" aria-hidden="true"></i>
+													<p class="required__field">*</p>
 												</span>
-												<input type="text" name="sector" class="input" placeholder="Sector" value="">
+												<input required type="text" name="sector" class="input" placeholder="Sector" value="">
 											</div>
 										</td>
 									</tr>
@@ -310,8 +313,9 @@
 											<div class="input__container">
 												<span class="input__addon">
 													<i class="fas fa-file-alt" aria-hidden="true"></i>
+													<p class="required__field">*</p>
 												</span>
-												<textarea name="description" class="input" placeholder="Job Description" value=""></textarea>
+												<textarea required name="description" class="input" placeholder="Job Description" value=""></textarea>
 											</div>
 										</td>
 										<td class="card__table__data">

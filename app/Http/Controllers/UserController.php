@@ -61,6 +61,7 @@ class UserController extends Controller
 
     public function handleLogin(Request $request)
     {
+        $request->flashExcept('password');
         $validation = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string',
@@ -68,7 +69,7 @@ class UserController extends Controller
 
         if ($validation->fails()) {
             return redirect()->route('login')
-                ->withErrors($validation);
+                ->withErrors($validation)->withInput($request->except('password'));;
         }
 
         $creadentials = $request->only(['email', 'password']);
@@ -100,12 +101,12 @@ class UserController extends Controller
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email,'.$user->id,
             'verificateEmail' => 'required|email|same:email',
-            'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*#?&]/',
+            'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$.!%*#?&,;:+-]/',
         ]);
 
         if ($validation->fails()) {
             return redirect()->route('register')
-                ->withErrors($validation);
+                ->withErrors($validation)->withInput($request->except('password'));;
         }
 
         return true;

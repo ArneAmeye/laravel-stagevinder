@@ -7,7 +7,8 @@
 	{{ asset('css/pages/index.css') }}
 @endsection
 @section('script')
-	{{ asset('js/search.js') }}
+    <script type="text/javascript" src="{{ asset('js/search.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/distance.js') }}"></script>
 @endsection
 @section('content')
     @if(Auth::check() and Session::has('user'))

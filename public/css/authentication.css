@@ -50,6 +50,7 @@ ul {
   color: #fff;
   background-size: cover;
   background: url(../images/bg.jpg) no-repeat center center fixed;
+  overflow-y: auto;
 }
 
 .container--active {
@@ -470,6 +471,17 @@ ul {
 .input:focus {
   border-color: #80bdff;
   outline: 0;
+}
+
+.required__field {
+  color: tomato;
+  display: inline-block;
+}
+
+.required__info {
+  padding: 0px 34px;
+  font-weight: 600;
+  font-size: 13px;
 }
 
 .checkbox__container {

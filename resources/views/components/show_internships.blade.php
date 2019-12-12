@@ -23,6 +23,8 @@
                             <p class="preview__text--company">
                                 @ {{ $companyName }}
                             </p>
+                            <p class="preview__text--distance" data-id="{{ $internship->id }}">
+                            </p>
                         </div>
                     </div>
                 </a>

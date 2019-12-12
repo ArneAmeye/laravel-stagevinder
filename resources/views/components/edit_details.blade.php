@@ -11,6 +11,7 @@
 	@endcomponent
 @endif
 
+<p class="required__info">Fields with a <span class="required__field">*</span> are required.</p>
 <form method="post" action="{{ route('student.update', $id) }}">
 	{{ csrf_field() }}
     {{ method_field('patch') }}
@@ -24,8 +25,9 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-user" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
-							<input type="text" name="username" class="input" placeholder="Full Name" value="{{ $name }}">
+							<input required type="text" name="username" class="input" placeholder="Full Name" value="{{ $name }}">
 						</div>
 					</td>
 				</tr>
@@ -34,8 +36,9 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-briefcase" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
-							<input type="text" name="profession" class="input" placeholder="Profession" value="{{ $profession }}">
+							<input required type="text" name="profession" class="input" placeholder="Profession" value="{{ $profession }}">
 						</div>
 					</td>
 				</tr>
@@ -44,8 +47,9 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-calendar" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
-							<input type="date" name="date" class="input" placeholder="Birth Date" value="{{ $date }}">
+							<input required type="date" name="date" class="input" placeholder="Birth Date" value="{{ $date }}">
 						</div>
 					</td>
 				</tr>
@@ -78,8 +82,9 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-envelope" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
-							<input type="email" name="email" class="input" placeholder="Email" value="{{ $email }}">
+							<input required type="email" name="email" class="input" placeholder="Email" value="{{ $email }}">
 						</div>
 					</td>
 				</tr>
@@ -119,7 +124,7 @@
 							<span class="input__addon">
 								<i class="fas fa-link" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="website" class="input" placeholder="Website" value="{{ $website }}">
+						<input type="text" name="website" class="input" placeholder="Website" value="{{ $website }} {{old('website')}}">
 						</div>
 					</td>
 				</tr>

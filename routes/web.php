@@ -61,3 +61,6 @@ Route::get('/search', 'SearchController@filter');
 //Dribbble portfolio routes
 Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');
 Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
+
+//Distance API routes
+Route::get('/getLocation', 'DistanceController@getLocation');

@@ -123,7 +123,7 @@ class CompanyController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect("companies/$id?edit=details")->withErrors($validation);
+            return redirect("companies/$id?edit=details")->withErrors($validation)->withInput();
         } else {
             $user = \App\User::where('id', $company->user_id)->first();
             $ceo_name = explode(' ', $request->input('ceo'), 2);

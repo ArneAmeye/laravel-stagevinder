@@ -76,6 +76,16 @@
     font-size: $companySmallSize;
     font-weight: $lightWeight;
     padding-top: 0.5em;
+    display: inline-block;
+    float: left;
+}
+
+.preview__text--distance {
+    font-size: $companySmallSize;
+    font-weight: $lightWeight;
+    padding-top: 0.5em;
+    display: inline-block;
+    float: right;
 }
 
 .preview__button--add {
