@@ -34,6 +34,7 @@
     3. [Composer](Composer)
     4. [Launching site](#Launching-site)
     5. [HTTPS and SSL](#HTTPS/SSL)
+
 8. [Envoy](#Envoy)
 9. [Docker](#Docker)
 10. [Dusk (tests)](<#Dusk-(tests)>)
@@ -122,77 +123,77 @@ To convert SASS & ES6 to CSS & plain Javascript for a visual view in your browse
 
 ### Legend
 
-| **Legende**                                                  | **Betekenis**                                              |
-| ------------------------------------------------------------ |:----------------------------------------------------------:|
-| 👑                                                           | Nieuwe to do                                               |
-|![#0AD500](https://placehold.it/15/0AD500/000000?text=+)      | Arne                                                       |
-|![#FFA200](https://placehold.it/15/FFA200/000000?text=+)      | Bram                                                       |
-|![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)      | Irene                                                      |
-|![#C100FF](https://placehold.it/15/C100FF/000000?text=+)      | Lars                                                       |
+| **Legende**                                              | **Betekenis** |
+| -------------------------------------------------------- | :-----------: |
+| 👑                                                       | Nieuwe to do  |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) |     Arne      |
+| ![#FFA200](https://placehold.it/15/FFA200/000000?text=+) |     Bram      |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) |     Irene     |
+| ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) |     Lars      |
 
 ### To Do
 
 Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d/1EONhy5d7Q7JDloX7UC3OkLKlEE4s2yvwaC_pqeFDuRs/edit#heading=h.qjhtyun2njki (doorstreep als iets klaar is)
 
-| **Function**                                                 |                                                            |
-| ------------------------------------------------------------ |:----------------------------------------------------------:|
-| **Person**                                                   | **Status**                                                 |
-| 👑 Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                              |
-| Person                                                       | Status                                                     |         
-| 👑 Knop Apply duidelijker (student, internship)                                                                           |
-| Person                                                       | Status                                                     |
-| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) $request->flash gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship)     |                                                       
-| Arne                                                       | Doing                                                     |
-| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validaties op profiel duidelijker of weglaten (student & company), requires front-end duidelijk aanduiden!                                                      |         
-| Arne                                                       | DONE                                                     |
-| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Informatie over Kingtrainnee mist (/index)                                                                             |
-| Irene                                                       | Doing                                                     |
-| 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)           |
-| Person                                                       | Status                                                     |
-| 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                |                                                       
-| Person                                                       | Status                                                     |
-| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                       |         
-| Irene                                                       | Doing                                                     |
-| 👑 Na registratie het bericht (Welcome back) wijzigen                                                                     |                                                       
-| Person                                                       | Status                                                     |
-| 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                            |
-| Person                                                       | Status                                                     |
-| 👑 Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)  |
-| Person                                                       | Status                                                     |
-| 👑 Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                      |
-| Person                                                       | Status                                                     |
-| 👑 Recente internships misschien eerst plaatsen bij weergave? (vooral index, misschien ook bij company)                   |
-| Person                                                       | Status                                                     |
-| 👑 Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                              |
-| Person                                                       | Status                                                     |
-| 👑 Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                           |
-| Person                                                       | Status                                                     |
-| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)   |
-| Arne                                                       | DONE                                                     |
-| 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest) |
-| Person                                                       | Status                                                     |
-| 👑 Bijwerken van afbeelding van een internship lukt niet (company, op homestead.test per ongeluk getest)                  |
-| Person                                                       | Status                                                     |
-| 👑 Preview van uploaden afbeelding bij internship                                                                        |
-| Person                                                       | Status                                                     |
-| 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                               |
-| Person                                                       | Status                                                     |
-| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)  Slechts eenmalig e-mail vragen bij registratie                                                                         |                                                       
-| Irene                                                       | DONE                                                     |
-| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)  Foute zinsverwoording: notificatie (requist > request) en bij breadcrumbs (home)                                       |                                                       
-| Irene                                                       | DONE                                                     |
-| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+)  Eerst registreren als student en daarna pas als bedrijf (/register)                                                    |                                                       
-| Irene                                                       | DONE                                                     |
-| 👑 Een beoordeling geven aan een internship (review)                                               |
-| Person                                                       | Status                                                     |
-| 👑 Een student kan op zijn profiel zien op welke hij/zij geapplied heeft.                                              |
-| Person                                                       | Status                                                     |
-| 👑 Een notification wordt ook verstuurd via mail.                                               |
-| Person                                                       | Status                                                     |
-| 👑 Als een notificatie geaccepteerd heeft, kan een student (en company?) zijn/haar notificatie verwijderen.                                              |
-| Person                                                       | Status                                                     |
-| 👑 Tutorial (UX/UI)                                              |
-| Person                                                       | Status                                                     |
+| **Function**                                                                                                                                                                   |            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------: |
+| **Person**                                                                                                                                                                     | **Status** |
+| 👑 Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                                                                                   |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Knop Apply duidelijker (student, internship)                                                                                                                                |
+| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) \$request->flash gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship) |
+| Arne                                                                                                                                                                           |   Doing    |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validaties op profiel duidelijker of weglaten (student & company), requires front-end duidelijk aanduiden!            |
+| Arne                                                                                                                                                                           |    DONE    |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Informatie over Kingtrainnee mist (/index)                                                                            |
+| Irene                                                                                                                                                                          |   Doing    |
+| 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)                                                                |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                                                                     |
+| Person                                                                                                                                                                         |   Status   |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                      |
+| Irene                                                                                                                                                                          |    DONE    |
+| 👑 Na registratie het bericht (Welcome back) wijzigen                                                                                                                          |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                                                                                 |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)                                                       |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                                                                           |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Recente internships misschien eerst plaatsen bij weergave? (vooral index, misschien ook bij company)                                                                        |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                                                                                   |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                                                                                |
+| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)  |
+| Arne                                                                                                                                                                           |    DONE    |
+| 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest)                                                      |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Bijwerken van afbeelding van een internship lukt niet (company, op homestead.test per ongeluk getest)                                                                       |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Preview van uploaden afbeelding bij internship                                                                                                                              |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                                                                                    |
+| Person                                                                                                                                                                         |   Status   |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Slechts eenmalig e-mail vragen bij registratie                                                                        |
+| Irene                                                                                                                                                                          |    DONE    |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Foute zinsverwoording: notificatie (requist > request) en bij breadcrumbs (home)                                      |
+| Irene                                                                                                                                                                          |    DONE    |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Eerst registreren als student en daarna pas als bedrijf (/register)                                                   |
+| Irene                                                                                                                                                                          |    DONE    |
+| 👑 Een beoordeling geven aan een internship (review)                                                                                                                           |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Een student kan op zijn profiel zien op welke hij/zij geapplied heeft.                                                                                                      |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Een notification wordt ook verstuurd via mail.                                                                                                                              |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Als een notificatie geaccepteerd heeft, kan een student (en company?) zijn/haar notificatie verwijderen.                                                                    |
+| Person                                                                                                                                                                         |   Status   |
+| 👑 Tutorial (UX/UI)                                                                                                                                                            |
+| Person                                                                                                                                                                         |   Status   |
 
 ## Server and laravel
 
@@ -443,6 +444,7 @@ Check if it works :D<br/>
 Done! Feel free to ask questions, might have missed some stuff 🙃
 
 ## Envoy
+
 Envoy needs to be configured LOCALLY!<br/>
 Install Envoy: `composer global require laravel/envoy` <br/>
 Make sure you have 2 environments: production and staging folders in Linode, a separate DB for each of them and working URL's.<br/>
@@ -477,21 +479,24 @@ It looks like this: (Replace your deploy username, IP adresss and foldernames!)<
 Now run the deployment (in vagrant) with: `envoy run deploy-staging` or `envoy run deploy-production`<br/>
 
 ISSUES?<br/>
-- SSH key for the deploy user must be setup! <br/>
-If you have done this but it tries to load it from "C/users/yourname/.ssh/id_rsa" then we need to tell Windows where this Linode host can find our Private Key:<br/>
-Go to "C:/User/Yourname/.ssh" and create a `config` file if it doesn't exist yet. <br/>
-Paste this and adapt to your configuration:<br/>
+
+-   SSH key for the deploy user must be setup! <br/>
+    If you have done this but it tries to load it from "C/users/yourname/.ssh/id_rsa" then we need to tell Windows where this Linode host can find our Private Key:<br/>
+    Go to "C:/User/Yourname/.ssh" and create a `config` file if it doesn't exist yet. <br/>
+    Paste this and adapt to your configuration:<br/>
+
 ```
 Host 139.XXX.XXX.XXX
  HostName 139.XXX.XXX.XXX
  User deployUsername
  IdentityFile ~/.ssh/YourPrivateKeyFileName
- ``` 
- 
+```
+
 NOTE: Recommended to place your Private SSH key or a copy of it inside this .ssh folder so the last line of this file can find it easily (or adapt the whole path...).<br/>
-- No access to remote repository? Then change the line `ssh://git@github.com/ArneAmeye/laravel-stagevinder.git` into `https://USERNAME:PASSWORD_WITHOUT_SPECIALCHARS@github.com/ArneAmeye/laravel-stagevinder.git`
-What is `PASSWORD_WITHOUT_SPECIALCHARS`? If you use special characters in your password, you need to replace it by (following this link)[https://support.brightcove.com/special-characters-usernames-and-passwords].
-Adding this to your github link in your .env is recommended.
+
+-   No access to remote repository? Then change the line `ssh://git@github.com/ArneAmeye/laravel-stagevinder.git` into `https://USERNAME:PASSWORD_WITHOUT_SPECIALCHARS@github.com/ArneAmeye/laravel-stagevinder.git`
+    What is `PASSWORD_WITHOUT_SPECIALCHARS`? If you use special characters in your password, you need to replace it by (following this link)[https://support.brightcove.com/special-characters-usernames-and-passwords].
+    Adding this to your github link in your .env is recommended.
 
 ```
 @setup
@@ -516,26 +521,29 @@ Adding this to your github link in your .env is recommended.
 @endtask
 ```
 
-- Error on bootstrap folder? `chmod -R 775 bootstrap/cache` and `systemctl restart httpd`
-- Error on storage folder with permissions denied? `chmod -R 775 storage` and `chgrp -R apache storage`
-- Errors about a package not found? Then add `composer install` after the git pull line in your Envoy.blade.php
-- Still errors? Then ask in chat 😉
+-   Error on bootstrap folder? `chmod -R 775 bootstrap/cache` and `systemctl restart httpd`
+-   Error on storage folder with permissions denied? `chmod -R 775 storage` and `chgrp -R apache storage`
+-   Errors about a package not found? Then add `composer install` after the git pull line in your Envoy.blade.php
+-   Still errors? Then ask in chat 😉
 
 ## Docker
-- First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).
-- Follow the tutorial on [this website](https://dev.to/baliachbryan/deploying-your-laravel-app-on-docker-with-nginx-and-mysql-56ni).
-- Tips when following the turorial:
-    - I recommend spliting following command in `docker-compose up -d --build database && docker-compose up -d --build app && docker-compose up -d --build web ` into `docker-compose up -d --build database`, `docker-compose up -d --build app` and `docker-compose up -d --build web` ;)
-    - Did you get an error after running the command `docker-compose up -d --build app`? It is about the php artisan optimize command? Then delete that line in the development > app.dockerfile.
 
+-   First, make an new directory with a new laravel project (`composer create-project --prefer-dist laravel/laravel nameOfProject`).
+-   Follow the tutorial on [this website](https://dev.to/baliachbryan/deploying-your-laravel-app-on-docker-with-nginx-and-mysql-56ni).
+-   Tips when following the turorial:
+    -   I recommend spliting following command in `docker-compose up -d --build database && docker-compose up -d --build app && docker-compose up -d --build web` into `docker-compose up -d --build database`, `docker-compose up -d --build app` and `docker-compose up -d --build web` ;)
+    -   Did you get an error after running the command `docker-compose up -d --build app`? It is about the php artisan optimize command? Then delete that line in the development > app.dockerfile.
 
 ## Dusk (tests)
+
 ### Install & Dusk setup
+
 Add Dusk with composer: `composer require --dev laravel/dusk`<br/>
 Install Dusk:<br/>
-- `vagrant ssh`<br/>
-- `cd code`<br/>
-- `php artisan dusk:install`<br/>
+
+-   `vagrant ssh`<br/>
+-   `cd code`<br/>
+-   `php artisan dusk:install`<br/>
 
 Make sure our .env file has the right URL (http://homestead.test) for "APP_URL".<br/>
 Within the .env also change the DB HOST (ip) to the IP found in Homestead.yaml<br/>
@@ -549,6 +557,7 @@ We can run a test with: `php artisan dusk`<br/>
 Note: do this in your local terminal, not inside the vagrant ssh terminal!<br/>
 
 ### Problem running dusk?<br/>
+
 Maybe try set the permissions right: `chmod -R 0755 vendor/laravel/dusk/bin/`<br/><br/>
 Error: Failed to connect to localhost port 9515: Connection refused <br/>
 `sudo apt-get update`<br/>
@@ -557,8 +566,10 @@ Error: session not created: Chrome version must be between 70 and 73 <br/>
 Exit the Virtual Box and run `composer require --dev staudenmeir/dusk-updater`. Go back in your Virtual Box. Here you run `php artisan dusk:update`. Test it again: `php artisan dusk`.
 
 ### Add dusk tests
+
 You can make a new Dusk test with: `php artisan dusk:make TestName` => replace with a name for your test!<br/>
 
 ### To Do
+
 Arne ==> Login & home page <br/>
 Lars ==> Regsiter for Companies/Students & Checking if you can visit the student page without Auth. <br/>
