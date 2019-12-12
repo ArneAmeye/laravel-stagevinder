@@ -317,6 +317,17 @@
   outline: 0;
 }
 
+.required__field {
+  color: tomato;
+  display: inline-block;
+}
+
+.required__info {
+  padding: 0px 34px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
 .textarea {
   resize: none;
   height: 470px;

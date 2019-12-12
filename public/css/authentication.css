@@ -473,6 +473,17 @@ ul {
   outline: 0;
 }
 
+.required__field {
+  color: tomato;
+  display: inline-block;
+}
+
+.required__info {
+  padding: 0px 34px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
 .checkbox__container {
   display: inline-block;
   width: 50%;

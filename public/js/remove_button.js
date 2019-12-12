@@ -113,11 +113,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\js\remove_button.js */"./resources/js/remove_button.js");
-=======
 module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\remove_button.js */"./resources/js/remove_button.js");
->>>>>>> 2ad2a5c15b304c7c349cb04e4ca1625825d564e2
 
 
 /***/ })

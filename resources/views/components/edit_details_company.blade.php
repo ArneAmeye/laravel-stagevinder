@@ -11,6 +11,7 @@
 	@endcomponent
 @endif
 
+<p class="required__info">Fields with a <span class="required__field">*</span> are required.</p>
 <form method="post" action="{{ route('company.update', $id) }}">
 	{{ csrf_field() }}
     {{ method_field('patch') }}
@@ -23,6 +24,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fa fa-user" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="text" name="name" id="businessName" class="input" placeholder="Name" value="{{ $name }}">
 						</div>
@@ -33,6 +35,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fa fa-briefcase" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="text" name="sector" id="sector" class="input" placeholder="Sector" value="{{ $sector }}">
 						</div>
@@ -43,6 +46,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-user-tie" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="text" name="ceo" class="input" placeholder="Name CEO" value="{{ $ceo }}">
 						</div>
@@ -53,6 +57,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-map" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="text" name="street" id="street" class="input" placeholder="Street" value="{{ $street }}">
 						</div>
@@ -63,6 +68,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-city" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="text" name="city" id="businessLocation" class="input" placeholder="city" value="{{ $city }}">
 						</div>
@@ -73,6 +79,7 @@
 							<div class="input__container">
 								<span class="input__addon">
 									<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+									<p class="required__field">*</p>
 								</span>
 								<input required type="text" name="postal" id="postal" class="input" placeholder="postal" value="{{ $postal }}">
 							</div>
@@ -87,6 +94,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-envelope" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="email" name="email" class="input" placeholder="Email" value="{{ $email }}">
 						</div>

@@ -321,20 +321,6 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\company.scss */"./resources/sass/pages/company.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\internship.scss */"./resources/sass/pages/internship.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\upload.scss */"./resources/sass/pages/upload.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
-__webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\privacy.scss */"./resources/sass/pages/privacy.scss");
-module.exports = __webpack_require__(/*! C:\Users\larsp\OneDrive\Bureaublad\projects\laravel-stagevinder\resources\sass\pages\welcome.scss */"./resources/sass/pages/welcome.scss");
-=======
 __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
@@ -347,7 +333,6 @@ __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PH
 __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
 __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\privacy.scss */"./resources/sass/pages/privacy.scss");
 module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\sass\pages\welcome.scss */"./resources/sass/pages/welcome.scss");
->>>>>>> 2ad2a5c15b304c7c349cb04e4ca1625825d564e2
 
 
 /***/ })

@@ -20,6 +20,8 @@
 					Details
 				</h5>	
 			</div>
+			
+			<p class="required__info">Fields with a <span class="required__field">*</span> are required.</p>
 			<form method="post" action="{{ route('internship.update', $id) }}">
 				{{ csrf_field() }}
 				{{ method_field('patch') }}
@@ -30,16 +32,18 @@
 									<div class="input__container">
 										<span class="input__addon">
 											<i class="fas fa-id-card" aria-hidden="true"></i>
+											<p class="required__field">*</p>
 										</span>
-									<input type="text" name="title" class="input" placeholder="Title" value="{{$title}}">
+									<input required type="text" name="title" class="input" placeholder="Title" value="{{$title}}">
 									</div>
 								</td>
 								<td class="card__table__data">
 									<div class="input__container">
 										<span class="input__addon">
 											<i class="fas fa-briefcase" aria-hidden="true"></i>
+											<p class="required__field">*</p>
 										</span>
-									<input type="text" name="sector" class="input" placeholder="Sector" value="{{$sector}}">
+									<input required type="text" name="sector" class="input" placeholder="Sector" value="{{$sector}}">
 									</div>
 								</td>
 							</tr>
@@ -48,16 +52,18 @@
 									<div class="input__container">
 										<span class="input__addon">
 											<i class="fas fa-file-alt" aria-hidden="true"></i>
+											<p class="required__field">*</p>
 										</span>
-									<textarea name="description" class="input" placeholder="Job Description">{{$description}}</textarea>
+									<textarea required name="description" class="input" placeholder="Job Description">{{$description}}</textarea>
 									</div>
 								</td>
 								<td class="card__table__data">
 									<div class="input__container">
 										<span class="input__addon">
 											<i class="fas fa-list-ul" aria-hidden="true"></i>
+											<p class="required__field">*</p>
 										</span>
-									<textarea name="requirements" class="input" placeholder="Job Requirements">{{$requirements}}</textarea>
+									<textarea required name="requirements" class="input" placeholder="Job Requirements">{{$requirements}}</textarea>
 									</div>
 								</td>
 							</tr>

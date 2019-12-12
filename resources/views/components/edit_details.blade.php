@@ -11,6 +11,7 @@
 	@endcomponent
 @endif
 
+<p class="required__info">Fields with a <span class="required__field">*</span> are required.</p>
 <form method="post" action="{{ route('student.update', $id) }}">
 	{{ csrf_field() }}
     {{ method_field('patch') }}
@@ -24,6 +25,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-user" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="text" name="username" class="input" placeholder="Full Name" value="{{ $name }}">
 						</div>
@@ -34,6 +36,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-briefcase" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="text" name="profession" class="input" placeholder="Profession" value="{{ $profession }}">
 						</div>
@@ -44,6 +47,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-calendar" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="date" name="date" class="input" placeholder="Birth Date" value="{{ $date }}">
 						</div>
@@ -78,6 +82,7 @@
 						<div class="input__container">
 							<span class="input__addon">
 								<i class="fas fa-envelope" aria-hidden="true"></i>
+								<p class="required__field">*</p>
 							</span>
 							<input required type="email" name="email" class="input" placeholder="Email" value="{{ $email }}">
 						</div>
@@ -119,7 +124,7 @@
 							<span class="input__addon">
 								<i class="fas fa-link" aria-hidden="true"></i>
 							</span>
-							<input type="text" name="website" class="input" placeholder="Website" value="{{ $website }}">
+						<input type="text" name="website" class="input" placeholder="Website" value="{{ $website }} {{old('website')}}">
 						</div>
 					</td>
 				</tr>
