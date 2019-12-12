@@ -2,9 +2,9 @@
         <h3 class="preview__container__title">All registered companies:</h3>
         @foreach($companies as $company)
                 @if(Auth::check() and Session::has('user'))
-                    <a href="{{ url('/companies/') }}/{{ $company->id }}">
+                    <a class="preview__container--link" href="{{ url('/companies/') }}/{{ $company->id }}">
                 @else
-                    <a href="/login">
+                    <a class="preview__container--link" href="/login">
                 @endif
                         <div class="single__company__card">
                             <img class="single__company__card__photo" src="{{asset('images/companies/profile_picture')}}/{{ $company->profile_picture}}">

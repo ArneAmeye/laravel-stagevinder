@@ -3,7 +3,7 @@
     @foreach($internships as $internship)
         @if($internship->is_available == 1)
             @if(Auth::check() and Session::has('user'))
-                <a href="{{ url('/internships/') }}/{{ $internship->id }}">
+                <a class="preview__container--link" href="{{ url('/internships/') }}/{{ $internship->id }}">
             @else
                 <a class="preview__container--link" href="/login">
             @endif

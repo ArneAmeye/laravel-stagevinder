@@ -22,7 +22,7 @@
                 @endphp
 
                 <div class="application__single__container">
-                    <a href="{{ url('/companies/') }}/{{ $application->company_id }}">
+                    <a class="preview__container--link" href="{{ url('/companies/') }}/{{ $application->company_id }}">
                         <div class="application__student__profile {{$status['class']}}">
                         <img class="student__image" src="{{asset('images/companies/profile_picture')}}/{{ $company->profile_picture }}" alt="company profile picture">
                         <div class="student__text">
