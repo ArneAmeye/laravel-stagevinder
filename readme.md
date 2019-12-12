@@ -145,14 +145,14 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Arne                                                       | Doing                                                     |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validaties op profiel duidelijker of weglaten (student & company), requires front-end duidelijk aanduiden!                                                      |         
 | Arne                                                       | DONE                                                     |
-| 👑 Informatie over Kingtrainnee mist (/index)                                                                             |
-| Person                                                       | Status                                                     |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Informatie over Kingtrainnee mist (/index)                                                                             |
+| Irene                                                       | Doing                                                     |
 | 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)           |
 | Person                                                       | Status                                                     |
 | 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                |                                                       
 | Person                                                       | Status                                                     |
-| 👑 Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                       |         
-| Person                                                       | Status                                                     |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                       |         
+| Irene                                                       | Doing                                                     |
 | 👑 Na registratie het bericht (Welcome back) wijzigen                                                                     |                                                       
 | Person                                                       | Status                                                     |
 | 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                            |
