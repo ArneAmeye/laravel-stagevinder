@@ -2,6 +2,9 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\InternshipEmail;
+
 class Notification
 {
 	public static function newNotifications($id) {
@@ -9,6 +12,7 @@ class Notification
 		if (count($notifications) == 0) {
 			return false;
 		}
+		Notification::sendMail();
 		return true;
 	}
 
@@ -47,5 +51,16 @@ class Notification
 		}
 
 		return $user;
+	}
+
+	private static function sendMail() {
+		$data = [
+			'title' => 'Hi user just a test',
+			'content' => 'Just a body'
+		];
+		/*Mail::send('mails.notification', $data, function($message){
+			$message->to('lars.pauwels@telenet.be', 'Lars')->subject('Hello Testing');
+		});*/
+		//Mail::to('lars.pauwels@telenet.be')->send(new InternshipEmail($data));
 	}
 }

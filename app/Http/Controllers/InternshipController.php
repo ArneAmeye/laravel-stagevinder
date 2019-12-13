@@ -187,6 +187,8 @@ class InternshipController extends Controller
             $data = "";
         }
         return response()->json($data);
+    }
+    
     public function status($id) {
         $student = $_GET["student"];
         $status = $_GET["status"];
