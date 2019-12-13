@@ -64,10 +64,6 @@
 								<i class="fas fa-plus button__icon" aria-hidden="true"></i>
 								follow
 							</button>
-							<button class="button button--message">
-								<i class="fas fa-comment button__icon" aria-hidden="true"></i>
-								message
-							</button>
 						</div>
 					</div>
 				</div>
