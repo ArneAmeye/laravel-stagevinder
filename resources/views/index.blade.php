@@ -22,7 +22,7 @@
             @slot('breadcrumb')
             @endslot
             @slot('sector')
-                Be sure to check if a company is interested in you!
+                Browse through the internships below by filtering on your interests or update your profile.
             @endslot
         @endcomponent
     @endif

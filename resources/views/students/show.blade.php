@@ -60,7 +60,7 @@
 							</div>
 						</div>
 						<div class="buttons__container">
-							<button class="button button--follow">
+							<button class="button button--follow button--overImage">
 								<i class="fas fa-plus button__icon" aria-hidden="true"></i>
 								follow
 							</button>

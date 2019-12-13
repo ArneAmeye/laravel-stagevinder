@@ -351,6 +351,10 @@ ul {
   width: 120px;
 }
 
+.button--overImage {
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.3);
+}
+
 .button--fullWidth {
   width: 100%;
   margin-bottom: 15px;
@@ -554,7 +558,7 @@ ul {
   border-right-width: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  z-index: 999;
+  z-index: 998;
   transition: right 0.95s ease-out;
 }
 

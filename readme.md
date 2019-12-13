@@ -143,8 +143,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | **Person**                                                                                                                                                                     | **Status** |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                                                                                   |
 | Arne                                                                                                                                                                         |   DONE   |
-| 👑 Knop Apply duidelijker (student, internship)                                                                                                                                |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Knop Apply duidelijker (student, internship)                                                                                                                                |
+| Arne                                                                                                                                                                         |   DONE   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) \$request->flash gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship) |
 | Arne                                                                                                                                                                           |   Doing    |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validaties op profiel duidelijker of weglaten (student & company), requires front-end duidelijk aanduiden!            |
@@ -159,8 +159,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Na registratie het bericht (Welcome back) wijzigen                                                                    |
 | Lars                                                                                                                                                                           |    DONE    |
-| 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                                                                                 |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                                                                                 |
+| Arne                                                                                                                                                                         |   DONE   |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)                                                       |
 | Irene                                                                                                                                                                         |   Doing   |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                                                                           |
@@ -169,8 +169,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                                                                                                                                         |   Status   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                                                                                   |
 | Arne                                                                                                                                                                         |   DONE   |
-| 👑 Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                                                                                |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                                                                                |
+| Arne                                                                                                                                                                         |   Doing   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)  |
 | Arne                                                                                                                                                                           |    DONE    |
 | 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest)                                                      |
@@ -197,6 +197,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Tutorial (UX/UI)                                                                                                                                                            |
 | Person                                                                                                                                                                         |   Status   |
+| ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Een bedrijf kan een student evalueren vooraleer ik die accepteer.                                                             |
+| Lars                                                                                                                                                                         |   TBA   |
 
 ## Server and laravel
 

@@ -235,6 +235,7 @@ ul {
   display: none;
   transition: all 0.3s ease-in-out;
   width: 14em;
+  z-index: 999;
 }
 
 .options__more__items--active {
@@ -603,7 +604,7 @@ ul {
   border-right-width: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  z-index: 999;
+  z-index: 998;
   transition: right 0.95s ease-out;
 }
 
