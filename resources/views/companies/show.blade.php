@@ -218,7 +218,7 @@
 					@if(isset($internships))
 						@foreach($internships as $internship)
 							@if($internship->is_available == 1)
-								<a href="{{ url('/internships/') }}/{{ $internship->id }}">
+								<a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
 									<div class="preview__inner">
 										@if($current == $company->user_id)
 											<form method="post" action="{{route('internship.delete', $internship->id)}}" class="preview__form">
