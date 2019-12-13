@@ -48,6 +48,7 @@ class InternshipController extends Controller
         $internship->field_sector = $request->input('sector');
         $internship->description = $request->input('description');
         $internship->requirements = $request->input('requirements');
+        $internship->tags = $request->input("tags");
         if (!empty($request->input('background_picture'))) {
             $internship->background_picture = $request->input('background_picture');
         } else {
@@ -154,5 +155,31 @@ class InternshipController extends Controller
         $internship->delete();
 
         return redirect("/internships/$id")->with('success', 'Successfully removed apply for internship!');
+    }
+
+    public function getTags(Request $request){
+
+        $data = \App\Tag::select("name")->where("name","LIKE", '%'.$request->msg.'%')->get();
+        
+        
+
+        if(!empty($request->tags)){
+            $dataCount = 0;
+            foreach($data as $tag){
+                foreach($request->tags as $tagSelected ){
+                    if($tag->name == $tagSelected){
+                        $data->forget($dataCount);
+                        
+                        break;
+                    }
+                }
+                $dataCount++;
+            }
+        }
+        
+        if(empty($request->msg)){
+            $data = "";
+        }
+        return response()->json($data);
     }
 }

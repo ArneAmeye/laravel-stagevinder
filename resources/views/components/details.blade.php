@@ -41,6 +41,14 @@
 					{{ $location }}
 				</td>
 			</tr>
+			<tr class="card__table__row">
+				<th class="card__table__data card__table__data--big">
+					Tags
+				</th>
+				<td class="card__table__data">
+					{{ $tags }}
+				</td>
+			</tr>
 		</table>
 	</div>
 	<div class="card__info">

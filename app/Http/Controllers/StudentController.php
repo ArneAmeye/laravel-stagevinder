@@ -123,6 +123,7 @@ class StudentController extends Controller
             'linkedIn' => 'url|nullable',
             'website' => 'url|nullable',
             'email' => 'required|email|unique:users,email,'.$student->user_id,
+            'tags' => 'string|nullable'
         ]);
         if ($validation->fails()) {
             return redirect("/students/$id?edit=details")
@@ -141,6 +142,7 @@ class StudentController extends Controller
         $student->website = $request->input('website');
         $student->field_study = $request->input('profession');
         $student->school = $request->input('school');
+        $student->tags = $request->input('tags');
         $user->email = $request->input('email');
         $student->save();
         $user->save();

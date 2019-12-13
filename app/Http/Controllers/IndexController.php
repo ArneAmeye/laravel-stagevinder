@@ -27,6 +27,20 @@ class IndexController extends Controller
         }elseif(Session::has('user') and Session::get('user')->type == 'student'){
             $currentUserId = auth()->user()->id;
             $student = \App\Student::where('user_id', $currentUserId)->first();
+        
+            $internships = collect();
+            $tags = explode(" ", $student->tags);
+            foreach($tags as $tag){
+                    $internshipsByTag = \App\Internship::where('tags', 'LIKE', '%'.$tag.'%')->get();
+                    foreach($internshipsByTag as $internship){
+                        $internships->push($internship);
+                    }
+                
+            }
+            
+            $data['internships'] = $internships->unique('id');
+           
+
             $data['applications'] = \App\StudentInternship::where('student_id', $student->id)->get();
         }
 

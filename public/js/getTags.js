@@ -81,63 +81,91 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/upload.js":
-/*!********************************!*\
-  !*** ./resources/js/upload.js ***!
-  \********************************/
+/***/ "./resources/js/getTags.js":
+/*!*********************************!*\
+  !*** ./resources/js/getTags.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  /* ADD BUTTON WHEN UPLOAD CONTAINS FILE */
-  $("#input__upload").change(function () {
-    if ($(this).val()) {
-      readURL(this);
-      $("#button_upload").fadeIn(300);
-    } else {
-      $("#button_upload").fadeOut(300);
-      $("#preview__card").fadeOut(650);
+  var tagCount = 0;
+  var tags = [];
+  $('#tag__autocomplete').keyup(function () {
+    getAutocomplete();
+  });
+
+  function getAutocomplete() {
+    $.ajax({
+      type: "POST",
+      url: '/getTags',
+      data: {
+        '_token': '<?php echo csrf_token() ?>',
+        'msg': $('#tag__autocomplete').val(),
+        'tags': tags
+      },
+      dataType: "json",
+      success: function success(data) {
+        if (Array.isArray(data) == false) {
+          data = Object.values(data);
+        }
+
+        console.log(data);
+        $(".autocomplete-suggestions").html("");
+        data.forEach(function (tag, index) {
+          $(".autocomplete-suggestions").append("<p class='autocomplete-suggestion' data-id='tag-" + tag.name + "'>" + tag.name + "</p>");
+        });
+      },
+      error: function error(e) {
+        console.log(e);
+      }
+    });
+  }
+
+  $(".autocomplete-suggestions").on('click', ".autocomplete-suggestion", function () {
+    if (tagCount < 5) {
+      var tag = $(this).html();
+      tagCount++;
+      $('.autocomplete-suggestion[data-id="tag-' + tag + '"]').addClass('tagSelected');
+      $('#tags').val($('#tags').val() + tag + " ");
+      $('.tags__selected').html($('.tags__selected').html() + " <div class='selected-tag-container'> <p class='selected-tag'>" + tag + "</p> <span class='delete-tag'>X</span> </div>");
+      tags.push(tag);
+      getAutocomplete();
     }
   });
-  /* SHOW PREVIEW OF THE IMAGE */
+  $(".tags__selected").on('click', ".selected-tag-container", function () {
+    var tag = $(this).children('.selected-tag')[0].innerHTML;
+    tagCount--;
+    $('.autocomplete-suggestion[data-id="tag-' + tag + '"]').removeClass('tagSelected');
+    var oldVal = $('#tags').val();
+    var oldValSplit = oldVal.replace(tag, '');
+    $('#tags').val(oldValSplit);
+    $(this).remove();
+    var index = tags.indexOf(tag);
 
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        $("#preview").css("background-image", "url(" + e.target.result + ")");
-        $("#preview__card").fadeIn(650);
-      };
-
-      reader.readAsDataURL(input.files[0]);
+    if (index > -1) {
+      tags.splice(index, 1);
     }
-  }
-  /* CHANGE STYLE OP DROPZONE ON DRAG OVER */
 
-
-  $("#input__upload").on("dragenter", function (e) {
-    $(".upload__visual").addClass("upload__visual--active");
-  }).on("dragleave dragend mouseout drop", function (e) {
-    $(".upload__visual").removeClass("upload__visual--active");
+    getAutocomplete();
   });
 });
 
 /***/ }),
 
-/***/ 2:
-/*!**************************************!*\
-  !*** multi ./resources/js/upload.js ***!
-  \**************************************/
+/***/ 3:
+/*!***************************************!*\
+  !*** multi ./resources/js/getTags.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bram Ravijts\Desktop\school\jaar 3\Semester 1\Advanced Webtech Back\laravel-stagevinder\resources\js\upload.js */"./resources/js/upload.js");
+module.exports = __webpack_require__(/*! C:\Users\Bram Ravijts\Desktop\school\jaar 3\Semester 1\Advanced Webtech Back\laravel-stagevinder\resources\js\getTags.js */"./resources/js/getTags.js");
 
 
 /***/ })
