@@ -207,9 +207,10 @@
 			</section>
 			
 		@elseif($internship == "list")
-			<div class="preview__container">
 				<section class="preview__container">
-					@if(isset($internships))
+					@if(count($internships) == 0)
+						<p class="preview__container--empty-state">Expand your kingdom and create a new internship!</p>
+					@else
 						@foreach($internships as $internship)
 							@if($internship->is_available == 1)
 								<a href="{{ url('/internships/') }}/{{ $internship->id }}">
@@ -239,8 +240,6 @@
 					@endif
 					</div>
 				</section>
-			</div>
-
 		@elseif($internship == "create")
 
 		<form method="post" action="{{ route('internship.create', $company->id) }}">
