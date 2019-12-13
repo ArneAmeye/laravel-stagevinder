@@ -26,8 +26,10 @@
             @endslot
         @endcomponent
     @endif
-    @component('components/info_kingtrainee')
-	@endcomponent
+    @if(!Auth::check())
+        @component('components/info_kingtrainee')
+        @endcomponent
+    @endif
     @component('components/search')
 	@endcomponent
     @auth
