@@ -10,10 +10,8 @@
 			$profileLink = '/'. 'companies/' . Session::get('user')->id;
 		}
 		$headerOfUser = [
-			["name" => "Settings", "href" => "#", "icon" => "fa-cog"],
 			["name" => "Profile", "href" => $profileLink, "icon" => "fa-user"],
 			["name" => "My Messages", "href" => "#", "icon" => "fa-envelope"],
-			["name" => "Lock Screen", "href" => "#", "icon" => "fa-lock"],
 			["name" => "Logout", "href" => "/logout", "icon" => "fa-sign-out-alt"]
 		];
 	}
