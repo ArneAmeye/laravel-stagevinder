@@ -351,6 +351,10 @@ ul {
   width: 120px;
 }
 
+.button--overImage {
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.3);
+}
+
 .button--fullWidth {
   width: 100%;
   margin-bottom: 15px;

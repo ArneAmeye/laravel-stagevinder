@@ -66,7 +66,7 @@
 						</div>
 						@if($current != $company->user_id)
 							<div class="buttons__container">
-								<button class="button button--follow">
+								<button class="button button--follow button--overImage">
 									<i class="fa fa-plus button__icon" aria-hidden="true"></i>
 									follow
 								</button>

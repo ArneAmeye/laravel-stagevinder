@@ -66,14 +66,14 @@
 								</div>
 								@if($applied)
 									<div class="buttons__container">
-										<a href="{{ route('internships.removeApply', $internship->id) }}" class="button button--green">
+										<a href="{{ route('internships.removeApply', $internship->id) }}" class="button button--green button--overImage">
 											<i class="fas fa-briefcase button__icon" aria-hidden="true"></i>
 											<span>Applied</span>
 										</a>
 									</div>
 								@elseif(Session::get('user')->type == 'student')
 									<div class="buttons__container">
-										<a href="{{ route('internships.apply', $internship->id) }}" class="button">
+										<a href="{{ route('internships.apply', $internship->id) }}" class="button button--overImage">
 											<i class="fas fa-briefcase button__icon" aria-hidden="true"></i>
 											Apply
 										</a>
