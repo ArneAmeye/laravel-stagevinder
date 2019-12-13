@@ -456,6 +456,10 @@ ul {
   border-bottom-right-radius: 0;
 }
 
+textarea {
+  resize: none;
+}
+
 .input {
   position: relative;
   flex: 1 1 auto;

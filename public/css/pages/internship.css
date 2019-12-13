@@ -263,7 +263,7 @@
 @media (min-width: 1200px) {
   .card__info {
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 100%;
     float: left;
     padding: 0 15px;
   }
@@ -293,6 +293,10 @@
   width: 45px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+textarea {
+  resize: none;
 }
 
 .input {
