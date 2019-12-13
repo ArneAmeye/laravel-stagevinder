@@ -24,7 +24,7 @@
                 </li>
             @endslot
             @slot('sector')
-                Find your company right now!
+                Look through the registered companies, clicking one reveals their internships!
             @endslot
         @endcomponent
 	@endif

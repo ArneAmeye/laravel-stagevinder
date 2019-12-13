@@ -554,7 +554,7 @@ ul {
   border-right-width: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  z-index: 999;
+  z-index: 998;
   transition: right 0.95s ease-out;
 }
 

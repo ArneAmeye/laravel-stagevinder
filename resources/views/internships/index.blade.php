@@ -24,7 +24,7 @@
                 </li>
             @endslot
             @slot('sector')
-                Don't know what internship you wan't to do? Just look around!
+                Why not try clicking an internship and apply for it?
             @endslot
         @endcomponent
 	@endif
