@@ -163,7 +163,6 @@ class InternshipController extends Controller
         return redirect("/internships/$id")->with('success', 'Successfully removed apply for internship!');
     }
 
-<<<<<<< HEAD
     public function getTags(Request $request){
 
         $data = \App\Tag::select("name")->where("name","LIKE", '%'.$request->msg.'%')->get();
@@ -188,7 +187,6 @@ class InternshipController extends Controller
             $data = "";
         }
         return response()->json($data);
-=======
     public function status($id) {
         $student = $_GET["student"];
         $status = $_GET["status"];
@@ -211,6 +209,5 @@ class InternshipController extends Controller
             return redirect("/")->with('success', 'You successfully '.$status.' te request!');
         }
         return redirect("/")->with('error', 'Something went wrong!');
->>>>>>> d2f100ff657389dda78a98a6abe72143695c3039
     }
 }

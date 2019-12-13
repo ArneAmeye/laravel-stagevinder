@@ -12,11 +12,8 @@
     "/css/pages/register.css": "/css/pages/register.css",
     "/css/pages/privacy.css": "/css/pages/privacy.css",
     "/css/pages/welcome.css": "/css/pages/welcome.css",
-<<<<<<< HEAD
     "/js/getTags.js": "/js/getTags.js",
-=======
     "/js/distance.js": "/js/distance.js",
->>>>>>> d2f100ff657389dda78a98a6abe72143695c3039
     "/js/remove_button.js": "/js/remove_button.js",
     "/js/search.js": "/js/search.js",
     "/js/upload.js": "/js/upload.js"
