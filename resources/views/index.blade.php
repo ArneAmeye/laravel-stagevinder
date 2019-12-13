@@ -26,6 +26,8 @@
             @endslot
         @endcomponent
     @endif
+    @component('components/info_kingtrainee')
+	@endcomponent
     @component('components/search')
 	@endcomponent
     @auth

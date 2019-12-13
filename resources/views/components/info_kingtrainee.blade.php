@@ -1,3 +1,5 @@
 <div class="info__container">
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deserunt unde ea consectetur exercitationem tempora vitae ut facilis, quo tempore impedit blanditiis eligendi, asperiores quae soluta amet doloribus. Provident, exercitationem?</p>
+	<img class="info--image" src="{{ asset('branding/mascotte.png') }}" alt="kingtrainee mascotte">
+	<h1 class="info--title">Ah my fellow friend, master your skills as your <span class="info--highlight">intern/internship</span> journey is ahead of us!</h1>
+	<p class="info--text">Looking a way to polish your shining skills? Or interested in working in a golden kingdom? Find here our daily opportunities!</p>
 </div>
