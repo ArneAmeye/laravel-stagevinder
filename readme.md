@@ -12,8 +12,7 @@
 3. [Front-end](#Front-end)
 4. [Planning](#Planning)
     1. [Legend](#Legend)
-    2. [Doing](#Doing)
-    3. [To Do](#To-Do)
+    2. [To Do](#To-Do)
 5. [Server and laravel](#Server-and-laravel)
     1. [MySQL](#MySQL)
     2. [Login into mysql](#Login-into-mysql)
@@ -196,6 +195,10 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | 👑 Als een notificatie geaccepteerd heeft, kan een student (en company?) zijn/haar notificatie verwijderen.                                                                    |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Tutorial (UX/UI)                                                                                                                                                            |
+| Person                                                                                                                                                                         |   Status   |
+| ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Een bedrijf kan een student evalueren vooraleer ik die accepteer.                                                             |
+| Lars                                                                                                                                                                         |   TBA   |
+| 👑 'Oog' icoon om de zichtbaarheid van e-mail en/of gsm veld te tonen of niet (voor student)                                                             |
 | Person                                                                                                                                                                         |   Status   |
 
 ## Server and laravel
