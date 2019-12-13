@@ -165,6 +165,12 @@
 							@slot('id')
 								{{ $company->id }}
 							@endslot
+							@slot('current')
+								{{ $current }}
+							@endslot
+							@slot('user_id')
+								{{ $company->user_id }}
+							@endslot
 						@endcomponent
 				</div>
 			</section>
@@ -213,7 +219,7 @@
 					@else
 						@foreach($internships as $internship)
 							@if($internship->is_available == 1)
-								<a href="{{ url('/internships/') }}/{{ $internship->id }}">
+								<a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
 									<div class="preview__inner">
 										@if($current == $company->user_id)
 											<form method="post" action="{{route('internship.delete', $internship->id)}}" class="preview__form">

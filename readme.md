@@ -169,7 +169,7 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                                                                                   |
 | Arne                                                                                                                                                                         |   DONE   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                                                                                |
-| Arne                                                                                                                                                                         |   Doing   |
+| Arne                                                                                                                                                                         |   DONE   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)  |
 | Arne                                                                                                                                                                           |    DONE    |
 | 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest)                                                      |
