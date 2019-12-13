@@ -345,6 +345,10 @@
     padding: 0 15px;
   }
 
+  .card__info--1-2 {
+    max-width: 50%;
+  }
+
   .card__body--padding {
     margin: 0 -15px;
   }

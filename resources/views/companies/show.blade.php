@@ -195,9 +195,15 @@
 					</div>
 					<div class="card__body">
 						@if (empty($edit) || $edit != "bio")
-							<p class="card__text">
-								{{ $company->bio }}
-							</p>
+							@if(empty($company->bio) && $current == $company->user_id)
+								<p class="card__text">You should add some bio or description so students know who you are and what you do.</p>
+							@elseif(empty($company->bio))
+								<p class="card__text">This company has not completed their description.</p>
+							@else
+								<p class="card__text">
+									{{ $company->bio }}
+								</p>
+							@endif
 						@else
 							@component('components/edit_bio_company')
 								@slot('bio')
@@ -214,8 +220,10 @@
 			
 		@elseif($internship == "list")
 				<section class="preview__container">
-					@if(count($internships) == 0)
+					@if(count($internships) == 0 && $current == $company->user_id)
 						<p class="preview__container--empty-state">Expand your kingdom and create a new internship!</p>
+					@elseif(count($internships) == 0)
+						<p class="preview__container--empty-state">This company has no internships posted 😥.</p>
 					@else
 						@foreach($internships as $internship)
 							@if($internship->is_available == 1)
