@@ -165,6 +165,12 @@
 							@slot('id')
 								{{ $company->id }}
 							@endslot
+							@slot('current')
+								{{ $current }}
+							@endslot
+							@slot('user_id')
+								{{ $company->user_id }}
+							@endslot
 						@endcomponent
 				</div>
 			</section>

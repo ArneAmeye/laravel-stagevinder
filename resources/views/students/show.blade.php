@@ -129,6 +129,12 @@
 						@slot('tags')
 							{{ $student->tags }}
 						@endslot
+						@slot('current')
+							{{ $current }}
+						@endslot
+						@slot('user_id')
+							{{ $student->user_id }}
+						@endslot
 					@endcomponent
 			</div>
 		</section>

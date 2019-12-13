@@ -22,6 +22,9 @@
                 </div>
                 <div class="card__body">
                         {{$requirements}}
+                        @if($requirements == "")
+                        <p>No requirements set, try contacting the company for more information about desired skillsets.</p>
+                        @endif
                 </div>
             </div>
         </div>

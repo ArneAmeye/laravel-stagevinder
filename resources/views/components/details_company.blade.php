@@ -9,6 +9,7 @@
 					{{ $name }}
 				</td>
 			</tr>
+			@if($sector != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Sector
@@ -17,6 +18,8 @@
 					{{ $sector }}
 				</td>
 			</tr>
+			@endif
+			@if($ceo != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					CEO
@@ -25,6 +28,8 @@
 					{{ $ceo }}
 				</td>
 			</tr>
+			@endif
+			@if($street != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Street
@@ -33,6 +38,8 @@
 					{{ $street }}
 				</td>
 			</tr>
+			@endif
+			@if($city != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					City
@@ -41,6 +48,7 @@
 					{{ $city }}
 				</td>
 			</tr>
+			@endif
 		</table>
 	</div>
 	<div class="card__info">
@@ -53,6 +61,7 @@
 					{{ $email }}
 				</td>
 			</tr>
+			@if($number != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Mobile Number
@@ -61,6 +70,8 @@
 					{{ $number }}
 				</td>
 			</tr>
+			@endif
+			@if($manager != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Manager
@@ -69,6 +80,8 @@
 					{{ $manager }}
 				</td>
 			</tr>
+			@endif
+			@if($linkedIn != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					LinkedIn
@@ -77,6 +90,8 @@
 					<a href="{{ $linkedIn }}">{{$linkedIn}}</a>
 				</td>
 			</tr>
+			@endif
+			@if($website != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Website
@@ -85,6 +100,7 @@
 					<a href="{{ $website }}" target="_blank">{{$website}}</a>
 				</td>
 			</tr>
+			@endif
 		</table>
 	</div>
 </div>
