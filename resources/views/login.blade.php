@@ -12,7 +12,7 @@
 
 		<div class="auth__box">
 			<div class="auth__branding">
-			<img src="{{ asset('branding/mascotte_1.png') }}" alt="Kingtrainee logo" class="auth__branding__logo">
+			<img src="{{ asset('branding/mascotte.png') }}" alt="Kingtrainee logo" class="auth__branding__logo">
 				<h1 class="auth__branding__name">KingTrainee</h1>
 			</div>
 			<div class="auth__header">
@@ -24,7 +24,7 @@
 				<div class="auth__header__right">
 					<p class="auth__header__text">
 						Don't have an account? 
-						<a href="register"> Register </a>
+						<a class="auth__header__text--link" href="register"> Register </a>
 						here for free!
 					</p>
 				</div>
@@ -47,7 +47,7 @@
 				<span class="input__addon">
 					<i class="fas fa-envelope" aria-hidden="true"></i>
 				</span>
-				<input type="email" name="email" class="input" placeholder="johndoe@stagevinder.be">
+			<input type="email" name="email" class="input" placeholder="johndoe@stagevinder.be" value="{{old('email')}}">
 			</div>
 			<div class="input__container">
 				<span class="input__addon">
@@ -78,6 +78,16 @@
 			</div>
 		</div>
 	</form>
+
+	<div class="homepage__reference">
+		<div class="homepage__reference__message">
+			<h4 class="homepage__reference__message--title">Hey trainee, want a sneak peak?</h4>
+			<p class="homepage__reference__message--text">Want to be the king of all trainees ever? Be my guest, have a look at what's available in our internship kingdom!</p>
+			<a href="/" class="button homepage__reference__button">Show internships!</a>
+			<i class="fa fa-times homepage__reference__close"></i>
+		</div>
+	<img class="homepage__reference__mascotte" src="{{ asset('branding/mascotte.png')}}" alt="Kingtrainee mascotte">
+	</div>
 
 	@if($errors->any())
         @component('components/alert')

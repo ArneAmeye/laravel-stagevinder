@@ -127,7 +127,7 @@ class StudentController extends Controller
         ]);
         if ($validation->fails()) {
             return redirect("/students/$id?edit=details")
-                ->withErrors($validation);
+                ->withErrors($validation)->withInput();
         }
 
         $user = \App\User::where('id', $student->user_id)->first();
@@ -146,6 +146,9 @@ class StudentController extends Controller
         $user->email = $request->input('email');
         $student->save();
         $user->save();
+
+        $student['type'] = 'student';
+        Session::put('user', $student);
 
         return redirect("/students/$id")
             ->with('success', 'User detials has been updated!');

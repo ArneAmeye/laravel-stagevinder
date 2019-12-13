@@ -22,47 +22,36 @@ class UserController extends Controller
     {
         $user = new User();
 
-        $validation = Validator::make($request->all(), [
-            'firstname' => 'required|string',
-            'lastname' => 'required|string',
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email,'.$user->id,
-            'verificateEmail' => 'required|email|same:email',
-            'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*#?&]/',
-        ]);
+        //Checkbox
+        //0 or false = student
+        //1 or true = company
+        $isCompany = $request->has('isCompany');
+
+        //Validate
+        $validation = $this->handleValidation($user, $request, $isCompany);
 
         if ($validation->fails()) {
             return redirect()->route('register')
-                ->withErrors($validation);
+                ->withErrors($validation)->withInput($request->except('password'));
         }
 
         $email = $request->input('email');
-        $emailVerified = $request->input('VerificateEmail');
-
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
         $user->save();
 
         $lastInsertedId = $user->id;
 
-        //Checkbox
-        $ifStudent = $request->has('isStudent');
-
-        if ($ifStudent) {
-            /*
-                return student that is registered
-                and make a session based on student
-            */
+        //If not checked, it is a student.
+        if (!$isCompany) {
             $student = StudentController::handleRegister($request, $lastInsertedId);
-            //Session::put('user', $student);
             $request->user_type = 'student';
             $this->handleLogin($request);
         }
 
-        if (!$ifStudent) {
-            //If not checked, it is a company.
+        //If checked, it is a company.
+        if ($isCompany) {
             $company = CompanyController::handleRegister($request, $lastInsertedId);
-            //Session::put('user', $company);
             $request->user_type = 'company';
             $this->handleLogin($request);
         }
@@ -77,6 +66,7 @@ class UserController extends Controller
 
     public function handleLogin(Request $request)
     {
+        $request->flashExcept('password');
         $validation = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string',
@@ -84,7 +74,7 @@ class UserController extends Controller
 
         if ($validation->fails()) {
             return redirect()->route('login')
-                ->withErrors($validation);
+                ->withErrors($validation)->withInput($request->except('password'));
         }
 
         $creadentials = $request->only(['email', 'password']);
@@ -107,6 +97,27 @@ class UserController extends Controller
         }
 
         return redirect()->route('login')->withErrors('Your email or password was incorrect!');
+    }
+
+    public function handleValidation($user, Request $request, $isCompany)
+    {
+        if ($isCompany) {
+            $validation = Validator::make($request->all(), [
+                'name' => 'required|string',
+                'email' => 'required|email|unique:users,email,'.$user->id,
+                'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$.!%*#?&,;:+-]/',
+            ]);
+        }
+        if (!$isCompany) {
+            $validation = Validator::make($request->all(), [
+                'firstname' => 'required|string',
+                'lastname' => 'required|string',
+                'email' => 'required|email|unique:users,email,'.$user->id,
+                'password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$.!%*#?&,;:+-]/',
+            ]);
+        }
+
+        return $validation;
     }
 
     public function logout()

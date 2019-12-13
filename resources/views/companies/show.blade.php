@@ -19,6 +19,11 @@
 		@endslot
 		@slot('breadcrumb')
 			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
+				<a href="/Companies" class="breadcrumb__info__link">
+                    Companies
+				</a>
+			</li>
+			<li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
 				<a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
 					{{$company->name}}
 				</a>
@@ -60,11 +65,11 @@
 							</div>
 						</div>
 						<div class="buttons__container">
-							<button class="button">
+							<button class="button button--follow">
 								<i class="fa fa-plus button__icon" aria-hidden="true"></i>
 								follow
 							</button>
-							<button class="button">
+							<button class="button button--message">
 								<i class="fa fa-comment button__icon" aria-hidden="true"></i>
 								message
 							</button>
@@ -74,19 +79,19 @@
 			</div>
 		</section>
 
-		@if($current == $company->user_id)
-			<section class="card__container card__container--menu">
-				<ul class="card__menu__items">
-					<li class="card__menu__item">
-						<a href="{{ url('companies/') }}/{{ $company->id }}" class="card__menu__link {{ empty(app('request')->input('internship')) ? 'card__menu__link--current' : '' }}">
-							Personal Info
-						</a>
-					</li>
-					<li class="card__menu__item">
-						<a href="?internship=list" class="card__menu__link {{ app('request')->input('internship') === 'list' ? 'card__menu__link--current' : '' }}">
-							My Internships
-						</a>
-					</li>
+		<section class="card__container card__container--menu">
+			<ul class="card__menu__items">
+				<li class="card__menu__item">
+					<a href="{{ url('companies/') }}/{{ $company->id }}" class="card__menu__link {{ empty(app('request')->input('internship')) ? 'card__menu__link--current' : '' }}">
+						Companies Info
+					</a>
+				</li>
+				<li class="card__menu__item">
+					<a href="?internship=list" class="card__menu__link {{ app('request')->input('internship') === 'list' ? 'card__menu__link--current' : '' }}">
+						{{ $current == $company->user_id ? 'My Internships' : 'Companies Internships' }}
+					</a>
+				</li>
+				@if($current == $company->user_id)
 					<li class="card__menu__item">
 						<a href="?internship=create" class="card__menu__link {{ app('request')->input('internship') === 'create' ? 'card__menu__link--current' : '' }}">
 							New Internship
@@ -97,9 +102,9 @@
 							Misc
 						</a>
 					</li>
-				</ul>
-			</section>
-		@endif
+				@endif
+			</ul>
+		</section>
 
 
 		@if(empty($internship))
@@ -170,7 +175,7 @@
 				<div class="card__inner">
 					<div class="card__header">
 						<h5 class="card__title">
-							Description About Me
+							Description
 						</h5>
 						@if($current == $company->user_id)
 							@if (empty($edit) || $edit != "bio")
@@ -210,15 +215,17 @@
 						@foreach($internships as $internship)
 							@if($internship->is_available == 1)
 								<a href="{{ url('/internships/') }}/{{ $internship->id }}">
-									<div class="preview__inner" style="background-image: url({{ asset('images/internships/background_picture/'.$internship->background_picture) }}); background-size: auto 100%; background-position: center;">
-									<form method="post" action="{{route('internship.delete', $internship->id)}}">
-										{{ csrf_field() }}
-										{{ method_field('delete') }}
-										<button type="submit" class="button button--danger button--right">
-											<i class="fas fa-times" aria-hidden="true"></i>
-										</button>
-									</form>
-										<img class="preview__image" src="">
+									<div class="preview__inner">
+										@if($current == $company->user_id)
+											<form method="post" action="{{route('internship.delete', $internship->id)}}" class="preview__form">
+												{{ csrf_field() }}
+												{{ method_field('delete') }}
+												<button type="submit" class="button button--danger button--right">
+													<i class="fas fa-times" aria-hidden="true"></i>
+												</button>
+											</form>
+										@endif
+										<img class="preview__image" src="{{ asset('images/internships/background_picture/'.$internship->background_picture) }}">
 										<div class="preview__text">
 											<p class="preview__text--internship">
 												{{ $internship->name }}
@@ -278,6 +285,7 @@
 								Details
 							</h5>	
 						</div>
+						<p class="required__info">Fields with a <span class="required__field">*</span> are required.</p>
 						<div class="card__body card__body--padding clearfix">
 								<table class="card__table">
 									<tr class="card__table__row">
@@ -285,16 +293,18 @@
 											<div class="input__container">
 												<span class="input__addon">
 													<i class="fas fa-id-card" aria-hidden="true"></i>
+													<p class="required__field">*</p>
 												</span>
-												<input type="text" name="title" class="input" placeholder="Title" value="">
+												<input required type="text" name="title" class="input" placeholder="Title" value="">
 											</div>
 										</td>
 										<td class="card__table__data">
 											<div class="input__container">
 												<span class="input__addon">
 													<i class="fas fa-briefcase" aria-hidden="true"></i>
+													<p class="required__field">*</p>
 												</span>
-												<input type="text" name="sector" class="input" placeholder="Sector" value="">
+												<input required type="text" name="sector" class="input" placeholder="Sector" value="">
 											</div>
 										</td>
 									</tr>
@@ -303,8 +313,9 @@
 											<div class="input__container">
 												<span class="input__addon">
 													<i class="fas fa-file-alt" aria-hidden="true"></i>
+													<p class="required__field">*</p>
 												</span>
-												<textarea name="description" class="input" placeholder="Job Description" value=""></textarea>
+												<textarea required name="description" class="input" placeholder="Job Description" value=""></textarea>
 											</div>
 										</td>
 										<td class="card__table__data">
@@ -329,14 +340,15 @@
 				
 			</form>
 		@endif
-
-		<section class="card__container">
-			<div class="card__inner">
-				@component('components/google_maps')
-					@slot('adress', $company->street_and_number." ".$company->zip_code." ".$company->city);
-				@endcomponent
-			</div>
-		</section>
+		@if(!$internship == "list")
+			<section class="card__container">
+				<div class="card__inner">
+					@component('components/google_maps')
+						@slot('adress', $company->street_and_number." ".$company->zip_code." ".$company->city);
+					@endcomponent
+				</div>
+			</section>
+		@endif
 	</div>
 
 	@if (\Session::has('success'))

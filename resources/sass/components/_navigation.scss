@@ -9,7 +9,7 @@
 }
 
 .navigation__scroll {
-    overflow-y: scroll;
+    //overflow-y: scroll;
     min-height: calc(100vh - 80px);
 }
 
@@ -133,7 +133,7 @@
     left: 0;
     position: absolute;
     top: 0;
-    border-left-color: $highlightBackgroundColor;
+    border-left-color: $accentColor;
 }
 
 .navigation__link:after {
@@ -154,13 +154,13 @@
     font-size: $navMoreSize;
     padding: 4px;
     margin-right: 10px;
-    color: #4680ff;
+    //color: $accentColor;
     width: 30px;
     display: inline-block;
     height: 30px;
     text-align: center;
     position: relative;
-    background-color: rgba(70, 128, 255, 0.5);
+    background-color: $navigationOpacity;
     border-radius: $inputRadius;
 }
 

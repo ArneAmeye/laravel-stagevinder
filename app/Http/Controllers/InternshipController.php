@@ -69,7 +69,7 @@ class InternshipController extends Controller
 
         $user = session()->get('user');
         if ($user->id != $internship->company_id) {
-            return redirect("/internships/$internship");
+            return redirect("/companies/".$internship->company_id);
         }
 
         $validation = Validator::make($request->all(), [
@@ -94,9 +94,15 @@ class InternshipController extends Controller
 
     public function delete($id){
         $internship = \App\Internship::where('id', $id)->first();
+
+        $user = session()->get('user');
+        if ($user->id != $internship->company_id) {
+            return redirect("/companies/".$internship->company_id."?internship=list");
+        }
+
         $company_id = $internship->company_id;
         $internship->delete();
-        
+            
         return redirect("/companies/$company_id?internship=list")->with('success', 'Internship successfully deleted!');
     }
 
@@ -157,6 +163,7 @@ class InternshipController extends Controller
         return redirect("/internships/$id")->with('success', 'Successfully removed apply for internship!');
     }
 
+<<<<<<< HEAD
     public function getTags(Request $request){
 
         $data = \App\Tag::select("name")->where("name","LIKE", '%'.$request->msg.'%')->get();
@@ -181,5 +188,29 @@ class InternshipController extends Controller
             $data = "";
         }
         return response()->json($data);
+=======
+    public function status($id) {
+        $student = $_GET["student"];
+        $status = $_GET["status"];
+        if (!empty($student) && !empty($status)) {
+            $request = \App\StudentInternship::where([
+                ['internship_id', $id],
+                ['student_id', $student]
+            ])->first();
+
+            if ($status == "accept") {
+                $state = 1;
+                $status = $status."ed";
+            } else {
+                $state = 2;
+                $status = $status."d";
+            }
+
+            $request->status = $state;
+            $request->save();
+            return redirect("/")->with('success', 'You successfully '.$status.' te request!');
+        }
+        return redirect("/")->with('error', 'Something went wrong!');
+>>>>>>> d2f100ff657389dda78a98a6abe72143695c3039
     }
 }

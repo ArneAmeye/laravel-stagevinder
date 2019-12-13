@@ -16,16 +16,16 @@ class CompaniesSeeder extends Seeder
         $company1->zip_code = '3000';
         $company1->street_and_number = 'Lange Ridderstraat 44';
         $company1->city = 'Mechelen';
-        $company1->profile_picture = 'default.png';
-        $company1->background_picture = 'default.jpg';
+        $company1->profile_picture = 'tm.png';
+        $company1->background_picture = 'tm.jpg';
         $company1->save();
 
         $company2 = new \App\Company();
         $company2->user_id = 6;
         $company2->name = 'Intracto';
         $company2->city = 'Herentals';
-        $company2->profile_picture = 'default.png';
-        $company2->background_picture = 'default.jpg';
+        $company2->profile_picture = 'intracto.png';
+        $company2->background_picture = 'intracto.jpg';
         $company2->save();
 
         $company3 = new \App\Company();
@@ -33,7 +33,7 @@ class CompaniesSeeder extends Seeder
         $company3->name = 'Capgemini Belgium';
         $company3->city = 'Diegem';
         $company3->profile_picture = 'capgemini.png';
-        $company3->background_picture = 'default.jpg';
+        $company3->background_picture = 'capgemini.jpg';
         $company3->save();
 
         $company4 = new \App\Company();
@@ -64,7 +64,7 @@ class CompaniesSeeder extends Seeder
         $company7->user_id = 12;
         $company7->name = 'Kingtrainnee';
         $company7->city = 'Mechelen';
-        $company7->profile_picture = 'default.png';
+        $company7->profile_picture = 'kingtrainnee.png';
         $company7->background_picture = 'default.jpg';
         $company7->save();
 

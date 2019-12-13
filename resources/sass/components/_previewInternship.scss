@@ -15,11 +15,17 @@
     border: none;
 }
 
-.preview__container__title{
+.preview__container__title {
     display: block;
     width: 100%;
     padding-bottom: 1em;
     color: $mainColor;
+}
+
+.preview__flex__child {
+    flex: 1;
+    flex-basis: 100%;
+    max-width: 100%;
 }
 
 .preview__inner {
@@ -29,9 +35,9 @@
     box-shadow: $breadcrumbShadow;
     border: none;
     background: $whiteColor;
-    width: 250px;
     height: 250px;
-    margin: 0px 10px 30px -5px;
+    width: initial;
+    margin: 0px 5px 30px 5px;
 }
 
 .preview__image {
@@ -41,15 +47,22 @@
     height: 100%;
 }
 
+.preview__form {
+    position: absolute;
+    left: 86%;
+    top: -1px;
+}
+
 .preview__text {
     position: absolute;
-    padding: 10%;
+    padding: 1em;
     bottom: 0%;
     color: $cardTitleColor;
     background-color: $whiteColor;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: inherit;
+    width: -webkit-fill-available;
+    width: 100%;
 }
 
 .preview__text--internship {
@@ -67,14 +80,53 @@
     text-overflow: ellipsis;
 }
 
-.preview__button--add{
+.preview__text--company {
+    font-size: $companySmallSize;
+    font-weight: $lightWeight;
+    padding-top: 0.5em;
+    display: inline-block;
+    float: left;
+}
+
+.preview__text--distance {
+    font-size: $companySmallSize;
+    font-weight: $lightWeight;
+    padding-top: 0.5em;
+    display: inline-block;
+    float: right;
+}
+
+.preview__button--add {
     display: block;
     width: 100%;
     margin-bottom: 1em;
+    text-align: center;
+}
+
+.preview__container--link {
+    flex: 1 1 250px;
+}
+
+@media (min-width: 768px) {
+    .preview__flex__child {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
 }
 
 @media (min-width: 1024px) {
-	.preview__container {
-		justify-content: initial;;
-	}
+    .preview__container {
+        justify-content: initial;
+    }
+
+    .preview__flex__child {
+        flex: 1;
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+
+    .preview__inner {
+        width: initial;
+        margin: 0px 5px 30px 5px;
+    }
 }

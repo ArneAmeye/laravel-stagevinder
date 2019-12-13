@@ -173,14 +173,22 @@ $(document).ready(function () {
     $(".container--disabled input").attr("value", "empty");
     $(".container--active input").attr("value", ""); //Checkbox value
 
-    var CheckBox = $("input[name=isStudent]");
+    var CheckBox = $("input[name=isCompany]");
     CheckBox.prop("checked", !CheckBox.prop("checked")); //Container slider
 
     $(".slider__container--disabled, .slider__container--active").toggleClass("slider__container--disabled slider__container--active"); //Circle in slider
 
     $(".slider__item--disabled, .slider__item--active").toggleClass("slider__item--disabled slider__item--active"); //Text next to slider
 
-    $(".slider__item--label").html($(".slider__item--label").html() == "Now you are a student!" ? "Now you are a company!" : "Now you are a student!");
+    $changedStatus = false;
+    $(".slider__item--label").html($(".slider__item--label").html() == "Now you are a student !" ? "Now you are a company !" : "Now you are a student !");
+  }); //Login popup: close and open with fading
+
+  $(".homepage__reference__close").click(function () {
+    $(".homepage__reference__message").fadeOut();
+  });
+  $(".homepage__reference__mascotte").click(function () {
+    $(".homepage__reference__message").fadeIn();
   });
 });
 

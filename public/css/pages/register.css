@@ -19,8 +19,8 @@
 }
 
 .slider__container--active {
-  border: 2px solid #4680ff;
-  background-color: #4680ff;
+  border: 2px solid #DE4A43;
+  background-color: #DE4A43;
 }
 
 .slider__item {
@@ -37,7 +37,7 @@
 }
 
 .slider__item--active {
-  border: 2px solid #4680ff;
+  border: 2px solid #DE4A43;
   background-color: #fff;
   order: 2;
   left: 50%;

@@ -11,7 +11,7 @@ body {
   background-color: #f3f3f3;
   font-size: 16px;
   overflow-x: hidden;
-  color: #303548;
+  color: #252421;
   font-family: open sans, sans-serif;
 }
 
@@ -50,6 +50,7 @@ ul {
   color: #fff;
   background-size: cover;
   background: url(../images/bg.jpg) no-repeat center center fixed;
+  overflow-y: auto;
 }
 
 .container--active {
@@ -101,7 +102,7 @@ ul {
 }
 
 .auth__branding__name {
-  color: #4680ff;
+  color: #DE4A43;
 }
 
 .auth__header {
@@ -125,15 +126,21 @@ ul {
 }
 
 .auth__header__text {
-  color: #303548;
+  color: #252421;
   margin: 25px 0;
   text-align: center;
   font-size: 13px;
 }
 
+.auth__header__text--link {
+  color: #DE4A43;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
 .auth__text {
   border-bottom: 1px solid #e0e0e0;
-  color: #303548;
+  color: #252421;
   padding-bottom: 5px;
   font-size: 13px;
   margin-bottom: 1rem;
@@ -168,13 +175,81 @@ ul {
 .auth__forgot__text {
   display: inline-block;
   font-weight: 600;
-  color: #303548;
+  color: #252421;
   font-size: 13px;
 }
 
 .auth__login {
   margin-top: 10px;
   width: 100%;
+}
+
+.homepage__reference {
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  margin-left: 1em;
+  background-color: transparent;
+  text-align: right;
+}
+
+.homepage__reference__mascotte {
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  background-color: #DE4A43;
+  margin-top: 1.5em;
+  box-shadow: 0 2px 18px -2px #000;
+}
+
+.homepage__reference__message {
+  background-color: #fff;
+  text-align: left;
+  padding: 1em;
+  box-shadow: 0 2px 18px -2px #000;
+  position: relative;
+}
+
+.homepage__reference__message::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 2%;
+  width: 0;
+  height: 0;
+  border: 1em solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+  margin-bottom: -0.9em;
+}
+
+.homepage__reference__message--title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #505458;
+}
+
+.homepage__reference__message--text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #252421;
+}
+
+.homepage__reference__button {
+  margin-top: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.homepage__reference__close {
+  color: #505458;
+  position: absolute;
+  right: 1em;
+  bottom: 1.25em;
+  cursor: pointer;
+  font-size: 1.5em;
 }
 
 @media (min-width: 576px) {
@@ -217,11 +292,21 @@ ul {
   .auth__login {
     margin-top: 30px;
   }
+
+  .homepage__reference {
+    max-width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .homepage__reference {
+    max-width: 25%;
+  }
 }
 .button__center {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .button__center--margin {
@@ -232,9 +317,9 @@ ul {
 .button {
   display: inline-block;
   margin-right: 10px;
-  background-color: #4680ff;
-  border-color: #4680ff;
-  color: #fff;
+  background-color: #FECF5B;
+  border-color: #FECF5B;
+  color: #252421;
   cursor: pointer;
   transition: all ease-in 0.3s;
   border-radius: 2px;
@@ -245,6 +330,16 @@ ul {
   box-shadow: none;
   border: none;
   text-align: center;
+}
+
+.button--follow {
+  background-color: #FECF5B;
+  color: #252421;
+}
+
+.button--message {
+  background-color: #fff;
+  color: #252421;
 }
 
 .button--big {
@@ -258,7 +353,7 @@ ul {
 
 .button--transparent {
   background-color: transparent;
-  color: #303548;
+  color: #252421;
 }
 
 .button--margin {
@@ -337,8 +432,8 @@ ul {
 }
 
 .input__addon {
-  background-color: #4680ff;
-  color: #fff;
+  background-color: #252421;
+  color: #FECF5B;
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;
@@ -378,6 +473,17 @@ ul {
   outline: 0;
 }
 
+.required__field {
+  color: tomato;
+  display: inline-block;
+}
+
+.required__info {
+  padding: 0px 34px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
 .checkbox__container {
   display: inline-block;
   width: 50%;
@@ -396,7 +502,7 @@ ul {
 }
 
 .checkbox__visual {
-  border: 2px solid #4680ff;
+  border: 2px solid #DE4A43;
   border-radius: 0;
   cursor: pointer;
   display: flex;
@@ -412,7 +518,7 @@ ul {
   transform: scale(3) rotateZ(-20deg);
   opacity: 0;
   transition: all 0.3s ease-in;
-  color: #4680ff;
+  color: #DE4A43;
   font-size: 0.8em;
   line-height: 0;
 }
@@ -423,7 +529,7 @@ ul {
 }
 
 .checkbox__text {
-  color: #303548;
+  color: #252421;
   font-weight: 400;
   font-size: 15px;
 }
@@ -498,8 +604,8 @@ ul {
 }
 
 .alert--info {
-  border-color: #4680ff;
-  color: #4680ff;
+  border-color: #252421;
+  color: #252421;
 }
 
 .alert__close {

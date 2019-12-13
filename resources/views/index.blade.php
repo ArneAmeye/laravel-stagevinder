@@ -7,7 +7,8 @@
 	{{ asset('css/pages/index.css') }}
 @endsection
 @section('script')
-	{{ asset('js/search.js') }}
+    <script type="text/javascript" src="{{ asset('js/search.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/distance.js') }}"></script>
 @endsection
 @section('content')
     @if(Auth::check() and Session::has('user'))
@@ -21,7 +22,12 @@
             @slot('breadcrumb')
             @endslot
             @slot('sector')
+                Be sure to check if a company is interested in you!
             @endslot
+        @endcomponent
+    @endif
+    @if(!Auth::check())
+        @component('components/info_kingtrainee')
         @endcomponent
     @endif
     @component('components/search')
@@ -32,7 +38,11 @@
                 @slot('type', 'info')
                 <ul class="alert__container">
                     <li class="alert__item">
-                        Welcome back {{ session('name') }}!
+                        @if(basename(url()->previous()) == "register")
+                            Welcome to King Trainee, {{ session('name') }}!
+                        @else
+                            Welcome back to King Trainee, {{ session('name') }}!
+                        @endif
                     </li>
                 </ul>
             @endcomponent
@@ -64,3 +74,21 @@
 		</section>
     </div>
 @endsection
+
+@if (\Session::has('error'))
+    @component('components/alert')
+        @slot('type', 'error')
+            <ul class="alert__container">
+                <li class="alert__item">{!! \Session::get('error') !!}</li>
+            </ul>
+    @endcomponent
+@endif
+
+@if (\Session::has('success'))
+    @component('components/alert')
+        @slot('type', 'success')
+            <ul class="alert__container">
+                <li class="alert__item">{!! \Session::get('success') !!}</li>
+            </ul>
+    @endcomponent
+@endif

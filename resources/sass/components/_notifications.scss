@@ -20,6 +20,7 @@
     width: 24rem;
     overflow-y: scroll;
     max-height: 250px;
+    line-height: normal;
 }
 
 .notification {
@@ -31,14 +32,58 @@
     display: flex;
     -ms-flex-align: start;
     align-items: flex-start;
+    position: relative;
 }
 
-.notification:hover {
+.notification--0:hover {
 	background-color: #f1f1f1;
 }
 
-.notification:hover .notification__buttons {
+.notification--1:hover {
+    background-color: $alertSuccessColor;
+}
+
+.notification--2:hover {
+    background-color: $alertErrorColor;
+}
+
+.notification--1:hover,
+.notification--2:hover,
+.notification--1:hover .notification__time,
+.notification--2:hover .notification__time {
+    color: $whiteColor;
+}
+
+.notification--0:hover .notification__buttons {
     display: block;
+}
+
+.notification__title {
+    display: inline-block;
+    font-size: $navigationSize;
+    font-weight: $boldWeight;
+    margin-bottom: 0;
+}
+
+.notification__label {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    font-size: 75%;
+    padding: 4px 7px;
+    margin-right: 5px;
+    font-weight: $mainWeight;
+    color: $whiteColor;
+}
+
+.notification__label--red {
+    background-color: $alertErrorColor;
+}
+
+.notification__label--green {
+    background-color: $alertSuccessColor;
 }
 
 .notification__image {
@@ -79,4 +124,13 @@
 
 .notification__buttons {
     display: none;
+}
+
+.notification__upToDate {
+    font-size: $navigationSize;
+    font-weight: $boldWeight;
+    color: #919aa3;
+    text-align: center;
+    width: 100%;
+    margin: 25px 0;
 }

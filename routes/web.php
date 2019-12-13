@@ -39,7 +39,11 @@ Route::get('/internships', 'InternshipController@index');
 Route::get('/internships/{internship}', 'InternshipController@show');
 Route::get('/internships/{internship}/apply', ['as' => 'internships.apply', 'uses' => 'InternshipController@apply']);
 Route::get('/internships/{internship}/apply/remove', ['as' => 'internships.removeApply', 'uses' => 'InternshipController@removeApply']);
+<<<<<<< HEAD
 Route::post('/getTags', 'InternshipController@getTags');
+=======
+Route::get('/internships/{internship}/status', ['as' => 'internships.status', 'uses' => 'InternshipController@status']);
+>>>>>>> d2f100ff657389dda78a98a6abe72143695c3039
 Route::post('/companies/{company}', ['as' => 'internship.create', 'uses' => 'InternshipController@create']);
 Route::patch('/internships/{internship}', ['as' => 'internship.update', 'uses' => 'InternshipController@update']);
 Route::delete('/companies/{company}', ['as' => 'internship.delete', 'uses' => 'InternshipController@delete']);
@@ -61,3 +65,7 @@ Route::get('/search', 'SearchController@filter');
 //Dribbble portfolio routes
 Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');
 Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
+
+//Distance API routes
+Route::get('/getLocation', 'DistanceController@getLocation');
+Route::post('/addLocation', 'DistanceController@addLocation');

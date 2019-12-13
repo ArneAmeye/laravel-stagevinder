@@ -4,17 +4,34 @@
     Companies
 @endsection
 @section('stylesheet')
-	{{ asset('css/pages/companies.css') }}
+	{{ asset('css/pages/company.css') }}
 @endsection
 @section('content')
 	<!--Add component breadcrumbs-->
-	<h1>Company List</h1>
-	@foreach($companies as $company)
-	<a href="{{ url('companies/') }}/{{ $company->id }}">
-		<p>
-			{{ $company->name }}
-		</p>
-	</a>
-	@endforeach
+	@if(Auth::check() and Session::has('user'))
+        @component('components/breadcrumb')
+            @slot('title')
+                Companies
+            @endslot
+            @slot('icon')
+                fa-building
+            @endslot
+            @slot('breadcrumb')
+                <li class="breadcrumb__info__linkContainer breadcrumb__info__linkContainer--slash">
+                    <a href="#!" class="breadcrumb__info__link breadcrumb__info__link--current">
+                        Companies
+                    </a>
+                </li>
+            @endslot
+            @slot('sector')
+                Find your company right now!
+            @endslot
+        @endcomponent
+	@endif
+	
+	@if(isset($companies))
+    	@component('components/show_companies', ['companies' => $companies])
+    	@endcomponent
+    @endif
 	
 @endsection

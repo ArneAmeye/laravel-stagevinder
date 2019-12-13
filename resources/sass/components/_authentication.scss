@@ -12,6 +12,7 @@
     color: $whiteColor;
     background-size: cover;
     background: url(../images/bg.jpg) no-repeat center center fixed;
+    overflow-y: auto;
 }
 
 .container--active {
@@ -100,6 +101,12 @@
     font-size: $authTextSize;
 }
 
+.auth__header__text--link{
+    color: $highlightBackgroundColor;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
 .auth__text {
     border-bottom: 1px solid $alertDefaultColor;
     color: $mainColor;
@@ -150,6 +157,74 @@
     width: 100%;
 }
 
+.homepage__reference{
+    display: block;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    margin-left: 1em;
+    background-color: transparent;
+    text-align: right;
+}
+
+.homepage__reference__mascotte{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    background-color: $highlightBackgroundColor;
+    margin-top: 1.5em;
+    -webkit-box-shadow: $authBoxShadow;
+    box-shadow: $authBoxShadow;
+}
+
+.homepage__reference__message{
+    background-color: $whiteColor;
+    text-align: left;
+    padding: 1em;
+    -webkit-box-shadow: $authBoxShadow;
+    box-shadow: $authBoxShadow;
+    position: relative;
+}
+
+.homepage__reference__message::after{
+    content: '';
+	position: absolute;
+	bottom: 0;
+	right: 2%;
+	width: 0;
+	height: 0;
+	border: 1em solid transparent;
+	border-top-color: $whiteColor;
+	border-bottom: 0;
+	margin-bottom: -0.9em;
+}
+
+.homepage__reference__message--title{
+    font-size: $authPopupTitleSize;
+    font-weight: $boldWeight;
+    color: $cardTitleColor;
+}
+
+.homepage__reference__message--text{
+    font-size: $mainFontSize;
+    font-weight: $mainWeight;
+    color: $mainColor;
+}
+
+.homepage__reference__button{
+    margin-top: 1em;
+    width: fit-content;
+}
+
+.homepage__reference__close{
+    color: $cardTitleColor;
+    position: absolute;
+    right: 1em;
+    bottom: 1.25em;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
 @media (min-width: 576px) {
     .container__center {
         -webkit-box-flex: 0;
@@ -196,5 +271,15 @@
 
     .auth__login {
         margin-top: 30px;
+    }
+
+    .homepage__reference{
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .homepage__reference{
+        max-width: 25%;
     }
 }

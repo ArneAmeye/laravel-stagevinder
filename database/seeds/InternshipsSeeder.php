@@ -34,7 +34,7 @@ class InternshipsSeeder extends Seeder
         $internship3 = new \App\Internship();
         $internship3->id = '3';
         $internship3->title = 'Front-End Development';
-        $internship3->company_id = '3';
+        $internship3->company_id = '6';
         $internship3->description = 'A well-designed CSS3 transition makes you feel complete? You resize your screen to check media queries of newly launched websites? Relative CSS units are your way to go? Then you are the MINSKY-frontend developer we are looking for!';
         /*$internship3->requirements = 'PHP, twig';*/
         $internship3->field_sector = 'Front-End';
@@ -45,7 +45,7 @@ class InternshipsSeeder extends Seeder
         $internship4 = new \App\Internship();
         $internship4->id = '4';
         $internship4->title = 'Front-End & Back-End Development';
-        $internship4->company_id = '6';
+        $internship4->company_id = '3';
         $internship4->description = 'Like what you see and triggered to talk about some of your or our ideas?';
         /*$internship4->requirements = 'PHP, twig';*/
         $internship4->field_sector = 'Front-End & Back-End';

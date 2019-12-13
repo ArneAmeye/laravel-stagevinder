@@ -15,7 +15,7 @@
 			<div class="breadcrumb__info__links">
 				<ul>
 					<li class="breadcrumb__info__linkContainer">
-						<a href="http://homestead.test/index.php" class="breadcrumb__info__link">
+						<a href="{{ url('/') }}" class="breadcrumb__info__link">
 							<i class="fas fa-home" aria-hidden="true"></i>
 						</a>
 					</li>
