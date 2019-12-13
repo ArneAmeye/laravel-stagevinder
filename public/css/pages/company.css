@@ -678,6 +678,7 @@
   padding: 0.5em;
   margin: 0em 0.5em 1em 0.5em;
   width: initial;
+  min-height: 5em;
 }
 
 .company__flex__child {
@@ -688,7 +689,7 @@
 
 .single__company__card__photo {
   width: 4em;
-  height: 4em;
+  height: auto;
 }
 
 .single__company__card__text {
