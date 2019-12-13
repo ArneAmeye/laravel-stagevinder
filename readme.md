@@ -141,8 +141,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | **Function**                                                                                                                                                                   |            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------: |
 | **Person**                                                                                                                                                                     | **Status** |
-| 👑 Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                                                                                   |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                                                                                   |
+| Arne                                                                                                                                                                         |   DONE   |
 | 👑 Knop Apply duidelijker (student, internship)                                                                                                                                |
 | Person                                                                                                                                                                         |   Status   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) \$request->flash gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship) |
@@ -167,8 +167,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Recente internships misschien eerst plaatsen bij weergave? (vooral index, misschien ook bij company)                                                                        |
 | Person                                                                                                                                                                         |   Status   |
-| 👑 Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                                                                                   |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                                                                                   |
+| Arne                                                                                                                                                                         |   DONE   |
 | 👑 Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                                                                                |
 | Person                                                                                                                                                                         |   Status   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)  |

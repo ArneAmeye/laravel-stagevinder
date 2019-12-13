@@ -184,6 +184,12 @@ ul {
   width: 100%;
 }
 
+.password__info {
+  color: #252421;
+  font-size: 13px;
+  display: inline-block;
+}
+
 .homepage__reference {
   display: block;
   position: absolute;
