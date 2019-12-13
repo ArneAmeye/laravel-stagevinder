@@ -154,17 +154,17 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)                                                                |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                                                                     |
-| Person                                                                                                                                                                         |   Status   |
+| Irene                                                                                                                                                                         |   Doing   |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                      |
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Na registratie het bericht (Welcome back) wijzigen                                                                    |
 | Lars                                                                                                                                                                           |    DONE    |
 | 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                                                                                 |
 | Person                                                                                                                                                                         |   Status   |
-| 👑 Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)                                                       |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                                                                           |
-| Person                                                                                                                                                                         |   Status   |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)                                                       |
+| Irene                                                                                                                                                                         |   Doing   |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                                                                           |
+| Irene                                                                                                                                                                         |   Doing   |
 | 👑 Recente internships misschien eerst plaatsen bij weergave? (vooral index, misschien ook bij company)                                                                        |
 | Person                                                                                                                                                                         |   Status   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                                                                                   |
@@ -175,7 +175,7 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Arne                                                                                                                                                                           |    DONE    |
 | 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest)                                                      |
 | Person                                                                                                                                                                         |   Status   |
-| 👑 Bijwerken van afbeelding van een internship lukt niet (company, op homestead.test per ongeluk getest)                                                                       |
+| 👑 Bijwerken van afbeelding van een internship lukt niet - verwijderen (company, op homestead.test per ongeluk getest)                                                                       |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Preview van uploaden afbeelding bij internship                                                                                                                              |
 | Person                                                                                                                                                                         |   Status   |
