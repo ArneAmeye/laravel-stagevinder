@@ -157,6 +157,12 @@
     width: 100%;
 }
 
+.password__info{
+    color: $mainColor;
+    font-size: $authTextSize;
+    display: inline-block;
+}
+
 .homepage__reference{
     display: block;
     position: absolute;

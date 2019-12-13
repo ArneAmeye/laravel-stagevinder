@@ -141,8 +141,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | **Function**                                                                                                                                                                   |            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------: |
 | **Person**                                                                                                                                                                     | **Status** |
-| 👑 Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                                                                                   |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                                                                                   |
+| Arne                                                                                                                                                                         |   DONE   |
 | 👑 Knop Apply duidelijker (student, internship)                                                                                                                                |
 | Person                                                                                                                                                                         |   Status   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) \$request->flash gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship) |
