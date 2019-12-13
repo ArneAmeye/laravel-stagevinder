@@ -186,7 +186,11 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\distance.js */"./resources/js/distance.js");
+=======
+module.exports = __webpack_require__(/*! D:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\distance.js */"./resources/js/distance.js");
+>>>>>>> a57067f6f8f1ffe8e06d0452b1363a9a3369fb3b
 
 
 /***/ })

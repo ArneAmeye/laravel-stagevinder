@@ -43,7 +43,6 @@ ul {
 .container {
   align-items: center;
   height: 100%;
-  position: fixed;
   width: 100%;
   display: flex;
   min-height: 100vh;
