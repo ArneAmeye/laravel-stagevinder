@@ -197,6 +197,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Tutorial (UX/UI)                                                                                                                                                            |
 | Person                                                                                                                                                                         |   Status   |
+| ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Een bedrijf kan een student evalueren vooraleer ik die accepteer.                                                             |
+| Lars                                                                                                                                                                         |   TBA   |
 
 ## Server and laravel
 
