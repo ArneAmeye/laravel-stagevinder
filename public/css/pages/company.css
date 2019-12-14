@@ -614,6 +614,13 @@ textarea {
   z-index: 999;
 }
 
+#upload__preview {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 1em;
+}
+
 .upload__visual {
   width: 100%;
   display: block;

@@ -33,6 +33,10 @@ class UploadController extends Controller
                 'profile' => '/images/companies/profile_picture',
                 'background' => '/images/companies/background_picture',
             ],
+            'internships' => [
+                'profile' => '/images/internships/profile_picture',
+                'background' => '/images/internships/background_picture',
+            ]
         ];
 
         if ($request->hasFile('file')) {
@@ -43,6 +47,9 @@ class UploadController extends Controller
             $this->uploadUser($name, $request);
         }
 
+        if($request->q == 'internships'){
+            return redirect('/'.$request->q.'/'.$request->id)->with('success', 'Image uploaded successfully.');
+        }
         return redirect('/'.$request->q.'/'.session()->get('user')->id)->with('success', 'Image uploaded successfully.');
     }
 
@@ -56,6 +63,14 @@ class UploadController extends Controller
 
         if ($request->q == 'companies') {
             $user = \App\Company::where('id', $currentUser->id)->first();
+        }
+
+        if ($request->q == 'internships') {
+            $internship = \App\Internship::where('company_id', $currentUser->id)->first();
+            $field = $request->edit.'_picture';
+            $internship->$field = $name;
+            $internship->save();
+            return true;
         }
 
         $currentImage = $request->edit.'_picture';

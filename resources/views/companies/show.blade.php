@@ -269,8 +269,9 @@
 						</div>
 						<div class="card__body">
 							<label>
-								<input type="file" name="file" class="upload">
+								<input type="file" name="file" class="upload" id="input__upload">
 								<div class="upload__visual">
+									<div id="upload__preview"></div>
 									<div class="upload__visual__icon">
 										<i class="fas fa-cloud-upload-alt"></i>
 									</div>
@@ -285,6 +286,20 @@
 									</a>
 								</div>
 							</label>  
+						</div>
+					</div>
+				</section>
+
+				<section class="card__container" id="preview__card">
+					<div class="card__inner">
+						<div class="card__header">
+							<h5 class="card__title">
+								Preview
+							</h5>	
+						</div>
+						<div class="card__body card__body--transparent">
+							<div class="card__body__preview" id="preview">
+							</div>
 						</div>
 					</div>
 				</section>
@@ -373,6 +388,7 @@
 @endsection
 @section('script')
 	<script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
+	<script type="text/javascript" src="{{ asset ('js/upload.js') }}"></script>
 	<!--<script type="text/javascript" src="{{ asset ('js/getTags.js') }}"></script>-->
 	<script>
 		$(document).ready(function(){
