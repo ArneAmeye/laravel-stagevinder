@@ -14,7 +14,8 @@
 */
 
 .filter__items {
-    border: $whiteColor 1px solid;
+    display: block;
+    border: $whiteColor 0px solid;
     border-radius: $profilePictureRadius;
     background: $whiteColor;
     width: 20vw;
@@ -24,19 +25,33 @@
 .filter__item--title {
     display: inline-block;
     padding: 1em;
-    border: $whiteColor 1px solid;
+    border: $whiteColor 0px solid;
     border-radius: $profilePictureRadius;
     background: $whiteColor;
     width: 20vw;
-    background-image: url(../images/arrow.svg);
     background-repeat: no-repeat;
     background-size: 7%;
     background-position: right 0.7em top 50%, 0 0;
 }
 
-.filter__item {
+.filter__item--title-active {
+    background-image: url(../images/arrow-up.svg);
+}
+
+.filter__item--title-disabled {
+    background-image: url(../images/arrow-down.svg);
+}
+
+.filter__item--disabled {
+    display: none;
+}
+
+.filter__item--active {
     display: flex;
     display: -ms-flexbox;
+}
+
+.filter__item {
     border-bottom: 1px solid rgba($mainColor, 0.5);
     width: 20vw;
     padding: 1em;
