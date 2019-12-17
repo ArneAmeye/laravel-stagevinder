@@ -30,8 +30,6 @@
         @component('components/info_kingtrainee')
         @endcomponent
     @endif
-    @component('components/search')
-	@endcomponent
     @auth
         @if(!empty(session('name')))
             @component('components/alert')
@@ -52,8 +50,8 @@
         @if(Session::get('user')->type == 'student')
             @if(isset($internships))
                 @component('components/show_my_applications', ['applications' => $applications])
-                    @endcomponent
-                    @component('components/show_internships', ['internships' => $internships])
+                @endcomponent
+                @component('components/show_internships', ['internships' => $internships])
                 @endcomponent
             @endif
         @endif
@@ -63,7 +61,7 @@
             @component('components/show_my_company_internships', ['companyInternships' => $companyInternships])
             @endcomponent
         @endif
-        @else
+    @else
         @if(isset($internships))
             @component('components/show_internships', ['internships' => $internships])
             @endcomponent

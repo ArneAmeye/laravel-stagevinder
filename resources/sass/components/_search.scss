@@ -1,0 +1,24 @@
+.filter__container {
+    background-color: $accentColor;
+    display: block;
+    width: 100%;
+    padding: 1em 1em 1em 1em;
+    margin-bottom: 1em;
+    border-radius: $profilePictureRadius;
+}
+
+.filter__dropdown {
+    border: $whiteColor;
+    border-radius: $profilePictureRadius;
+    width: 20vw;
+    padding: 0.5em;
+}
+
+.filter__btn {
+    padding: 0.5em;
+    background-color: $whiteColor;
+    border: $whiteColor;
+    border-radius: $profilePictureRadius;
+    box-shadow: $breadcrumbShadow;
+    cursor: pointer;
+}
