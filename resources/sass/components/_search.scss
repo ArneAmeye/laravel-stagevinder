@@ -1,6 +1,7 @@
 .filter__container {
     background-color: $accentColor;
-    display: block;
+    display: flex;
+    display: flexbox;
     width: 100%;
     padding: 1em;
     margin-bottom: 1em;
@@ -14,12 +15,28 @@
 */
 
 .filter__items {
-    display: block;
+    position: absolute;
+    margin-top: 3em;
+    background-color: $whiteColor;
+    width: auto;
+    left: auto;
+    right: auto;
+    top: auto;
     border: $whiteColor 0px solid;
     border-radius: $profilePictureRadius;
     background: $whiteColor;
     width: 20vw;
-    z-index: 99;
+    z-index: $topIndex;
+    //left: -20vw;
+    //top: 10vh;
+}
+
+.filter__items--active {
+    display: block;
+}
+
+.filter__items--disabled {
+    display: none;
 }
 
 .filter__item--title {
@@ -32,6 +49,7 @@
     background-repeat: no-repeat;
     background-size: 7%;
     background-position: right 0.7em top 50%, 0 0;
+    z-index: 1;
 }
 
 .filter__item--title-active {
@@ -52,6 +70,10 @@
 }
 
 .filter__item {
+    display: flex;
+    display: flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
     border-bottom: 1px solid rgba($mainColor, 0.5);
     width: 20vw;
     padding: 1em;
@@ -67,6 +89,7 @@
 
 .filter__btn {
     padding: 1em;
+    margin-left: 1em;
     background-color: $mainColor;
     border: $mainColor;
     border-radius: $profilePictureRadius;

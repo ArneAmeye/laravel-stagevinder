@@ -133,5 +133,9 @@ $(document).ready(function() {
         ).toggleClass(
             "filter__item--title-disabled filter__item--title-active"
         );
+
+        $(".filter__items--active, .filter__items--disabled").toggleClass(
+            "filter__items--disabled filter__items--active"
+        );
     });
 });

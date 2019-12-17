@@ -60,3 +60,6 @@ Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
 //Distance API routes
 Route::get('/getLocation', 'DistanceController@getLocation');
 Route::post('/addLocation', 'DistanceController@addLocation');
+
+//Search
+Route::get('/search', 'SearchController@getSearchResults');

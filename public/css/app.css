@@ -905,7 +905,8 @@ ul {
 
 .filter__container {
   background-color: #FECF5B;
-  display: block;
+  display: flex;
+  display: flexbox;
   width: 100%;
   padding: 1em;
   margin-bottom: 1em;
@@ -918,12 +919,26 @@ ul {
     background-position: right 0.7em top 50%, 0 0;
 */
 .filter__items {
-  display: block;
+  position: absolute;
+  margin-top: 3em;
+  background-color: #fff;
+  width: auto;
+  left: auto;
+  right: auto;
+  top: auto;
   border: #fff 0px solid;
   border-radius: 5px;
   background: #fff;
   width: 20vw;
-  z-index: 99;
+  z-index: 999;
+}
+
+.filter__items--active {
+  display: block;
+}
+
+.filter__items--disabled {
+  display: none;
 }
 
 .filter__item--title {
@@ -936,6 +951,7 @@ ul {
   background-repeat: no-repeat;
   background-size: 7%;
   background-position: right 0.7em top 50%, 0 0;
+  z-index: 1;
 }
 
 .filter__item--title-active {
@@ -956,6 +972,10 @@ ul {
 }
 
 .filter__item {
+  display: flex;
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
   border-bottom: 1px solid rgba(37, 36, 33, 0.5);
   width: 20vw;
   padding: 1em;
@@ -971,6 +991,7 @@ ul {
 
 .filter__btn {
   padding: 1em;
+  margin-left: 1em;
   background-color: #252421;
   border: #252421;
   border-radius: 5px;

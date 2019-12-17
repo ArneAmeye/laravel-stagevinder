@@ -194,6 +194,7 @@ $(document).ready(function () {
   $(".filter__item--title").click(function () {
     $(".filter__item--active, .filter__item--disabled").toggleClass("filter__item--disabled filter__item--active");
     $(".filter__item--title-active, .filter__item--title-disabled").toggleClass("filter__item--title-disabled filter__item--title-active");
+    $(".filter__items--active, .filter__items--disabled").toggleClass("filter__items--disabled filter__items--active");
   });
 });
 

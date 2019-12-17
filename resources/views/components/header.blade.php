@@ -25,7 +25,7 @@
 		<a href="/" class="header__logo">
 			<img src="{{ asset('branding/logo.png') }}" class="header__logo__image">
 		</a>
-		@if(!Auth::check())
+		@if(Auth::check())
 			<a href="#" class="header__options header__options--mobile">
 				<i class="fas fa-ellipsis-h header__options__icon" aria-hidden="true"></i>
 			</a>
