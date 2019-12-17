@@ -90,4 +90,22 @@ class SearchController extends Controller
     public function destroy($id)
     {
     }
+
+    public function getSearchResults(Request $request)
+    {
+        $design = $request->get('design');
+        $development = $request->get('development');
+        $webdevelopment = $request->get('webdevelopment');
+        $webdesign = $request->get('webdesign');
+
+        $query = `{$design} & {$development} & {$webdevelopment} & {$webdesign}`;
+
+        $client = new Client();
+
+        $result = $client->request('GET', 'http://homestead.test/api/search?q=', $query)->getBody();
+
+        $result = json_decode($result);
+
+        return response()->json($result);
+    }
 }

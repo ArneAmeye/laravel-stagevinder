@@ -1,5 +1,7 @@
 <div class="preview__container">
     <h3 class="preview__container__title">All available internships:</h3>
+    @component('../components/filter')
+    @endcomponent
     <!--Show empty state-->
     @if(count($internships) == 0)
         <p class="preview__container--empty-state">Oh no, no internships have been found! Add some tags to find your new match.</p>

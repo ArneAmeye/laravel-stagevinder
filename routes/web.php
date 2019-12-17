@@ -53,12 +53,6 @@ Route::patch('/upload', ['as' => 'upload.one', 'uses' => 'UploadController@updat
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
 
-//Search
-Route::get('/welcome', 'SearchController@index');
-//Route::post('/search', 'SearchController@filter');
-Route::get('/search', 'SearchController@filter');
-//Route::post('/search', 'SearchController@filter');
-
 //Dribbble portfolio routes
 Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');
 Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
@@ -66,3 +60,6 @@ Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
 //Distance API routes
 Route::get('/getLocation', 'DistanceController@getLocation');
 Route::post('/addLocation', 'DistanceController@addLocation');
+
+//Search
+Route::get('/search', 'SearchController@getSearchResults');
