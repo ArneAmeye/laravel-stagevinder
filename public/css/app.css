@@ -925,7 +925,7 @@ ul {
   border: #fff 0px solid;
   border-radius: 5px;
   background: #fff;
-  width: 20vw;
+  width: auto;
   z-index: 999;
 }
 
@@ -973,7 +973,7 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   border-bottom: 1px solid rgba(37, 36, 33, 0.5);
-  width: 20vw;
+  width: 100%;
   padding: 1em;
 }
 
@@ -1000,6 +1000,14 @@ ul {
 @media only screen and (min-width: 598px) {
   .filter__container {
     flex-direction: row;
+  }
+
+  .filter__items {
+    width: 20vw;
+  }
+
+  .filter__item {
+    width: 20vw;
   }
 
   .filter__item--title {
