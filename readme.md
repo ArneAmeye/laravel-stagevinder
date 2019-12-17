@@ -172,12 +172,12 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Arne                                                                                                                                                                         |   DONE   |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)  |
 | Arne                                                                                                                                                                           |    DONE    |
-| 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest)                                                      |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Bijwerken van afbeelding van een internship lukt niet - verwijderen (company, op homestead.test per ongeluk getest)                                                                       |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Preview van uploaden afbeelding bij internship                                                                                                                              |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Bijwerken van afbeelding van een internship lukt niet - verwijderen (company, op homestead.test per ongeluk getest)                                                                       |
+| Arne                                                                                                                                                                         |   DONE   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Preview van uploaden afbeelding bij internship                                                                                                                              |
+| Arne                                                                                                                                                                         |   DONE   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Upload preview in zelfde container, geen scroll nodig => minder verwarrend (UX)                                                                                                                              |
+| Arne                                                                                                                                                                         |   DONE   |
 | 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                                                                                    |
 | Person                                                                                                                                                                         |   Status   |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Slechts eenmalig e-mail vragen bij registratie                                                                        |

@@ -8,7 +8,7 @@
 		["name" => "Sign in", "url" => "/login", "icon" => "fa-sign-in-alt"],
 		["name" => "Sign up", "url" => "/register", "icon" => "fa-user-plus"],
 	];
-	if(Auth::check()){
+	if(Auth::check() && Session::has('user')){
 		if(Session::get('user')->type == 'student'){
 			$userLink = "students";
 			$userLinkId =  Session::get('user')->id;

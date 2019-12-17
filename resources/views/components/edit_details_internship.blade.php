@@ -19,6 +19,9 @@
 				<h5 class="card__title">
 					Details
 				</h5>	
+				<a href="{{ url('internships/') }}/{{ $id }}" class="button button--right">
+					<i class="fas fa-times" aria-hidden="true"></i>
+				</a>
 			</div>
 			
 			<p class="required__info">Fields with a <span class="required__field">*</span> are required.</p>
@@ -67,6 +70,9 @@
 									</div>
 								</td>
 							</tr>
+							@component('components/tags')
+										
+									@endcomponent
 						</table>
 				</div>
 				<div class="button__center">

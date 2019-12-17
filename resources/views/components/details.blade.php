@@ -1,5 +1,5 @@
 <div class="card__body card__body--padding clearfix">
-	<div class="card__info">
+	<div class="card__info card__info--1-2">
 		<table class="card__table">
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
@@ -61,7 +61,7 @@
 			@endif
 		</table>
 	</div>
-	<div class="card__info">
+	<div class="card__info card__info--1-2">
 		<table class="card__table">
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">

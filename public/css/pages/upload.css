@@ -19,6 +19,13 @@
   z-index: 999;
 }
 
+#upload__preview {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 1em;
+}
+
 .upload__visual {
   width: 100%;
   display: block;
@@ -343,6 +350,10 @@
     max-width: 100%;
     float: left;
     padding: 0 15px;
+  }
+
+  .card__info--1-2 {
+    max-width: 50%;
   }
 
   .card__body--padding {

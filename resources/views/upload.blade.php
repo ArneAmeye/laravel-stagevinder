@@ -43,10 +43,12 @@
     				{{ method_field('patch') }}
 
     				<input type="hidden" name="edit" value="{{ app('request')->input('edit') }}">
-    				<input type="hidden" name="q" value="{{ app('request')->input('q') }}">
+					<input type="hidden" name="q" value="{{ app('request')->input('q') }}">
+					<input type="hidden" name="id" value="{{ app('request')->input('id') }}">
 					<div class="upload__container">
 						<input type="file" name="file" class="upload" id="input__upload">
 						<div class="upload__visual">
+							<div id="upload__preview"></div>
 							<div class="upload__visual__icon">
 								<i class="fas fa-cloud-upload-alt"></i>
 							</div>
