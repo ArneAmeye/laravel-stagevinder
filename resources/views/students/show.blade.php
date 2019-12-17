@@ -159,9 +159,15 @@
 				</div>
 				<div class="card__body">
 					@if (empty($edit) || $edit != "bio")
+						@if(empty($student->bio) && $current == $student->user_id)
+							<p class="card__text">You should add some bio or description so companies will accept you more easily.</p>
+						@elseif(empty($student->bio))
+							<p class="card__text">This student has not completed their description.</p>
+						@else
 						<p class="card__text">
 							{{ $student->bio }}
 						</p>
+						@endif
 					@else
 						@component('components/edit_bio')
 							@slot('bio')
@@ -196,8 +202,10 @@
 				</div>
 				<div class="card__body">
 					@if (empty($edit) || $edit != "dribbble")
-						@if (empty($student->dribbble))
-							<p class="">Edit me and sync with your Dribbble portfolio!</p>
+						@if (empty($student->dribbble) && $current == $student->user_id)
+							<p class="card__text">Edit me and sync with your Dribbble portfolio!</p>
+						@elseif(empty($student->dribbble))
+							<p class="card__text">This student has not connected their Dribbble portfolio.</p>
 						@else
 							<div class="dribbble__container">
 							@forelse ($student->dribbble_api_result as $item)
@@ -208,7 +216,7 @@
 								</a>
 								
 							@empty
-								<p>Empty Dribble portfolio 😞. Try uploading your work to Dribbble!</p>
+								<p class="card__text">Empty Dribble portfolio 😞. Try uploading your work to Dribbble!</p>
 							@endforelse
 							</div>
 						@endif

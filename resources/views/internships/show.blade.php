@@ -35,15 +35,9 @@
 					<div class="user__inner user__inner--padding">
 						<div class="user__inner__image" style="background-image: url({{ asset('images/internships/background_picture/'.$internship->background_picture) }});">
 							@if($current == $company->user_id)
-								@if(empty($edit) || $edit != "details")
-									<a href="?edit=details" class="button button--right">
+									<a href="/upload?edit=background&q=internships&id={{$internship->id}}" class="button button--right">
 										<i class="fas fa-edit" aria-hidden="true"></i>
 									</a>
-								@else
-									<a href="{{ url('internships/') }}/{{ $internship->id }}" class="button button--right">
-										<i class="fas fa-times" aria-hidden="true"></i>
-									</a>
-								@endif
 							@endif
 						</div>
 						<div class="user__info">
@@ -60,7 +54,7 @@
 											{{ $company->name }}
 										</h2>
 										<span class="user__function">
-											{{ $company->field_ssector }}
+											{{ $company->field_sector }}
 										</span>
 									</div>
 								</div>
@@ -105,13 +99,21 @@
 				@slot('id')
 					{{$internship->id}}
 				@endslot
+				@slot('current')
+					{{$current}}
+				@endslot
+				@slot('company_id')
+					{{$company->user_id}}
+				@endslot
 			@endcomponent
 		</section> 
     </div>
 @endsection
 @section('script')
     <script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('js/remove_button.js') }}"></script>
+	<script type="text/javascript" src="{{ asset ('js/remove_button.js') }}"></script>
+	<script type="text/javascript" src="{{ asset ('js/getTags.js') }}"></script>
+	<script type="text/javascript" src="{{ asset ('js/upload.js') }}"></script>
 @endsection
 
 @if (\Session::has('success'))

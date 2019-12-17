@@ -111,8 +111,8 @@ $(document).ready(function () {
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        $("#preview").css("background-image", "url(" + e.target.result + ")");
-        $("#preview__card").fadeIn(650);
+        $("#upload__preview").css("background-image", "url(" + e.target.result + ")");
+        $("#upload__preview").css("height", "150px"); //$("#preview__card").fadeIn(650);
       };
 
       reader.readAsDataURL(input.files[0]);
@@ -137,7 +137,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\upload.js */"./resources/js/upload.js");
+module.exports = __webpack_require__(/*! D:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\upload.js */"./resources/js/upload.js");
 
 
 /***/ })
