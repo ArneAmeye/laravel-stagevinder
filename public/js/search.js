@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/ajax/search.js":
-/*!*************************************!*\
-  !*** ./resources/js/ajax/search.js ***!
-  \*************************************/
+/***/ "./resources/js/search.js":
+/*!********************************!*\
+  !*** ./resources/js/search.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.querySelector(".filter__btn").onclick(function () {
+document.querySelector(".filter__btn").click(function () {
   var design = document.querySelector(".filter__item__checkbox--design").value;
   var development = document.querySelector(".filter__item__checkbox--development").value;
   var webdevelopment = document.querySelector(".filter__item__checkbox--webdevelopment").value;
@@ -113,13 +113,13 @@ document.querySelector(".filter__btn").onclick(function () {
 /***/ }),
 
 /***/ 6:
-/*!*******************************************!*\
-  !*** multi ./resources/js/ajax/search.js ***!
-  \*******************************************/
+/*!**************************************!*\
+  !*** multi ./resources/js/search.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\ajax\search.js */"./resources/js/ajax/search.js");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\search.js */"./resources/js/search.js");
 
 
 /***/ })

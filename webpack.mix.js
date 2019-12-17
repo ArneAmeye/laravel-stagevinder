@@ -19,7 +19,7 @@ mix.js("resources/js/app.js", "public/js")
     .js("resources/js/getTags.js", "public/js")
     .js("resources/js/remove_button.js", "public/js")
     .js("resources/js/distance.js", "public/js")
-    .js("resources/js/ajax/search.js", "public/js")
+    .js("resources/js/search.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .sass("resources/sass/authentication.scss", "public/css")
     .options({ processCssUrls: false });

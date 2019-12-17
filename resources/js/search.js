@@ -1,4 +1,4 @@
-document.querySelector(".filter__btn").onclick(() => {
+document.querySelector(".filter__btn").click(() => {
     let design = document.querySelector(".filter__item__checkbox--design")
         .value;
     let development = document.querySelector(

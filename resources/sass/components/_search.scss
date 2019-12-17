@@ -2,17 +2,12 @@
     background-color: $accentColor;
     display: flex;
     display: flexbox;
+    flex-direction: column;
     width: 100%;
     padding: 1em;
     margin-bottom: 1em;
     border-radius: $profilePictureRadius;
 }
-
-/*background-image: url(../images/arrow.svg);
-    background-repeat: no-repeat;
-    background-size: 7%;
-    background-position: right 0.7em top 50%, 0 0;
-*/
 
 .filter__items {
     position: absolute;
@@ -27,8 +22,6 @@
     background: $whiteColor;
     width: 20vw;
     z-index: $topIndex;
-    //left: -20vw;
-    //top: 10vh;
 }
 
 .filter__items--active {
@@ -45,7 +38,7 @@
     border: $whiteColor 0px solid;
     border-radius: $profilePictureRadius;
     background: $whiteColor;
-    width: 20vw;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: 7%;
     background-position: right 0.7em top 50%, 0 0;
@@ -83,17 +76,34 @@
     border-bottom: none;
 }
 
-.filter__item--checkbox {
+.filter__item__checkbox {
     margin-right: 1em;
 }
 
 .filter__btn {
     padding: 1em;
-    margin-left: 1em;
     background-color: $mainColor;
     border: $mainColor;
     border-radius: $profilePictureRadius;
     box-shadow: $breadcrumbShadow;
     color: $whiteColor;
     cursor: pointer;
+    margin-top: 1em;
+    width: 100%;
+}
+
+@media only screen and (min-width: 598px) {
+    .filter__container {
+        flex-direction: row;
+    }
+
+    .filter__item--title {
+        width: 20vw;
+    }
+
+    .filter__btn {
+        margin-top: 0em;
+        margin-left: 1em;
+        width: 8vw;
+    }
 }
