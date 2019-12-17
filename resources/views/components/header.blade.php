@@ -25,9 +25,11 @@
 		<a href="/" class="header__logo">
 			<img src="{{ asset('branding/logo.png') }}" class="header__logo__image">
 		</a>
-		<a href="#" class="header__options header__options--mobile">
-			<i class="fas fa-ellipsis-h header__options__icon" aria-hidden="true"></i>
-		</a>
+		@if(!Auth::check())
+			<a href="#" class="header__options header__options--mobile">
+				<i class="fas fa-ellipsis-h header__options__icon" aria-hidden="true"></i>
+			</a>
+		@endif
 	</div>
 	<div class="header__options__container clearfix">
 		<!--<ul class="header__options__items--left header__options__items--desktop">
