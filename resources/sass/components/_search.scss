@@ -2,23 +2,60 @@
     background-color: $accentColor;
     display: block;
     width: 100%;
-    padding: 1em 1em 1em 1em;
+    padding: 1em;
     margin-bottom: 1em;
     border-radius: $profilePictureRadius;
 }
 
-.filter__dropdown {
-    border: $whiteColor;
+/*background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 7%;
+    background-position: right 0.7em top 50%, 0 0;
+*/
+
+.filter__items {
+    border: $whiteColor 1px solid;
     border-radius: $profilePictureRadius;
+    background: $whiteColor;
     width: 20vw;
-    padding: 0.5em;
+    z-index: 99;
+}
+
+.filter__item--title {
+    display: inline-block;
+    padding: 1em;
+    border: $whiteColor 1px solid;
+    border-radius: $profilePictureRadius;
+    background: $whiteColor;
+    width: 20vw;
+    background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 7%;
+    background-position: right 0.7em top 50%, 0 0;
+}
+
+.filter__item {
+    display: flex;
+    display: -ms-flexbox;
+    border-bottom: 1px solid rgba($mainColor, 0.5);
+    width: 20vw;
+    padding: 1em;
+}
+
+.filter__item:last-child {
+    border-bottom: none;
+}
+
+.filter__item--checkbox {
+    margin-right: 1em;
 }
 
 .filter__btn {
-    padding: 0.5em;
-    background-color: $whiteColor;
-    border: $whiteColor;
+    padding: 1em;
+    background-color: $mainColor;
+    border: $mainColor;
     border-radius: $profilePictureRadius;
     box-shadow: $breadcrumbShadow;
+    color: $whiteColor;
     cursor: pointer;
 }
