@@ -39,6 +39,39 @@ ul {
   height: 0;
 }
 
+/* EMAIL STANDERD ELEMENTS */
+.email__container {
+  font-weight: normal;
+  border-collapse: collapse;
+  border: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  color: #555559;
+  background-color: white;
+  font-size: 16px;
+  line-height: 26px;
+  width: 600px;
+  padding: 20px;
+}
+
+.email__row {
+  border-collapse: collapse;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  color: #555559;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.email__row--line {
+  background-color: #fff;
+  border-bottom: 4px solid #FECF5B;
+}
+
 /*COMPONENTS CSS*/
 .container {
   align-items: center;

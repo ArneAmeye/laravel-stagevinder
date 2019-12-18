@@ -12,7 +12,6 @@ class Notification
 		if (count($notifications) == 0) {
 			return false;
 		}
-		Notification::sendMail();
 		return true;
 	}
 
@@ -23,11 +22,17 @@ class Notification
 				['company_id', $id],
 				['status', 0]
 			])->get();
+
+			// $student = \App\Student::where('id', $notifications[0]->student_id)->first();
+			// $name = $student->firstname." ".$student->lastname;
 		} else {
 			$notifications = \App\StudentInternship::where([
 				['student_id', $id],
 				['status', '!=', 0 ]
 			])->get();
+
+			// $company = \App\Company::where('id', $notifications[0]->company_id)->first();
+			// $name = $company->name;
 		}
 
         return $notifications;
@@ -53,14 +58,24 @@ class Notification
 		return $user;
 	}
 
-	private static function sendMail() {
+	public static function sendMail() {
+		$user = session()->get('user');
+		if (Notification::isStudent($user)) {
+			$name = $user->firstname." ".$user->lastname;
+		} else {
+			$name = $user->name;
+		}
+
 		$data = [
-			'title' => 'Hi user just a test',
-			'content' => 'Just a body'
+			'title' => 'Notification',
+			'subtitle' => 'You have a new notification from '.$name.'!',
+			'date' => date('Y-m-d'),
+			'hour' => date('H:i:s'),
+			'type' => 'notification'
 		];
 		/*Mail::send('mails.notification', $data, function($message){
 			$message->to('lars.pauwels@telenet.be', 'Lars')->subject('Hello Testing');
 		});*/
-		//Mail::to('lars.pauwels@telenet.be')->send(new InternshipEmail($data));
+		Mail::to('lars.pauwels@telenet.be')->queue(new InternshipEmail($data));
 	}
 }

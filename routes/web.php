@@ -66,3 +66,11 @@ Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
 //Distance API routes
 Route::get('/getLocation', 'DistanceController@getLocation');
 Route::post('/addLocation', 'DistanceController@addLocation');
+
+Route::get('mailable', function () {
+	$data = [
+		'title' => 'Hi user just a test',
+		'content' => 'Just a body'
+	];
+    return new App\Mail\InternshipEmail($data);
+});
