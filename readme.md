@@ -153,7 +153,7 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)                                                                |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                                                                     |
-| Irene                                                                                                                                                                          |   Doing    |
+| Irene                                                                                                                                                                          |  DONE (?)  |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                      |
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Na registratie het bericht (Welcome back) wijzigen                                                                    |

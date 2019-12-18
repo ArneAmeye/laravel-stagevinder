@@ -1,6 +1,6 @@
 <div class="preview__container">
     <h3 class="preview__container__title">All available internships:</h3>
-    @component('../components/filter')
+    @component('../components/search')
     @endcomponent
     <!--Show empty state-->
     @if(count($internships) == 0)
