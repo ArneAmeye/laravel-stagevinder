@@ -96,6 +96,7 @@
 var btn = document.querySelector(".filter__btn");
 var previewContainer = document.querySelector(".preview__container__items");
 var searchResults;
+var url = window.location.protocol + "//" + window.location.hostname;
 var params;
 
 btn.onclick = function () {
@@ -126,7 +127,7 @@ btn.onclick = function () {
     params += "webdevelopment&";
   }
 
-  fetch("{{env('SITE_URL')}}=".concat(params), {
+  fetch("".concat(url, "/api/search?q=").concat(params), {
     method: "get"
   }).then(function (result) {
     return result.json();
