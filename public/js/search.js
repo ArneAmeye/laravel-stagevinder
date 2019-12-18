@@ -126,7 +126,7 @@ btn.onclick = function () {
     params += "webdevelopment&";
   }
 
-  fetch("https://kingtrainee.weareimd.be/api/search?q=".concat(params), {
+  fetch("{{env('SITE_URL')}}=".concat(params), {
     method: "get"
   }).then(function (result) {
     return result.json();

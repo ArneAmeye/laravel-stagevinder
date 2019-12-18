@@ -38,7 +38,7 @@ btn.onclick = () => {
         params += "webdevelopment&";
     }
 
-    fetch(`https://kingtrainee.weareimd.be/api/search?q=${params}`, {
+    fetch(`{{env('SITE_URL')}}=${params}`, {
         method: "get"
     })
         .then(result => {
