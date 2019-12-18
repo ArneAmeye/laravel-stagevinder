@@ -128,10 +128,6 @@
 						</div>
 					</td>
 				</tr>
-
-				@component('components/tags')
-					
-				@endcomponent
 			</table>
 		</div>
 	</div>

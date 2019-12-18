@@ -54,7 +54,7 @@
 											<i class="fas fa-file-alt" aria-hidden="true"></i>
 											<p class="required__field">*</p>
 										</span>
-									<textarea required name="description" class="input" placeholder="Job Description">{{$description}}</textarea>
+									<textarea required name="description" class="input textarea" placeholder="Job Description">{{$description}}</textarea>
 									</div>
 								</td>
 								<td class="card__table__data">
@@ -63,12 +63,16 @@
 											<i class="fas fa-list-ul" aria-hidden="true"></i>
 											<p class="required__field">*</p>
 										</span>
-									<textarea required name="requirements" class="input" placeholder="Job Requirements">{{$requirements}}</textarea>
+									<textarea required name="requirements" class="input textarea" placeholder="Job Requirements">{{$requirements}}</textarea>
 									</div>
 								</td>
 							</tr>
 						</table>
 				</div>
+				@component('components/tags')
+					
+				@endcomponent
+
 				<div class="button__center">
 					<button type="submit" class="button button--margin" name="update_internship">update</button>
 				</div>

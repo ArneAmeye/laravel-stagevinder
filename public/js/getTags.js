@@ -105,7 +105,6 @@ $(document).ready(function () {
       type: "POST",
       url: '/getTags',
       data: {
-        '_token': '<?php echo csrf_token() ?>',
         'msg': $('#tag__autocomplete').val(),
         'tags': tags
       },

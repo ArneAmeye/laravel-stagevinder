@@ -294,6 +294,10 @@
   width: 40%;
 }
 
+.card__table__data--small {
+  width: 40%;
+}
+
 .card__menu__items {
   position: relative;
   border-bottom: 1px solid #ddd;
@@ -343,6 +347,10 @@
 
   .card__body--padding {
     margin: 0 -15px;
+  }
+
+  .card__table__data--small {
+    width: 14%;
   }
 }
 /*KEYFRAMES*/

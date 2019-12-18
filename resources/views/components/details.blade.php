@@ -41,14 +41,6 @@
 					{{ $location }}
 				</td>
 			</tr>
-			<tr class="card__table__row">
-				<th class="card__table__data card__table__data--big">
-					Tags
-				</th>
-				<td class="card__table__data">
-					{{ $tags }}
-				</td>
-			</tr>
 		</table>
 	</div>
 	<div class="card__info">
@@ -94,6 +86,18 @@
 				<td class="card__table__data">
 					<a href="{{ $website }}" target="_blank">	{{$website}}
 					</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="card__body">
+		<table class="card__table">
+			<tr class="card__table__row">
+				<th class="card__table__data card__table__data--small">
+					Tags
+				</th>
+				<td class="card__table__data">
+					{{ $tags }}
 				</td>
 			</tr>
 		</table>

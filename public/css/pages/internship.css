@@ -217,6 +217,10 @@
   width: 40%;
 }
 
+.card__table__data--small {
+  width: 40%;
+}
+
 .card__menu__items {
   position: relative;
   border-bottom: 1px solid #ddd;
@@ -266,6 +270,10 @@
 
   .card__body--padding {
     margin: 0 -15px;
+  }
+
+  .card__table__data--small {
+    width: 14%;
   }
 }
 .input__container {
@@ -330,7 +338,7 @@
 
 .textarea {
   resize: none;
-  height: 470px;
+  height: 20vh;
   width: 100%;
   font-size: 14px;
   border: 1px solid #cccccc;
@@ -763,4 +771,45 @@
     margin: 0px 5px 30px 5px;
   }
 }
+.autocomplete__suggestions, .tags__selected {
+  flex-direction: column;
+  border: 2px solid #f1f1f1;
+  border-radius: 4px;
+  height: 25vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.autocomplete__suggestions ::-webkit-scrollbar, .tags__selected ::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.autocomplete__suggestion, .tag__selected__container {
+  padding: 2% 5%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.autocomplete__suggestion:hover {
+  background-color: #f1f1f1;
+}
+
+.tag__selected__container:hover {
+  color: white;
+  background-color: #DE4A43;
+}
+
+.tags__arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #DE4A43;
+  font-size: 50px;
+  font-weight: 600;
+}
+
 /*KEYFRAMES*/

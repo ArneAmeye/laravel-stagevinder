@@ -26,7 +26,7 @@ class InternshipController extends Controller
 
         if (!empty($_GET['edit'])) {
             $id = session()->get('user')->id;
-            if ($id != $internship) {
+            if ($id != $data['internship']->company_id) {
                 return redirect("/internships/$internship");
             }
             $data['edit'] = $_GET['edit'];
@@ -165,7 +165,7 @@ class InternshipController extends Controller
 
     public function getTags(Request $request){
 
-        $data = \App\Tag::select("name")->where("name","LIKE", '%'.$request->msg.'%')->get();
+        $data = \App\Tag::select("name")->where("name","LIKE", '%'.$request->msg.'%')->take(20)->get();
         
         
 
@@ -187,6 +187,9 @@ class InternshipController extends Controller
             $data = "";
         }
         return response()->json($data);
+    }
+
+
     public function status($id) {
         $student = $_GET["student"];
         $status = $_GET["status"];

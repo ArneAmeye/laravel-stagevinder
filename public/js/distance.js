@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -179,14 +179,14 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!****************************************!*\
   !*** multi ./resources/js/distance.js ***!
   \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\distance.js */"./resources/js/distance.js");
+module.exports = __webpack_require__(/*! C:\Users\Bram Ravijts\Desktop\school\jaar 3\Semester 1\Advanced Webtech Back\laravel-stagevinder\resources\js\distance.js */"./resources/js/distance.js");
 
 
 /***/ })
