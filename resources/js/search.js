@@ -38,7 +38,7 @@ btn.onclick = () => {
         params += "webdevelopment&";
     }
 
-    fetch(`http://homestead.test/api/search?q=${params}`, {
+    fetch(`https://kingtrainee.weareimd.be/api/search?q=${params}`, {
         method: "get"
     })
         .then(result => {

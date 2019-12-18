@@ -126,7 +126,7 @@ btn.onclick = function () {
     params += "webdevelopment&";
   }
 
-  fetch("http://homestead.test/api/search?q=".concat(params), {
+  fetch("https://kingtrainee.weareimd.be/api/search?q=".concat(params), {
     method: "get"
   }).then(function (result) {
     return result.json();
