@@ -61,15 +61,5 @@ Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
 Route::get('/getLocation', 'DistanceController@getLocation');
 Route::post('/addLocation', 'DistanceController@addLocation');
 
-<<<<<<< HEAD
-Route::get('mailable', function () {
-	$data = [
-		'title' => 'Hi user just a test',
-		'content' => 'Just a body'
-	];
-    return new App\Mail\InternshipEmail($data);
-});
-=======
 //Search
 Route::get('/search', 'SearchController@getSearchResults');
->>>>>>> 47197945ad55f3019cd263c46f5a717568fbb2df
