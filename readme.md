@@ -12,8 +12,7 @@
 3. [Front-end](#Front-end)
 4. [Planning](#Planning)
     1. [Legend](#Legend)
-    2. [Doing](#Doing)
-    3. [To Do](#To-Do)
+    2. [To Do](#To-Do)
 5. [Server and laravel](#Server-and-laravel)
     1. [MySQL](#MySQL)
     2. [Login into mysql](#Login-into-mysql)
@@ -141,10 +140,10 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | **Function**                                                                                                                                                                   |            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------: |
 | **Person**                                                                                                                                                                     | **Status** |
-| 👑 Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                                                                                   |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Knop Apply duidelijker (student, internship)                                                                                                                                |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validatievoorwaarden wachtwoord op voorhand vermelden + er na (/register)                                             |
+| Arne                                                                                                                                                                           |    DONE    |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Knop Apply duidelijker (student, internship)                                                                          |
+| Arne                                                                                                                                                                           |    DONE    |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) \$request->flash gebruiken bij het invoeren van gegevens (login, registratie, profiel company & student), internship) |
 | Arne                                                                                                                                                                           |   Doing    |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Validaties op profiel duidelijker of weglaten (student & company), requires front-end duidelijk aanduiden!            |
@@ -154,31 +153,31 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)                                                                |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                                                                     |
-| Person                                                                                                                                                                         |   Status   |
+| Irene                                                                                                                                                                          |   Doing    |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                      |
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Na registratie het bericht (Welcome back) wijzigen                                                                    |
 | Lars                                                                                                                                                                           |    DONE    |
-| 👑 Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                                                                                 |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company)                                                       |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                                                                           |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Tekst onder de breadcrumb home is onduidelijk (Denk na over wat de gebruiker nu moet doen.)                           |
+| Arne                                                                                                                                                                           |    DONE    |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Bij geen internships > toon empty state of bericht vb. zoek naar een internship (vooral index, misschien ook company) |
+| Irene                                                                                                                                                                          |    Done    |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Wat doe je als je 100 of juist 1000 applications of internships hebt? (vooral index, ook company)                     |
+| Irene                                                                                                                                                                          |   Doing    |
 | 👑 Recente internships misschien eerst plaatsen bij weergave? (vooral index, misschien ook bij company)                                                                        |
 | Person                                                                                                                                                                         |   Status   |
-| 👑 Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                                                                                   |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                                                                                |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Afbeeldingen van company bedrijven fixen (nu uitgestrekt)                                                             |
+| Arne                                                                                                                                                                           |    DONE    |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Lege velden bij een profielpagina weglaten (niet interessant voor gebruiker)                                          |
+| Arne                                                                                                                                                                           |    DONE    |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Ingelogd > klik home icoon (breadcrumb) op index.php wordt je opeens ingelogd (op homestead.test per ongeluk getest)  |
 | Arne                                                                                                                                                                           |    DONE    |
-| 👑 Wijziging student profielfoto, daarna inlog company, is de foto niet geüpdatet. (op homestead.test per ongeluk getest)                                                      |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Bijwerken van afbeelding van een internship lukt niet (company, op homestead.test per ongeluk getest)                                                                       |
-| Person                                                                                                                                                                         |   Status   |
-| 👑 Preview van uploaden afbeelding bij internship                                                                                                                              |
-| Person                                                                                                                                                                         |   Status   |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Bijwerken van afbeelding van een internship lukt niet - verwijderen (company, op homestead.test per ongeluk getest)   |
+| Arne                                                                                                                                                                           |    DONE    |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Preview van uploaden afbeelding bij internship                                                                        |
+| Arne                                                                                                                                                                           |    DONE    |
+| ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Upload preview in zelfde container, geen scroll nodig => minder verwarrend (UX)                                       |
+| Arne                                                                                                                                                                           |    DONE    |
 | 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                                                                                    |
 | Person                                                                                                                                                                         |   Status   |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Slechts eenmalig e-mail vragen bij registratie                                                                        |
@@ -196,6 +195,10 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | 👑 Als een notificatie geaccepteerd heeft, kan een student (en company?) zijn/haar notificatie verwijderen.                                                                    |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Tutorial (UX/UI)                                                                                                                                                            |
+| Person                                                                                                                                                                         |   Status   |
+| ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Een bedrijf kan een student evalueren vooraleer ik die accepteer.                                                     |
+| Lars                                                                                                                                                                           |    TBA     |
+| 👑 'Oog' icoon om de zichtbaarheid van e-mail en/of gsm veld te tonen of niet (voor student)                                                                                   |
 | Person                                                                                                                                                                         |   Status   |
 
 ## Server and laravel

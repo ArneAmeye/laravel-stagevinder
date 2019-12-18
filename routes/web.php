@@ -53,12 +53,6 @@ Route::patch('/upload', ['as' => 'upload.one', 'uses' => 'UploadController@updat
 Route::get('/fb-login', 'SocialAuthFacebookController@redirectToProvider');
 Route::get('/callback', 'SocialAuthFacebookController@handleProviderCallback');
 
-//Search
-Route::get('/welcome', 'SearchController@index');
-//Route::post('/search', 'SearchController@filter');
-Route::get('/search', 'SearchController@filter');
-//Route::post('/search', 'SearchController@filter');
-
 //Dribbble portfolio routes
 Route::get('/dribbble-callback', 'DribbbleApiController@getAccessToken');
 Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
@@ -67,6 +61,7 @@ Route::get('/dribbble-get', 'DribbbleApiController@getDribbblePortfolio');
 Route::get('/getLocation', 'DistanceController@getLocation');
 Route::post('/addLocation', 'DistanceController@addLocation');
 
+<<<<<<< HEAD
 Route::get('mailable', function () {
 	$data = [
 		'title' => 'Hi user just a test',
@@ -74,3 +69,7 @@ Route::get('mailable', function () {
 	];
     return new App\Mail\InternshipEmail($data);
 });
+=======
+//Search
+Route::get('/search', 'SearchController@getSearchResults');
+>>>>>>> 47197945ad55f3019cd263c46f5a717568fbb2df

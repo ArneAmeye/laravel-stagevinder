@@ -1,5 +1,5 @@
 <div class="card__body card__body--padding clearfix">
-	<div class="card__info">
+	<div class="card__info card__info--1-2">
 		<table class="card__table">
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
@@ -9,6 +9,7 @@
 					{{ $name }}
 				</td>
 			</tr>
+			@if($profession != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Profession
@@ -17,6 +18,8 @@
 					{{ $profession }}
 				</td>
 			</tr>
+			@endif
+			@if($date != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Birth Date
@@ -25,6 +28,8 @@
 					{{ $date }}
 				</td>
 			</tr>
+			@endif
+			@if($school != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					School
@@ -33,6 +38,8 @@
 					{{ $school }}
 				</td>
 			</tr>
+			@endif
+			@if($location != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Location
@@ -41,6 +48,8 @@
 					{{ $location }}
 				</td>
 			</tr>
+			@endif
+			@if($tags != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Tags
@@ -49,9 +58,10 @@
 					{{ $tags }}
 				</td>
 			</tr>
+			@endif
 		</table>
 	</div>
-	<div class="card__info">
+	<div class="card__info card__info--1-2">
 		<table class="card__table">
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
@@ -61,6 +71,7 @@
 					{{ $email }}
 				</td>
 			</tr>
+			@if($number != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Mobile Number
@@ -69,6 +80,8 @@
 					{{ $number }}
 				</td>
 			</tr>
+			@endif
+			@if($linkedIn != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					LinkedIn
@@ -79,6 +92,8 @@
 					</a>
 				</td>
 			</tr>
+			@endif
+			@if($skype != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					Skype
@@ -87,6 +102,8 @@
 					{{ $skype }}
 				</td>
 			</tr>
+			@endif
+			@if($website != "" || $current == $user_id)
 			<tr class="card__table__row">
 				<th class="card__table__data card__table__data--big">
 					website
@@ -96,6 +113,7 @@
 					</a>
 				</td>
 			</tr>
+			@endif
 		</table>
 	</div>
 </div>

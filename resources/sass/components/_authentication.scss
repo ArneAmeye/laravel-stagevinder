@@ -3,7 +3,6 @@
     -ms-flex-align: center;
     align-items: center;
     height: 100%;
-    position: fixed;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -155,6 +154,12 @@
 .auth__login {
     margin-top: 10px;
     width: 100%;
+}
+
+.password__info{
+    color: $mainColor;
+    font-size: $authTextSize;
+    display: inline-block;
 }
 
 .homepage__reference{

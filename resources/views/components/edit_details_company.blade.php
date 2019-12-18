@@ -17,7 +17,7 @@
     {{ method_field('patch') }}
 
 	<div class="card__body card__body--padding clearfix">
-		<div class="card__info">
+		<div class="card__info card__info--1-2">
 			<table class="card__table">
 				<tr class="card__table__row">
 					<td class="card__table__data">
@@ -87,7 +87,7 @@
 					</tr>
 			</table>
 		</div>
-		<div class="card__info">
+		<div class="card__info card__info--1-2">
 			<table class="card__table">
 				<tr class="card__table__row">
 					<td class="card__table__data">

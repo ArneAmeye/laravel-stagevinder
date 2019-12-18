@@ -164,7 +164,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\js\getTags.js */"./resources/js/getTags.js");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\getTags.js */"./resources/js/getTags.js");
 
 
 /***/ })

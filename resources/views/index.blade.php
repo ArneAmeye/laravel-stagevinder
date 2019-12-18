@@ -22,7 +22,7 @@
             @slot('breadcrumb')
             @endslot
             @slot('sector')
-                Be sure to check if a company is interested in you!
+                Browse through the internships below by filtering on your interests or update your profile.
             @endslot
         @endcomponent
     @endif
@@ -30,49 +30,43 @@
         @component('components/info_kingtrainee')
         @endcomponent
     @endif
-    @component('components/search')
-	@endcomponent
     @auth
         @if(!empty(session('name')))
             @component('components/alert')
                 @slot('type', 'info')
-                <ul class="alert__container">
-                    <li class="alert__item">
-                        @if(basename(url()->previous()) == "register")
-                            Welcome to King Trainee, {{ session('name') }}!
-                        @else
-                            Welcome back to King Trainee, {{ session('name') }}!
-                        @endif
-                    </li>
-                </ul>
+                    <ul class="alert__container">
+                        <li class="alert__item">
+                            @if(basename(url()->previous()) == "register")
+                                Welcome to King Trainee, {{ session('name') }}!
+                            @else
+                                Welcome back to King Trainee, {{ session('name') }}!
+                            @endif
+                        </li>
+                    </ul>
             @endcomponent
         @endif
     @endauth
-    
-            @if(Auth::check() and Session::has('user'))
-                @if(Session::get('user')->type == 'student')
-                    @if(isset($internships))
-                        @component('components/show_my_applications', ['applications' => $applications])
-                        @endcomponent
-                        @component('components/show_internships', ['internships' => $internships])
-                        @endcomponent
-                    @endif
-                @endif
-                @if(Session::get('user')->type == 'company')
-                    @component('components/show_applications_from_students', ['applications' => $applications])
-                    @endcomponent
-                    @component('components/show_my_company_internships', ['companyInternships' => $companyInternships])
-                    @endcomponent
-                @endif
-            @else
-                @if(isset($internships))
-                    @component('components/show_internships', ['internships' => $internships])
-                    @endcomponent
-                @endif
-            @endif  
-		    </div>
-		</section>
-    </div>
+    @if(Auth::check() and Session::has('user'))
+        @if(Session::get('user')->type == 'student')
+            @if(isset($internships))
+                @component('components/show_my_applications', ['applications' => $applications])
+                @endcomponent
+                @component('components/show_internships', ['internships' => $internships])
+                @endcomponent
+            @endif
+        @endif
+        @if(Session::get('user')->type == 'company')
+            @component('components/show_applications_from_students', ['applications' => $applications])
+             @endcomponent
+            @component('components/show_my_company_internships', ['companyInternships' => $companyInternships])
+            @endcomponent
+        @endif
+    @else
+        @if(isset($internships))
+            @component('components/show_internships', ['internships' => $internships])
+            @endcomponent
+        @endif
+    @endif 
 @endsection
 
 @if (\Session::has('error'))

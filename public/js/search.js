@@ -86,56 +86,40 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/vue/search.js":
-/*!************************************!*\
-  !*** ./resources/js/vue/search.js ***!
-  \************************************/
+/***/ "./resources/js/search.js":
+/*!********************************!*\
+  !*** ./resources/js/search.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-Vue.component("get", {
-  template: "<a href=\"#\">\n\t\t<div class=\"preview__inner\">\n\t\t\t<img class=\"preview__image\" src=\"@{{profile_picture}}\">\n\t\t\t<div class=\"preview__text\">\n\t\t\t\t<p class=\"preview__text--internship\">\n\t\t\t\t\t@{{firstname}} @{{lastname}}\n\t\t\t\t</p>\n\t\t\t\t<p class=\"preview__text--position\">\n\t\t\t\t\t@{{bio}}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n    </a>",
-  props: ["result"]
-});
-var app = new Vue({
-  el: "body",
-  data: {
-    results: [],
-    query: "irene"
-  },
-  mounted: function mounted() {
-    this.search();
-  },
-  methods: {
-    search: function search() {
-      var that = this; // Clear the error message.
-
-      this.error = ""; // Empty the products array so we can fill it with the new products.
-
-      this.products = []; // Making a get request to our API and passing the query to it.
-
-      fetch("/api/search?q=" + this.query).then(function (response) {
-        return response.json();
-      }).then(function (json) {
-        console.log(json.users);
-        that.results.push(json.users);
-      }); // Clear the query.
-
-      this.query = "";
-    }
-  }
+document.querySelector(".filter__btn").click(function () {
+  var design = document.querySelector(".filter__item__checkbox--design").value;
+  var development = document.querySelector(".filter__item__checkbox--development").value;
+  var webdevelopment = document.querySelector(".filter__item__checkbox--webdevelopment").value;
+  var webdesign = document.querySelector(".filter__item__checkbox--webdesign").value;
+  var params = "".concat(design, "&").concat(development, "&").concat(webdevelopment, "&").concat(webdesign);
+  fetch("http://homestead.test/api/search?q=".concat(params), {
+    method: "get"
+  }).then(function (result) {
+    return result.json();
+  }).then(function (json) {
+    console.log(json);
+  })["catch"](function (err) {
+    console.log(err);
+  });
 });
 
 /***/ }),
 
 /***/ 6:
-/*!******************************************!*\
-  !*** multi ./resources/js/vue/search.js ***!
-  \******************************************/
+/*!**************************************!*\
+  !*** multi ./resources/js/search.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\js\vue\search.js */"./resources/js/vue/search.js");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\search.js */"./resources/js/search.js");
 
 
 /***/ })

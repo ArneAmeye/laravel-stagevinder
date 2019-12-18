@@ -19,7 +19,7 @@ mix.js("resources/js/app.js", "public/js")
     .js("resources/js/getTags.js", "public/js")
     .js("resources/js/remove_button.js", "public/js")
     .js("resources/js/distance.js", "public/js")
-    .js("resources/js/vue/search.js", "public/js")
+    .js("resources/js/search.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .sass("resources/sass/authentication.scss", "public/css")
     .options({ processCssUrls: false });
@@ -32,4 +32,3 @@ mix.sass("resources/sass/pages/login.scss", "public/css/pages");
 mix.sass("resources/sass/pages/upload.scss", "public/css/pages");
 mix.sass("resources/sass/pages/register.scss", "public/css/pages");
 mix.sass("resources/sass/pages/privacy.scss", "public/css/pages");
-mix.sass("resources/sass/pages/welcome.scss", "public/css/pages");

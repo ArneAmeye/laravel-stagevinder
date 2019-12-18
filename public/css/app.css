@@ -268,6 +268,7 @@ ul {
   display: none;
   transition: all 0.3s ease-in-out;
   width: 14em;
+  z-index: 999;
 }
 
 .options__more__items--active {
@@ -636,7 +637,7 @@ ul {
   border-right-width: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  z-index: 999;
+  z-index: 998;
   transition: right 0.95s ease-out;
 }
 
@@ -935,4 +936,120 @@ ul {
   margin: 25px 0;
 }
 
-/*KEYFRAMES*/
+.filter__container {
+  background-color: #FECF5B;
+  display: flex;
+  display: flexbox;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+.filter__items {
+  position: absolute;
+  margin-top: 3em;
+  background-color: #fff;
+  width: auto;
+  left: auto;
+  right: auto;
+  top: auto;
+  border: #fff 0px solid;
+  border-radius: 5px;
+  background: #fff;
+  width: auto;
+  z-index: 999;
+}
+
+.filter__items--active {
+  display: block;
+}
+
+.filter__items--disabled {
+  display: none;
+}
+
+.filter__item--title {
+  display: inline-block;
+  padding: 1em;
+  border: #fff 0px solid;
+  border-radius: 5px;
+  background: #fff;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 7%;
+  background-position: right 0.7em top 50%, 0 0;
+  z-index: 1;
+}
+
+.filter__item--title-active {
+  background-image: url(../images/arrow-up.svg);
+}
+
+.filter__item--title-disabled {
+  background-image: url(../images/arrow-down.svg);
+}
+
+.filter__item--disabled {
+  display: none;
+}
+
+.filter__item--active {
+  display: flex;
+  display: -ms-flexbox;
+}
+
+.filter__item {
+  display: flex;
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(37, 36, 33, 0.5);
+  width: 100%;
+  padding: 1em;
+}
+
+.filter__item:last-child {
+  border-bottom: none;
+}
+
+.filter__item__checkbox {
+  margin-right: 1em;
+}
+
+.filter__btn {
+  padding: 1em;
+  background-color: #252421;
+  border: #252421;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1em;
+  width: 100%;
+}
+
+@media only screen and (min-width: 598px) {
+  .filter__container {
+    flex-direction: row;
+  }
+
+  .filter__items {
+    width: 20vw;
+  }
+
+  .filter__item {
+    width: 20vw;
+  }
+
+  .filter__item--title {
+    width: 20vw;
+  }
+
+  .filter__btn {
+    margin-top: 0em;
+    margin-left: 1em;
+    width: 8vw;
+  }
+}

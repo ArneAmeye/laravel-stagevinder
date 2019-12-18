@@ -189,6 +189,12 @@ $(document).ready(function () {
   });
   $(".homepage__reference__mascotte").click(function () {
     $(".homepage__reference__message").fadeIn();
+  }); //Search dropdown of checkboxes
+
+  $(".filter__item--title").click(function () {
+    $(".filter__item--active, .filter__item--disabled").toggleClass("filter__item--disabled filter__item--active");
+    $(".filter__item--title-active, .filter__item--title-disabled").toggleClass("filter__item--title-disabled filter__item--title-active");
+    $(".filter__items--active, .filter__items--disabled").toggleClass("filter__items--disabled filter__items--active");
   });
 });
 
@@ -304,36 +310,24 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ "./resources/sass/pages/welcome.scss":
-/*!*******************************************!*\
-  !*** ./resources/sass/pages/welcome.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/student.scss ./resources/sass/pages/company.scss ./resources/sass/pages/internship.scss ./resources/sass/pages/login.scss ./resources/sass/pages/upload.scss ./resources/sass/pages/register.scss ./resources/sass/pages/privacy.scss ./resources/sass/pages/welcome.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/authentication.scss ./resources/sass/pages/index.scss ./resources/sass/pages/student.scss ./resources/sass/pages/company.scss ./resources/sass/pages/internship.scss ./resources/sass/pages/login.scss ./resources/sass/pages/upload.scss ./resources/sass/pages/register.scss ./resources/sass/pages/privacy.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\company.scss */"./resources/sass/pages/company.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\internship.scss */"./resources/sass/pages/internship.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\upload.scss */"./resources/sass/pages/upload.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
-__webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\privacy.scss */"./resources/sass/pages/privacy.scss");
-module.exports = __webpack_require__(/*! D:\laravel 5\laravel-stagevinder\resources\sass\pages\welcome.scss */"./resources/sass/pages/welcome.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\authentication.scss */"./resources/sass/authentication.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\index.scss */"./resources/sass/pages/index.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\student.scss */"./resources/sass/pages/student.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\company.scss */"./resources/sass/pages/company.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\internship.scss */"./resources/sass/pages/internship.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\login.scss */"./resources/sass/pages/login.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\upload.scss */"./resources/sass/pages/upload.scss");
+__webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\register.scss */"./resources/sass/pages/register.scss");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\sass\pages\privacy.scss */"./resources/sass/pages/privacy.scss");
 
 
 /***/ })

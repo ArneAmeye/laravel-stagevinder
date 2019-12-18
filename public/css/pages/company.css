@@ -146,6 +146,10 @@
   width: 120px;
 }
 
+.button--overImage {
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.3);
+}
+
 .button--fullWidth {
   width: 100%;
   margin-bottom: 15px;
@@ -361,9 +365,13 @@
 @media (min-width: 1200px) {
   .card__info {
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 100%;
     float: left;
     padding: 0 15px;
+  }
+
+  .card__info--1-2 {
+    max-width: 50%;
   }
 
   .card__body--padding {
@@ -391,6 +399,10 @@
   width: 45px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+textarea {
+  resize: none;
 }
 
 .input {
@@ -556,6 +568,11 @@
   flex: 1 1 250px;
 }
 
+.preview__container--empty-state {
+  text-align: left;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .preview__flex__child {
     flex-basis: 50%;
@@ -595,6 +612,13 @@
   width: 100%;
   transition: all 0.3s ease;
   z-index: 999;
+}
+
+#upload__preview {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 1em;
 }
 
 .upload__visual {
@@ -678,6 +702,7 @@
   padding: 0.5em;
   margin: 0em 0.5em 1em 0.5em;
   width: initial;
+  min-height: 5em;
 }
 
 .company__flex__child {
@@ -688,7 +713,7 @@
 
 .single__company__card__photo {
   width: 4em;
-  height: 4em;
+  height: auto;
 }
 
 .single__company__card__text {

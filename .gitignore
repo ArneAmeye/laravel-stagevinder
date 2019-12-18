@@ -12,7 +12,12 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .vagrant
+Envoy.blade.php
+
+#Removed files or changed name of files
+resources\views\welcome.blade.php
+tests/Browser/ExampleTest.php
 ca.homestead.laravel-app.crt
 ca.homestead.laravel-stagevinder.crt
-Envoy.blade.php
-tests/Browser/ExampleTest.php
+resources\sass\components\previewApplication.scss
+resources\sass\components\companies.scss

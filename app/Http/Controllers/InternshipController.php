@@ -25,9 +25,9 @@ class InternshipController extends Controller
 
         $data['current'] = auth()->user()->id;
 
-        if (!empty($_GET['edit'])) {
+        if (!empty($_GET['edit']) && auth()->user() != null) {
             $id = session()->get('user')->id;
-            if ($id != $internship) {
+            if ($id != $data['company']->id) {
                 return redirect("/internships/$internship");
             }
             $data['edit'] = $_GET['edit'];
@@ -81,7 +81,7 @@ class InternshipController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect("internshipss/$id?edit=details")->withErrors($validation);
+            return redirect("internships/$id?edit=details")->withErrors($validation);
         } else {
             $internship->title = $request->input('title');
             $internship->field_sector = $request->input('sector');
