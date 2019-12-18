@@ -476,6 +476,11 @@ textarea {
   border: none;
 }
 
+.preview__container__items {
+  box-shadow: none;
+  padding: 0;
+}
+
 .preview__container__title {
   display: block;
   width: 100%;

@@ -15,6 +15,12 @@
     border: none;
 }
 
+.preview__container__items {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+}
+
 .preview__container__title {
     display: block;
     width: 100%;

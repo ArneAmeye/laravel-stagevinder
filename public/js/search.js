@@ -94,11 +94,14 @@
 /***/ (function(module, exports) {
 
 var btn = document.querySelector(".filter__btn");
-var previewContainer = document.querySelector(".preview__container");
+var previewContainer = document.querySelector(".preview__container__items");
+var searchResults;
 var params;
 
 btn.onclick = function () {
   params = "";
+  searchResults = "";
+  previewContainer.innerHTML = "";
   var design = document.querySelector(".filter__item__checkbox--design");
 
   if (design.checked === true) {
@@ -131,9 +134,8 @@ btn.onclick = function () {
     var array = json;
 
     for (item in array) {
-      var searchResults = "<a class=\"preview__flex__child\" href=\"/internships/".concat(array[item].company_id, "\">") + "<div class=\"preview__inner\">" + "<img class=\"preview__image\" src=\"images/internships/background_picture/".concat(array[item].background_picture, "\">") + "<div class=\"preview__text\">" + "<p class=\"preview__text--internship\">".concat(array[item].title, "</p>") + "<p class=\"preview__text--position\">".concat(array[item].description, "</p>") + "<p class=\"preview__text--company\">@company</p>" + "<p class=\"preview__text--distance\" data-id=\"".concat(array[item].company_id, "\"></p>") + "</div>" + "</div>" + "</a>";
-      console.log(searchResults); //find a fix for company name
-      //append in grid
+      searchResults += "<a class=\"preview__flex__child\" href=\"/internships/".concat(array[item].company_id, "\">") + "<div class=\"preview__inner\">" + "<img class=\"preview__image\" src=\"images/internships/background_picture/".concat(array[item].background_picture, "\">") + "<div class=\"preview__text\">" + "<p class=\"preview__text--internship\">".concat(array[item].title, "</p>") + "<p class=\"preview__text--position\">".concat(array[item].description, "</p>") + //`<p class="preview__text--company">@company</p>` +
+      "<p class=\"preview__text--distance\" data-id=\"".concat(array[item].company_id, "\"></p>") + "</div>" + "</div>" + "</a>"; //append in grid
 
       previewContainer.innerHTML = searchResults;
     }

@@ -21,7 +21,8 @@
     border-radius: $profilePictureRadius;
     background: $whiteColor;
     width: auto;
-    z-index: $topIndex;
+    z-index: $topIndex - 1;
+    box-shadow: $breadcrumbShadow;
 }
 
 .filter__items--active {

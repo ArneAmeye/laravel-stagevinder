@@ -7,34 +7,36 @@
         <p class="preview__container--empty-state">Oh no, no internships have been found! Add some tags to find your new match.</p>
     <!--Loop through all internships, if any.-->
     @else
-        @foreach($internships as $internship)
-            @if($internship->is_available == 1)
-                @if(Auth::check() and Session::has('user'))
-                    <a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
-                @else
-                    <a class="preview__flex__child" href="/login">
-                @endif
-                        <div class="preview__inner">
-                            <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture}}">
-                            <div class="preview__text">
-                                <p class="preview__text--internship">
-                                    {{ $internship->title }}
-                                </p>
-                                <p class="preview__text--position">
-                                    {{ $internship->description }}
-                                </p>
-                                @php
-                                    $companyName = \App\Company::where('id', $internship->company_id)->first()->name;
-                                @endphp
-                                <p class="preview__text--company">
-                                    @ {{ $companyName }}
-                                </p>
-                                <p class="preview__text--distance" data-id="{{ $internship->company_id }}">
-                                </p>
+        <div class="preview__container preview__container__items">
+            @foreach($internships as $internship)
+                @if($internship->is_available == 1)
+                    @if(Auth::check() and Session::has('user'))
+                        <a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
+                    @else
+                        <a class="preview__flex__child" href="/login">
+                    @endif
+                            <div class="preview__inner">
+                                <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture}}">
+                                <div class="preview__text">
+                                    <p class="preview__text--internship">
+                                        {{ $internship->title }}
+                                    </p>
+                                    <p class="preview__text--position">
+                                        {{ $internship->description }}
+                                    </p>
+                                    @php
+                                        $companyName = \App\Company::where('id', $internship->company_id)->first()->name;
+                                    @endphp
+                                    <p class="preview__text--company">
+                                        @ {{ $companyName }}
+                                    </p>
+                                    <p class="preview__text--distance" data-id="{{ $internship->company_id }}">
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-            @endif
-        @endforeach
+                        </a>
+                @endif
+            @endforeach
+        </div>
     @endif
 </div>
