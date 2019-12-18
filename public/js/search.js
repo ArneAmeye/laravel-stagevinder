@@ -93,22 +93,54 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.querySelector(".filter__btn").click(function () {
-  var design = document.querySelector(".filter__item__checkbox--design").value;
-  var development = document.querySelector(".filter__item__checkbox--development").value;
-  var webdevelopment = document.querySelector(".filter__item__checkbox--webdevelopment").value;
-  var webdesign = document.querySelector(".filter__item__checkbox--webdesign").value;
-  var params = "".concat(design, "&").concat(development, "&").concat(webdevelopment, "&").concat(webdesign);
+var btn = document.querySelector(".filter__btn");
+var previewContainer = document.querySelector(".preview__container");
+var params;
+
+btn.onclick = function () {
+  params = "";
+  var design = document.querySelector(".filter__item__checkbox--design");
+
+  if (design.checked === true) {
+    params += "design&";
+  }
+
+  var development = document.querySelector(".filter__item__checkbox--development");
+
+  if (development.checked === true) {
+    params += "development&";
+  }
+
+  var webdesign = document.querySelector(".filter__item__checkbox--webdesign");
+
+  if (webdesign.checked === true) {
+    params += "webdesign&";
+  }
+
+  var webdevelopment = document.querySelector(".filter__item__checkbox--webdevelopment");
+
+  if (webdevelopment.checked === true) {
+    params += "webdevelopment&";
+  }
+
   fetch("http://homestead.test/api/search?q=".concat(params), {
     method: "get"
   }).then(function (result) {
     return result.json();
   }).then(function (json) {
-    console.log(json);
+    var array = json;
+
+    for (item in array) {
+      var searchResults = "<a class=\"preview__flex__child\" href=\"/internships/".concat(array[item].company_id, "\">") + "<div class=\"preview__inner\">" + "<img class=\"preview__image\" src=\"images/internships/background_picture/".concat(array[item].background_picture, "\">") + "<div class=\"preview__text\">" + "<p class=\"preview__text--internship\">".concat(array[item].title, "</p>") + "<p class=\"preview__text--position\">".concat(array[item].description, "</p>") + "<p class=\"preview__text--company\">@company</p>" + "<p class=\"preview__text--distance\" data-id=\"".concat(array[item].company_id, "\"></p>") + "</div>" + "</div>" + "</a>";
+      console.log(searchResults); //find a fix for company name
+      //append in grid
+
+      previewContainer.innerHTML = searchResults;
+    }
   })["catch"](function (err) {
     console.log(err);
   });
-});
+};
 
 /***/ }),
 
