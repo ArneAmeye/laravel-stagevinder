@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Helpers\Notification;
 use Auth;
 use Session;
 
@@ -141,6 +142,8 @@ class InternshipController extends Controller
         $internship->company_id = \App\Internship::where('id', $id)->first()->company_id;
         $internship->save();
 
+        Notification::sendMail();
+
         return redirect("/internships/$id")->with('success', 'Successfully applied for internship!');
     }
 
@@ -208,6 +211,7 @@ class InternshipController extends Controller
 
             $request->status = $state;
             $request->save();
+            Notification::sendMail();
             return redirect("/")->with('success', 'You successfully '.$status.' te request!');
         }
         return redirect("/")->with('error', 'Something went wrong!');
