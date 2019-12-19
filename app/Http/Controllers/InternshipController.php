@@ -215,7 +215,7 @@ class InternshipController extends Controller
 
             $request->status = $state;
             $request->save();
-            Notification::sendMail();
+            Notification::sendMail($request->student_id, $request->company_id);
             return redirect("/")->with('success', 'You successfully '.$status.' te request!');
         }
         return redirect("/")->with('error', 'Something went wrong!');

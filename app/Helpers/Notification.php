@@ -68,20 +68,18 @@ class Notification
     {
         $user = session()->get('user');
 
-        $student = \App\Company::where('id', $studentId)->first();
-        $userStudent = $student->user_id;
-        $userStudent = \App\User::where('id', $userStudent)->first();
-        $studentMail = $userStudent->email;
-
-        $company = \App\Company::where('id', $companyId)->first();
-        $userCompany = $company->user_id;
-        $userCompany = \App\User::where('id', $userCompany)->first();
-        $companyMail = $userCompany->email;
-
         if (Notification::isStudent($user)) {
             $name = $user->firstname.' '.$user->lastname;
+            $company = \App\Company::where('id', $companyId)->first();
+	        $userCompany = $company->user_id;
+	        $userCompany = \App\User::where('id', $userCompany)->first();
+	        $mailTo = $userCompany->email;
         } else {
             $name = $user->name;
+            $student = \App\Student::where('id', $studentId)->first();
+	        $userStudent = $student->user_id;
+	        $userStudent = \App\User::where('id', $userStudent)->first();
+	        $mailTo = $userStudent->email;
         }
 
         $data = [
@@ -92,7 +90,6 @@ class Notification
             'type' => 'notification',
         ];
 
-        Mail::to($studentMail)->queue(new InternshipEmail($data));
-        Mail::to($companyMail)->queue(new InternshipEmail($data));
+        Mail::to($mailTo)->queue(new InternshipEmail($data));
     }
 }
