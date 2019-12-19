@@ -31,8 +31,8 @@ class IndexController extends Controller
             $internships = collect();
             $tags = explode(" ", $student->tags);
 
-            if($tags !== null){
-
+            if($tags[0] != ""){
+                
                 foreach($tags as $tag){
                     $internshipsByTag = \App\Internship::where('tags', 'LIKE', '%'.$tag.'%')->get();
                     foreach($internshipsByTag as $internship){
