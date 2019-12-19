@@ -100,7 +100,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 $(document).ready(function () {
-  var api_url = "http://www.mapquestapi.com/directions/v2/route?";
+  var api_url = "https://cors-anywhere.herokuapp.com/https://www.mapquestapi.com/directions/v2/route?";
 
   var Distance =
   /*#__PURE__*/
@@ -186,7 +186,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\distance.js */"./resources/js/distance.js");
+module.exports = __webpack_require__(/*! D:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\distance.js */"./resources/js/distance.js");
 
 
 /***/ })

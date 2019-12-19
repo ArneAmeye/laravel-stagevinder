@@ -154,7 +154,7 @@ btn.onclick = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\search.js */"./resources/js/search.js");
+module.exports = __webpack_require__(/*! D:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\search.js */"./resources/js/search.js");
 
 
 /***/ })

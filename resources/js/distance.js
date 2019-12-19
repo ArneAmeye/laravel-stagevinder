@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	let api_url = "http://www.mapquestapi.com/directions/v2/route?";
+	let api_url = "https://cors-anywhere.herokuapp.com/https://www.mapquestapi.com/directions/v2/route?";
 
 	class Distance {
 		static getLocation(api_url, id) {

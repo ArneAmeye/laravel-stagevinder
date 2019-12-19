@@ -13,6 +13,7 @@ npm-debug.log
 yarn-error.log
 .vagrant
 Envoy.blade.php
+.htaccess
 
 #Removed files or changed name of files
 resources\views\welcome.blade.php

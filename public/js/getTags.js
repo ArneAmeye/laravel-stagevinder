@@ -164,7 +164,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\getTags.js */"./resources/js/getTags.js");
+module.exports = __webpack_require__(/*! D:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\getTags.js */"./resources/js/getTags.js");
 
 
 /***/ })
