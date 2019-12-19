@@ -142,7 +142,7 @@ class InternshipController extends Controller
         $internship->company_id = \App\Internship::where('id', $id)->first()->company_id;
         $internship->save();
 
-        Notification::sendMail();
+        Notification::sendMail($internship->student_id, $internship->company_id);
 
         return redirect("/internships/$id")->with('success', 'Successfully applied for internship!');
     }
