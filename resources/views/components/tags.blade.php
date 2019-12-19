@@ -1,4 +1,4 @@
-<section class="card__container">
+<section class="card__container" style="display: none;">
     <div>
         <div class="card__header">
             <h5 class="card__title">

@@ -358,9 +358,13 @@
 						</div>
 					</div>
 				</section>
-
+				@php
+				$tags = null	
+				@endphp
 				@component('components/tags')
-										
+					@slot('tags')
+						{{ $tags }}
+					@endslot		
 				@endcomponent
 				<div class="button__center">
 					<button type="submit" class="button button--margin" name="create_internship">Create</button>
