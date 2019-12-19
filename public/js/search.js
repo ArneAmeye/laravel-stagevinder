@@ -100,6 +100,9 @@ var url = window.location.protocol + "//" + window.location.hostname;
 var params;
 
 btn.onclick = function () {
+  $(".filter__item--active, .filter__item--disabled").toggleClass("filter__item--disabled filter__item--active");
+  $(".filter__item--title-active, .filter__item--title-disabled").toggleClass("filter__item--title-disabled filter__item--title-active");
+  $(".filter__items--active, .filter__items--disabled").toggleClass("filter__items--disabled filter__items--active");
   params = "";
   searchResults = "";
   previewContainer.innerHTML = "";
@@ -134,11 +137,16 @@ btn.onclick = function () {
   }).then(function (json) {
     var array = json;
 
-    for (item in array) {
-      searchResults += "<a class=\"preview__flex__child\" href=\"/internships/".concat(array[item].company_id, "\">") + "<div class=\"preview__inner\">" + "<img class=\"preview__image\" src=\"images/internships/background_picture/".concat(array[item].background_picture, "\">") + "<div class=\"preview__text\">" + "<p class=\"preview__text--internship\">".concat(array[item].title, "</p>") + "<p class=\"preview__text--position\">".concat(array[item].description, "</p>") + //`<p class="preview__text--company">@company</p>` +
-      "<p class=\"preview__text--distance\" data-id=\"".concat(array[item].company_id, "\"></p>") + "</div>" + "</div>" + "</a>"; //append in grid
-
+    if ("error" in array) {
+      searchResults += "<p>No matches where found for this search, maybe you have more interests to search for?</p>";
       previewContainer.innerHTML = searchResults;
+    } else {
+      for (item in array) {
+        searchResults += "<a class=\"preview__flex__child\" href=\"/internships/".concat(array[item].company_id, "\">") + "<div class=\"preview__inner\">" + "<img class=\"preview__image\" src=\"images/internships/background_picture/".concat(array[item].background_picture, "\">") + "<div class=\"preview__text\">" + "<p class=\"preview__text--internship\">".concat(array[item].title, "</p>") + "<p class=\"preview__text--position\">".concat(array[item].description, "</p>") + //`<p class="preview__text--company">@company</p>` +
+        "<p class=\"preview__text--distance\" data-id=\"".concat(array[item].company_id, "\"></p>") + "</div>" + "</div>" + "</a>"; //append in grid
+
+        previewContainer.innerHTML = searchResults;
+      }
     }
   })["catch"](function (err) {
     console.log(err);
