@@ -7,7 +7,9 @@
     <!--Show empty state-->
     @if(count($internships) == 0)
         <p class="preview__container--empty-state">Oh no, no internships have been found! Add some tags to find your new match.</p>
-    <!--Loop through all internships, if any.-->
+        <!-- Add empty list div so when the user searches there is no conflict with the script -->
+        <div class="preview__container preview__container__items"></div>
+        <!--Loop through all internships, if any.-->
     @else
         <div class="preview__container preview__container__items">
             @foreach($internships as $internship)

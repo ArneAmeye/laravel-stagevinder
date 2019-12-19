@@ -30,15 +30,26 @@ class IndexController extends Controller
         
             $internships = collect();
             $tags = explode(" ", $student->tags);
-            foreach($tags as $tag){
+
+            if(!empty($tags) || $tags !== null || $tags !== ""){
+
+                foreach($tags as $tag){
                     $internshipsByTag = \App\Internship::where('tags', 'LIKE', '%'.$tag.'%')->get();
                     foreach($internshipsByTag as $internship){
                         $internships->push($internship);
                     }
                 
+                }
+                $data['internships'] = $internships->unique('id');
+            }else{
+                $data['internships'] = \App\Internship::all();
             }
+
             
-            $data['internships'] = $internships->unique('id');
+
+           
+            
+            
 
             $data['applications'] = \App\StudentInternship::where('student_id', $student->id)->get();
         }
