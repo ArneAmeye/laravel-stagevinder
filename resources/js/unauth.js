@@ -1,6 +1,10 @@
-let btnInternship = document.querySelector(".preview__inner--unauth");
+let btnInternship = document.querySelectorAll(".preview__inner--unauth");
 let popup = document.querySelector(".popup__unauth--container");
 
-btnInternship.onclick = () => {
-    popup.style.display = "block";
-};
+btnInternship.forEach((internship) => {
+    internship.onclick = () => {
+        popup.style.display = "block";
+    };
+});
+
+

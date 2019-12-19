@@ -78,6 +78,7 @@ class InternshipController extends Controller
             'sector' => 'required',
             'description' => 'required',
             'requirements' => 'required',
+            'tags' => 'required'
         ]);
 
         if ($validation->fails()) {
@@ -87,6 +88,7 @@ class InternshipController extends Controller
             $internship->field_sector = $request->input('sector');
             $internship->description = $request->input('description');
             $internship->requirements = $request->input('requirements');
+            $internship->tags = $request->input('tags');
             $internship->save();
 
             return redirect("/internships/$id")->with('success', 'Internship details have been updated!');
@@ -168,7 +170,8 @@ class InternshipController extends Controller
 
     public function getTags(Request $request){
 
-        $data = \App\Tag::select("name")->where("name","LIKE", '%'.$request->msg.'%')->get();
+            $data = \App\Tag::select("name")->where("name","LIKE", '%'.$request->msg.'%')->take(20)->get();
+        
         
         
 
@@ -191,7 +194,8 @@ class InternshipController extends Controller
         }
         return response()->json($data);
     }
-    
+
+
     public function status($id) {
         $student = $_GET["student"];
         $status = $_GET["status"];

@@ -1,0 +1,34 @@
+.autocomplete__suggestions, .tags__selected{
+    flex-direction: column;
+    border: 2px solid #f1f1f1;
+    border-radius: $inputRadius;
+    height: 25vh;
+    overflow-y: scroll;
+    scrollbar-color: $highlightBackgroundColor transparent;
+    scrollbar-width: thin;
+}
+
+.autocomplete__suggestion, .tag__selected__container{
+    padding: 2% 5%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.autocomplete__suggestion:hover{
+    background-color: #f1f1f1;
+}
+
+.tag__selected__container:hover{
+    color: white;
+    background-color: $highlightBackgroundColor;
+}
+
+.tags__arrow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $highlightBackgroundColor;
+    font-size: 50px;
+    font-weight: $boldWeight;
+}

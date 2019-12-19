@@ -128,13 +128,15 @@
 						</div>
 					</td>
 				</tr>
-
-				@component('components/tags')
-					
-				@endcomponent
 			</table>
 		</div>
 	</div>
+
+	@component('components/tags')
+		@slot('tags')
+			{{$tags}}
+		@endslot
+	@endcomponent
 
 	<div class="button__center button__center--margin">
 		<button type="submit" class="button button--big" name="update_details">Save</button>

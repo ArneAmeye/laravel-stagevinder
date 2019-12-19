@@ -151,6 +151,6 @@ class StudentController extends Controller
         Session::put('user', $student);
 
         return redirect("/students/$id")
-            ->with('success', 'User detials has been updated!');
+            ->with('success', 'User details has been updated!');
     }
 }

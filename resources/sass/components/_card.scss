@@ -96,6 +96,10 @@
     width: 40%;
 }
 
+.card__table__data--small {
+	width: 40%;
+}
+
 .card__menu__items {
     position: relative;
     border-bottom: 1px solid #ddd;
@@ -141,6 +145,10 @@
 }
 
 @media (min-width: 1200px) {
+
+	.card__table__data--small {
+		width: 14%;
+	}
     .card__info {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;

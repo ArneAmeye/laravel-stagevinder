@@ -99,6 +99,9 @@
 				@slot('id')
 					{{$internship->id}}
 				@endslot
+				@slot('tags')
+					{{$internship->tags}}
+				@endslot
 				@slot('current')
 					{{$current}}
 				@endslot
@@ -114,6 +117,99 @@
 	<script type="text/javascript" src="{{ asset ('js/remove_button.js') }}"></script>
 	<script type="text/javascript" src="{{ asset ('js/getTags.js') }}"></script>
 	<script type="text/javascript" src="{{ asset ('js/upload.js') }}"></script>
+	<script>
+		$(document).ready(function(){
+			var tagCount = 0;
+			var tags = [];
+
+			var selectedTags =	$('#tags').val();
+
+			if(selectedTags !== "" ){
+				var selectedTagsArray = selectedTags.split(" ");
+				selectedTagsArray.forEach(function(tag, index){
+					$('.tags__selected').html( $('.tags__selected').html() + " <div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
+					tags.push(tag);
+					tagCount++
+				})
+			}
+			
+
+
+			getAutocomplete();
+
+
+			$('#tag__autocomplete').keyup(function(){
+					
+				getAutocomplete();
+
+				
+			});
+
+			function getAutocomplete(){
+
+				$.ajax({
+					type:"POST",
+					url:'/getTags',
+					data:{
+						'msg' : $('#tag__autocomplete').val(),
+						'tags': tags
+					},
+					dataType: "json",
+					success:function(data){
+						if(Array.isArray(data) == false){
+							data = Object.values(data);
+						}
+						console.log(data);
+						$(".autocomplete__suggestions").html("");
+						data.forEach(function(tag, index){
+							$(".autocomplete__suggestions").append(
+								"<p class='autocomplete__suggestion' data-id='tag-"+tag.name+"'>" + tag.name +"</p>"
+							);
+
+						});
+						
+					},
+					error:function(e){
+						console.log(e);
+					}
+					
+				});
+			}
+
+			$(".autocomplete__suggestions").on('click', ".autocomplete__suggestion", function(){
+				if(tagCount < 5){
+					var tag = $(this).html();
+
+					tagCount++;
+					$('.autocomplete__suggestion[data-id="tag-'+tag+'"]').addClass('tagSelected');
+					$('#tags').val($('#tags').val()+tag+ " ");
+					$('.tags__selected').html( $('.tags__selected').html() + "<div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
+
+					tags.push(tag);
+
+					getAutocomplete();
+				}
+			});
+
+			$(".tags__selected").on('click', ".tag__selected__container", function(){
+				
+				var tag = $(this).children('.tag__selected')[0].innerHTML;
+				tagCount--;
+				$('.autocomplete__suggestion[data-id="tag-'+tag+'"]').removeClass('tagSelected');
+				var oldVal = $('#tags').val();
+				var oldValSplit = oldVal.replace(tag, '');
+				$('#tags').val(oldValSplit);
+				$(this).remove();
+				var index = tags.indexOf(tag);
+				if (index > -1) {
+					tags.splice(index, 1);
+				}
+
+				getAutocomplete();
+			});
+
+		});
+	</script>
 @endsection
 
 @if (\Session::has('success'))

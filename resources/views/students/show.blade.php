@@ -240,6 +240,20 @@
 		$(document).ready(function(){
 			var tagCount = 0;
 			var tags = [];
+
+			var selectedTags =	$('#tags').val();
+
+			if(selectedTags !== "" ){
+				var selectedTagsArray = selectedTags.split(" ");
+				selectedTagsArray.forEach(function(tag, index){
+					$('.tags__selected').html( $('.tags__selected').html() + " <div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
+					tags.push(tag);
+					tagCount++
+				})
+			}
+
+			getAutocomplete();
+
 			$('#tag__autocomplete').keyup(function(){
 					
 				getAutocomplete();
@@ -262,10 +276,10 @@
 							data = Object.values(data);
 						}
 						console.log(data);
-						$(".autocomplete-suggestions").html("");
+						$(".autocomplete__suggestions").html("");
 						data.forEach(function(tag, index){
-							$(".autocomplete-suggestions").append(
-								"<p class='autocomplete-suggestion' data-id='tag-"+tag.name+"'>" + tag.name +"</p>"
+							$(".autocomplete__suggestions").append(
+								"<p class='autocomplete__suggestion' data-id='tag-"+tag.name+"'>" + tag.name +"</p>"
 							);
 
 						});
@@ -278,14 +292,14 @@
 				});
 			}
 
-			$(".autocomplete-suggestions").on('click', ".autocomplete-suggestion", function(){
+			$(".autocomplete__suggestions").on('click', ".autocomplete__suggestion", function(){
 				if(tagCount < 5){
 					var tag = $(this).html();
 
 					tagCount++;
-					$('.autocomplete-suggestion[data-id="tag-'+tag+'"]').addClass('tagSelected');
+					$('.autocomplete__suggestion[data-id="tag-'+tag+'"]').addClass('tagSelected');
 					$('#tags').val($('#tags').val()+tag+ " ");
-					$('.tags__selected').html( $('.tags__selected').html() + " <div class='selected-tag-container'> <p class='selected-tag'>" + tag + "</p> <span class='delete-tag'>X</span> </div>");
+					$('.tags__selected').html( $('.tags__selected').html() + " <div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
 
 					tags.push(tag);
 
@@ -293,11 +307,11 @@
 				}
 			});
 
-			$(".tags__selected").on('click', ".selected-tag-container", function(){
+			$(".tags__selected").on('click', ".tag__selected__container", function(){
 				
-				var tag = $(this).children('.selected-tag')[0].innerHTML;
+				var tag = $(this).children('.tag__selected')[0].innerHTML;
 				tagCount--;
-				$('.autocomplete-suggestion[data-id="tag-'+tag+'"]').removeClass('tagSelected');
+				$('.autocomplete__suggestion[data-id="tag-'+tag+'"]').removeClass('tagSelected');
 				var oldVal = $('#tags').val();
 				var oldValSplit = oldVal.replace(tag, '');
 				$('#tags').val(oldValSplit);

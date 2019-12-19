@@ -341,7 +341,7 @@
 													<i class="fas fa-file-alt" aria-hidden="true"></i>
 													<p class="required__field">*</p>
 												</span>
-												<textarea required name="description" class="input" placeholder="Job Description" value=""></textarea>
+												<textarea required name="description" class="input textarea" placeholder="Job Description" value=""></textarea>
 											</div>
 										</td>
 										<td class="card__table__data">
@@ -349,17 +349,19 @@
 												<span class="input__addon">
 													<i class="fas fa-list-ul" aria-hidden="true"></i>
 												</span>
-												<textarea name="requirements" class="input" placeholder="Job Requirements" value=""></textarea>
+												<textarea name="requirements" class="input textarea" placeholder="Job Requirements" value=""></textarea>
 											</div>
 										</td>
 									</tr>
-									@component('components/tags')
-										
-									@endcomponent
+									
 								</table>
 						</div>
 					</div>
 				</section>
+
+				@component('components/tags')
+										
+				@endcomponent
 				<div class="button__center">
 					<button type="submit" class="button button--margin" name="create_internship">Create</button>
 				</div>
@@ -416,10 +418,10 @@
 							data = Object.values(data);
 						}
 						console.log(data);
-						$(".autocomplete-suggestions").html("");
+						$(".autocomplete__suggestions").html("");
 						data.forEach(function(tag, index){
-							$(".autocomplete-suggestions").append(
-								"<p class='autocomplete-suggestion' data-id='tag-"+tag.name+"'>" + tag.name +"</p>"
+							$(".autocomplete__suggestions").append(
+								"<p class='autocomplete__suggestion' data-id='tag-"+tag.name+"'>" + tag.name +"</p>"
 							);
 
 						});
@@ -432,14 +434,14 @@
 				});
 			}
 
-			$(".autocomplete-suggestions").on('click', ".autocomplete-suggestion", function(){
+			$(".autocomplete__suggestions").on('click', ".autocomplete__suggestion", function(){
 				if(tagCount < 5){
 					var tag = $(this).html();
 
 					tagCount++;
-					$('.autocomplete-suggestion[data-id="tag-'+tag+'"]').addClass('tagSelected');
+					$('.autocomplete__suggestion[data-id="tag-'+tag+'"]').addClass('tagSelected');
 					$('#tags').val($('#tags').val()+tag+ " ");
-					$('.tags__selected').html( $('.tags__selected').html() + " <div class='selected-tag-container'> <p class='selected-tag'>" + tag + "</p> <span class='delete-tag'>X</span> </div>");
+					$('.tags__selected').html( $('.tags__selected').html() + " <div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
 
 					tags.push(tag);
 
@@ -447,11 +449,11 @@
 				}
 			});
 
-			$(".tags__selected").on('click', ".selected-tag-container", function(){
+			$(".tags__selected").on('click', ".tag__selected__container", function(){
 				
-				var tag = $(this).children('.selected-tag')[0].innerHTML;
+				var tag = $(this).children('.tag__selected')[0].innerHTML;
 				tagCount--;
-				$('.autocomplete-suggestion[data-id="tag-'+tag+'"]').removeClass('tagSelected');
+				$('.autocomplete__suggestion[data-id="tag-'+tag+'"]').removeClass('tagSelected');
 				var oldVal = $('#tags').val();
 				var oldValSplit = oldVal.replace(tag, '');
 				$('#tags').val(oldValSplit);

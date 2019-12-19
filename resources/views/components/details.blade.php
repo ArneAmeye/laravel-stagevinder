@@ -49,16 +49,7 @@
 				</td>
 			</tr>
 			@endif
-			@if($tags != "" || $current == $user_id)
-			<tr class="card__table__row">
-				<th class="card__table__data card__table__data--big">
-					Tags
-				</th>
-				<td class="card__table__data">
-					{{ $tags }}
-				</td>
-			</tr>
-			@endif
+			
 		</table>
 	</div>
 	<div class="card__info card__info--1-2">
@@ -116,4 +107,19 @@
 			@endif
 		</table>
 	</div>
+	@if($tags != "" || $current == $user_id)
+	<div class="card__body">
+		<table class="card__table">
+			<tr class="card__table__row">
+				<th class="card__table__data card__table__data--small">
+					Tags
+				</th>
+				<td class="card__table__data">
+					{{ $tags }}
+				</td>
+			</tr>
+		</table>
+	</div>
+	@endif
+			
 </div>
