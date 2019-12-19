@@ -153,7 +153,7 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | 👑 Informatie over Kingtrainnee op login is eventueel niet nodig doordat je niet auto surft naar login (/login)                                                                |
 | Person                                                                                                                                                                         |   Status   |
 | 👑 Zoekparameters missen (vb. afstand thuis - stage, design - development)                                                                                                     |
-| Irene                                                                                                                                                                          |   Doing    |
+| Irene                                                                                                                                                                          |  DONE (?)  |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Witruimte recht van grid - flex van weergave stageplaats als applicaties weglaten (vooral index)                      |
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#C100FF](https://placehold.it/15/C100FF/000000?text=+) Na registratie het bericht (Welcome back) wijzigen                                                                    |
@@ -178,8 +178,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Arne                                                                                                                                                                           |    DONE    |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Upload preview in zelfde container, geen scroll nodig => minder verwarrend (UX)                                       |
 | Arne                                                                                                                                                                           |    DONE    |
-| 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                                                                                    |
-| Person                                                                                                                                                                         |   Status   |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                              |
+| Irene                                                                                                                                                                          |    DONE    |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Slechts eenmalig e-mail vragen bij registratie                                                                        |
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Foute zinsverwoording: notificatie (requist > request) en bij breadcrumbs (home)                                      |

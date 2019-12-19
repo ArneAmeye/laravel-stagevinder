@@ -81,80 +81,35 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/search.js":
+/***/ "./resources/js/unauth.js":
 /*!********************************!*\
-  !*** ./resources/js/search.js ***!
+  !*** ./resources/js/unauth.js ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var btn = document.querySelector(".filter__btn");
-var previewContainer = document.querySelector(".preview__container__items");
-var searchResults;
-var url = window.location.protocol + "//" + window.location.hostname;
-var params;
+var btnInternship = document.querySelector(".preview__inner--unauth");
+var popup = document.querySelector(".popup__unauth--container");
 
-btn.onclick = function () {
-  params = "";
-  searchResults = "";
-  previewContainer.innerHTML = "";
-  var design = document.querySelector(".filter__item__checkbox--design");
-
-  if (design.checked === true) {
-    params += "design&";
-  }
-
-  var development = document.querySelector(".filter__item__checkbox--development");
-
-  if (development.checked === true) {
-    params += "development&";
-  }
-
-  var webdesign = document.querySelector(".filter__item__checkbox--webdesign");
-
-  if (webdesign.checked === true) {
-    params += "webdesign&";
-  }
-
-  var webdevelopment = document.querySelector(".filter__item__checkbox--webdevelopment");
-
-  if (webdevelopment.checked === true) {
-    params += "webdevelopment&";
-  }
-
-  fetch("".concat(url, "/api/search?q=").concat(params), {
-    method: "get"
-  }).then(function (result) {
-    return result.json();
-  }).then(function (json) {
-    var array = json;
-
-    for (item in array) {
-      searchResults += "<a class=\"preview__flex__child\" href=\"/internships/".concat(array[item].company_id, "\">") + "<div class=\"preview__inner\">" + "<img class=\"preview__image\" src=\"images/internships/background_picture/".concat(array[item].background_picture, "\">") + "<div class=\"preview__text\">" + "<p class=\"preview__text--internship\">".concat(array[item].title, "</p>") + "<p class=\"preview__text--position\">".concat(array[item].description, "</p>") + //`<p class="preview__text--company">@company</p>` +
-      "<p class=\"preview__text--distance\" data-id=\"".concat(array[item].company_id, "\"></p>") + "</div>" + "</div>" + "</a>"; //append in grid
-
-      previewContainer.innerHTML = searchResults;
-    }
-  })["catch"](function (err) {
-    console.log(err);
-  });
+btnInternship.onclick = function () {
+  popup.style.display = "block";
 };
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /*!**************************************!*\
-  !*** multi ./resources/js/search.js ***!
+  !*** multi ./resources/js/unauth.js ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bram Ravijts\Desktop\school\jaar 3\Semester 1\Advanced Webtech Back\laravel-stagevinder\resources\js\search.js */"./resources/js/search.js");
+module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\unauth.js */"./resources/js/unauth.js");
 
 
 /***/ })

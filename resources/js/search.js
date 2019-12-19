@@ -2,6 +2,8 @@ let btn = document.querySelector(".filter__btn");
 let previewContainer = document.querySelector(".preview__container__items");
 let searchResults;
 
+let url = window.location.protocol + "//" + window.location.hostname;
+
 let params;
 btn.onclick = () => {
     params = "";
@@ -38,7 +40,7 @@ btn.onclick = () => {
         params += "webdevelopment&";
     }
 
-    fetch(`https://kingtrainee.weareimd.be/api/search?q=${params}`, {
+    fetch(`${url}/api/search?q=${params}`, {
         method: "get"
     })
         .then(result => {

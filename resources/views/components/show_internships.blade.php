@@ -1,6 +1,8 @@
+@component('../components/not_authorized')
+@endcomponent
 <div class="preview__container">
     <h3 class="preview__container__title">All available internships:</h3>
-    @component('../components/filter')
+    @component('../components/search')
     @endcomponent
     <!--Show empty state-->
     @if(count($internships) == 0)
@@ -12,10 +14,11 @@
                 @if($internship->is_available == 1)
                     @if(Auth::check() and Session::has('user'))
                         <a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
+                            <div class="preview__inner">    
                     @else
-                        <a class="preview__flex__child" href="/login">
+                        <a class="preview__flex__child" href="#">
+                            <div class="preview__inner preview__inner--unauth">
                     @endif
-                            <div class="preview__inner">
                                 <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture}}">
                                 <div class="preview__text">
                                     <p class="preview__text--internship">

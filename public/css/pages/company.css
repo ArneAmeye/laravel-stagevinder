@@ -511,6 +511,7 @@ textarea {
   height: 250px;
   width: initial;
   margin: 0px 5px 30px 5px;
+  cursor: pointer;
 }
 
 .preview__image {

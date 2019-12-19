@@ -21,3 +21,4 @@ ca.homestead.laravel-app.crt
 ca.homestead.laravel-stagevinder.crt
 resources\sass\components\previewApplication.scss
 resources\sass\components\companies.scss
+public\css\pages\welcome.css

@@ -41,6 +41,7 @@
   height: 250px;
   width: initial;
   margin: 0px 5px 30px 5px;
+  cursor: pointer;
 }
 
 .preview__image {
@@ -498,4 +499,57 @@
     font-size: 2em;
   }
 }
+.popup__unauth--container {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 999;
+  /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.popup__unauth--item {
+  width: 550px;
+  height: 350px;
+  margin: auto;
+  margin-top: 30vh;
+  cursor: pointer;
+  /* Add a pointer on hover */
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  text-align: center;
+}
+
+.popup__unauth--title {
+  padding-bottom: 30px;
+}
+
+.popup__unauth--text {
+  padding-bottom: 30px;
+}
+
+.popup__unauth--cta {
+  margin-top: 30px;
+  color: #DE4A43;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.popup__unauth--link {
+  display: block;
+  padding-top: 60px;
+  color: #252421;
+  text-decoration: underline;
+}
+
 /*KEYFRAMES*/
