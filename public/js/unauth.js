@@ -93,12 +93,13 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var btnInternship = document.querySelector(".preview__inner--unauth");
+var btnInternship = document.querySelectorAll(".preview__inner--unauth");
 var popup = document.querySelector(".popup__unauth--container");
-
-btnInternship.onclick = function () {
-  popup.style.display = "block";
-};
+btnInternship.forEach(function (internship) {
+  internship.onclick = function () {
+    popup.style.display = "block";
+  };
+});
 
 /***/ }),
 
@@ -109,7 +110,7 @@ btnInternship.onclick = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haege\Dropbox\thomas_more\3IMD_A\advanced_webtech_back\laravel\projecten\laravel-stagevinder\resources\js\unauth.js */"./resources/js/unauth.js");
+module.exports = __webpack_require__(/*! d:\Bureaublad\Thomas More\Sem 5\Webtech Advanced Back\PHP2\laravel-app\resources\js\unauth.js */"./resources/js/unauth.js");
 
 
 /***/ })
