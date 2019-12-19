@@ -14,10 +14,11 @@
                 @if($internship->is_available == 1)
                     @if(Auth::check() and Session::has('user'))
                         <a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
+                            <div class="preview__inner">    
                     @else
                         <a class="preview__flex__child" href="#">
-                    @endif
                             <div class="preview__inner preview__inner--unauth">
+                    @endif
                                 <img class="preview__image" src="{{asset('images/internships/background_picture')}}/{{ $internship->background_picture}}">
                                 <div class="preview__text">
                                     <p class="preview__text--internship">
