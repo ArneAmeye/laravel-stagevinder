@@ -11,14 +11,14 @@
                     <span class="input__addon">
                         <i class="fas fa-tags" aria-hidden="true"></i>
                     </span>
-                    <input class="input input--tag" placeholder="Tags" value="" id="tag__autocomplete"/>
+                <input class="input input--tag" placeholder="Tags" value="" id="tag__autocomplete"/>
                 </div>
             </div>
             <div class="card__info">  
                 <table class="card__table">
                     <tr class="card__table__row">
                         <td class="card__table__data">
-                            <input type="hidden" name="tags" value="" id="tags">
+                            <input type="hidden" name="tags" value="{{$tags}}" id="tags">
                             <div class="input__container autocomplete__suggestions">
                             </div>
                         </td>
@@ -35,6 +35,7 @@
                     <tr class="card__table__row">
                         <td class="card__table__data">
                             <div class="input__container tags__selected">
+                                
                             </div>
                         </td>
                     </tr>

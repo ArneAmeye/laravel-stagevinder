@@ -111,8 +111,8 @@ $(document).ready(function () {
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        $("#preview").css("background-image", "url(" + e.target.result + ")");
-        $("#preview__card").fadeIn(650);
+        $("#upload__preview").css("background-image", "url(" + e.target.result + ")");
+        $("#upload__preview").css("height", "150px"); //$("#preview__card").fadeIn(650);
       };
 
       reader.readAsDataURL(input.files[0]);

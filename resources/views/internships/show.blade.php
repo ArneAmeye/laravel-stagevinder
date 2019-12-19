@@ -35,15 +35,9 @@
 					<div class="user__inner user__inner--padding">
 						<div class="user__inner__image" style="background-image: url({{ asset('images/internships/background_picture/'.$internship->background_picture) }});">
 							@if($current == $company->user_id)
-								@if(empty($edit) || $edit != "details")
-									<a href="?edit=details" class="button button--right">
+									<a href="/upload?edit=background&q=internships&id={{$internship->id}}" class="button button--right">
 										<i class="fas fa-edit" aria-hidden="true"></i>
 									</a>
-								@else
-									<a href="{{ url('internships/') }}/{{ $internship->id }}" class="button button--right">
-										<i class="fas fa-times" aria-hidden="true"></i>
-									</a>
-								@endif
 							@endif
 						</div>
 						<div class="user__info">
@@ -60,20 +54,20 @@
 											{{ $company->name }}
 										</h2>
 										<span class="user__function">
-											{{ $company->field_ssector }}
+											{{ $company->field_sector }}
 										</span>
 									</div>
 								</div>
 								@if($applied)
 									<div class="buttons__container">
-										<a href="{{ route('internships.removeApply', $internship->id) }}" class="button button--green">
+										<a href="{{ route('internships.removeApply', $internship->id) }}" class="button button--green button--overImage">
 											<i class="fas fa-briefcase button__icon" aria-hidden="true"></i>
 											<span>Applied</span>
 										</a>
 									</div>
 								@elseif(Session::get('user')->type == 'student')
 									<div class="buttons__container">
-										<a href="{{ route('internships.apply', $internship->id) }}" class="button">
+										<a href="{{ route('internships.apply', $internship->id) }}" class="button button--overImage">
 											<i class="fas fa-briefcase button__icon" aria-hidden="true"></i>
 											Apply
 										</a>
@@ -108,6 +102,12 @@
 				@slot('tags')
 					{{$internship->tags}}
 				@endslot
+				@slot('current')
+					{{$current}}
+				@endslot
+				@slot('company_id')
+					{{$company->user_id}}
+				@endslot
 			@endcomponent
 		</section> 
     </div>
@@ -115,10 +115,29 @@
 @section('script')
     <script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
 	<script type="text/javascript" src="{{ asset ('js/remove_button.js') }}"></script>
+	<script type="text/javascript" src="{{ asset ('js/getTags.js') }}"></script>
+	<script type="text/javascript" src="{{ asset ('js/upload.js') }}"></script>
 	<script>
 		$(document).ready(function(){
 			var tagCount = 0;
 			var tags = [];
+
+			var selectedTags =	$('#tags').val();
+
+			if(selectedTags !== "" ){
+				var selectedTagsArray = selectedTags.split(" ");
+				selectedTagsArray.forEach(function(tag, index){
+					$('.tags__selected').html( $('.tags__selected').html() + " <div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
+					tags.push(tag);
+					tagCount++
+				})
+			}
+			
+
+
+			getAutocomplete();
+
+
 			$('#tag__autocomplete').keyup(function(){
 					
 				getAutocomplete();
@@ -164,7 +183,7 @@
 					tagCount++;
 					$('.autocomplete__suggestion[data-id="tag-'+tag+'"]').addClass('tagSelected');
 					$('#tags').val($('#tags').val()+tag+ " ");
-					$('.tags__selected').html( $('.tags__selected').html() + " <div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
+					$('.tags__selected').html( $('.tags__selected').html() + "<div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
 
 					tags.push(tag);
 

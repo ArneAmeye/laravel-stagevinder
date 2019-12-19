@@ -44,6 +44,10 @@
   width: 120px;
 }
 
+.button--overImage {
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.3);
+}
+
 .button--fullWidth {
   width: 100%;
   margin-bottom: 15px;
@@ -261,19 +265,23 @@
   }
 }
 @media (min-width: 1200px) {
+  .card__table__data--small {
+    width: 14%;
+  }
+
   .card__info {
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 100%;
     float: left;
     padding: 0 15px;
   }
 
-  .card__body--padding {
-    margin: 0 -15px;
+  .card__info--1-2 {
+    max-width: 50%;
   }
 
-  .card__table__data--small {
-    width: 14%;
+  .card__body--padding {
+    margin: 0 -15px;
   }
 }
 .input__container {
@@ -297,6 +305,10 @@
   width: 45px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+textarea {
+  resize: none;
 }
 
 .input {
@@ -500,6 +512,11 @@
   border: none;
 }
 
+.preview__container__items {
+  box-shadow: none;
+  padding: 0;
+}
+
 .preview__container__title {
   display: block;
   width: 100%;
@@ -590,6 +607,11 @@
 
 .preview__container--link {
   flex: 1 1 250px;
+}
+
+.preview__container--empty-state {
+  text-align: left;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -714,6 +736,7 @@
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
   width: -webkit-fill-available;
 }
 
@@ -777,14 +800,8 @@
   border-radius: 4px;
   height: 25vh;
   overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.autocomplete__suggestions ::-webkit-scrollbar, .tags__selected ::-webkit-scrollbar {
-  width: 0px;
-  /* Remove scrollbar space */
-  background: transparent;
-  /* Optional: just make scrollbar invisible */
+  scrollbar-color: #DE4A43 transparent;
+  scrollbar-width: thin;
 }
 
 .autocomplete__suggestion, .tag__selected__container {

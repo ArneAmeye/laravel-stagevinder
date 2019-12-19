@@ -86,56 +86,74 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/vue/search.js":
-/*!************************************!*\
-  !*** ./resources/js/vue/search.js ***!
-  \************************************/
+/***/ "./resources/js/search.js":
+/*!********************************!*\
+  !*** ./resources/js/search.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-Vue.component("get", {
-  template: "<a href=\"#\">\n\t\t<div class=\"preview__inner\">\n\t\t\t<img class=\"preview__image\" src=\"@{{profile_picture}}\">\n\t\t\t<div class=\"preview__text\">\n\t\t\t\t<p class=\"preview__text--internship\">\n\t\t\t\t\t@{{firstname}} @{{lastname}}\n\t\t\t\t</p>\n\t\t\t\t<p class=\"preview__text--position\">\n\t\t\t\t\t@{{bio}}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n    </a>",
-  props: ["result"]
-});
-var app = new Vue({
-  el: "body",
-  data: {
-    results: [],
-    query: "irene"
-  },
-  mounted: function mounted() {
-    this.search();
-  },
-  methods: {
-    search: function search() {
-      var that = this; // Clear the error message.
+var btn = document.querySelector(".filter__btn");
+var previewContainer = document.querySelector(".preview__container__items");
+var searchResults;
+var params;
 
-      this.error = ""; // Empty the products array so we can fill it with the new products.
+btn.onclick = function () {
+  params = "";
+  searchResults = "";
+  previewContainer.innerHTML = "";
+  var design = document.querySelector(".filter__item__checkbox--design");
 
-      this.products = []; // Making a get request to our API and passing the query to it.
-
-      fetch("/api/search?q=" + this.query).then(function (response) {
-        return response.json();
-      }).then(function (json) {
-        console.log(json.users);
-        that.results.push(json.users);
-      }); // Clear the query.
-
-      this.query = "";
-    }
+  if (design.checked === true) {
+    params += "design&";
   }
-});
+
+  var development = document.querySelector(".filter__item__checkbox--development");
+
+  if (development.checked === true) {
+    params += "development&";
+  }
+
+  var webdesign = document.querySelector(".filter__item__checkbox--webdesign");
+
+  if (webdesign.checked === true) {
+    params += "webdesign&";
+  }
+
+  var webdevelopment = document.querySelector(".filter__item__checkbox--webdevelopment");
+
+  if (webdevelopment.checked === true) {
+    params += "webdevelopment&";
+  }
+
+  fetch("https://kingtrainee.weareimd.be/api/search?q=".concat(params), {
+    method: "get"
+  }).then(function (result) {
+    return result.json();
+  }).then(function (json) {
+    var array = json;
+
+    for (item in array) {
+      searchResults += "<a class=\"preview__flex__child\" href=\"/internships/".concat(array[item].company_id, "\">") + "<div class=\"preview__inner\">" + "<img class=\"preview__image\" src=\"images/internships/background_picture/".concat(array[item].background_picture, "\">") + "<div class=\"preview__text\">" + "<p class=\"preview__text--internship\">".concat(array[item].title, "</p>") + "<p class=\"preview__text--position\">".concat(array[item].description, "</p>") + //`<p class="preview__text--company">@company</p>` +
+      "<p class=\"preview__text--distance\" data-id=\"".concat(array[item].company_id, "\"></p>") + "</div>" + "</div>" + "</a>"; //append in grid
+
+      previewContainer.innerHTML = searchResults;
+    }
+  })["catch"](function (err) {
+    console.log(err);
+  });
+};
 
 /***/ }),
 
 /***/ 6:
-/*!******************************************!*\
-  !*** multi ./resources/js/vue/search.js ***!
-  \******************************************/
+/*!**************************************!*\
+  !*** multi ./resources/js/search.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bram Ravijts\Desktop\school\jaar 3\Semester 1\Advanced Webtech Back\laravel-stagevinder\resources\js\vue\search.js */"./resources/js/vue/search.js");
+module.exports = __webpack_require__(/*! C:\Users\Bram Ravijts\Desktop\school\jaar 3\Semester 1\Advanced Webtech Back\laravel-stagevinder\resources\js\search.js */"./resources/js/search.js");
 
 
 /***/ })

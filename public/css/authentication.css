@@ -39,11 +39,43 @@ ul {
   height: 0;
 }
 
+/* EMAIL STANDERD ELEMENTS */
+.email__container {
+  font-weight: normal;
+  border-collapse: collapse;
+  border: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  color: #555559;
+  background-color: white;
+  font-size: 16px;
+  line-height: 26px;
+  width: 600px;
+  padding: 20px;
+}
+
+.email__row {
+  border-collapse: collapse;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  color: #555559;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.email__row--line {
+  background-color: #fff;
+  border-bottom: 4px solid #FECF5B;
+}
+
 /*COMPONENTS CSS*/
 .container {
   align-items: center;
   height: 100%;
-  position: fixed;
   width: 100%;
   display: flex;
   min-height: 100vh;
@@ -182,6 +214,12 @@ ul {
 .auth__login {
   margin-top: 10px;
   width: 100%;
+}
+
+.password__info {
+  color: #252421;
+  font-size: 13px;
+  display: inline-block;
 }
 
 .homepage__reference {
@@ -346,6 +384,10 @@ ul {
   width: 120px;
 }
 
+.button--overImage {
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.3);
+}
+
 .button--fullWidth {
   width: 100%;
   margin-bottom: 15px;
@@ -445,6 +487,10 @@ ul {
   width: 45px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+textarea {
+  resize: none;
 }
 
 .input {
@@ -549,7 +595,7 @@ ul {
   border-right-width: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  z-index: 999;
+  z-index: 998;
   transition: right 0.95s ease-out;
 }
 

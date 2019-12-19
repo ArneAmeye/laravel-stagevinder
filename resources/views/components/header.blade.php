@@ -10,10 +10,8 @@
 			$profileLink = '/'. 'companies/' . Session::get('user')->id;
 		}
 		$headerOfUser = [
-			["name" => "Settings", "href" => "#", "icon" => "fa-cog"],
 			["name" => "Profile", "href" => $profileLink, "icon" => "fa-user"],
 			["name" => "My Messages", "href" => "#", "icon" => "fa-envelope"],
-			["name" => "Lock Screen", "href" => "#", "icon" => "fa-lock"],
 			["name" => "Logout", "href" => "/logout", "icon" => "fa-sign-out-alt"]
 		];
 	}
@@ -27,9 +25,11 @@
 		<a href="/" class="header__logo">
 			<img src="{{ asset('branding/logo.png') }}" class="header__logo__image">
 		</a>
-		<a href="#" class="header__options header__options--mobile">
-			<i class="fas fa-ellipsis-h header__options__icon" aria-hidden="true"></i>
-		</a>
+		@if(Auth::check())
+			<a href="#" class="header__options header__options--mobile">
+				<i class="fas fa-ellipsis-h header__options__icon" aria-hidden="true"></i>
+			</a>
+		@endif
 	</div>
 	<div class="header__options__container clearfix">
 		<!--<ul class="header__options__items--left header__options__items--desktop">

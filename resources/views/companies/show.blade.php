@@ -64,16 +64,14 @@
 								</span>
 							</div>
 						</div>
-						<div class="buttons__container">
-							<button class="button button--follow">
-								<i class="fa fa-plus button__icon" aria-hidden="true"></i>
-								follow
-							</button>
-							<button class="button button--message">
-								<i class="fa fa-comment button__icon" aria-hidden="true"></i>
-								message
-							</button>
-						</div>
+						@if($current != $company->user_id)
+							<div class="buttons__container">
+								<button class="button button--follow button--overImage">
+									<i class="fa fa-plus button__icon" aria-hidden="true"></i>
+									follow
+								</button>
+							</div>
+						@endif
 					</div>
 				</div>
 			</div>
@@ -167,6 +165,12 @@
 							@slot('id')
 								{{ $company->id }}
 							@endslot
+							@slot('current')
+								{{ $current }}
+							@endslot
+							@slot('user_id')
+								{{ $company->user_id }}
+							@endslot
 						@endcomponent
 				</div>
 			</section>
@@ -191,9 +195,15 @@
 					</div>
 					<div class="card__body">
 						@if (empty($edit) || $edit != "bio")
-							<p class="card__text">
-								{{ $company->bio }}
-							</p>
+							@if(empty($company->bio) && $current == $company->user_id)
+								<p class="card__text">You should add some bio or description so students know who you are and what you do.</p>
+							@elseif(empty($company->bio))
+								<p class="card__text">This company has not completed their description.</p>
+							@else
+								<p class="card__text">
+									{{ $company->bio }}
+								</p>
+							@endif
 						@else
 							@component('components/edit_bio_company')
 								@slot('bio')
@@ -209,12 +219,15 @@
 			</section>
 			
 		@elseif($internship == "list")
-			<div class="preview__container">
 				<section class="preview__container">
-					@if(isset($internships))
+					@if(count($internships) == 0 && $current == $company->user_id)
+						<p class="preview__container--empty-state">Expand your kingdom and create a new internship!</p>
+					@elseif(count($internships) == 0)
+						<p class="preview__container--empty-state">This company has no internships posted 😥.</p>
+					@else
 						@foreach($internships as $internship)
 							@if($internship->is_available == 1)
-								<a href="{{ url('/internships/') }}/{{ $internship->id }}">
+								<a class="preview__flex__child" href="{{ url('/internships/') }}/{{ $internship->id }}">
 									<div class="preview__inner">
 										@if($current == $company->user_id)
 											<form method="post" action="{{route('internship.delete', $internship->id)}}" class="preview__form">
@@ -241,8 +254,6 @@
 					@endif
 					</div>
 				</section>
-			</div>
-
 		@elseif($internship == "create")
 
 		<form method="post" action="{{ route('internship.create', $company->id) }}">
@@ -258,8 +269,9 @@
 						</div>
 						<div class="card__body">
 							<label>
-								<input type="file" name="file" class="upload">
+								<input type="file" name="file" class="upload" id="input__upload">
 								<div class="upload__visual">
+									<div id="upload__preview"></div>
 									<div class="upload__visual__icon">
 										<i class="fas fa-cloud-upload-alt"></i>
 									</div>
@@ -274,6 +286,20 @@
 									</a>
 								</div>
 							</label>  
+						</div>
+					</div>
+				</section>
+
+				<section class="card__container" id="preview__card">
+					<div class="card__inner">
+						<div class="card__header">
+							<h5 class="card__title">
+								Preview
+							</h5>	
+						</div>
+						<div class="card__body card__body--transparent">
+							<div class="card__body__preview" id="preview">
+							</div>
 						</div>
 					</div>
 				</section>
@@ -364,6 +390,7 @@
 @endsection
 @section('script')
 	<script type="text/javascript" src="{{ asset ('js/ajax.js') }}"></script>
+	<script type="text/javascript" src="{{ asset ('js/upload.js') }}"></script>
 	<!--<script type="text/javascript" src="{{ asset ('js/getTags.js') }}"></script>-->
 	<script>
 		$(document).ready(function(){

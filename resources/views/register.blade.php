@@ -82,6 +82,7 @@
 			</span>
             <input type="email" class="input" name="email" aria-describedby="emailHelp" placeholder="Enter your email" value="{{old('email')}}">
         </div>
+        <p class="password__info">Password: at least 8 characters long and contain a special character!</p>
         <div class="input__container">
             <span class="input__addon">
 	    		<i class="fa fa-lock" aria-hidden="true"></i>

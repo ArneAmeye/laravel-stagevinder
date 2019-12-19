@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\User;
 use App\Internship;
 /*
 use App\Students;
@@ -20,7 +19,7 @@ class SearchController extends Controller
         $error = ['error' => 'No results found, please try with different keywords.'];
 
         if ($request->has('q')) {
-            $users = User::search($request->get('q'))->get();
+            $internships = Internship::search($request->get('q'))->get();
             //$internships = Internship::search($request->get('q'))->get();
             /*$applications;*/
 
@@ -36,7 +35,7 @@ class SearchController extends Controller
             $resultsUsers = $results['users'];
             array($resultsUsers, $users);*/
 
-            return $users->count() ? $users : $error;
+            return $internships->count() ? $internships : $error;
             //return view('/search', $users->count() ? $users : $error);
             //return sizeof($results, 1) ? $results : $error;
         }

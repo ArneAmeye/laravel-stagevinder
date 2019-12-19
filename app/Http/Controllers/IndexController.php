@@ -39,7 +39,6 @@ class IndexController extends Controller
             }
             
             $data['internships'] = $internships->unique('id');
-           
 
             $data['applications'] = \App\StudentInternship::where('student_id', $student->id)->get();
         }

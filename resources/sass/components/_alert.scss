@@ -13,7 +13,7 @@
 	border-right-width: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	z-index: $topIndex;
+	z-index: $justBelowTopIndex;
 	-moz-transition: right 0.95s ease-out;
 	-webkit-transition: right 0.95s ease-out;
 	transition: right 0.95s ease-out;

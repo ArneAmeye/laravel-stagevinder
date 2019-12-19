@@ -18,7 +18,7 @@
     <input type="hidden" name="type" value="{{ request()->route('edit') }}">
 
 	<div class="card__body card__body--padding clearfix">
-		<div class="card__info">
+		<div class="card__info card__info--1-2">
 			<table class="card__table">
 				<tr class="card__table__row">
 					<td class="card__table__data">
@@ -75,7 +75,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="card__info">
+		<div class="card__info card__info--1-2">
 			<table class="card__table">
 				<tr class="card__table__row">
 					<td class="card__table__data">
@@ -131,6 +131,12 @@
 			</table>
 		</div>
 	</div>
+
+	@component('components/tags')
+		@slot('tags')
+			{{$tags}}
+		@endslot
+	@endcomponent
 
 	<div class="button__center button__center--margin">
 		<button type="submit" class="button button--big" name="update_details">Save</button>

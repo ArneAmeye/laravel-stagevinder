@@ -14,6 +14,11 @@
   border: none;
 }
 
+.preview__container__items {
+  box-shadow: none;
+  padding: 0;
+}
+
 .preview__container__title {
   display: block;
   width: 100%;
@@ -106,6 +111,11 @@
   flex: 1 1 250px;
 }
 
+.preview__container--empty-state {
+  text-align: left;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .preview__flex__child {
     flex-basis: 50%;
@@ -128,49 +138,6 @@
     margin: 0px 5px 30px 5px;
   }
 }
-.search__field__container {
-  margin-bottom: 30px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
-  border: none;
-  flex-direction: column;
-  display: flex;
-}
-
-.search__field {
-  display: flex;
-  display: -ms-flexbox;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 0 -15px;
-  border-bottom: 1px solid #252421;
-}
-
-.search__field--input {
-  margin: 0;
-  width: 95%;
-  color: #252421;
-  background-color: #fff;
-  font-size: 14px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-shadow: none;
-  padding: 6px 22px 6px 10px;
-  outline: none;
-  border: 1px solid transparent;
-}
-
-.search__field--btn {
-  width: 5%;
-  cursor: pointer;
-  color: #ccc;
-  background-color: transparent;
-  border: transparent;
-}
-
 .button__center {
   display: flex;
   justify-content: center;
@@ -213,6 +180,10 @@
 
 .button--big {
   width: 120px;
+}
+
+.button--overImage {
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.3);
 }
 
 .button--fullWidth {
@@ -393,6 +364,7 @@
   background-color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
   width: -webkit-fill-available;
 }
 

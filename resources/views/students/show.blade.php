@@ -60,13 +60,9 @@
 							</div>
 						</div>
 						<div class="buttons__container">
-							<button class="button button--follow">
+							<button class="button button--follow button--overImage">
 								<i class="fas fa-plus button__icon" aria-hidden="true"></i>
 								follow
-							</button>
-							<button class="button button--message">
-								<i class="fas fa-comment button__icon" aria-hidden="true"></i>
-								message
 							</button>
 						</div>
 					</div>
@@ -133,15 +129,15 @@
 						@slot('tags')
 							{{ $student->tags }}
 						@endslot
+						@slot('current')
+							{{ $current }}
+						@endslot
+						@slot('user_id')
+							{{ $student->user_id }}
+						@endslot
 					@endcomponent
 			</div>
 		</section>
-
-		@if(!empty($edit) || $edit == "details")
-			@component('components/tags')
-				
-			@endcomponent
-		@endif
 
 		<section class="card__container">
 			<div class="card__inner">
@@ -163,9 +159,15 @@
 				</div>
 				<div class="card__body">
 					@if (empty($edit) || $edit != "bio")
+						@if(empty($student->bio) && $current == $student->user_id)
+							<p class="card__text">You should add some bio or description so companies will accept you more easily.</p>
+						@elseif(empty($student->bio))
+							<p class="card__text">This student has not completed their description.</p>
+						@else
 						<p class="card__text">
 							{{ $student->bio }}
 						</p>
+						@endif
 					@else
 						@component('components/edit_bio')
 							@slot('bio')
@@ -200,8 +202,10 @@
 				</div>
 				<div class="card__body">
 					@if (empty($edit) || $edit != "dribbble")
-						@if (empty($student->dribbble))
-							<p class="">Edit me and sync with your Dribbble portfolio!</p>
+						@if (empty($student->dribbble) && $current == $student->user_id)
+							<p class="card__text">Edit me and sync with your Dribbble portfolio!</p>
+						@elseif(empty($student->dribbble))
+							<p class="card__text">This student has not connected their Dribbble portfolio.</p>
 						@else
 							<div class="dribbble__container">
 							@forelse ($student->dribbble_api_result as $item)
@@ -212,7 +216,7 @@
 								</a>
 								
 							@empty
-								<p>Empty Dribble portfolio 😞. Try uploading your work to Dribbble!</p>
+								<p class="card__text">Empty Dribble portfolio 😞. Try uploading your work to Dribbble!</p>
 							@endforelse
 							</div>
 						@endif
@@ -236,6 +240,20 @@
 		$(document).ready(function(){
 			var tagCount = 0;
 			var tags = [];
+
+			var selectedTags =	$('#tags').val();
+
+			if(selectedTags !== "" ){
+				var selectedTagsArray = selectedTags.split(" ");
+				selectedTagsArray.forEach(function(tag, index){
+					$('.tags__selected').html( $('.tags__selected').html() + " <div class='tag__selected__container'> <p class='tag__selected'>" + tag + "</p></div>");
+					tags.push(tag);
+					tagCount++
+				})
+			}
+
+			getAutocomplete();
+
 			$('#tag__autocomplete').keyup(function(){
 					
 				getAutocomplete();
