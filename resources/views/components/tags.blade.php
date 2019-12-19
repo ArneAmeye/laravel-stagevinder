@@ -1,5 +1,5 @@
 <section class="card__container">
-    <div class="card__inner">
+    <div>
         <div class="card__header">
             <h5 class="card__title">
                 Tags
