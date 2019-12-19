@@ -67,7 +67,7 @@ btn.onclick = () => {
             }else{
                 for (item in array) {
                     searchResults +=
-                        `<a class="preview__flex__child" href="/internships/${array[item].company_id}">` +
+                        `<a class="preview__flex__child" href="/internships/${array[item].id}">` +
                         `<div class="preview__inner">` +
                         `<img class="preview__image" src="images/internships/background_picture/${array[item].background_picture}">` +
                         `<div class="preview__text">` +
