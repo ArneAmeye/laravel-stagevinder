@@ -178,8 +178,8 @@ Geheime feedback van Joris na de eerste demo: https://docs.google.com/document/d
 | Arne                                                                                                                                                                           |    DONE    |
 | ![#0AD500](https://placehold.it/15/0AD500/000000?text=+) Upload preview in zelfde container, geen scroll nodig => minder verwarrend (UX)                                       |
 | Arne                                                                                                                                                                           |    DONE    |
-| 👑 Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                                                                                    |
-| Person                                                                                                                                                                         |   Status   |
+| ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Als je uitgelogd bent en je klikt op een internship, beter UX/UI (index)                                              |
+| Irene                                                                                                                                                                          |    DONE    |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Slechts eenmalig e-mail vragen bij registratie                                                                        |
 | Irene                                                                                                                                                                          |    DONE    |
 | ![#FF00B9](https://placehold.it/15/FF00B9/000000?text=+) Foute zinsverwoording: notificatie (requist > request) en bij breadcrumbs (home)                                      |
