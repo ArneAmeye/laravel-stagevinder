@@ -1,0 +1,50 @@
+.popup__unauth--container {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: $topIndex; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.popup__unauth--item {
+    width: 60%;
+    height: 350px;
+    margin: auto;
+    margin-top: 30vh;
+    cursor: pointer; /* Add a pointer on hover */
+    margin-bottom: 30px;
+    background-color: $whiteColor;
+    padding: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: $breadcrumbShadow;
+    box-shadow: $breadcrumbShadow;
+    border: none;
+    text-align: center;
+}
+
+.popup__unauth--title {
+    padding-bottom: 30px;
+}
+
+.popup__unauth--text {
+    padding-bottom: 30px;
+}
+
+.popup__unauth--cta {
+    margin-top: 30px;
+    color: $highlightBackgroundColor;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.popup__unauth--link {
+    display: block;
+    padding-top: 60px;
+    color: $mainColor;
+    text-decoration: underline;
+}
